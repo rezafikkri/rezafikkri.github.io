@@ -94,7 +94,7 @@
 	.pembuka__assalamualaikum {
 		font-size: 25pt;
 		font-family: Merriweather_Bold;
-		font-weight: bold
+		font-weight: bold;
 	}
 
 	.pembuka__nama {
@@ -107,6 +107,7 @@
 	.pembuka__job {
 		margin-top: 12px;
 		font-family: NunitoSans_Light;
+		color: #f2e146;
 	}
 
 /*tentang saya*/
@@ -115,6 +116,7 @@
 		background-color: white;
 		padding: 20px;
 		border-radius: 20px;
+		margin-bottom: 100px;
 	}
 
 	.tentang-saya__foto {
@@ -137,7 +139,7 @@
 		font-family: NunitoSans_Light;
 	}
 
-		.tentang-saya__caption {
+	.tentang-saya__caption {
 		margin-top: 50px;
 	}
 
