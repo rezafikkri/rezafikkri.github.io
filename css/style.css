@@ -33,6 +33,54 @@
 		line-height: 20px;
 	}
 
+	hr {
+		border: none;
+		border-bottom: 1px solid #f2f2f2;
+	}
+	
+/*menu-humberger*/
+	.menu--humberger {
+		display: inline-block;
+	}
+
+	.menu--humberger a {
+		background-color: #2597d6;
+		padding: 7px 10px;
+		border-radius: 10px;
+		transition: .1s ease-in-out
+	}
+
+	.menu--humberger a:hover {
+		background-color: #16577b;
+	}
+
+	.menu--humberger a span {
+		position: relative;
+		bottom: -3px;
+		display: inline-block;
+		width: 25px;
+		height: 3px;
+		background-color: white;
+	}
+
+	.menu--humberger a span:before {
+		content: "";
+		top: -7.6px;
+		position: absolute;
+		background-color: white;
+		width: 25px;
+		height: 3px;
+	}
+
+	.menu--humberger a span:after {
+		content: "";
+		top: -15px;
+		position: absolute;
+		background-color: white;
+		width: 25px;
+		height: 3px;
+	}
+
 /*menu-header*/
 	.menu-header {
 		position: absolute;
@@ -85,6 +133,7 @@
 /*pembuka*/
 	.pembuka {
 		background-color: #02283d;
+		background-image: radial-gradient(#02283d, #002030);
 		color: #f1f1f1;
 		padding: 200px 0;
 		padding-bottom: 300px;
@@ -174,6 +223,47 @@
 		color: #2db3fc;
 	}
 
+/*pendidikan*/
+	.pendidikan{
+		margin-bottom: 50px;
+	}
+
+	.pendidikan__judul {
+		font-family: Merriweather_Bold;
+		font-size: 20pt;
+		color: #333;
+		margin-bottom: 25px;
+		text-align: center;
+	}
+
+	.pendidikan__item {
+		border: 1px solid #f2f2f2;
+		padding: 20px;
+		border-radius: 10px;
+		font-family: NunitoSans_Regular;
+	}
+
+	.pendidikan__item--active {
+		border: 1px solid #d5e8f2;
+	}
+
+	.pendidikan__item h1 {
+		margin-bottom: 5px;
+	}
+
+	.pendidikan__item h2 {
+		margin-bottom: 10px;
+		color: #2597d6;
+	}
+
+	.pendidikan__item h3 {
+		color: #aaa
+	}
+
+	.pendidikan__item h3 span {
+		color: #2597d6;
+	}
+
 /*responsive*/
 	.container {
 		padding-left: 15px;
@@ -240,6 +330,14 @@
 		.col-l-10{width: 83.33%}
 		.col-l-11{width: 91.66%}
 		.col-l-12{width: 100%}
+	}
+
+	.pendidikan--nopadding-l {
+		padding-left: 0;
+	}
+
+	.pendidikan--nopadding-r {
+		padding-right: 0;
 	}
 
 /*clear float*/
