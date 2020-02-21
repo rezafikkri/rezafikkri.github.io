@@ -111,43 +111,10 @@
 
 /*tentang saya*/
 	.tentang-saya {
-		margin-top: -100px;
+		margin-top: -120px;
 		background-color: white;
 		padding: 20px;
 		border-radius: 20px;
-	}
-
-	.tentang-saya__caption {
-		margin-top: 20px;
-	}
-
-	.tentang-saya__caption h1 {
-		position: relative;
-		font-size: 18pt;
-		font-family: Merriweather_Bold;
-		margin-bottom: 30px;
-	}
-
-	.tentang-saya__caption h1:before {
-		content: "";
-		position: absolute;
-		top: 30px;
-		width: 50px;
-		height: 4px;
-		background-color: #333;
-		border-radius: 4px;
-	}
-
-	.tentang-saya__caption h2 {
-		font-size: 20pt;
-		font-family: Merriweather_Bold;
-		margin-bottom: 20px;
-		color: #2db3fc;
-	}
-
-	.tentang-saya__foto--container {
-		width: 70%;
-		margin-left: 10%;
 	}
 
 	.tentang-saya__foto {
@@ -168,6 +135,40 @@
 		font-size: 14pt;
 		color: #333;
 		font-family: NunitoSans_Light;
+	}
+
+		.tentang-saya__caption {
+		margin-top: 50px;
+	}
+
+	.tentang-saya__caption h1 {
+		position: relative;
+		font-size: 20pt;
+		font-family: Merriweather_Bold;
+		margin-bottom: 30px;
+		color: #2597d6;
+	}
+
+	.tentang-saya__caption h1:before {
+		content: "";
+		position: absolute;
+		top: 35px;
+		width: 50px;
+		height: 4px;
+		background-color: #2597d6;
+		border-radius: 4px;
+	}
+
+	.tentang-saya__caption h2 {
+		font-size: 20pt;
+		font-family: Merriweather_Bold;
+		margin-bottom: 20px;
+		color: #2db3fc;
+	}
+
+	.tentang-saya__foto--container {
+		width: 70%;
+		margin-left: 10%;
 	}
 
 /*responsive*/
