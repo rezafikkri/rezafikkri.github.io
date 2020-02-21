@@ -35,7 +35,7 @@
 
 /*menu-header*/
 	.menu-header {
-		position: fixed;
+		position: absolute;
 		width: 100%;
 		font-family: NunitoSans_Regular;
 	}
@@ -59,7 +59,9 @@
 	}
 
 	.menu-header li.menu-header__item a {
-		padding: 35px 10px;
+		margin-top: 30px;
+		padding: 10px 10px;
+		transition: .1s ease-in-out;
 	}
 
 	.menu-header li.menu-header__item a:hover {
@@ -82,7 +84,7 @@
 
 /*pembuka*/
 	.pembuka {
-		background-color: #102335;
+		background-color: #02283d;
 		color: #f1f1f1;
 		padding: 200px 0;
 		padding-bottom: 300px;
@@ -104,6 +106,67 @@
 
 	.pembuka__job {
 		margin-top: 12px;
+		font-family: NunitoSans_Light;
+	}
+
+/*tentang saya*/
+	.tentang-saya {
+		margin-top: -100px;
+		background-color: white;
+		padding: 20px;
+		border-radius: 20px;
+	}
+
+	.tentang-saya__caption {
+		margin-top: 20px;
+	}
+
+	.tentang-saya__caption h1 {
+		position: relative;
+		font-size: 18pt;
+		font-family: Merriweather_Bold;
+		margin-bottom: 30px;
+	}
+
+	.tentang-saya__caption h1:before {
+		content: "";
+		position: absolute;
+		top: 30px;
+		width: 50px;
+		height: 4px;
+		background-color: #333;
+		border-radius: 4px;
+	}
+
+	.tentang-saya__caption h2 {
+		font-size: 20pt;
+		font-family: Merriweather_Bold;
+		margin-bottom: 20px;
+		color: #2db3fc;
+	}
+
+	.tentang-saya__foto--container {
+		width: 70%;
+		margin-left: 10%;
+	}
+
+	.tentang-saya__foto {
+		background-color: #2db3fc;
+		border-radius: 50%;
+		border-bottom-left-radius: 20%;
+		border-bottom-right-radius: 20%;
+		clip-path: polygon(20% 0%, 200% 0%, 60% 100%, 0 100%);
+	}
+
+	.tentang-saya__foto img {
+		width: 100%;
+		margin-left: 10%;
+	}
+
+	.tentang-saya__caption p {
+		line-height: 1.6em;
+		font-size: 14pt;
+		color: #333;
 		font-family: NunitoSans_Light;
 	}
 
@@ -173,4 +236,25 @@
 		.col-l-10{width: 83.33%}
 		.col-l-11{width: 91.66%}
 		.col-l-12{width: 100%}
+	}
+
+/*clear float*/
+	.cf:before,
+	.cf:after {
+	content: " "; /* 1 */
+	display: table; /* 2 */
+	}
+
+	.cf:after {
+	clear: both;
+	}
+
+	/* for IE 6/7 only */
+	.cf {
+	*zoom: 1;
+	}
+
+/*utilitis*/
+	.mt-20 {
+		margin-top: 20px;
 	}
