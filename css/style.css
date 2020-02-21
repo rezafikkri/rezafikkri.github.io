@@ -37,24 +37,25 @@
 		border: none;
 		border-bottom: 1px solid #f2f2f2;
 	}
-	
+
 /*menu-humberger*/
-	.menu--humberger {
+	.menu-header__menu--humberger {
+		margin-top: 30px;
 		display: inline-block;
 	}
 
-	.menu--humberger a {
+	.menu-header__menu--humberger a {
 		background-color: #2597d6;
 		padding: 7px 10px;
 		border-radius: 10px;
 		transition: .1s ease-in-out
 	}
 
-	.menu--humberger a:hover {
+	.menu-header__menu--humberger a:hover {
 		background-color: #16577b;
 	}
 
-	.menu--humberger a span {
+	.menu-header__menu--humberger a span {
 		position: relative;
 		bottom: -3px;
 		display: inline-block;
@@ -63,7 +64,7 @@
 		background-color: white;
 	}
 
-	.menu--humberger a span:before {
+	.menu-header__menu--humberger a span:before {
 		content: "";
 		top: -7.6px;
 		position: absolute;
@@ -72,7 +73,7 @@
 		height: 3px;
 	}
 
-	.menu--humberger a span:after {
+	.menu-header__menu--humberger a span:after {
 		content: "";
 		top: -15px;
 		position: absolute;
@@ -81,7 +82,23 @@
 		height: 3px;
 	}
 
+	@media (min-width: 501px) {
+		.menu-humberger__hide--lg {
+			display: none;
+		}
+	}
+
 /*menu-header*/
+	@media (max-width: 500px) {
+		.menu-header--hide-sm {
+			display: none;
+		}
+
+		.menu-header--hide-sm.menu-header--show-sm {
+			display: block;
+		}
+	}
+
 	.menu-header {
 		position: absolute;
 		width: 100%;
@@ -144,6 +161,7 @@
 		font-size: 25pt;
 		font-family: Merriweather_Bold;
 		font-weight: bold;
+		word-wrap: break-word;
 	}
 
 	.pembuka__nama {
@@ -163,7 +181,6 @@
 	.tentang-saya {
 		margin-top: -120px;
 		background-color: white;
-		border: 1px solid #f2f2f2;
 		padding: 20px;
 		border-radius: 20px;
 		margin-bottom: 100px;

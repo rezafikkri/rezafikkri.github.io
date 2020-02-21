@@ -13,12 +13,14 @@
 		<div class="container">
 			<li class="menu-header__logo"><a href=""><img src="img/logo.png" alt="Reiran"></a></li>
 
-			<div class="menu-header--right">
+			<div class="menu-header--right menu-header--hide-sm">
 				<li class="menu-header__item"><a href="">Tentang Saya</a></li>
 				<li class="menu-header__item"><a href="">Pendidikan</a></li>
 				<li class="menu-header__item"><a href="">Keahlian</a></li>
 				<li class="menu-header__item"><a href="">Karya</a></li>
-				<li class="menu--humberger"><a href=""><span></span></a></li>
+			</div>
+			<div class="menu-header--right">
+				<li class="menu-header__menu--humberger menu-humberger__hide--lg"><a id="show_menu_header"><span></span></a></li>
 			</div>
 		</div>
 	</ul>
@@ -71,5 +73,10 @@
 	</div>
 	<hr>
 
+	<script type="text/javascript">
+	// show hide menu-header in mobile
+	const btnShow_menu_header = document.querySelestor("a#show_menu_header");
+	
+	</script>
 </body>
 </html>
