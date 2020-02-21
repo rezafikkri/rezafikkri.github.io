@@ -114,9 +114,15 @@
 	.tentang-saya {
 		margin-top: -120px;
 		background-color: white;
+		border: 1px solid #f2f2f2;
 		padding: 20px;
 		border-radius: 20px;
 		margin-bottom: 100px;
+	}
+
+	.tentang-saya__foto--container {
+		width: 70%;
+		margin-left: 15%;
 	}
 
 	.tentang-saya__foto {
@@ -166,11 +172,6 @@
 		font-family: Merriweather_Bold;
 		margin-bottom: 20px;
 		color: #2db3fc;
-	}
-
-	.tentang-saya__foto--container {
-		width: 70%;
-		margin-left: 10%;
 	}
 
 /*responsive*/
