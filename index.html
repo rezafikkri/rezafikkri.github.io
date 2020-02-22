@@ -20,7 +20,7 @@
 				<li class="menu-header__item"><a href="">Karya</a></li>
 			</div>
 			<div class="menu-header--right">
-				<li class="menu-header__menu--humberger menu-humberger__hide--lg"><a id="show_menu_header"><span></span></a></li>
+				<li class="menu-header__menu--humberger menu-humberger__hide--lg"><a id="show-menu-header-sm"><span></span></a></li>
 			</div>
 		</div>
 	</ul>
@@ -73,10 +73,13 @@
 	</div>
 	<hr>
 
-	<script type="text/javascript">
-	// show hide menu-header in mobile
-	const btnShow_menu_header = document.querySelestor("a#show_menu_header");
-	
-	</script>
+<script type="text/javascript">
+// show hide menu-header in mobile
+const btnShow_menu_header = document.querySelector("a#show-menu-header-sm");
+const menu_header_right = document.querySelector("div.menu-header--right");
+btnShow_menu_header.addEventListener("click", () => {
+	menu_header_right.classList.toggle("menu-header--show-sm");
+});
+</script>
 </body>
 </html>
