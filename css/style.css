@@ -233,16 +233,23 @@
 	}
 
 	.tentang-saya__foto {
-		background-color: #2db3fc;
+		position: relative;
 		border-radius: 50%;
-		border-bottom-left-radius: 20%;
-		border-bottom-right-radius: 20%;
-		clip-path: polygon(20% 0%, 200% 0%, 60% 100%, 0 100%);
 	}
 
 	.tentang-saya__foto img {
-		width: 100%;
+		position: relative;
+		z-index: 2;
+		width: 80%;
 		margin-left: 10%;
+	}
+
+	.tentang-saya__foto svg#bg-foto {
+		width: 130%;
+		left: 0;
+		top: 70px;
+		margin-left: -15%;
+		position: absolute;
 	}
 
 	.tentang-saya__caption p {
