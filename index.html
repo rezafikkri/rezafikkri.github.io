@@ -80,6 +80,16 @@ const menu_header_right = document.querySelector("div.menu-header--right");
 btnShow_menu_header.addEventListener("click", () => {
 	menu_header_right.classList.toggle("menu-header--show-sm");
 });
+
+// menu fixed when scroll
+const menu_header = document.querySelector(".menu-header");
+window.addEventListener('scroll', (e) => {
+	if(e.pageY >= 460) {
+		menu_header.classList.add("menu-header--fixed");
+	} else {
+		menu_header.classList.remove("menu-header--fixed");
+	}
+});
 </script>
 </body>
 </html>
