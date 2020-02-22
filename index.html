@@ -29,13 +29,13 @@
 				</svg>
 			</a></li>
 
-			<div class="menu-header--right menu-header--hide-sm">
+			<div class="menu-header__right menu-header__right--hide-sm">
 				<li class="menu-header__item"><a href="">Tentang Saya</a></li>
 				<li class="menu-header__item"><a href="">Pendidikan</a></li>
 				<li class="menu-header__item"><a href="">Keahlian</a></li>
 				<li class="menu-header__item"><a href="">Karya</a></li>
 			</div>
-			<div class="menu-header--right">
+			<div class="menu-header__right">
 				<li class="menu-header__menu--humberger menu-humberger__hide--lg"><a id="show-menu-header-sm"><span></span></a></li>
 			</div>
 		</div>
@@ -174,9 +174,9 @@
 <script type="text/javascript">
 // show hide menu-header in mobile
 const btnShow_menu_header = document.querySelector("a#show-menu-header-sm");
-const menu_header_right = document.querySelector("div.menu-header--right");
+const menu_header_right = document.querySelector("div.menu-header__right");
 btnShow_menu_header.addEventListener("click", () => {
-	menu_header_right.classList.toggle("menu-header--show-sm");
+	menu_header_right.classList.toggle("menu-header__right--show-sm");
 });
 
 // menu fixed when scroll
