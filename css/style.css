@@ -140,7 +140,7 @@
 		display: inline-block;
 	}
 
-	.menu-header li.menu-header__logo img {
+	.menu-header li.menu-header__logo svg {
 		display: block;
 		width: 50px;
 	}
@@ -252,6 +252,10 @@
 		position: absolute;
 	}
 
+	.tentang-saya__caption {
+		margin-top: 30px;
+	}
+
 	.tentang-saya__caption p {
 		line-height: 1.6em;
 		font-size: 14pt;
@@ -259,16 +263,12 @@
 		font-family: NunitoSans_Light;
 	}
 
-	.tentang-saya__caption {
-		margin-top: 50px;
-	}
-
 	.tentang-saya__caption h1 {
 		position: relative;
 		font-size: 20pt;
 		font-family: Merriweather_Bold;
 		margin-bottom: 30px;
-		color: #2597d6;
+		color: #333;
 	}
 
 	.tentang-saya__caption h1:before {
@@ -299,10 +299,16 @@
 		padding: 20px;
 		border-radius: 10px;
 		font-family: NunitoSans_Regular;
+		text-align: center;
 	}
 
 	.pendidikan__item--active {
 		border: 1px solid #d5e8f2;
+	}
+
+	.pendidikan__item svg {
+		width: 50%;
+		margin-bottom: 20px;
 	}
 
 	.pendidikan__item h1 {
