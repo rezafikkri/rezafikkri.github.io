@@ -153,6 +153,7 @@
 
 	.menu-header.menu-header--fixed li.menu-header__logo {
 		padding: 0px 10px;
+		padding-top: 2px;
 	}
 
 	.menu-header.menu-header--fixed li.menu-header__item a {
@@ -349,7 +350,7 @@
 
 /*pendidikan*/
 	.pendidikan{
-		margin-bottom: 50px;
+		margin-bottom: 150px;
 	}
 
 	.pendidikan__judul {
@@ -395,8 +396,69 @@
 	}
 
 /*keahlian*/
-	.keahlian h1 {
+	.keahlian {
+		padding-top: 50px;
+		background-color: #f2f5f7;
+	}
 
+	.keahlian_keterangan {
+		margin-top: 100px;
+		padding-right: 100px;
+	}
+
+	.keahlian_keterangan h1 {
+		font-size: 25pt;
+		font-family: Merriweather_Bold;
+		margin-bottom: 25px;
+		color: #333;
+		line-height: 1.2em;
+	}
+
+	.keahlian_keterangan h1 span {
+		font-size: 18pt;
+		color: #2597d6;
+	}
+
+	.keahlian_keterangan p {
+		line-height: 1.4em;
+		font-size: 14pt;
+		color: #333;
+		font-family: NunitoSans_Light;
+	}
+
+	.keahlian__item {
+		min-height: 200px;
+	}
+
+	.keahlian__item svg {
+		width: 45%;
+	}
+
+	.keahlian__item svg#php {
+		width: 75%;
+	}
+
+	.keahlian__item svg#es6 {
+		width: 68%;
+	}
+
+	.keahlian__item svg#mariadb {
+		width: 57%;
+	}
+
+	.keahlian__item__nama {
+		font-size: 14pt;
+		font-family: NunitoSans_Bold;
+		margin-bottom: 10px;
+		color: #333;
+		line-height: 20px;
+	}
+
+	.keahlian__item__keterangan {
+		font-size: 11pt;
+		font-family: NunitoSans_Regular;
+		color: #333;
+		line-height: 20px;
 	}
 
 /*responsive*/
@@ -471,7 +533,8 @@
 		padding-left: 0;
 	}
 
-	.pendidikan--nopadding-r {
+	.pendidikan--nopadding-r,
+	.keahlian__item--nopadding-r {
 		padding-right: 0;
 	}
 
