@@ -411,6 +411,10 @@
 		padding-right: 100px;
 	}
 
+	.keahlian_keterangan--mt-50 {
+		margin-top: 50px;
+	}
+
 	.keahlian_keterangan h1 {
 		font-size: 25pt;
 		font-family: Merriweather_Bold;
