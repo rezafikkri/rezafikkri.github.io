@@ -399,7 +399,7 @@
 
 /*keahlian*/
 	.keahlian {
-		padding: 50px 50px;
+		padding: 50px;
 	}
 
 	.keahlian--blue-abu-abu {
@@ -432,7 +432,7 @@
 	}
 
 	.keahlian__item {
-		min-height: 180px;
+		min-height: 185px;
 	}
 
 	.keahlian__item svg {
@@ -443,12 +443,30 @@
 		width: 70%;
 	}
 
-	.keahlian__item svg#es6 {
+	.keahlian__item svg#es6,
+	.keahlian__item svg#oop,
+	.keahlian__item svg#jquery {
 		width: 63%;
 	}
 
-	.keahlian__item svg#mariadb {
-		width: 52%;
+	.keahlian__item svg#mariadb{
+		width: 58%;
+	}
+
+	.keahlian__item svg#codeigniter {
+		width: 50%;
+	}
+
+	.keahlian__item svg#git {
+		width: 50%
+	}
+
+	.keahlian__item svg#laravel{
+		width: 47%;
+	}
+
+	.keahlian__item svg#github {
+		width: 45%;
 	}
 
 	.keahlian__item__nama {
