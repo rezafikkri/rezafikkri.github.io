@@ -427,23 +427,23 @@
 	}
 
 	.keahlian__item {
-		min-height: 200px;
+		min-height: 180px;
 	}
 
 	.keahlian__item svg {
-		width: 45%;
+		width: 40%;
 	}
 
 	.keahlian__item svg#php {
-		width: 75%;
+		width: 70%;
 	}
 
 	.keahlian__item svg#es6 {
-		width: 68%;
+		width: 63%;
 	}
 
 	.keahlian__item svg#mariadb {
-		width: 57%;
+		width: 52%;
 	}
 
 	.keahlian__item__nama {
