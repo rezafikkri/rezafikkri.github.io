@@ -349,7 +349,7 @@
 	}
 
 /*pendidikan*/
-	.pendidikan{
+	.pendidikan {
 		margin-bottom: 150px;
 	}
 
@@ -399,7 +399,10 @@
 
 /*keahlian*/
 	.keahlian {
-		padding-top: 50px;
+		padding: 50px 50px;
+	}
+
+	.keahlian--blue-abu-abu {
 		background-color: #f2f5f7;
 	}
 
