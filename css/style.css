@@ -147,13 +147,22 @@
 
 	.menu-header.menu-header--fixed {
 		position: fixed;
-		background-color: #002030;
-		background-image: linear-gradient(-45deg, #00496b, #002030);
-		box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+		background-color: white;
+		box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 	}
 
 	.menu-header.menu-header--fixed li.menu-header__logo {
-		padding: 10px 10px;
+		padding: 0px 10px;
+	}
+
+	.menu-header.menu-header--fixed li.menu-header__item a {
+		transition: none;
+		margin-top: 10px;
+		color: #333;
+	}
+
+	.menu-header.menu-header--fixed li.menu-header__item a:hover {
+		color: #16577b;
 	}
 
 	@media (max-width: 500px) {
@@ -385,6 +394,11 @@
 		color: #2597d6;
 	}
 
+/*keahlian*/
+	.keahlian h1 {
+
+	}
+
 /*responsive*/
 	.container {
 		padding-left: 15px;
@@ -459,6 +473,10 @@
 
 	.pendidikan--nopadding-r {
 		padding-right: 0;
+	}
+
+	.keahlian--nopadding-all {
+		padding: 0;
 	}
 
 	@media (max-width: 767px) {
