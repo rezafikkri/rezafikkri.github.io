@@ -379,6 +379,8 @@
 	}
 
 	.pendidikan__item h1 {
+		font-family: NunitoSans_Bold;
+		color: #333;
 		margin-bottom: 5px;
 	}
 
