@@ -923,7 +923,7 @@ btnShow_menu_header.addEventListener("click", () => {
 // menu fixed when scroll
 const menu_header = document.querySelector(".menu-header");
 window.addEventListener('scroll', (e) => {
-	if(e.pageY >= document.querySelector("div.tentang-saya").offsetTop) {
+	if(document.querySelector("html, body").scrollTop >= document.querySelector("div.tentang-saya").offsetTop) {
 		menu_header.classList.add("menu-header--fixed");
 	} else {
 		menu_header.classList.remove("menu-header--fixed");
