@@ -44,8 +44,12 @@
 
 /*menu-humberger*/
 	.menu-header__menu--humberger {
-		margin-top: 19px;
+		margin-top: 30px;
 		display: inline-block;
+	}
+
+	.menu-header--fixed .menu-header__menu--humberger {
+		margin-top: 19px;
 	}
 
 	.menu-header__menu--humberger a {
