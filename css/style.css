@@ -406,6 +406,14 @@
 		border-radius: 10px;
 		font-family: NunitoSans_Regular;
 		text-align: center;
+		opacity: 0;
+		transform: translate(0,30px);
+		transition: .5s ease-in-out;
+	}
+
+	.pendidikan__item--show {
+		opacity: 1;
+		transform: translate(0,0);
 	}
 
 	.pendidikan__item--active {
@@ -622,43 +630,37 @@
 	}
 
 	@media (max-width: 500px) {
+		.keahlian {
+			padding: 30px 0px;
+		}
+
 		.keahlian__item svg {
-			width: 22%;
+			width: 17%;
 		}
 
-		.keahlian__item svg#php {
-			width: 60%;
-		}
-
-		.keahlian__item svg#codeigniter {
-			width: 53%;
-		}
-
+		.keahlian__item svg#php,
+		.keahlian__item svg#codeigniter,
 		.keahlian__item svg#mariadb,
-		.keahlian__item svg#es6,
-		.keahlian__item svg#jquery {
-			width: 55%;
+		.keahlian__item svg#es6 {
+			width: 26%;
 		}
 
 		.keahlian__item svg#github,
 		.keahlian__item svg#restapi {
-			width: 48%;
+			width: 21%;
 		}
 
-		.keahlian__item svg#git {
-			width: 55%
-		}
-
+		.keahlian__item svg#git,
 		.keahlian__item svg#laravel{
-			width: 50%;
+			width: 24%;
 		}
 
 		.keahlian__item svg#jquery {
-			width: 80%;
+			width: 35%;
 		}
 
 		.keahlian__item svg#oop {
-			width: 60%;
+			width: 26%;
 		}
 	}
 

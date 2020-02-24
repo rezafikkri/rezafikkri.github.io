@@ -922,7 +922,7 @@ btnShow_menu_header.addEventListener("click", () => {
 
 // menu fixed when scroll
 const menu_header = document.querySelector(".menu-header");
-window.addEventListener('scroll', (e) => {
+window.addEventListener('scroll', () => {
 	if(document.querySelector("html, body").scrollTop >= document.querySelector("div.tentang-saya").offsetTop) {
 		menu_header.classList.add("menu-header--fixed");
 	} else {
@@ -932,6 +932,20 @@ window.addEventListener('scroll', (e) => {
 
 // get and append year
 document.querySelector("year").innerText = new Date().getFullYear();
+
+// paralax pendidikan
+const html = document.querySelector("html");
+const pendidikan_items = document.querySelectorAll("div.pendidikan__item");
+window.addEventListener('scroll', () => {
+	//show hide pendidikan item
+	for(const PItem of pendidikan_items) {
+		if(html.scrollTop >= PItem.offsetTop-570) {
+			PItem.classList.add('pendidikan__item--show');
+		} else {
+			PItem.classList.remove('pendidikan__item--show');
+		}
+	}
+});
 </script>
 </body>
 </html>
