@@ -292,10 +292,10 @@
 	}
 
 	.tentang-saya__foto svg#bg-foto {
-		width: 130%;
+		width: 120%;
 		left: 0;
 		top: 0;
-		margin-left: -15%;
+		margin-left: -10%;
 		position: absolute;
 	}
 
@@ -335,8 +335,8 @@
 		}
 
 		.tentang-saya__foto svg#bg-foto {
-			width: 140%;
-			margin-left: -25%;
+			width: 130%;
+			margin-left: -20%;
 		}
 	}
 
@@ -346,8 +346,8 @@
 		}
 
 		.tentang-saya__foto svg#bg-foto {
-			width: 150%;
-			margin-left: -30%;
+			width: 140%;
+			margin-left: -20%;
 		}
 
 		.tentang-saya__caption h1:before {
@@ -357,12 +357,12 @@
 
 	@media (max-width: 767px) {
 		.tentang-saya__foto img{
-			width: 100%;
+			width: 90%;
 		}
 
 		.tentang-saya__foto svg#bg-foto {
-			width: 160%;
-			margin-left: -30%;
+			width: 140%;
+			margin-left: -20%;
 		}
 
 		.tentang-saya__caption h1:before {
@@ -380,6 +380,10 @@
 		.tentang-saya__foto img{
 			width: 120%;
 			margin-left: -7%;
+		}
+
+		.tentang-saya__foto svg#bg-foto {
+			margin-top: 30px;
 		}
 	}
 
