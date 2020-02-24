@@ -490,7 +490,51 @@
 
 /*karya*/
 	.karya {
+		margin-top: 100px;
+		margin-bottom: 100px;
+	}
 
+	.karya h1.karya__judul {
+		font-size: 25pt;
+		font-family: Merriweather_Bold;
+		color: #333;
+		margin-bottom: 40px;
+		text-align: center;
+	}
+
+	.karya__item {
+		padding: 5px;
+		border: 1px solid #ddd;
+		border-radius: 10px;
+	}
+
+	.karya__item img {
+		width: 100%;
+		margin-bottom: 20px;
+	}
+
+	.karya__item__nama,
+	.karya__item__keterangan {
+		margin-left: 10px;
+	}
+
+	.karya__item__nama {
+		line-height: 1.3em;
+		margin-bottom: 10px;
+		font-size: 16pt;
+		font-family: NunitoSans_Bold;
+		color: #333;
+	}
+
+	.karya__item__nama span {
+		color: #2597d6;
+	}
+
+	.karya__item__keterangan {
+		margin-bottom: 10px;
+		line-height: 1.3em;
+		font-size: 12pt;
+		font-family: NunitoSans_Regular;
 	}
 
 /*responsive*/
@@ -559,6 +603,39 @@
 		.col-l-10{width: 83.33%}
 		.col-l-11{width: 91.66%}
 		.col-l-12{width: 100%}
+
+		.offset-lr-1{margin-right: 8.33%}
+		.offset-ll-1{margin-left: 8.33%}
+
+		.offset-lr-2{margin-right: 16.66%}
+		.offset-ll-2{margin-left: 16.66%}
+
+		.offset-lr-3{margin-right: 25%}
+		.offset-ll-3{margin-left: 25%}
+
+		.offset-lr-4{margin-right: 33.33%}
+		.offset-ll-4{margin-left: 33.33%}
+
+		.offset-lr-5{margin-right: 41.66%}
+		.offset-ll-5{margin-left: 41.66%}
+
+		.offset-lr-6{margin-right: 50%}
+		.offset-ll-6{margin-left: 50%}
+
+		.offset-lr-7{margin-right: 58.33%}
+		.offset-ll-7{margin-left: 58.33%}
+
+		.offset-lr-8{margin-right: 66.66%}
+		.offset-ll-8{margin-left: 66.66%}
+
+		.offset-lr-9{margin-right: 75%}
+		.offset-ll-9{margin-left: 75%}
+
+		.offset-lr-10{margin-right: 83.33%}
+		.offset-ll-10{margin-left: 83.33%}
+
+		.offset-lr-11{margin-right: 91.66%}
+		.offset-ll-11{margin-left: 91.66%}
 	}
 
 	.pendidikan--nopadding-l {
@@ -570,7 +647,8 @@
 		padding-right: 0;
 	}
 
-	.keahlian--nopadding-all {
+	.keahlian--nopadding-all,
+	.karya--nopadding-all {
 		padding: 0;
 	}
 
