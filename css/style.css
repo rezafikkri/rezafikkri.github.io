@@ -350,7 +350,7 @@
 
 /*pendidikan*/
 	.pendidikan {
-		margin-bottom: 150px;
+		margin-bottom: 100px;
 	}
 
 	.pendidikan__judul {
@@ -386,7 +386,7 @@
 
 	.pendidikan__item h2 {
 		margin-bottom: 10px;
-		color: #2597d6;
+		color: #333;
 	}
 
 	.pendidikan__item h3 {
@@ -394,7 +394,7 @@
 	}
 
 	.pendidikan__item h3 span {
-		color: #2597d6;
+		color: #333;
 	}
 
 /*keahlian*/
@@ -486,6 +486,11 @@
 		font-family: NunitoSans_Regular;
 		color: #333;
 		line-height: 20px;
+	}
+
+/*karya*/
+	.karya {
+
 	}
 
 /*responsive*/
