@@ -479,6 +479,12 @@
 		min-height: 185px;
 	}
 
+	@media (max-width: 991px) {
+		.keahlian__item.keahlian__item--min-height-195-sm {
+			min-height: 260px;
+		}
+	}
+
 	.keahlian__item svg {
 		width: 40%;
 	}
@@ -511,6 +517,155 @@
 
 	.keahlian__item svg#github {
 		width: 45%;
+	}
+
+	@media (max-width: 991px) {
+		.keahlian--blue-abu-abu {
+			clip-path: polygon(100% 1%, 100% 100%, 0% 99%, 0% 0%);
+		}
+
+		.keahlian__item svg {
+			width: 60%;
+		}
+
+		.keahlian__item svg#php {
+			width: 85%;
+		}
+
+		.keahlian__item svg#codeigniter {
+			width: 83%;
+		}
+
+		.keahlian__item svg#mariadb{
+			width: 85%;
+		}
+
+		.keahlian__item svg#es6 {
+			width: 78%;
+		}
+
+		.keahlian__item svg#git {
+			width: 80%
+		}
+
+		.keahlian__item svg#laravel{
+			width: 72%;
+		}
+
+		.keahlian__item svg#github {
+			width: 64%;
+		}
+
+		.keahlian__item svg#restapi {
+			width: 64%;
+		}
+
+		.keahlian__item svg#jquery {
+			width: 100%;
+		}
+
+		.keahlian__item svg#oop {
+			width: 90%;
+		}
+
+		.keahlian_keterangan {
+			margin-top: 0px;
+		}
+	}
+
+	@media (max-width: 767px) {
+		.keahlian_keterangan {
+			margin-top: 50px;
+			padding-right: 0;
+		}
+
+		.keahlian__item {
+			min-height: 100px;
+		}
+
+		.keahlian__item.keahlian__item--min-height-195-sm {
+			min-height: 100px;
+		}
+
+		.keahlian__item svg {
+			width: 15%;
+		}
+
+		.keahlian__item svg#php {
+			width: 25%;
+		}
+
+		.keahlian__item svg#codeigniter,
+		.keahlian__item svg#github,
+		.keahlian__item svg#restapi {
+			width: 19%;
+		}
+
+		.keahlian__item svg#mariadb,
+		.keahlian__item svg#es6,
+		.keahlian__item svg#oop,
+		.keahlian__item svg#jquery {
+			width: 22%;
+		}
+
+		.keahlian__item svg#git {
+			width: 21%
+		}
+
+		.keahlian__item svg#laravel{
+			width: 20%;
+		}
+
+		.keahlian__item svg#jquery {
+			width: 27%;
+		}
+	}
+
+	@media (max-width: 500px) {
+		.keahlian__item svg {
+			width: 22%;
+		}
+
+		.keahlian__item svg#php {
+			width: 60%;
+		}
+
+		.keahlian__item svg#codeigniter {
+			width: 53%;
+		}
+
+		.keahlian__item svg#mariadb,
+		.keahlian__item svg#es6,
+		.keahlian__item svg#jquery {
+			width: 55%;
+		}
+
+		.keahlian__item svg#github,
+		.keahlian__item svg#restapi {
+			width: 48%;
+		}
+
+		.keahlian__item svg#git {
+			width: 55%
+		}
+
+		.keahlian__item svg#laravel{
+			width: 50%;
+		}
+
+		.keahlian__item svg#jquery {
+			width: 80%;
+		}
+
+		.keahlian__item svg#oop {
+			width: 60%;
+		}
+	}
+
+	@media (max-width: 360px) {
+		.keahlian__item svg {
+			width: 45%;
+		}
 	}
 
 	.keahlian__item__nama {
