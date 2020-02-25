@@ -494,37 +494,44 @@
 	}
 
 	.keahlian__item svg {
-		width: 40%;
+		width: 37%;
 	}
 
 	.keahlian__item svg#php {
-		width: 70%;
+		width: 65%;
 	}
 
 	.keahlian__item svg#es6,
-	.keahlian__item svg#oop,
-	.keahlian__item svg#jquery {
-		width: 63%;
+	.keahlian__item svg#oop {
+		width: 59%;
 	}
 
 	.keahlian__item svg#mariadb{
-		width: 58%;
+		width: 56%;
 	}
 
 	.keahlian__item svg#codeigniter {
-		width: 50%;
+		width: 49%;
 	}
 
 	.keahlian__item svg#git {
-		width: 50%
+		width: 49%
 	}
 
 	.keahlian__item svg#laravel{
-		width: 47%;
+		width: 46%;
 	}
 
 	.keahlian__item svg#github {
 		width: 45%;
+	}
+
+	.keahlian__item svg#restapi {
+		width: 42%;
+	}
+
+	.keahlian__item svg#jquery {
+		width: 65%;
 	}
 
 	@media (max-width: 991px) {
