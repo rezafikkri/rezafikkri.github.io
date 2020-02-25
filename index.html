@@ -920,32 +920,60 @@ btnShow_menu_header.addEventListener("click", () => {
 	menu_header_right.classList.toggle("menu-header__right--show-sm");
 });
 
-// menu fixed when scroll
+// data menu fixed when scroll
+const html = document.querySelector("html");
 const menu_header = document.querySelector(".menu-header");
+
+// data parallax pendidikan
+const pendidikan = document.querySelector("div.pendidikan");
+const pendidikan_items = document.querySelectorAll("div.pendidikan__item");
+/// parallaxPendidikan: untuk penanda apakah masih ada element pendidikan__item yang belum masuk kearea window
+let parallaxPendidikan = true;
+/// parallaxIndex: jika tidak semua pendidikan__item masuk kearea window maka kita harus looping dari index terakhir dari pendidikan_items yang sudah ditambahkan class pendidikan__item--show, bukan malah looping dari index awal
+let pendidikanIndex;
+
+// cek apakah tanpa scroll, element yang mau ditampilkan dengan effect parallax sudah masuk ke area window, jika iya langsung tampilkan tanpa harus scroll
+if(html.scrollTop+html.clientHeight-100 >= pendidikan.offsetTop) {
+	for(let i = 0; i < pendidikan_items.length; i++) {
+		if(html.scrollTop+html.clientHeight-100 >= pendidikan_items[i].offsetTop) {
+			pendidikan_items[i].classList.add("pendidikan__item--show");
+			parallaxPendidikan = false;
+			pendidikanIndex = i;
+
+		} else {
+			parallaxPendidikan = true;
+			break;
+		}
+	}
+}
+
 window.addEventListener('scroll', () => {
-	if(document.querySelector("html, body").scrollTop >= document.querySelector("div.tentang-saya").offsetTop) {
+	// fungsi menu fixed when scroll
+	if(html.scrollTop >= document.querySelector("div.tentang-saya").offsetTop && !menu_header.classList.contains("menu-header--fixed")) {
 		menu_header.classList.add("menu-header--fixed");
-	} else {
+
+	} else if(html.scrollTop < document.querySelector("div.tentang-saya").offsetTop && menu_header.classList.contains("menu-header--fixed")) {
 		menu_header.classList.remove("menu-header--fixed");
 	}
+
+	// fungsi paralax pendidikan
+	let PIndexStart;
+	pendidikanIndex != undefined?PIndexStart=pendidikanIndex+1:PIndexStart = 0;
+	if(parallaxPendidikan === true) {
+		for(let i = PIndexStart; i < pendidikan_items.length; i++) {
+			if(html.scrollTop+html.clientHeight-100 >= pendidikan_items[i].offsetTop && !pendidikan_items[i].classList.contains("pendidikan__item--show")) {
+				pendidikan_items[i].classList.add("pendidikan__item--show");
+
+			} else if(html.scrollTop+html.clientHeight-100 < pendidikan_items[i].offsetTop && pendidikan_items[i].classList.contains("pendidikan__item--show")) {
+				pendidikan_items[i].classList.remove("pendidikan__item--show");
+			}
+		}
+	}
+
 });
 
 // get and append year
 document.querySelector("year").innerText = new Date().getFullYear();
-
-// paralax pendidikan
-const html = document.querySelector("html");
-const pendidikan_items = document.querySelectorAll("div.pendidikan__item");
-window.addEventListener('scroll', () => {
-	//show hide pendidikan item
-	for(const PItem of pendidikan_items) {
-		if(html.scrollTop >= PItem.offsetTop-570) {
-			PItem.classList.add('pendidikan__item--show');
-		} else {
-			PItem.classList.remove('pendidikan__item--show');
-		}
-	}
-});
 </script>
 </body>
 </html>
