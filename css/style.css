@@ -692,32 +692,32 @@
 
 	@media (max-width: 360px) {
 		.keahlian__item svg {
-			width: 25%;
+			width: 24%;
 		}
 
 		.keahlian__item svg#php,
 		.keahlian__item svg#codeigniter,
 		.keahlian__item svg#mariadb,
 		.keahlian__item svg#es6 {
-			width: 32%;
+			width: 33%;
 		}
 
 		.keahlian__item svg#github,
 		.keahlian__item svg#restapi {
-			width: 21%;
+			width: 25%;
 		}
 
 		.keahlian__item svg#git,
 		.keahlian__item svg#laravel{
-			width: 24%;
+			width: 30%;
 		}
 
 		.keahlian__item svg#jquery {
-			width: 35%;
+			width: 40%;
 		}
 
 		.keahlian__item svg#oop {
-			width: 26%;
+			width: 35%;
 		}
 	}
 

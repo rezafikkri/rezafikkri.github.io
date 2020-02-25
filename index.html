@@ -540,7 +540,7 @@
 		</div>
 	</div>
 	<!-- keahlian basic -->
-	<div class="keahlian cf" id="kehalian_basic">
+	<div class="keahlian cf" id="keahlian_basic">
 		<div class="container">
 			<div class="col-l-5">
 				<div class="keahlian__keterangan keahlian__keterangan--mt-50">
@@ -967,6 +967,11 @@ const ket_keahlian_profesional = keahlian_profesional.querySelector("div.keahlia
 const {parallaxElement:parallaxKeahlianPro, elementIndex:keahlianProIndex} = showParallaxNow(keahlian_profesional, keahlian_profesional_items, 'keahlian__item--show');
 const parallaxKetKeahlianPro = showParallaxNow(ket_keahlian_profesional, undefined, 'keahlian__keterangan--show');
 
+// data parallax keahlian basic
+const keahlian_basic = document.querySelector("div#keahlian_basic");
+const ket_keahlian_basic = keahlian_basic.querySelector("div.keahlian__keterangan");
+const keahlian_basic_items = keahlian_basic.querySelectorAll("div.keahlian__item");
+
 window.addEventListener('scroll', () => {
 	// fungsi menu fixed when scroll
 	if(html.scrollTop >= document.querySelector("div.tentang-saya").offsetTop && !menu_header.classList.contains("menu-header--fixed")) {
@@ -1002,7 +1007,6 @@ window.addEventListener('scroll', () => {
 	// fungsi parallax keahlian profesional item
 	let KeahlianProIndexStart;
 	keahlianProIndex !== undefined?KeahlianProIndexStart=keahlianProIndex+1:KeahlianProIndexStart=0;
-	console.log(parallaxKeahlianPro);
 	if(parallaxKeahlianPro === true) {
 		for(let i = KeahlianProIndexStart; i < keahlian_profesional_items.length; i++) {
 
@@ -1013,6 +1017,23 @@ window.addEventListener('scroll', () => {
 			} else if(html.scrollTop+html.clientHeight-100 < keahlian_profesional_items[i].offsetTop && keahlian_profesional_items[i].classList.contains('keahlian__item--show')) {
 				keahlian_profesional_items[i].classList.remove("keahlian__item--show");
 			}
+		}
+	}
+
+	// fungsi parallax keterangan keahlian basic
+	if(html.scrollTop+html.clientHeight-100 >= ket_keahlian_basic.offsetTop && !ket_keahlian_basic.classList.contains('keahlian__keterangan--show')) {
+		ket_keahlian_basic.classList.add('keahlian__keterangan--show');
+
+	} else if(html.scrollTop+html.clientHeight-100 < ket_keahlian_basic.offsetTop && ket_keahlian_basic.classList.contains('keahlian__keterangan--show')) {
+		ket_keahlian_basic.classList.remove('keahlian__keterangan--show');
+	}
+	// fungsi parallax keahlian basic
+	for(const KBItem of keahlian_basic_items) {
+		if(html.scrollTop+html.clientHeight-100 >= KBItem.offsetTop && !KBItem.classList.contains('keahlian__item--show')) {
+			KBItem.classList.add('keahlian__item--show');
+
+		} else if(html.scrollTop+html.clientHeight-100 < KBItem.offsetTop && KBItem.classList.contains('keahlian__item--show')) {
+			KBItem.classList.remove('keahlian__item--show');
 		}
 	}
 });
