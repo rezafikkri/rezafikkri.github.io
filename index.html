@@ -924,28 +924,33 @@ btnShow_menu_header.addEventListener("click", () => {
 const html = document.querySelector("html");
 const menu_header = document.querySelector(".menu-header");
 
+// cek apakah tanpa scroll, element yang mau ditampilkan dengan effect parallax sudah masuk ke area window, jika iya langsung tampilkan tanpa harus scroll
+const showParallaxNow = (parentElement, childElements, classShow) => {
+	let parallaxElement = true;
+	let elementIndex;
+	if(html.scrollTop+html.clientHeight-100 >= parentElement.offsetTop) {
+		for(let i = 0; i < childElements.length; i++) {
+			if(html.scrollTop+html.clientHeight-100 >= childElements[i].offsetTop) {
+				childElements[i].classList.add(classShow);
+				parallaxElement = false;
+				elementIndex = i;
+
+			} else {
+				parallaxElement = true;
+				break;
+			}
+		}
+	}
+	return {parallaxElement:parallaxElement, elementIndex:elementIndex};
+}
+
 // data parallax pendidikan
 const pendidikan = document.querySelector("div.pendidikan");
 const pendidikan_items = document.querySelectorAll("div.pendidikan__item");
+
 /// parallaxPendidikan: untuk penanda apakah masih ada element pendidikan__item yang belum masuk kearea window
-let parallaxPendidikan = true;
 /// parallaxIndex: jika tidak semua pendidikan__item masuk kearea window maka kita harus looping dari index terakhir dari pendidikan_items yang sudah ditambahkan class pendidikan__item--show, bukan malah looping dari index awal
-let pendidikanIndex;
-
-// cek apakah tanpa scroll, element yang mau ditampilkan dengan effect parallax sudah masuk ke area window, jika iya langsung tampilkan tanpa harus scroll
-if(html.scrollTop+html.clientHeight-100 >= pendidikan.offsetTop) {
-	for(let i = 0; i < pendidikan_items.length; i++) {
-		if(html.scrollTop+html.clientHeight-100 >= pendidikan_items[i].offsetTop) {
-			pendidikan_items[i].classList.add("pendidikan__item--show");
-			parallaxPendidikan = false;
-			pendidikanIndex = i;
-
-		} else {
-			parallaxPendidikan = true;
-			break;
-		}
-	}
-}
+const {parallaxElement:parallaxPendidikan, elementIndex:pendidikanIndex} = showParallaxNow(pendidikan, pendidikan_items, 'pendidikan__item--show');
 
 window.addEventListener('scroll', () => {
 	// fungsi menu fixed when scroll
