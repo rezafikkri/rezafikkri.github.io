@@ -214,7 +214,7 @@
 	<div class="keahlian keahlian--blue-abu-abu cf" id="keahlian_profesional">
 		<div class="container">
 			<div class="col-l-5">
-				<div class="keahlian_keterangan">
+				<div class="keahlian__keterangan">
 					<h1>Keahlian Programming <span>Professional</span></h1>
 					<p>Kategori keahlian <i>Professional</i> adalah keahlian saya dengan pengalaman kurang lebih 1 tahun sampai 3 tahun, Serta ada beberapa yang kurang lebih seminggu saya pelajari dikarenakan <i>teknologi tersebut terus update</i>, namun saya sudah cukup berpengalaman diversi sebelumnya.</p>
 				</div>
@@ -543,7 +543,7 @@
 	<div class="keahlian cf" id="kehalian_basic">
 		<div class="container">
 			<div class="col-l-5">
-				<div class="keahlian_keterangan keahlian_keterangan--mt-50">
+				<div class="keahlian__keterangan keahlian__keterangan--mt-50">
 					<h1>Keahlian Programming <span>Intermediate</span></h1>
 					<p>Kategori keahlian <i>Intermediate</i> adalah keahlian saya dengan pengalaman kurang lebih 2 bulan sampai 6 bulan, Serta ada beberapa yang baru saya pelajari, namun sudah cukup mumpuni.</p>
 				</div>
@@ -789,7 +789,7 @@
 	<div class="keahlian cf" id="keahlian_lainnya">
 		<div class="container">
 			<div class="col-l-5">
-				<div class="keahlian_keterangan">
+				<div class="keahlian__keterangan">
 					<h1>Keahlian Lainnya <span>Intermediate</span></h1>
 					<p>Saya punya keahlian lain selain programming yaitu yang menyangkut multimedia.</p>
 				</div>
@@ -920,37 +920,52 @@ btnShow_menu_header.addEventListener("click", () => {
 	menu_header_right.classList.toggle("menu-header__right--show-sm");
 });
 
+// cek apakah tanpa scroll, element yang mau ditampilkan dengan effect parallax sudah masuk ke area window, jika iya langsung tampilkan tanpa harus scroll
+const showParallaxNow = (parentElement, childElements, classShow) => {
+	let parallaxElement = true;
+	if(childElements !== undefined) {
+		let elementIndex;
+		if(html.scrollTop+html.clientHeight-100 >= parentElement.offsetTop) {
+			for(let i = 0; i < childElements.length; i++) {
+				if(html.scrollTop+html.clientHeight-100 >= childElements[i].offsetTop) {
+					childElements[i].classList.add(classShow);
+					parallaxElement = false;
+					elementIndex = i;
+
+				} else {
+					parallaxElement = true;
+					break;
+				}
+			}
+		}
+		return {parallaxElement:parallaxElement, elementIndex:elementIndex};
+
+	} else {
+		if(html.scrollTop+html.clientHeight-100 >= parentElement.offsetTop) {
+			parentElement.classList.add('keahlian__keterangan--show');
+			parallaxElement = false;
+		}
+		return parallaxElement
+	}
+}
+
 // data menu fixed when scroll
 const html = document.querySelector("html");
 const menu_header = document.querySelector(".menu-header");
 
-// cek apakah tanpa scroll, element yang mau ditampilkan dengan effect parallax sudah masuk ke area window, jika iya langsung tampilkan tanpa harus scroll
-const showParallaxNow = (parentElement, childElements, classShow) => {
-	let parallaxElement = true;
-	let elementIndex;
-	if(html.scrollTop+html.clientHeight-100 >= parentElement.offsetTop) {
-		for(let i = 0; i < childElements.length; i++) {
-			if(html.scrollTop+html.clientHeight-100 >= childElements[i].offsetTop) {
-				childElements[i].classList.add(classShow);
-				parallaxElement = false;
-				elementIndex = i;
-
-			} else {
-				parallaxElement = true;
-				break;
-			}
-		}
-	}
-	return {parallaxElement:parallaxElement, elementIndex:elementIndex};
-}
-
 // data parallax pendidikan
 const pendidikan = document.querySelector("div.pendidikan");
-const pendidikan_items = document.querySelectorAll("div.pendidikan__item");
-
+const pendidikan_items = pendidikan.querySelectorAll("div.pendidikan__item");
 /// parallaxPendidikan: untuk penanda apakah masih ada element pendidikan__item yang belum masuk kearea window
 /// parallaxIndex: jika tidak semua pendidikan__item masuk kearea window maka kita harus looping dari index terakhir dari pendidikan_items yang sudah ditambahkan class pendidikan__item--show, bukan malah looping dari index awal
 const {parallaxElement:parallaxPendidikan, elementIndex:pendidikanIndex} = showParallaxNow(pendidikan, pendidikan_items, 'pendidikan__item--show');
+
+// data parallax kehalian profesional
+const keahlian_profesional = document.querySelector("div#keahlian_profesional");
+const keahlian_profesional_items = keahlian_profesional.querySelectorAll("div.keahlian__item");
+const ket_keahlian_profesional = keahlian_profesional.querySelector("div.keahlian__keterangan");
+const {parallaxElement:parallaxKeahlianPro, elementIndex:keahlianProIndex} = showParallaxNow(keahlian_profesional, keahlian_profesional_items, 'keahlian__item--show');
+const parallaxKetKeahlianPro = showParallaxNow(ket_keahlian_profesional, undefined, 'keahlian__keterangan--show');
 
 window.addEventListener('scroll', () => {
 	// fungsi menu fixed when scroll
@@ -961,9 +976,9 @@ window.addEventListener('scroll', () => {
 		menu_header.classList.remove("menu-header--fixed");
 	}
 
-	// fungsi paralax pendidikan
+	// fungsi parallax pendidikan
 	let PIndexStart;
-	pendidikanIndex != undefined?PIndexStart=pendidikanIndex+1:PIndexStart = 0;
+	pendidikanIndex !== undefined?PIndexStart=pendidikanIndex+1:PIndexStart = 0;
 	if(parallaxPendidikan === true) {
 		for(let i = PIndexStart; i < pendidikan_items.length; i++) {
 			if(html.scrollTop+html.clientHeight-100 >= pendidikan_items[i].offsetTop && !pendidikan_items[i].classList.contains("pendidikan__item--show")) {
@@ -975,6 +990,31 @@ window.addEventListener('scroll', () => {
 		}
 	}
 
+	// fungsi parallax ketarangan kehalian profesional
+	if(parallaxKetKeahlianPro === true) {
+		if(html.scrollTop+html.clientHeight-100 >= ket_keahlian_profesional.offsetTop && !ket_keahlian_profesional.classList.contains('keahlian__keterangan--show')) {
+			ket_keahlian_profesional.classList.add("keahlian__keterangan--show");
+
+		} else if(html.scrollTop+html.clientHeight-100 < ket_keahlian_profesional.offsetTop && ket_keahlian_profesional.classList.contains('keahlian__keterangan--show')) {
+			ket_keahlian_profesional.classList.remove("keahlian__keterangan--show");
+		}
+	}
+	// fungsi parallax keahlian profesional item
+	let KeahlianProIndexStart;
+	keahlianProIndex !== undefined?KeahlianProIndexStart=keahlianProIndex+1:KeahlianProIndexStart=0;
+	console.log(parallaxKeahlianPro);
+	if(parallaxKeahlianPro === true) {
+		for(let i = KeahlianProIndexStart; i < keahlian_profesional_items.length; i++) {
+
+			if(html.scrollTop+html.clientHeight-100 >= keahlian_profesional_items[i].offsetTop && !keahlian_profesional_items[i].classList.contains('keahlian__item--show')) {
+				console.log('re');
+				keahlian_profesional_items[i].classList.add("keahlian__item--show");
+
+			} else if(html.scrollTop+html.clientHeight-100 < keahlian_profesional_items[i].offsetTop && keahlian_profesional_items[i].classList.contains('keahlian__item--show')) {
+				keahlian_profesional_items[i].classList.remove("keahlian__item--show");
+			}
+		}
+	}
 });
 
 // get and append year

@@ -447,6 +447,7 @@
 /*keahlian*/
 	.keahlian {
 		padding: 50px;
+		padding-top: 90px;
 	}
 
 	.keahlian--blue-abu-abu {
@@ -454,16 +455,24 @@
 		clip-path: polygon(100% 5%, 100% 100%, 0% 95%, 0% 0%);
 	}
 
-	.keahlian_keterangan {
+	.keahlian__keterangan {
 		margin-top: 100px;
 		padding-right: 100px;
+		opacity: 0;
+		transform: translate(0,30px);
+		transition: .5s ease-in-out;
 	}
 
-	.keahlian_keterangan--mt-50 {
+	.keahlian__keterangan--show {
+		opacity: 1;
+		transform: translate(0,0);
+	}
+
+	.keahlian__keterangan--mt-50 {
 		margin-top: 50px;
 	}
 
-	.keahlian_keterangan h1 {
+	.keahlian__keterangan h1 {
 		font-size: 25pt;
 		font-family: Merriweather_Bold;
 		margin-bottom: 25px;
@@ -471,12 +480,12 @@
 		line-height: 1.2em;
 	}
 
-	.keahlian_keterangan h1 span {
+	.keahlian__keterangan h1 span {
 		font-size: 18pt;
 		color: #2597d6;
 	}
 
-	.keahlian_keterangan p {
+	.keahlian__keterangan p {
 		line-height: 1.4em;
 		font-size: 14pt;
 		color: #333;
@@ -485,12 +494,14 @@
 
 	.keahlian__item {
 		min-height: 185px;
+		opacity: 0;
+		transform: translate(0,30px);
+		transition: .5s ease-in-out;
 	}
 
-	@media (max-width: 991px) {
-		.keahlian__item.keahlian__item--min-height-195-sm {
-			min-height: 260px;
-		}
+	.keahlian__item--show {
+		opacity: 1;
+		transform: translate(0,0);
 	}
 
 	.keahlian__item svg {
@@ -535,6 +546,14 @@
 	}
 
 	@media (max-width: 991px) {
+		.keahlian {
+			padding: 50px;
+		}
+
+		.keahlian__item.keahlian__item--min-height-195-sm {
+			min-height: 260px;
+		}
+
 		.keahlian--blue-abu-abu {
 			clip-path: polygon(100% 1%, 100% 100%, 0% 99%, 0% 0%);
 		}
@@ -583,13 +602,13 @@
 			width: 90%;
 		}
 
-		.keahlian_keterangan {
+		.keahlian__keterangan {
 			margin-top: 0px;
 		}
 	}
 
 	@media (max-width: 767px) {
-		.keahlian_keterangan {
+		.keahlian__keterangan {
 			margin-top: 50px;
 			padding-right: 0;
 		}
@@ -673,7 +692,32 @@
 
 	@media (max-width: 360px) {
 		.keahlian__item svg {
-			width: 45%;
+			width: 25%;
+		}
+
+		.keahlian__item svg#php,
+		.keahlian__item svg#codeigniter,
+		.keahlian__item svg#mariadb,
+		.keahlian__item svg#es6 {
+			width: 32%;
+		}
+
+		.keahlian__item svg#github,
+		.keahlian__item svg#restapi {
+			width: 21%;
+		}
+
+		.keahlian__item svg#git,
+		.keahlian__item svg#laravel{
+			width: 24%;
+		}
+
+		.keahlian__item svg#jquery {
+			width: 35%;
+		}
+
+		.keahlian__item svg#oop {
+			width: 26%;
 		}
 	}
 
