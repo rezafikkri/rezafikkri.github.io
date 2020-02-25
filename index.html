@@ -1097,19 +1097,23 @@ window.addEventListener('scroll', () => {
 	/// tentangSaya
 	const linkMenuHeaderTentangSaya = document.querySelector("li a#linkMenuHeaderTentangSaya");
 	const tentang_saya = document.querySelector("div#tentang-saya");
-	if(html.scrollTop+html.clientHeight-350 >= tentang_saya.offsetTop && html.scrollTop <= tentang_saya.offsetTop+tentang_saya.clientHeight-190 && !linkMenuHeaderTentangSaya.classList.contains("menu-header__link--active")) {
+	console.log(html.scrollTop);
+	if(html.scrollTop <= 100 && linkMenuHeaderTentangSaya.classList.contains('menu-header__link--active')) {
+		linkMenuHeaderTentangSaya.classList.remove('menu-header__link--active');
+
+	} else if(html.scrollTop > 100 && html.scrollTop+html.clientHeight >= tentang_saya.offsetTop && html.scrollTop <= tentang_saya.offsetTop+tentang_saya.clientHeight-200 && !linkMenuHeaderTentangSaya.classList.contains("menu-header__link--active")) {
 		linkMenuHeaderTentangSaya.classList.add('menu-header__link--active');
 
-	} else if((html.scrollTop+html.clientHeight-350 < tentang_saya.offsetTop || html.scrollTop > tentang_saya.offsetTop+tentang_saya.clientHeight-190) && linkMenuHeaderTentangSaya.classList.contains("menu-header__link--active")) {
+	} else if((html.scrollTop+html.clientHeight < tentang_saya.offsetTop || html.scrollTop > tentang_saya.offsetTop+tentang_saya.clientHeight-200) && linkMenuHeaderTentangSaya.classList.contains("menu-header__link--active")) {
 		linkMenuHeaderTentangSaya.classList.remove('menu-header__link--active');
 	}
 	/// pendidikan
 	const linkMenuHeaderPendidikan = document.querySelector("li a#linkMenuHeaderPendidikan");
 	const pendidikan = document.querySelector("div#pendidikan");
-	if(html.scrollTop+html.clientHeight-380 >= pendidikan.offsetTop && html.scrollTop <= pendidikan.offsetTop+pendidikan.clientHeight-100 && !linkMenuHeaderPendidikan.classList.contains("menu-header__link--active")) {
+	if(html.scrollTop <= pendidikan.offsetTop+pendidikan.clientHeight && html.scrollTop > tentang_saya.offsetTop+tentang_saya.clientHeight-200 && !linkMenuHeaderPendidikan.classList.contains("menu-header__link--active")) {
 		linkMenuHeaderPendidikan.classList.add("menu-header__link--active");
 
-	} else if((html.scrollTop+html.clientHeight-380 < pendidikan.offsetTop || html.scrollTop > pendidikan.offsetTop+pendidikan.clientHeight-100) && linkMenuHeaderPendidikan.classList.contains("menu-header__link--active")) {
+	} else if((html.scrollTop > pendidikan.offsetTop+pendidikan.clientHeight || html.scrollTop <= tentang_saya.offsetTop+tentang_saya.clientHeight-200) && linkMenuHeaderPendidikan.classList.contains("menu-header__link--active")) {
 		linkMenuHeaderPendidikan.classList.remove("menu-header__link--active");		
 	}
 });
