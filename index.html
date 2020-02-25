@@ -33,8 +33,8 @@
 			<div class="menu-header__right menu-header__right--absolute-mobile menu-header__right--hide-sm">
 				<li class="menu-header__item"><a id="linkMenuHeaderTentangSaya" href="#tentang-saya">Tentang Saya</a></li>
 				<li class="menu-header__item"><a id="linkMenuHeaderPendidikan" href="#pendidikan">Pendidikan</a></li>
-				<li class="menu-header__item"><a id="linkMenuHeaderKeahlian" href="">Keahlian</a></li>
-				<li class="menu-header__item"><a id="linkMenuHeaderkarya" href="">Karya</a></li>
+				<li class="menu-header__item"><a id="linkMenuHeaderKeahlian" href="#keahlian">Keahlian</a></li>
+				<li class="menu-header__item"><a id="linkMenuHeaderKarya" href="#karya">Karya</a></li>
 			</div>
 			<div class="menu-header__right">
 				<li class="menu-header__menu--humberger menu-humberger__hide--lg"><a id="show-menu-header-sm"><span></span></a></li>
@@ -210,6 +210,7 @@
 		</div>
 	</div>
 
+	<div id="keahlian">
 	<!-- keahlian profesional -->
 	<div class="keahlian keahlian--blue-abu-abu cf" id="keahlian_profesional">
 		<div class="container">
@@ -865,6 +866,7 @@
 			</div><!-- col-l-7 -->
 		</div>
 	</div>
+	</div>
 	<hr>
 
 	<!-- karya -->
@@ -988,10 +990,10 @@ const {parallaxElement:parallaxKarya, elementIndex:karyaIndex} = showParallaxNow
 
 window.addEventListener('scroll', () => {
 	// fungsi menu fixed when scroll
-	if(html.scrollTop >= document.querySelector("div.tentang-saya").offsetTop && !menu_header.classList.contains("menu-header--fixed")) {
+	if(html.scrollTop >= document.querySelector("div.tentang-saya").offsetTop-100 && !menu_header.classList.contains("menu-header--fixed")) {
 		menu_header.classList.add("menu-header--fixed");
 
-	} else if(html.scrollTop < document.querySelector("div.tentang-saya").offsetTop && menu_header.classList.contains("menu-header--fixed")) {
+	} else if(html.scrollTop < document.querySelector("div.tentang-saya").offsetTop-100 && menu_header.classList.contains("menu-header--fixed")) {
 		menu_header.classList.remove("menu-header--fixed");
 	}
 
@@ -1034,7 +1036,7 @@ window.addEventListener('scroll', () => {
 	}
 
 	// fungsi parallax keterangan keahlian basic
-	if(parallaxKetKeahlianPro === true) {
+	if(parallaxKeahlianBasic === true) {
 		if(html.scrollTop+html.clientHeight-100 >= ket_keahlian_basic.offsetTop && !ket_keahlian_basic.classList.contains('keahlian__keterangan--show')) {
 			ket_keahlian_basic.classList.add('keahlian__keterangan--show');
 
@@ -1097,7 +1099,6 @@ window.addEventListener('scroll', () => {
 	/// tentangSaya
 	const linkMenuHeaderTentangSaya = document.querySelector("li a#linkMenuHeaderTentangSaya");
 	const tentang_saya = document.querySelector("div#tentang-saya");
-	console.log(html.scrollTop);
 	if(html.scrollTop <= 100 && linkMenuHeaderTentangSaya.classList.contains('menu-header__link--active')) {
 		linkMenuHeaderTentangSaya.classList.remove('menu-header__link--active');
 
@@ -1110,11 +1111,29 @@ window.addEventListener('scroll', () => {
 	/// pendidikan
 	const linkMenuHeaderPendidikan = document.querySelector("li a#linkMenuHeaderPendidikan");
 	const pendidikan = document.querySelector("div#pendidikan");
-	if(html.scrollTop <= pendidikan.offsetTop+pendidikan.clientHeight && html.scrollTop > tentang_saya.offsetTop+tentang_saya.clientHeight-200 && !linkMenuHeaderPendidikan.classList.contains("menu-header__link--active")) {
+	if(html.scrollTop <= pendidikan.offsetTop+pendidikan.clientHeight-150 && html.scrollTop > tentang_saya.offsetTop+tentang_saya.clientHeight-200 && !linkMenuHeaderPendidikan.classList.contains("menu-header__link--active")) {
 		linkMenuHeaderPendidikan.classList.add("menu-header__link--active");
 
-	} else if((html.scrollTop > pendidikan.offsetTop+pendidikan.clientHeight || html.scrollTop <= tentang_saya.offsetTop+tentang_saya.clientHeight-200) && linkMenuHeaderPendidikan.classList.contains("menu-header__link--active")) {
+	} else if((html.scrollTop > pendidikan.offsetTop+pendidikan.clientHeight-150 || html.scrollTop <= tentang_saya.offsetTop+tentang_saya.clientHeight-200) && linkMenuHeaderPendidikan.classList.contains("menu-header__link--active")) {
 		linkMenuHeaderPendidikan.classList.remove("menu-header__link--active");		
+	}
+	/// keahlian
+	const linkMenuHeaderKeahlian = document.querySelector("li a#linkMenuHeaderKeahlian");
+	const keahlian = document.querySelector("div#keahlian");
+	if(html.scrollTop <= keahlian.offsetTop+keahlian.clientHeight-220 && html.scrollTop > pendidikan.offsetTop+pendidikan.clientHeight-150 && !linkMenuHeaderKeahlian.classList.contains("menu-header__link--active")) {
+		linkMenuHeaderKeahlian.classList.add("menu-header__link--active");
+
+	} else if((html.scrollTop > keahlian.offsetTop+keahlian.clientHeight-220 || html.scrollTop <= pendidikan.offsetTop+pendidikan.clientHeight-150) && linkMenuHeaderKeahlian.classList.contains("menu-header__link--active")) {
+		linkMenuHeaderKeahlian.classList.remove("menu-header__link--active");
+	}
+	/// karya
+	const linkMenuHeaderKarya = document.querySelector("li a#linkMenuHeaderKarya");
+	const karya = document.querySelector("div#karya");
+	if(html.scrollTop <= karya.offsetTop+karya.clientHeight-170 && html.scrollTop > keahlian.offsetTop+keahlian.clientHeight-220 && html.scrollTop < html.scrollTopMax-100 && !linkMenuHeaderKarya.classList.contains("menu-header__link--active")) {
+		linkMenuHeaderKarya.classList.add("menu-header__link--active");
+
+	} else if((html.scrollTop > karya.offsetTop+karya.clientHeight-170 || html.scrollTop <= keahlian.offsetTop+keahlian.clientHeight-220 || html.scrollTop >= html.scrollTopMax-100) && linkMenuHeaderKarya.classList.contains("menu-header__link--active")){
+		linkMenuHeaderKarya.classList.remove("menu-header__link--active");
 	}
 });
 
