@@ -972,6 +972,11 @@ const keahlian_basic = document.querySelector("div#keahlian_basic");
 const ket_keahlian_basic = keahlian_basic.querySelector("div.keahlian__keterangan");
 const keahlian_basic_items = keahlian_basic.querySelectorAll("div.keahlian__item");
 
+// data parallax keahlian
+const keahlian_lainnya = document.querySelector("div#keahlian_lainnya");
+const ket_keahlian_lainnya = keahlian_lainnya.querySelector("div.keahlian__keterangan");
+const keahlian_lainnya_items = keahlian_lainnya.querySelectorAll("div.keahlian__item");
+
 window.addEventListener('scroll', () => {
 	// fungsi menu fixed when scroll
 	if(html.scrollTop >= document.querySelector("div.tentang-saya").offsetTop && !menu_header.classList.contains("menu-header--fixed")) {
@@ -1034,6 +1039,23 @@ window.addEventListener('scroll', () => {
 
 		} else if(html.scrollTop+html.clientHeight-100 < KBItem.offsetTop && KBItem.classList.contains('keahlian__item--show')) {
 			KBItem.classList.remove('keahlian__item--show');
+		}
+	}
+
+	// fungsi parallax keterangan keahlian lainnya
+	if(html.scrollTop+html.clientHeight-100 >= ket_keahlian_lainnya.offsetTop && !ket_keahlian_lainnya.classList.contains('keahlian__keterangan--show')) {
+		ket_keahlian_lainnya.classList.add('keahlian__keterangan--show');
+
+	} else if(html.scrollTop+html.clientHeight-100 < ket_keahlian_lainnya.offsetTop && ket_keahlian_lainnya.classList.contains('keahlian__keterangan--show')) {
+		ket_keahlian_lainnya.classList.remove('keahlian__keterangan--show');
+	}
+	// fungsi parallax keahlian lainnya
+	for(const KLItem of keahlian_lainnya_items) {
+		if(html.scrollTop+html.clientHeight-100 >= KLItem.offsetTop && !KLItem.classList.contains('keahlian__item--show')) {
+			KLItem.classList.add('keahlian__item--show');
+
+		} else if(html.scrollTop+html.clientHeight-100 < KLItem.offsetTop && KLItem.classList.contains('keahlian__item--show')) {
+			KLItem.classList.remove('keahlian__item--show');
 		}
 	}
 });
