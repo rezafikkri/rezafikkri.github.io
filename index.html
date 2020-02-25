@@ -31,10 +31,10 @@
 			</a></li>
 
 			<div class="menu-header__right menu-header__right--absolute-mobile menu-header__right--hide-sm">
-				<li class="menu-header__item"><a href="">Tentang Saya</a></li>
-				<li class="menu-header__item"><a href="">Pendidikan</a></li>
-				<li class="menu-header__item"><a href="">Keahlian</a></li>
-				<li class="menu-header__item"><a href="">Karya</a></li>
+				<li class="menu-header__item"><a id="linkMenuHeaderTentangSaya" href="#tentang-saya">Tentang Saya</a></li>
+				<li class="menu-header__item"><a id="linkMenuHeaderPendidikan" href="#pendidikan">Pendidikan</a></li>
+				<li class="menu-header__item"><a id="linkMenuHeaderKeahlian" href="">Keahlian</a></li>
+				<li class="menu-header__item"><a id="linkMenuHeaderkarya" href="">Karya</a></li>
 			</div>
 			<div class="menu-header__right">
 				<li class="menu-header__menu--humberger menu-humberger__hide--lg"><a id="show-menu-header-sm"><span></span></a></li>
@@ -79,7 +79,7 @@
 	</div>
 	<!-- tentang saya -->
 	<div class="container">
-		<div class="tentang-saya cf">
+		<div class="tentang-saya cf" id="tentang-saya">
 			<div class="col-l-6">
 				<div class="tentang-saya__foto--container">
 					<div class="tentang-saya__foto">
@@ -115,7 +115,7 @@
 	</div>
 	<!-- pendidikan -->
 	<div class="container">
-		<div class="pendidikan cf">
+		<div class="pendidikan cf" id="pendidikan">
 			<h1 class="pendidikan__judul">Riwayat Pendidikan</h1>
 			<div class="col-l-6 pendidikan--nopadding-l">
 				<div class="pendidikan__item">
@@ -869,7 +869,7 @@
 
 	<!-- karya -->
 	<div class="container">
-		<div class="karya cf">
+		<div class="karya cf" id="karya">
 			<h1 class="karya__judul">Karya</h1>
 
 			<div class="col-l-6 offset-ll-3">
@@ -1025,7 +1025,6 @@ window.addEventListener('scroll', () => {
 		for(let i = KeahlianProIndexStart; i < keahlian_profesional_items.length; i++) {
 
 			if(html.scrollTop+html.clientHeight-100 >= keahlian_profesional_items[i].offsetTop && !keahlian_profesional_items[i].classList.contains('keahlian__item--show')) {
-				console.log('re');
 				keahlian_profesional_items[i].classList.add("keahlian__item--show");
 
 			} else if(html.scrollTop+html.clientHeight-100 < keahlian_profesional_items[i].offsetTop && keahlian_profesional_items[i].classList.contains('keahlian__item--show')) {
@@ -1092,6 +1091,26 @@ window.addEventListener('scroll', () => {
 				karya_items[i].classList.remove('karya__item--show');
 			}
 		}
+	}
+
+	// effect bold pada link menu jika scroll halaman sudah mencapai bagian dari menu
+	/// tentangSaya
+	const linkMenuHeaderTentangSaya = document.querySelector("li a#linkMenuHeaderTentangSaya");
+	const tentang_saya = document.querySelector("div#tentang-saya");
+	if(html.scrollTop+html.clientHeight-350 >= tentang_saya.offsetTop && html.scrollTop <= tentang_saya.offsetTop+tentang_saya.clientHeight-190 && !linkMenuHeaderTentangSaya.classList.contains("menu-header__link--active")) {
+		linkMenuHeaderTentangSaya.classList.add('menu-header__link--active');
+
+	} else if((html.scrollTop+html.clientHeight-350 < tentang_saya.offsetTop || html.scrollTop > tentang_saya.offsetTop+tentang_saya.clientHeight-190) && linkMenuHeaderTentangSaya.classList.contains("menu-header__link--active")) {
+		linkMenuHeaderTentangSaya.classList.remove('menu-header__link--active');
+	}
+	/// pendidikan
+	const linkMenuHeaderPendidikan = document.querySelector("li a#linkMenuHeaderPendidikan");
+	const pendidikan = document.querySelector("div#pendidikan");
+	if(html.scrollTop+html.clientHeight-380 >= pendidikan.offsetTop && html.scrollTop <= pendidikan.offsetTop+pendidikan.clientHeight-100 && !linkMenuHeaderPendidikan.classList.contains("menu-header__link--active")) {
+		linkMenuHeaderPendidikan.classList.add("menu-header__link--active");
+
+	} else if((html.scrollTop+html.clientHeight-380 < pendidikan.offsetTop || html.scrollTop > pendidikan.offsetTop+pendidikan.clientHeight-100) && linkMenuHeaderPendidikan.classList.contains("menu-header__link--active")) {
+		linkMenuHeaderPendidikan.classList.remove("menu-header__link--active");		
 	}
 });
 

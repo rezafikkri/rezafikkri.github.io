@@ -132,6 +132,12 @@
 
 	.menu-header li.menu-header__item a:hover {
 		color: #16577b;
+		font-weight: bold;
+	}
+
+	.menu-header li.menu-header__item a.menu-header__link--active {
+		color: #16577b;
+		font-weight: bold;
 	}
 
 	.menu-header li:last-child.menu-header__item a {
