@@ -1141,24 +1141,19 @@ window.addEventListener('scroll', () => {
 document.querySelector("year").innerText = new Date().getFullYear();
 
 // smoth scrolling
-(()=>{
-	scrollTo();
-})();
-function scrollTo() {
-	const MHItems = document.querySelectorAll('li a.scroll');
-	MHItems.forEach(MHItem => MHItem.addEventListener('click', (e)=> {
-		e.preventDefault();
-		const distanceToTop = el => el.getBoundingClientRect().top;
-		const targetAnchor = document.querySelector(e.target.getAttribute('href'));
-		let originalTop = distanceToTop(targetAnchor);
-		if(originalTop < 0) {
-			originalTop -= 90;
-		} else {
-			originalTop -= 90;
-		}
-		window.scrollBy({ top: originalTop, left: 0, behavior: 'smooth' });
-	} ));
-}
+const MHItems = document.querySelectorAll('li a.scroll');
+MHItems.forEach(MHItem => MHItem.addEventListener('click', (e)=> {
+	e.preventDefault();
+	const distanceToTop = el => el.getBoundingClientRect().top;
+	const targetAnchor = document.querySelector(e.target.getAttribute('href'));
+	let originalTop = distanceToTop(targetAnchor);
+	if(originalTop < 0) {
+		originalTop -= 90;
+	} else {
+		originalTop -= 90;
+	}
+	window.scrollBy({ top: originalTop, left: 0, behavior: 'smooth' });
+} ));
 </script>
 </body>
 </html>
