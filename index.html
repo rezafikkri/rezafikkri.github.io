@@ -31,10 +31,10 @@
 			</a></li>
 
 			<div class="menu-header__right menu-header__right--absolute-mobile menu-header__right--hide-sm">
-				<li class="menu-header__item"><a id="linkMenuHeaderTentangSaya" href="#tentang-saya">Tentang Saya</a></li>
-				<li class="menu-header__item"><a id="linkMenuHeaderPendidikan" href="#pendidikan">Pendidikan</a></li>
-				<li class="menu-header__item"><a id="linkMenuHeaderKeahlian" href="#keahlian">Keahlian</a></li>
-				<li class="menu-header__item"><a id="linkMenuHeaderKarya" href="#karya">Karya</a></li>
+				<li class="menu-header__item"><a id="linkMenuHeaderTentangSaya" class="scroll" href="#tentang-saya">Tentang Saya</a></li>
+				<li class="menu-header__item"><a id="linkMenuHeaderPendidikan" class="scroll" href="#pendidikan">Pendidikan</a></li>
+				<li class="menu-header__item"><a id="linkMenuHeaderKeahlian" class="scroll" href="#keahlian">Keahlian</a></li>
+				<li class="menu-header__item"><a id="linkMenuHeaderKarya" class="scroll" href="#karya">Karya</a></li>
 			</div>
 			<div class="menu-header__right">
 				<li class="menu-header__menu--humberger menu-humberger__hide--lg"><a id="show-menu-header-sm"><span></span></a></li>
@@ -73,7 +73,7 @@
 							C429.3,579.7,432.6,581.2,433,583.7L433,583.7z"/>
 					</g>
 				</svg>
-				<a href="https://github.com/rezafikkri" class="pembuka__github-nama">rezafikkri</a>
+				<a target="_blank" href="https://github.com/rezafikkri" class="pembuka__github-nama">rezafikkri</a>
 			</div>
 		</div>
 	</div>
@@ -1139,6 +1139,26 @@ window.addEventListener('scroll', () => {
 
 // get and append year
 document.querySelector("year").innerText = new Date().getFullYear();
+
+// smoth scrolling
+(()=>{
+	scrollTo();
+})();
+function scrollTo() {
+	const MHItems = document.querySelectorAll('li a.scroll');
+	MHItems.forEach(MHItem => MHItem.addEventListener('click', (e)=> {
+		e.preventDefault();
+		const distanceToTop = el => el.getBoundingClientRect().top;
+		const targetAnchor = document.querySelector(e.target.getAttribute('href'));
+		let originalTop = distanceToTop(targetAnchor);
+		if(originalTop < 0) {
+			originalTop -= 90;
+		} else {
+			originalTop -= 90;
+		}
+		window.scrollBy({ top: originalTop, left: 0, behavior: 'smooth' });
+	} ));
+}
 </script>
 </body>
 </html>
