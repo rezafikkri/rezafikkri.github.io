@@ -40,7 +40,8 @@
 	}
 
 	.profile:hover,
-	.summary:hover {
+	.summary:hover,
+	.education:hover {
 		box-shadow: 0px 5px 10px #d7dde7;
 	}
 
@@ -146,6 +147,59 @@
 		text-decoration-color: #432344;
 	}
 
+/*education*/
+	.education {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+
+		margin-top: 20px;
+		width: 66.66%;
+        background-color: #f4f8fc;
+        border: 1px solid #f9d586;
+        position: relative;
+        border-radius: 10px;
+        overflow: hidden;
+        padding: 25px 30px;
+        transition: .3s ease-in-out;
+	}
+
+	.education__judul {
+		width: 100%;
+		top: 0;
+		left: 0;
+		position: absolute;
+		padding: 8px 30px;
+		background-color: #ffc03d;
+		background-image: linear-gradient(45deg, #f9d586, #f9d179);
+		font-family: NunitoSans_Bold;
+		color: #432344;
+		border-bottom: 1px solid #f9d586;
+	}
+
+	.education__item {
+		margin-top: 33px;
+		font-family: NunitoSans_Regular;
+		font-size: 13pt;
+		line-height: 23px;
+	}
+
+	.education__nama-sekolah {
+		color: #432344;
+		font-family: NunitoSans_Bold;
+		margin-bottom: 5px;
+	}
+
+	.education__jurusan,
+	.education__jenjang {
+		font-size: 12pt;
+		margin-left: 5px;
+	}
+
+	.education__jenjang {
+		color: #565656;
+	}
+
 /*responsive*/
 	.container {
 		display: flex;
@@ -156,6 +210,8 @@
 		padding-right: 15px;
 		margin-left: auto;
 		margin-right: auto;
+
+		margin-bottom: 100px;
 	}
 
 	@media (min-width: 576px) {
