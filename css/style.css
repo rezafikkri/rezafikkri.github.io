@@ -1,12 +1,5 @@
 /*include font*/
 	@font-face {
-		font-family: 'Merriweather_Bold';
-		src: url('../font/Merriweather-Bold.ttf');
-		font-weight: normal;
-		font-style: normal;
-	}
-
-	@font-face {
 		font-family: 'NunitoSans_Light';
 		src: url('../font/NunitoSans-Light.ttf');
 		font-weight: normal;
