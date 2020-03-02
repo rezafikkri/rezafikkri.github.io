@@ -26,8 +26,13 @@
 		line-height: 20px;
 	}
 
-	body {
-		background-color: #e7eefb;
+	div.header {
+		background-color: red;
+		background-image: linear-gradient(to bottom, #F5F5F5 0, #fff 100%);
+		position: absolute;
+		top: 0;
+		width: 100%;
+		height: 45px;
 	}
 
 	hr {
@@ -41,8 +46,9 @@
 
 	.profile:hover,
 	.summary:hover,
-	.education:hover {
-		box-shadow: 0px 5px 10px #d7dde7;
+	.education:hover,
+	.skill:hover {
+		box-shadow: 1px 3px 20px rgba(0,0,0,.1);
 	}
 
 /*profile*/
@@ -198,6 +204,73 @@
 
 	.education__jenjang {
 		color: #565656;
+	}
+
+/*skill*/
+	.skill {
+		margin-top: 20px;
+		width: 66.66%;
+        background-color: #f4f8fc;
+		padding: 25px 30px;
+        position: relative;
+        border-radius: 10px;
+        border: 1px solid #f9d586;
+        overflow: hidden;
+	}
+
+	.skill__judul {
+		width: 100%;
+		top: 0;
+		left: 0;
+		position: absolute;
+		padding: 8px 30px;
+		background-color: #ffc03d;
+		background-image: linear-gradient(45deg, #f9d586, #f9d179);
+		font-family: NunitoSans_Bold;
+		color: #432344;
+		border-bottom: 1px solid #f9d586;
+	}
+
+	.skill__item {
+		line-height: 20px;
+		margin-top: 33px;
+		font-family: NunitoSans_Regular;
+	}
+
+	.skill__level {
+		margin-bottom: 10px;
+		font-size: 12pt;
+		color: #565656;
+		font-style: italic;
+	}
+
+	.skill__level span {
+		margin-left: 5px;
+		font-style: normal;
+		font-family: NunitoSans_Bold;
+		font-size: 13pt;
+	}
+
+	.skill__level--experiented span {
+		color: #abc270;
+	}
+
+	.skill__level--skillful span {
+		color: #fec868;
+	}
+
+	.skill__level--intermediate span {
+		color: #fda769;
+	}
+
+	.skill__isi {
+		font-size: 12pt;
+		margin-left: 10px;
+	}
+
+	.skill__break-new-line {
+		margin-top: 10px;
+		text-align: center;
 	}
 
 /*responsive*/
