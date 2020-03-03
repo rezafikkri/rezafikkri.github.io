@@ -64,7 +64,7 @@
         display: flex;
         flex-direction: row;
 
-        transition: .3s ease-in-out;
+        transition: box-shadow .3s ease-in-out;
 	}
 
 	.profile__foto {
@@ -100,6 +100,34 @@
 		margin-bottom: 20px;
 	}
 
+	@media (max-width: 991px) {
+		.profile {
+			width: 100%;
+		}
+	}
+
+	@media (max-width: 767px) {
+		.profile {
+			flex-direction: column;
+		}
+
+		.profile__foto {
+			width: 60%;
+			padding-bottom: 20px;
+		}
+
+		.profile__ket h1,
+		.profile__ket h2 {
+			text-align: center;
+		}
+	}
+
+	@media (max-width: 360px) {
+		.profile__foto {
+			width: 90%;
+		}
+	}
+
 	.profile__ket ul {
 		list-style-type: none;
 	}
@@ -127,7 +155,7 @@
         border: 1px solid #f9d586;
         overflow: hidden;
         line-height: 20px;
-        transition: .3s ease-in-out;
+        transition: box-shadow .3s ease-in-out;
 	}
 
 	.summary__judul {
@@ -153,6 +181,12 @@
 		text-decoration-color: #432344;
 	}
 
+	@media (max-width: 991px) {
+		.summary {
+			width: 100%;
+		}
+	}
+
 /*education*/
 	.education {
 		display: flex;
@@ -167,7 +201,7 @@
         border-radius: 10px;
         overflow: hidden;
         padding: 25px 30px;
-        transition: .3s ease-in-out;
+        transition: box-shadow .3s ease-in-out;
 	}
 
 	.education__judul {
@@ -204,6 +238,18 @@
 
 	.education__jenjang {
 		color: #565656;
+	}
+
+	@media (max-width: 991px) {
+		.education {
+			width: 100%;
+		}
+	}
+
+	@media (max-width: 500px) {
+		.education {
+			flex-direction: column;
+		}
 	}
 
 /*skill*/
@@ -275,6 +321,12 @@
 		text-align: center;
 	}
 
+	@media (max-width: 991px) {
+		.skill {
+			width: 100%;
+		}
+	}
+
 /* project */
 	.project {
 		margin-top: 60px;
@@ -341,6 +393,35 @@
 		color: #333;
 	}
 
+	@media (max-width: 991px) {
+		.project {
+			width: 100%;
+		}
+	}
+
+	@media (max-width: 767px) {
+		.project {
+			flex-direction: column;
+		}
+
+		.project__item-container {
+			padding-right: 0;
+			padding-left: 0;
+		}
+	}
+
+/* footer */
+	footer {
+		margin-top: 50px;
+		margin-bottom: 20px;
+	}
+
+	footer p {
+		font-family: NunitoSans_Regular;
+		font-size: 10pt;
+		color: #9e9e9e;
+	}
+
 /*responsive*/
 	.container {
 		display: flex;
@@ -351,8 +432,6 @@
 		padding-right: 15px;
 		margin-left: auto;
 		margin-right: auto;
-
-		margin-bottom: 100px;
 	}
 
 	@media (min-width: 576px) {
