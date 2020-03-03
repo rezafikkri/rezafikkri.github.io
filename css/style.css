@@ -58,7 +58,7 @@
 		background: #f9d179;
 		background-image: linear-gradient(45deg, #f9d586, #f9d179);
         border-radius: 10px;
-        width: 66.66%;
+        width: 75%;
         transform: translate(0,0);
 
         display: flex;
@@ -122,7 +122,7 @@
 	.summary {
 		margin-top: 20px;
 		border-radius: 10px;
-        width: 66.66%;
+        width: 75%;
         background-color: #f4f8fc;
         border: 1px solid #f9d586;
         overflow: hidden;
@@ -160,7 +160,7 @@
 		justify-content: space-around;
 
 		margin-top: 20px;
-		width: 66.66%;
+		width: 75%;
         background-color: #f4f8fc;
         border: 1px solid #f9d586;
         position: relative;
@@ -209,13 +209,15 @@
 /*skill*/
 	.skill {
 		margin-top: 20px;
-		width: 66.66%;
+		width: 75%;
         background-color: #f4f8fc;
 		padding: 25px 30px;
         position: relative;
         border-radius: 10px;
         border: 1px solid #f9d586;
         overflow: hidden;
+
+        transition: .3s ease-in-out;
 	}
 
 	.skill__judul {
@@ -271,6 +273,72 @@
 	.skill__break-new-line {
 		margin-top: 10px;
 		text-align: center;
+	}
+
+/* project */
+	.project {
+		margin-top: 60px;
+		width: 75%;
+		position: relative;
+
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+
+	.project__judul {
+		left: 0;
+		top: -25px;
+		position: absolute;
+		font-family: NunitoSans_Bold;
+		color: #432344;
+	}
+
+	.project__item-container {
+		padding: 10px;
+		flex-basis: 50%;
+	}
+
+	.project__item {
+		transition: .3s ease-in-out;
+	}
+
+	.project__item:hover {
+		filter: drop-shadow(1px 4px 10px rgba(0,0,0,.1));
+	}
+
+	.project__item img {
+		width: 100%;
+		border:  1px solid #f9d586;
+		border-bottom-right-radius: 10px;
+		border-top-right-radius: 10px;
+	}
+
+	.project__isi-container {
+		padding-right: 15px;
+	}
+
+	.project__isi {
+		margin-top: -3px;
+		padding: 25px 30px;
+		background-color: #f4f8fc;
+		border:  1px solid #f9d586;
+		border-bottom-right-radius: 10px;
+		border-bottom-left-radius: 10px;
+		border-top: none;
+		line-height: 20px;
+	}
+
+	.project__isi h1 {
+		font-family: NunitoSans_Bold;
+		font-size: 15pt;
+		color: #432344;
+	}
+
+	.project__isi p {
+		margin-top: 10px;
+		font-family: NunitoSans_Regular;
+		color: #333;
 	}
 
 /*responsive*/
@@ -366,4 +434,12 @@
 /*utilitis*/
 	.mt-20 {
 		margin-top: 20px;
+	}
+
+	.project--nopd-l {
+		padding-left: 0;
+	}
+
+	.project--nopd-r {
+		padding-right: 0;
 	}
