@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="573"
+   height="571"
+   viewBox="0 0 151.60625 151.07708"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.5 (0.92.5+68)"
+   sodipodi:docname="Reza logo.svg"
+   inkscape:export-filename="/home/reza/Documents/LOGO DESIGN/Reza Logo/Reza logo.png"
+   inkscape:export-xdpi="76"
+   inkscape:export-ydpi="76">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.46324355"
+     inkscape:cx="345.21975"
+     inkscape:cy="250.23504"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer3"
+     showgrid="true"
+     inkscape:window-width="1366"
+     inkscape:window-height="711"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     units="px">
+    <inkscape:grid
+       type="xygrid"
+       id="grid4518" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:groupmode="layer"
+     id="layer3"
+     inkscape:label="logo"
+     transform="translate(0,-145.92292)">
+    <rect
+       style="opacity:1;fill:#006eaa;fill-opacity:1;stroke:none;stroke-width:0.41857433;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
+       id="rect882"
+       width="37.69643"
+       height="150.78572"
+       x="0.37179857"
+       y="146.01233"
+       ry="18.848215" />
+    <rect
+       style="opacity:1;fill:#007ec4;fill-opacity:1;stroke:none;stroke-width:0.41857433;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
+       id="rect882-3"
+       width="37.69643"
+       height="150.78572"
+       x="-183.70879"
+       y="0.37179857"
+       ry="18.848215"
+       transform="rotate(-90)" />
+    <rect
+       style="opacity:1;fill:#007ec4;fill-opacity:1;stroke:none;stroke-width:0.41857433;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
+       id="rect882-3-5"
+       width="37.69643"
+       height="150.78572"
+       x="-296.79807"
+       y="0.37179857"
+       ry="18.848215"
+       transform="rotate(-90)" />
+    <rect
+       style="opacity:1;fill:#008bd8;fill-opacity:1;stroke:none;stroke-width:0.48853335;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
+       id="rect882-3-5-2"
+       width="39.211025"
+       height="197.46742"
+       x="-229.96935"
+       y="-200.91086"
+       ry="19.605871"
+       transform="matrix(-0.7045019,-0.7097021,0.70859354,-0.70561689,0,0)" />
+  </g>
+</svg>
