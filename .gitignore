@@ -51,3 +51,4 @@ GitHub.sublime-settings
 
 # End of https://www.toptal.com/developers/gitignore/api/linux,sublimetext
 .sass-cache
+node_modules

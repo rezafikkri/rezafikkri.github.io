@@ -1,0 +1,12 @@
+{
+	"name": "CV-Reza",
+	"version": "1.0.0",
+	"scripts": {
+		"build": "babel src/js/cv-reza.js -o src/js/cv-reza.compile.js"
+	},
+	"devDependencies": {
+		"@babel/cli": "^7.10.5",
+		"@babel/core": "^7.11.4",
+		"@babel/preset-env": "^7.11.0"
+	}
+}
