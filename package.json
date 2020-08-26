@@ -2,11 +2,14 @@
 	"name": "CV-Reza",
 	"version": "1.0.0",
 	"scripts": {
-		"build": "babel src/js/cv-reza.js -o src/js/cv-reza.compile.js"
+		"build": "npx rollup --config"
 	},
 	"devDependencies": {
-		"@babel/cli": "^7.10.5",
 		"@babel/core": "^7.11.4",
-		"@babel/preset-env": "^7.11.0"
-	}
+		"@babel/preset-env": "^7.11.0",
+		"@rollup/plugin-babel": "^5.2.0",
+		"rollup": "^2.26.5",
+		"rollup-plugin-terser": "^7.0.0"
+	},
+	"dependencies": {}
 }
