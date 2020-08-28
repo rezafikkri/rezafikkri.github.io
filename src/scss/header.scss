@@ -12,18 +12,18 @@
 	&__summary,
 	&__photo-profile,
 	&__profile {
-		box-shadow: $box-shadow;
+		border: 1px solid $border-color;
 		border-radius: $border-radius;
 	}
 
-	&__summary,
 	&__photo-profile,
 	&__caption,
 	&__name {
 		background-color: white;
 	}
 
-	&__summary,
+	&__title,
+	&__description,
 	&__caption,
 	&__name {
 		padding: 9px $padding;
@@ -31,6 +31,15 @@
 
 	&__summary {
 		overflow: hidden;
+	}
+
+	&__title {
+		background-color: $gray-background;
+		border-bottom: 1px solid $border-color;
+	}
+
+	&__description {
+		background-color: #fff;
 	}
 
 	&__photo-profile {
@@ -60,7 +69,7 @@
 			display: inline-block;
 			padding: 10px;
 			color: #333;
-			background-color: #f8f8f8;
+			background-color: $gray-background;
 			border: 1px solid $border-color;
 			border-bottom: none;
 			line-height: 0;
@@ -97,18 +106,22 @@
 		background-color: #fff;
 		z-index: 2;
 		border-radius: $border-radius;
-		box-shadow: $box-shadow;
 		line-height: 1.5;
 		text-align: left;
+		border: 1px solid $border-color;
 
 		&::before {
 			content: '';
 			position: absolute;
-			top: -18px;
+			width: 15px;
+			height: 15px;
+			background-color: white;
+			border: 1px solid $border-color;
+			border-bottom: none;
+			border-right: none;
+			transform: rotateZ(45deg);
+			top: -8px;
 			left: 30px;
-			border-width: 10px;
-			border-style: solid;
-			border-color: transparent transparent #fff;
 		}
 		
 		@media (min-width: 336px) {

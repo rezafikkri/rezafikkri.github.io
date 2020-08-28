@@ -3,10 +3,10 @@
  * Copyright (c) 2020 Reza Sariful Fikri
 */
 
-$box-shadow: 0 5px 15px rgba(0,0,0,.07);
 $border-radius: 4px;
 $padding: 17px;
 $border-color: #eaeaea;
+$gray-background: #f8f8f8;
 
 @import "font-face.scss";
 
@@ -66,10 +66,10 @@ a:hover {
 }
 
 .header {
-	background-color: #f8f8f8;
+	background-color: #f7f7f7;
 
 	&::before {
-		background-color: #f8f8f8;
+		background-color: #f7f7f7;
 		z-index: 1;
 	}
 }
