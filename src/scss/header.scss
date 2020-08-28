@@ -132,5 +132,16 @@
 
 	&__contact a:hover &__tooltip {
 		display: block;
+
+		animation: tooltip-fade 100ms ease-in-out;
+	}
+
+	@keyframes tooltip-fade {
+		0%{
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+		}
 	}
 }
