@@ -3,7 +3,7 @@
  * Copyright (c) 2020 Reza Sariful Fikri
 */
 
-$box-shadow: 0 5px 10px rgba(0,0,0,.07);
+$box-shadow: 0 5px 15px rgba(0,0,0,.07);
 $border-radius: 4px;
 $padding: 17px;
 $border-color: #eaeaea;
@@ -38,7 +38,48 @@ h1, h2, h3, h4, h5, h6 {
 	font-family: pt_sans_captionbold, Arial, sans-serif;
 }
 
+.header,
+.skill {
+	position: relative;
+	border-bottom: 1px solid $border-color;
+
+	padding: 40px 0px;
+
+	&::before {
+		content: '';
+		position: absolute;
+		bottom: -21px;
+		transform: rotateZ(45deg) translateX(-50%);
+		left: 50%;
+		margin-left: -3.5px;
+
+		width: 24px;
+		height: 24px;
+		border: 1px solid $border-color;
+		border-top: none;
+		border-left: none;
+	}
+}
+
+.header {
+	background-color: #f8f8f8;
+
+	&::before {
+		background-color: #f8f8f8;
+		z-index: 1;
+	}
+}
+
+.skill {
+	background-color: #fff;
+
+	&::before {
+		background-color: #fff;
+	}
+}
+
 @import "header.scss";
+@import "skill.scss";
 
 @import "grid.scss";
 @import "utilities.scss";
