@@ -53,3 +53,4 @@ GitHub.sublime-settings
 .sass-cache
 node_modules
 diff
+dist/js/cv-reza.js

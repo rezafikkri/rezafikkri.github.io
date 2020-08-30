@@ -1,0 +1,68 @@
+/* project */
+.project__item {
+	border-radius: $border-radius;
+	overflow: hidden;
+	border: 1px solid $border-color;
+}
+
+.project__image {
+	line-height: 0;
+	border-bottom: 1px solid $border-color;
+	background-color: $gray-background;
+
+	img {
+		width: 100%;
+		line-height: 1.5;
+	}
+}
+
+.project__description {
+	background-color: white;
+	padding: 9px $padding;
+}
+
+.project__tag {
+	padding: 0 5px;
+	border-radius: $border-radius;
+	background-color: #d1edfc;
+	display: inline-block;
+}
+
+.project__button {
+	display: flex;
+	border-top: 1px solid $border-color;
+}
+
+.project__primary-btn,
+.project__secondary-btn {
+	text-decoration: none;
+	padding: 10px $padding;
+
+	color: #007ec4;
+	transition: 100ms ease-in-out;
+	background-color: $gray-background;
+
+	&:hover {
+		background-color: #f4f4f4;
+	}
+
+	svg {
+		display: inline-block;
+		vertical-align: text-bottom;
+	}
+}
+
+.project__primary-btn {
+	flex: 6;
+	border-right: 1px solid $border-color;
+}
+
+.project__secondary-btn {
+	flex: 1;
+	line-height: 0;
+	text-align: center;
+
+	&--mt {
+		margin-top: .15rem;
+	}
+}
