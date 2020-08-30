@@ -44,7 +44,8 @@ a:hover {
 
 .header,
 .skill,
-.project {
+.project,
+.education {
 	position: relative;
 	border-bottom: 1px solid $border-color;
 
@@ -76,7 +77,8 @@ a:hover {
 	}
 }
 
-.skill {
+.skill,
+.education {
 	background-color: #fff;
 
 	&::before {
@@ -88,6 +90,7 @@ a:hover {
 @import "header.scss";
 @import "skill.scss";
 @import "project.scss";
+@import "education.scss";
 
 @import "grid.scss";
 @import "utilities.scss";
