@@ -1,14 +1,21 @@
 /* utilities */
 .justify-content-center {
-	justify-content: center;
+	-webkit-box-pack: center; 
+    -ms-flex-pack: center; 
+    justify-content: center;
 }
 
 .flex-direction-column {
-	flex-direction: column;
+	-webkit-box-orient: vertical; 
+	-webkit-box-direction: normal; 
+    -ms-flex-direction: column; 
+    flex-direction: column;
 }
 
 .align-item-center {
-	align-items: center;
+	-webkit-box-align: center; 
+    -ms-flex-align: center; 
+    align-items: center;
 }
 
 .mb-0 { margin-bottom: 0; }

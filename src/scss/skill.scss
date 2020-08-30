@@ -2,18 +2,14 @@
 .skill__item {
 	border-radius: $border-radius;
 	overflow: hidden;
-
 	position: relative;
 	z-index: 1;
-	transition: 100ms ease-in-out;
 	border: 1px solid $border-color;
 
-	&:hover {
-		z-index: 2;
-	}
-
 	&--php h5, &--html h5, &--git h5, &--css h5, &--mariadb h5, &--github h5, &--bootstrap h5, &--scss h5, &--codeigniter, &--js h5, &--laravel h5, &--restfulapi h5, &--oop h5 {
-		transition: 100ms ease-in-out;		
+		-webkit-transition: 100ms ease-in-out; 
+		-o-transition: 100ms ease-in-out; 
+		transition: 100ms ease-in-out;
 	}
 
 	&--php:hover h5 { color: #777bb3; }

@@ -11,6 +11,7 @@ $gray-background: #f8f8f8;
 @import "font-face.scss";
 
 *, *::before, *::after {
+	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
 }
 
@@ -54,10 +55,13 @@ a:hover {
 	&::before {
 		content: '';
 		position: absolute;
-		bottom: -21px;
-		transform: rotateZ(45deg) translateX(-50%);
+		bottom: -21px;		
 		left: 50%;
 		margin-left: -3.5px;
+
+		-webkit-transform: rotateZ(45deg) translateX(-50%); 
+    	-ms-transform: rotate(45deg) translateX(-50%); 
+        transform: rotateZ(45deg) translateX(-50%);
 
 		width: 24px;
 		height: 24px;

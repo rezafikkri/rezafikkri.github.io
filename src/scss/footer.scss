@@ -17,12 +17,20 @@
 
 	&__description {
 		padding: $padding;
-		display: flex;
-		align-items: center;
 		height: 100%;
 
+		display: -webkit-box; 
+		display: -ms-flexbox; 
+		display: flex;
+		-webkit-box-align: center;
+		-ms-flex-align: center;
+		align-items: center;
+
 		@media (max-width: 575.98px) {
-			justify-content: center;
+			-webkit-box-pack: center; 
+    		-ms-flex-pack: center; 
+        	justify-content: center;
+
 			padding-left: 0;
 			padding-right: 0;
 		}
