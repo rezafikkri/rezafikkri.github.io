@@ -1,0 +1,30 @@
+/* footer */
+.footer {
+	background-color: #f7f7f7;
+	padding: 40px 0;
+
+	&__logo {
+		text-align: right;
+		padding: $padding;
+		line-height: 0;
+
+		@media (max-width: 575.98px) {
+			text-align: center;
+			padding-left: 0;
+			padding-right: 0;
+		}
+	}
+
+	&__description {
+		padding: $padding;
+		display: flex;
+		align-items: center;
+		height: 100%;
+
+		@media (max-width: 575.98px) {
+			justify-content: center;
+			padding-left: 0;
+			padding-right: 0;
+		}
+	}
+}
