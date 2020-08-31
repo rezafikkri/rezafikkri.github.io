@@ -27,9 +27,10 @@
 	&--oop:hover h5 { color: #d53d1f; }
 }
 
+#{$class-font-loaded} .skill__category-title { font-family: pt_sans_captionregular, Arial, sans-serif; }
+
 .skill__category-title {
 	font-weight: 100;
-	font-family: pt_sans_captionregular, Arial, sans-serif;
 	font-size: 1.10rem;
 }
 

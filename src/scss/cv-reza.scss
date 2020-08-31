@@ -7,6 +7,7 @@ $border-radius: 4px;
 $padding: 17px;
 $border-color: #eaeaea;
 $gray-background: #f8f8f8;
+$class-font-loaded: 'html.fonts-loaded';
 
 @import "font-face.scss";
 
@@ -15,8 +16,9 @@ $gray-background: #f8f8f8;
 	box-sizing: border-box;
 }
 
+#{$class-font-loaded} body { font-family: pt_sans_captionregular, Arial, sans-serif; }
+
 body {
-	font-family: pt_sans_captionregular, Arial, sans-serif;
 	color: #333;
 	font-size: 1rem;
 	line-height: 1.5;
@@ -34,8 +36,7 @@ h4 { font-size: 1.5rem; }
 h5 { font-size: 1.25rem; }
 h6 { font-size: 1rem; }
 
-strong,
-h1, h2, h3, h4, h5, h6 {
+#{$class-font-loaded} strong, #{$class-font-loaded} h1, #{$class-font-loaded} h2, #{$class-font-loaded} h3, #{$class-font-loaded} h4, #{$class-font-loaded} h5, #{$class-font-loaded} h6 {
 	font-family: pt_sans_captionbold, Arial, sans-serif;
 }
 

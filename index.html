@@ -336,5 +336,17 @@
 </footer>
 
 <script type="text/javascript" src="dist/js/cv-reza.min.js"></script>
+<script type="text/javascript" src="dist/js/fontfaceobserver.js"></script>
+<script type="text/javascript">
+	'use strict';
+	var ptSansCaptionboldObserver = new FontFaceObserver('pt_sans_captionbold');
+	var ptSansCaptionregular = new FontFaceObserver('pt_sans_captionregular');
+	Promise.all([
+		ptSansCaptionboldObserver.load(),
+		ptSansCaptionregular.load()
+	]).then(function() {
+		document.documentElement.classList.add("fonts-loaded");
+	});
+</script>
 </body>
 </html>
