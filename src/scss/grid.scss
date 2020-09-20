@@ -91,6 +91,10 @@
 	padding-left: 15px;
 	margin-right: auto;
 	margin-left: auto;
+
+	@media (min-width: 1352px) {
+		width: 1352px; 
+	}
 }
 
 .row {
