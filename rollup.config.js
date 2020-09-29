@@ -2,21 +2,21 @@ import babel from '@rollup/plugin-babel';
 import { terser } from 'rollup-plugin-terser';
 
 export default {
-	input: 'src/js/cv-reza.js',
+	input: 'src/js/resume-reza.js',
 	output: [
 	{
-		file: 'dist/js/cv-reza.js',
+		file: 'dist/js/resume-reza.js',
 		format: 'amd',
 		banner: `/*!
- * CV Reza v2
+ * Resume Reza v2
  * Copyright (c) 2020 Reza Sariful Fikri
 */`,
 	},
 	{
-		file: "dist/js/cv-reza.min.js",
+		file: "dist/js/resume-reza.min.js",
 		format: "iife",
 		banner: `/*!
- * CV Reza v2
+ * Resume Reza v2
  * Copyright (c) 2020 Reza Sariful Fikri
 */`,
 		plugins: [terser()]

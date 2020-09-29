@@ -1,5 +1,5 @@
 {
-	"name": "CV-Reza",
+	"name": "Resume-Reza",
 	"version": "1.0.0",
 	"scripts": {
 		"build": "npx rollup --config"
