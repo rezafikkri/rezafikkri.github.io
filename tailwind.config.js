@@ -7,7 +7,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "ajwa-green": "#75CD1E",
+        "ajwa-green": "#72C71D",
       },
     }, 
   },

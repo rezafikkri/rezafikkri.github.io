@@ -6,4 +6,12 @@
   a {
     @apply underline decoration-2;
   }
+
+  p a {
+    @apply text-ajwa-green;
+  }
+
+  p a:hover {
+    @apply no-underline;
+  }
 }
