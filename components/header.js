@@ -5,7 +5,7 @@ import { roboto } from "@/common/fonts";
 export default function Header() {
   return (
     <header className="pt-12">
-      <Link className="flex no-underline" href="/">
+      <Link className="inline-flex no-underline" href="/">
         <Image src="/Reza logo.svg" width={35} height={35} alt="Reza logo" />
         <div className="ml-4">
           <span className={`text-xl text-gray-800 font-bold block leading-none ${roboto.className}`}>Reza Sariful Fikri</span>
