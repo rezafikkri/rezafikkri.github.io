@@ -21,7 +21,7 @@ export default function Header() {
             <Link href="" className="hover:text-ajwa-green no-underline">Blog</Link>
           </li>
           <li className="inline-block pr-8">
-            <Link href="" className="hover:text-ajwa-green no-underline">Portofolio</Link>
+            <Link href="" className="hover:text-ajwa-green no-underline">Projek</Link>
           </li>
           <li className="inline-block">
             <Link href="" className="group hover:text-ajwa-green no-underline">

@@ -37,7 +37,20 @@ export default function Home() {
             </Link>
           </li>
         </ul>
-        <Link href="" className="mt-5 inline-block no-underline bg-white hover:bg-gray-100 border border-border-gray-300 px-4 py-2 rounded-lg">Lihat Semua &raquo;</Link>
+        <Link href="" className="mt-5 inline-block no-underline bg-white hover:bg-gray-100 border border-gray-200 px-4 py-2 rounded-lg">Lihat Semua &raquo;</Link>
+      </section>
+      <section className="text-gray-800 mt-20"> 
+        <h2 className="text-3xl font-bold">Topik Tulisan</h2>
+        <small className="text-gray-700">Klik pada salah satu topik tulisan untuk melihat semua tulisan dengan topik itu!</small>
+        <div className="mt-4 flex flex-wrap gap-2">
+          <Link href="" className="inline-block no-underline bg-white border border-gray-500 hover:border-ajwa-green border-2 px-2 py-1 rounded-lg">PHP</Link>
+          <Link href="" className="inline-block no-underline bg-white border border-gray-500 hover:border-ajwa-green border-2 px-2 py-1 rounded-lg">Javascript</Link>
+          <Link href="" className="inline-block no-underline bg-white border border-gray-500 hover:border-ajwa-green border-2 px-2 py-1 rounded-lg">HTML</Link>
+          <Link href="" className="inline-block no-underline bg-white border border-gray-500 hover:border-ajwa-green border-2 px-2 py-1 rounded-lg">API</Link>
+          <Link href="" className="inline-block no-underline bg-white border border-gray-500 hover:border-ajwa-green border-2 px-2 py-1 rounded-lg">Laravel</Link>
+          <Link href="" className="inline-block no-underline bg-white border border-gray-500 hover:border-ajwa-green border-2 px-2 py-1 rounded-lg">ReactJS</Link>
+          <Link href="" className="inline-block no-underline bg-white border border-gray-500 hover:border-ajwa-green border-2 px-2 py-1 rounded-lg">OOP</Link>
+        </div>
       </section>
     </Layout>
   )
