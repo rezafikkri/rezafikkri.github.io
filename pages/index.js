@@ -41,15 +41,44 @@ export default function Home() {
       </section>
       <section className="text-gray-800 mt-20"> 
         <h2 className="text-3xl font-bold">Topik Tulisan</h2>
-        <small className="text-gray-700">Klik pada salah satu topik tulisan untuk melihat semua tulisan dengan topik itu!</small>
-        <div className="mt-4 flex flex-wrap gap-2">
-          <Link href="" className="inline-block no-underline bg-white border border-gray-500 hover:border-ajwa-green border-2 px-2 py-1 rounded-lg">PHP</Link>
-          <Link href="" className="inline-block no-underline bg-white border border-gray-500 hover:border-ajwa-green border-2 px-2 py-1 rounded-lg">Javascript</Link>
-          <Link href="" className="inline-block no-underline bg-white border border-gray-500 hover:border-ajwa-green border-2 px-2 py-1 rounded-lg">HTML</Link>
-          <Link href="" className="inline-block no-underline bg-white border border-gray-500 hover:border-ajwa-green border-2 px-2 py-1 rounded-lg">API</Link>
-          <Link href="" className="inline-block no-underline bg-white border border-gray-500 hover:border-ajwa-green border-2 px-2 py-1 rounded-lg">Laravel</Link>
-          <Link href="" className="inline-block no-underline bg-white border border-gray-500 hover:border-ajwa-green border-2 px-2 py-1 rounded-lg">ReactJS</Link>
-          <Link href="" className="inline-block no-underline bg-white border border-gray-500 hover:border-ajwa-green border-2 px-2 py-1 rounded-lg">OOP</Link>
+        <small className="text-gray-600">Klik pada salah satu topik tulisan untuk melihat semua tulisan dengan topik itu!</small>
+        <div className="mt-7 flex flex-wrap gap-2">
+          <Link href="" className="inline-block no-underline bg-white border-2 border-gray-500 hover:border-ajwa-green px-2 py-1 rounded-lg">PHP</Link>
+          <Link href="" className="inline-block no-underline bg-white border-2 border-gray-500 hover:border-ajwa-green px-2 py-1 rounded-lg">Javascript</Link>
+          <Link href="" className="inline-block no-underline bg-white border-2 border-gray-500 hover:border-ajwa-green px-2 py-1 rounded-lg">HTML</Link>
+          <Link href="" className="inline-block no-underline bg-white border-2 border-gray-500 hover:border-ajwa-green px-2 py-1 rounded-lg">API</Link>
+          <Link href="" className="inline-block no-underline bg-white border-2 border-gray-500 hover:border-ajwa-green px-2 py-1 rounded-lg">Laravel</Link>
+          <Link href="" className="inline-block no-underline bg-white border-2 border-gray-500 hover:border-ajwa-green px-2 py-1 rounded-lg">ReactJS</Link>
+          <Link href="" className="inline-block no-underline bg-white border-2 border-gray-500 hover:border-ajwa-green px-2 py-1 rounded-lg">OOP</Link>
+        </div>
+      </section>
+      <section className="text-gray-800 mt-20">
+        <h2 className="text-3xl font-bold">Projek</h2>
+        <div className="mt-7 grid sm:grid-cols-2 gap-4">
+          <div className="border border-gray-300 bg-white rounded-lg px-5 pt-4 pb-12 relative">
+            <h3 className="text-xl font-bold mb-2">Reza Admin</h3>
+            <p className="text-gray-600 mb-5">Templat admin yang dibuat dengan bootstrap 4</p>
+            <div className="absolute bottom-4">
+              <Link href="" className="inline-block no-underline border border-gray-200 bg-gray-50 hover:bg-gray-100 rounded-lg px-2 py-1 text-sm mr-2">Code</Link>
+              <Link href="" className="inline-block no-underline border border-gray-200 bg-gray-50 hover:bg-gray-100 rounded-lg px-2 py-1 text-sm mr-2">Demo</Link>
+            </div>
+          </div>
+
+          <div className="border border-gray-300 bg-white rounded-lg px-5 pt-4 pb-12 relative">
+            <h3 className="text-xl font-bold mb-2">Manport</h3>
+            <p className="text-gray-600 mb-5">Aplikasi pengelola raport siswa SMK dibuat dengan PHP native</p>
+            <div className="absolute bottom-4">
+              <Link href="" className="inline-block no-underline border border-gray-200 bg-gray-50 hover:bg-gray-100 rounded-lg px-2 py-1 text-sm mr-2">Code</Link>
+            </div>
+          </div>
+
+          <div className="border border-gray-300 bg-white rounded-lg px-5 pt-4 pb-12 relative">
+            <h3 className="text-xl font-bold mb-2">Website Sekolah</h3>
+            <p className="text-gray-600 mb-5">Website sekolah yang dibuat dengan Codeigniter 3</p>
+            <div className="absolute bottom-4">
+              <Link href="" className="inline-block no-underline border border-gray-200 bg-gray-50 hover:bg-gray-100 rounded-lg px-2 py-1 text-sm mr-2">Code</Link>
+            </div>
+          </div>
         </div>
       </section>
     </Layout>
