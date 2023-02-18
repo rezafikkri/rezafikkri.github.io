@@ -3,7 +3,7 @@ import Layout, { name } from "@/components/layout";
 import Link from "next/link";
 
 export default function Home() {
-  const title = `${name} | Web Developer`;
+  const title = `${name} - Web Developer`;
 
   return (
     <Layout>
@@ -13,7 +13,7 @@ export default function Home() {
       <header className="mt-24 text-gray-800"> 
         <h1 className="text-5xl font-bold">Halo, Saya Reza!</h1>
         <p className="mt-7 text-xl">Terimakasih sudah berkunjung.</p>
-        <p className="mt-7 text-xl">Saya suka membuat aplikasi <Link href="">open-source</Link> dan <Link href="">menulis</Link> mengenai , khususnya di bidang pengembangan web, menggunakan bahasa pemrograman php dan javascript dan hal-hal umum seputar teknologi.</p>
+        <p className="mt-7 text-xl">Saya suka membuat aplikasi <Link href="/projects">open-source</Link> dan <Link href="/blogs">menulis</Link> mengenai , khususnya di bidang pengembangan web, menggunakan bahasa pemrograman php dan javascript dan hal-hal umum seputar teknologi.</p>
       </header>
       <section className="text-gray-800 mt-20">
         <h2 className="text-3xl font-bold">Tulisan Terbaru</h2>
@@ -37,7 +37,7 @@ export default function Home() {
             </Link>
           </li>
         </ul>
-        <Link href="" className="mt-5 inline-block no-underline bg-white hover:bg-gray-100 border border-gray-200 px-4 py-2 rounded-lg">Lihat Semua &raquo;</Link>
+        <Link href="blogs" className="mt-5 inline-block no-underline bg-white hover:bg-gray-100 border border-gray-200 px-4 py-2 rounded-lg">Lihat Semua &raquo;</Link>
       </section>
       <section className="text-gray-800 mt-20"> 
         <h2 className="text-3xl font-bold">Topik Tulisan</h2>
@@ -59,8 +59,8 @@ export default function Home() {
             <h3 className="text-xl font-bold mb-2">Reza Admin</h3>
             <p className="text-gray-600 mb-5">Templat admin yang dibuat dengan bootstrap 4</p>
             <div className="absolute bottom-4">
-              <Link href="" className="inline-block no-underline border border-gray-200 bg-gray-50 hover:bg-gray-100 rounded-lg px-2 py-1 text-sm mr-2">Code</Link>
-              <Link href="" className="inline-block no-underline border border-gray-200 bg-gray-50 hover:bg-gray-100 rounded-lg px-2 py-1 text-sm mr-2">Demo</Link>
+              <Link href="https://github.com/rezafikkri/Reza-Admin" rel="noopener noreferrer" target="_blank" className="inline-block no-underline border border-gray-200 bg-gray-50 hover:bg-gray-100 rounded-lg px-2 py-1 text-sm mr-2">Code</Link>
+              <Link href="https://rezafikkri.github.io/Reza-Admin" rel="noopener noreferrer" target="_blank" className="inline-block no-underline border border-gray-200 bg-gray-50 hover:bg-gray-100 rounded-lg px-2 py-1 text-sm mr-2">Demo</Link>
             </div>
           </div>
 
@@ -68,7 +68,7 @@ export default function Home() {
             <h3 className="text-xl font-bold mb-2">Manport</h3>
             <p className="text-gray-600 mb-5">Aplikasi pengelola raport siswa SMK dibuat dengan PHP native</p>
             <div className="absolute bottom-4">
-              <Link href="" className="inline-block no-underline border border-gray-200 bg-gray-50 hover:bg-gray-100 rounded-lg px-2 py-1 text-sm mr-2">Code</Link>
+              <Link href="https://github.com/rezafikkri/Manport" rel="noopener noreferrer" target="_blank" className="inline-block no-underline border border-gray-200 bg-gray-50 hover:bg-gray-100 rounded-lg px-2 py-1 text-sm mr-2">Code</Link>
             </div>
           </div>
 
@@ -76,7 +76,7 @@ export default function Home() {
             <h3 className="text-xl font-bold mb-2">Website Sekolah</h3>
             <p className="text-gray-600 mb-5">Website sekolah yang dibuat dengan Codeigniter 3</p>
             <div className="absolute bottom-4">
-              <Link href="" className="inline-block no-underline border border-gray-200 bg-gray-50 hover:bg-gray-100 rounded-lg px-2 py-1 text-sm mr-2">Code</Link>
+              <Link href="https://github.com/rezafikkri/School-website" rel="noopener noreferrer" target="_blank" className="inline-block no-underline border border-gray-200 bg-gray-50 hover:bg-gray-100 rounded-lg px-2 py-1 text-sm mr-2">Code</Link>
             </div>
           </div>
         </div>
