@@ -9,7 +9,10 @@ module.exports = {
       colors: {
         "ajwa-green": "#72C71D",
       },
-    }, 
+    },
+    listStyleType: {
+      minus: '"\\2d\\20"',
+    },
   },
   plugins: [],
 }

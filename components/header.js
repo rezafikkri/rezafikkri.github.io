@@ -1,6 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import { roboto } from "@/common/fonts";
+import { useRouter } from "next/router";
+
+function activeNav(href) {
+  const router = useRouter();
+  if (router.asPath == href) return 'text-ajwa-green';
+}
 
 export default function Header() {
   return (
@@ -15,13 +21,13 @@ export default function Header() {
       <nav className={`mt-5 text-gray-700 font-medium ${roboto.className}`}>
         <ul>
           <li className="inline-block pr-8">
-            <Link href="/about" className="hover:text-ajwa-green no-underline">Tentang</Link>
+            <Link href="/about" className={`hover:text-ajwa-green no-underline ${activeNav('/about')}`}>Tentang</Link>
           </li>
           <li className="inline-block pr-8">
-            <Link href="/blogs" className="hover:text-ajwa-green no-underline">Blog</Link>
+            <Link href="/blogs" className={`hover:text-ajwa-green no-underline ${activeNav('/blogs')}`}>Blog</Link>
           </li>
           <li className="inline-block pr-8">
-            <Link href="/projects" className="hover:text-ajwa-green no-underline">Projek</Link>
+            <Link href="/projects" className={`hover:text-ajwa-green no-underline ${activeNav('/projects')}`}>Projek</Link>
           </li>
           <li className="inline-block">
             <Link href="https://github.com/rezafikkri" className="group hover:text-ajwa-green no-underline" rel="noopener noreferrer" target="_blank">
