@@ -4,14 +4,17 @@ import Link from "next/link";
 import Image from "next/image";
 
 export default function About() { 
-  const title = `Tentang - ${name}`;
+  const title = `Tentang Saya - ${name}`;
 
   return (
     <Layout>
       <Head>
         <title>{title}</title>
       </Head>
-      <section className="mt-24">
+      <header className="mt-24 text-gray-800">
+        <h1 className="text-5xl font-bold">Tentang Saya</h1>
+      </header>
+      <section className="mt-12">
         <div className="rounded-full inline-block border-4 border-gray-600">
           <Image src="/rezas.jpg" height={150} width={150} alt="Photo Profile" className="rounded-full" />
         </div>

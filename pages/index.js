@@ -80,6 +80,7 @@ export default function Home() {
             </div>
           </div>
         </div>
+        <Link href="/projects" className="inline-block no-underline mt-5 hover:text-ajwa-green">Lihat Semua &raquo;</Link>
       </section>
     </Layout>
   )
