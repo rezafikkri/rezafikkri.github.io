@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Header from "./header";
 import Footer from "./footer";
-import { roboto } from "@/common/fonts";
+import { roboto } from "@/lib/fonts";
 
 export const name = "Reza Sariful Fikri";
 

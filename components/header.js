@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { roboto } from "@/common/fonts";
 import { useRouter } from "next/router";
 
 function activeNav(href) {
@@ -14,11 +13,11 @@ export default function Header() {
       <Link className="inline-flex no-underline" href="/">
         <Image src="/Reza logo.svg" width={35} height={35} alt="Reza logo" />
         <div className="ml-4">
-          <span className={`text-xl text-gray-800 font-bold block leading-none ${roboto.className}`}>Reza Sariful Fikri</span>
-          <span className={`text-gray-500 leading-none ${roboto.className}`}>Web Developer</span>
+          <span className={`text-xl text-gray-800 font-bold block leading-none`}>Reza Sariful Fikri</span>
+          <span className={`text-gray-500 leading-none`}>Web Developer</span>
         </div>
       </Link>
-      <nav className={`mt-5 text-gray-700 font-medium ${roboto.className}`}>
+      <nav className={`mt-5 text-gray-700 font-medium`}>
         <ul>
           <li className="inline-block pr-8">
             <Link href="/about" className={`hover:text-ajwa-green no-underline ${activeNav('/about')}`}>Tentang</Link>
