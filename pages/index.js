@@ -1,8 +1,9 @@
 import Head from "next/head";
 import Layout, { name } from "@/components/layout";
 import Link from "next/link";
+import { getTopics } from "@/lib/writing";
 
-export default function Home() {
+export default function Home({ topics }) {
   const title = `${name} - Web Developer`;
 
   return (
@@ -43,13 +44,9 @@ export default function Home() {
         <h2 className="text-3xl font-bold">Topik Tulisan</h2>
         <small className="text-gray-600">Klik pada salah satu topik tulisan untuk melihat semua tulisan dengan topik itu!</small>
         <div className="mt-7 flex flex-wrap gap-2">
-          <Link href="" className="no-underline bg-white border-2 border-gray-500 hover:border-ajwa-green px-2 py-1 rounded-lg">PHP</Link>
-          <Link href="" className="no-underline bg-white border-2 border-gray-500 hover:border-ajwa-green px-2 py-1 rounded-lg">Javascript</Link>
-          <Link href="" className="no-underline bg-white border-2 border-gray-500 hover:border-ajwa-green px-2 py-1 rounded-lg">HTML</Link>
-          <Link href="" className="no-underline bg-white border-2 border-gray-500 hover:border-ajwa-green px-2 py-1 rounded-lg">API</Link>
-          <Link href="" className="no-underline bg-white border-2 border-gray-500 hover:border-ajwa-green px-2 py-1 rounded-lg">Laravel</Link>
-          <Link href="" className="no-underline bg-white border-2 border-gray-500 hover:border-ajwa-green px-2 py-1 rounded-lg">ReactJS</Link>
-          <Link href="" className="no-underline bg-white border-2 border-gray-500 hover:border-ajwa-green px-2 py-1 rounded-lg">OOP</Link>
+          {topics.map(topic => (
+            <Link href="" className="no-underline bg-white border-2 border-gray-500 hover:border-ajwa-green px-2 py-1 rounded-lg">{topic}</Link>
+          ))}
         </div>
       </section>
       <section className="text-gray-800 mt-20">
@@ -84,4 +81,13 @@ export default function Home() {
       </section>
     </Layout>
   )
+}
+
+export async function getStaticProps() {
+  const topics = getTopics();
+  return {
+    props: {
+      topics,
+    },
+  };
 }
