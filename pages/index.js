@@ -44,8 +44,8 @@ export default function Home({ topics }) {
         <h2 className="text-3xl font-bold">Topik Tulisan</h2>
         <small className="text-gray-600">Klik pada salah satu topik tulisan untuk melihat semua tulisan dengan topik itu!</small>
         <div className="mt-7 flex flex-wrap gap-2">
-          {topics.map(topic => (
-            <Link href="" className="no-underline bg-white border-2 border-gray-500 hover:border-ajwa-green px-2 py-1 rounded-lg">{topic}</Link>
+          {topics.map((topic, index) => (
+            <Link key={index} href="" className="no-underline bg-white border-2 border-gray-500 hover:border-ajwa-green px-2 py-1 rounded-lg">{topic}</Link>
           ))}
         </div>
       </section>
