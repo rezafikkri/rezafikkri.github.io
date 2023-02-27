@@ -1,9 +1,15 @@
 import Head from "next/head";
 import Layout, { name } from "@/components/layout";
 import Link from "next/link";
-import { getTopics } from "@/lib/posts";
+import dayjs from "dayjs";
+import relativeTime from "dayjs/plugin/relativeTime";
+import 'dayjs/locale/id';
+import { getTopics, getLatestPostList } from "@/lib/posts";
 
-export default function Home({ topics }) {
+dayjs.extend(relativeTime);
+dayjs.locale('id');
+
+export default function Home({ topics, latestPostList }) {
   const title = `${name} - Web Developer`;
 
   return (
@@ -19,24 +25,14 @@ export default function Home({ topics }) {
       <section className="text-gray-800 mt-20">
         <h2 className="text-3xl font-bold">Tulisan Terbaru</h2>
         <ul className="mt-6 flex flex-col divide-y divide-gray-200">
-          <li className="py-1.5">
-            <Link href="" className="flex justify-between no-underline items-center hover:text-ajwa-green">
-              <h3 className="text-xl">Membuat footer website tetap dibagian bawah halaman.</h3>
-              <time className="font-light">10 Januari 2023</time>
-            </Link>
-          </li>
-          <li className="py-1.5">
-            <Link href="" className="flex justify-between no-underline items-center hover:text-ajwa-green">
-              <h3 className="text-xl">Alternatif software berbayar di linux dan windows.</h3>
-              <time className="font-light">11 Januari 2023</time>
-            </Link>
-          </li>
-          <li className="py-1.5">
-            <Link href="" className="flex justify-between no-underline items-center hover:text-ajwa-green">
-              <h3 className="text-xl">Dasar-dasar css flexbox.</h3>
-              <time className="font-light">10 Januari 2023</time>
-            </Link>
-          </li>
+          {latestPostList.map((post, index) => (
+            <li className="py-1.5" key={index}>
+              <Link href="" className="flex justify-between items-start no-underline hover:text-ajwa-green">
+                <h3 className="text-xl">{post.title}</h3>
+                <time className="font-light basis-40 text-right">{dayjs(post.date).fromNow()}</time>
+              </Link>
+            </li>
+          ))}
         </ul>
         <Link href="/blogs" className="mt-5 inline-block no-underline bg-white hover:bg-gray-100 border border-gray-200 px-4 py-2 rounded-lg">Lihat Semua &raquo;</Link>
       </section>
@@ -85,9 +81,11 @@ export default function Home({ topics }) {
 
 export async function getStaticProps() {
   const topics = getTopics();
+  const latestPostList = getLatestPostList();
   return {
     props: {
       topics,
+      latestPostList,
     },
   };
 }
