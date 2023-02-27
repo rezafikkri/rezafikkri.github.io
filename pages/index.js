@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Layout, { name } from "@/components/layout";
 import Link from "next/link";
-import { getTopics } from "@/lib/writing";
+import { getTopics } from "@/lib/posts";
 
 export default function Home({ topics }) {
   const title = `${name} - Web Developer`;
