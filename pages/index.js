@@ -26,10 +26,10 @@ export default function Home({ topics, latestPostList }) {
         <h2 className="text-3xl font-bold">Tulisan Terbaru</h2>
         <ul className="mt-6 flex flex-col divide-y divide-gray-200">
           {latestPostList.map((post, index) => (
-            <li className="py-1.5" key={index}>
-              <Link href="" className="flex justify-between items-start no-underline hover:text-ajwa-green">
+            <li className="py-2 md:py-1.5" key={index}>
+              <Link href="" className="flex flex-col md:flex-row md:justify-between no-underline hover:text-ajwa-green">
                 <h3 className="text-xl">{post.title}</h3>
-                <time className="font-light basis-40 text-right">{dayjs(post.date).fromNow()}</time>
+                <time className="font-light md:basis-40 md:text-right">{dayjs(post.date).fromNow()}</time>
               </Link>
             </li>
           ))}
