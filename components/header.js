@@ -9,7 +9,7 @@ function activeNav(href) {
 
 export default function Header() {
   return (
-    <header className="pt-12">
+    <header className="pt-8 md:pt-12">
       <Link className="inline-flex no-underline" href="/">
         <Image src="/Reza logo.svg" width={35} height={35} alt="Reza logo" />
         <div className="ml-4">
