@@ -4,12 +4,12 @@ import Link from "next/link";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
 import 'dayjs/locale/id';
-import { getTopics, getLatestPostList } from "@/lib/posts";
+import { getTopics, getLatestPosts } from "@/lib/posts";
 
 dayjs.extend(relativeTime);
 dayjs.locale('id');
 
-export default function Home({ topics, latestPostList }) {
+export default function Home({ topics, latestPosts }) {
   const title = `${name} - Web Developer`;
 
   return (
@@ -25,7 +25,7 @@ export default function Home({ topics, latestPostList }) {
       <section className="text-gray-800 mt-20">
         <h2 className="text-3xl font-bold">Tulisan Terbaru</h2>
         <ul className="mt-6 flex flex-col divide-y divide-gray-200">
-          {latestPostList.map((post, index) => (
+          {latestPosts.map((post, index) => (
             <li className="py-2 md:py-1.5" key={index}>
               <Link href="" className="flex flex-col md:flex-row md:justify-between no-underline hover:text-ajwa-green">
                 <h3 className="text-xl">{post.title}</h3>
@@ -81,11 +81,11 @@ export default function Home({ topics, latestPostList }) {
 
 export async function getStaticProps() {
   const topics = getTopics();
-  const latestPostList = getLatestPostList();
+  const latestPosts = getLatestPosts();
   return {
     props: {
       topics,
-      latestPostList,
+      latestPosts,
     },
   };
 }

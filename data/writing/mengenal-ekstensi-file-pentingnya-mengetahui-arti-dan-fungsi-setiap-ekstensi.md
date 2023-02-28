@@ -1,6 +1,6 @@
 ---
 title: "Mengenal Ekstensi File: Pentingnya Mengetahui Arti dan Fungsi Setiap Ekstensi"
-date: "2023-02-26T15:00:33.392Z"
+date: "2022-01-16T20:24:00.000Z"
 topics: ["Internet", "Ekstensi File"]
 slug: "mengenal-ekstensi-file-pentingnya-mengetahui-arti-dan-fungsi-setiap-ekstensi"
 ---

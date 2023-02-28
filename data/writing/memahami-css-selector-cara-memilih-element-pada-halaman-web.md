@@ -1,6 +1,6 @@
 ---
 title: "Memahami CSS Selector: Cara Memilih Element pada Halaman Web"
-date: "2023-02-26T23:13:52.843Z"
+date: "2022-01-21T20:24:00.000Z"
 topics: ["CSS Selector", "CSS"]
 slug: "how-facebook-is-changing-the-way-we-interact"
 ---

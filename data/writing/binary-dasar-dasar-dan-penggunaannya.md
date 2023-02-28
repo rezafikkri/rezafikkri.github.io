@@ -1,6 +1,6 @@
 ---
 title: "Binary: Dasar-Dasar dan Penggunaannya"
-date: "2023-02-26T14:26:09.112Z"
+date: "2021-01-14T20:24:00.000Z"
 topics: ["Teknologi", "Komputer"]
 slug: "binary-dasar-dasar-dan-penggunaannya"
 ---
