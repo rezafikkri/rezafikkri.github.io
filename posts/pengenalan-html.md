@@ -1,7 +1,7 @@
 ---
 title: "Pengenalan HTML"
 date: "2023-02-26T13:45:50.366Z"
-topics: [HTML", "CSS"]
+topics: ["HTML", "CSS"]
 slug: "pengenalan-html"
 ---
 
