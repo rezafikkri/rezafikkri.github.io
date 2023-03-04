@@ -41,7 +41,7 @@ export default function Home({ topics, latestPosts }) {
         <small className="text-gray-600">Klik pada salah satu topik tulisan untuk melihat semua tulisan dengan topik itu!</small>
         <div className="mt-7 flex flex-wrap gap-2">
           {topics.map((topic, index) => (
-            <Link key={index} href="" className="no-underline bg-white border-2 border-gray-500 hover:border-ajwa-green px-2 py-1 rounded-lg">{topic}</Link>
+            <Link key={index} href={`/blogs/topics/${topic}`} className="no-underline bg-white border-2 border-gray-500 hover:border-ajwa-green px-2 py-1 rounded-lg">{topic}</Link>
           ))}
         </div>
       </section>

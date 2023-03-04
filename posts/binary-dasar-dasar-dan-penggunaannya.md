@@ -1,7 +1,7 @@
 ---
 title: "Binary: Dasar-Dasar dan Penggunaannya"
 date: "2021-01-14T20:24:00.000Z"
-topics: ["Teknologi", "Komputer"]
+topics: ["CSS", "HTML"]
 slug: "binary-dasar-dasar-dan-penggunaannya"
 ---
 

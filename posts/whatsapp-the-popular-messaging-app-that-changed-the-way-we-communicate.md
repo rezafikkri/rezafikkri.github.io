@@ -1,7 +1,7 @@
 ---
 title: "Whatsapp the Popular Messaging App that Changed the way we Communicate"
 date: "2023-02-26T14:38:39.756Z"
-topics: ["WhatsApp", "Teknologi"]
+topics: ["PHP", "JavaScript"]
 slug: "whatsapp-the-popular-messaging-app-that-changed-the-way-we-communicate"
 ---
 

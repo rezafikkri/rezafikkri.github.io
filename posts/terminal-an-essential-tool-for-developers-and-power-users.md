@@ -1,7 +1,7 @@
 ---
 title: "Terminal: An Essential Tool for Developers and Power Users"
 date: "2023-02-26T14:46:36.192Z"
-topics: ["Terminal", "Linux"]
+topics: ["PHP", "CSS"]
 slug: "terminal-an-essential-tool-for-developers-and-power-users"
 ---
 

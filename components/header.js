@@ -4,7 +4,8 @@ import { useRouter } from "next/router";
 
 function activeNav(href) {
   const router = useRouter();
-  if (router.asPath == href) return 'text-ajwa-green';
+  const regex = new RegExp(`${href}*`);
+  if (regex.test(router.asPath)) return 'text-ajwa-green';
 }
 
 export default function Header() {

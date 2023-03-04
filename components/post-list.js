@@ -9,7 +9,7 @@ export default function PostList({ posts }) {
   let currentYear = 0;
 
   return (
-    <ul className="mt-7">
+    <ul>
       {posts.map((post, index) => {
         const year = dayjs(post.date).year();
         const li = (

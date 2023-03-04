@@ -1,7 +1,7 @@
 ---
 title: "Mengenal Ekstensi File: Pentingnya Mengetahui Arti dan Fungsi Setiap Ekstensi"
 date: "2022-01-16T20:24:00.000Z"
-topics: ["Internet", "Ekstensi File"]
+topics: ["CSS", "HTML"]
 slug: "mengenal-ekstensi-file-pentingnya-mengetahui-arti-dan-fungsi-setiap-ekstensi"
 ---
 

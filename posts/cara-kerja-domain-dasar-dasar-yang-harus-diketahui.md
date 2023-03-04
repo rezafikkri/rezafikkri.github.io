@@ -1,7 +1,7 @@
 ---
 title: "Cara Kerja Domain: Dasar-Dasar yang Harus Diketahui"
 date: "2021-01-09T20:24:00.000Z"
-topics: ["Teknologi", "Komputer", "Internet"]
+topics: ["CSS", "PHP", "JavaScript"]
 slug: "cara-kerja-domain-dasar-dasar-hyang-harus-diketahui"
 ---
 

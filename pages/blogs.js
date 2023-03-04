@@ -14,7 +14,7 @@ export default function Blogs({ topics, posts }) {
       </Head>
       <BlogHeader topics={topics} />
       <section className="mt-20 text-gray-800">
-        <h2 className="text-3xl font-bold">Tulisan</h2>
+        <h2 className="text-3xl font-bold mb-7">Tulisan</h2>
         <PostList posts={posts} />
       </section>
     </Layout>

@@ -1,7 +1,7 @@
 ---
 title: "Chart GPT: Understanding the Power of Language Models"
 date: "2023-02-26T14:27:58.168Z"
-topics: ["Teknologi", "Komputer", "AI"]
+topics: ["HTML"]
 slug: "chart-gpt-understanding-the-power-of-language-models"
 ---
 

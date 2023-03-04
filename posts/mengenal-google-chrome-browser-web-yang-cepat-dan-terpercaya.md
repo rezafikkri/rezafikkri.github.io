@@ -1,7 +1,7 @@
 ---
 title: "Mengenal Google Chrome: Browser Web yang Cepat dan Terpercaya"
 date: "2023-02-26T15:11:56.165Z"
-topics: ["Internet", "Browser", "Google Chrome"]
+topics: ["PHP", "HTML"]
 slug: "mengenal-google-chrome-browser-web-yang-cepat-dan-terpercaya"
 ---
 

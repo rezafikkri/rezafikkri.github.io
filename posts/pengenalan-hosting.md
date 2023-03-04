@@ -1,7 +1,7 @@
 ---
 title: "Pengenalan Hosting"
 date: "2023-02-26T14:26:32.516Z"
-topics: ["Internet", "HTML", "Hosting"]
+topics: ["JavaScript", "HTML"]
 slug: "pengenalan-hosting"
 ---
 
