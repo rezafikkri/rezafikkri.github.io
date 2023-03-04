@@ -3,12 +3,8 @@ import Head from "next/head";
 import Link from "next/link";
 import Layout, { name } from "@/components/layout";
 import PostList from "@/components/post-list";
-import BlogHeader from "@/components/blog-header";
 import { getPosts, getTopics } from "@/lib/posts";
-
-function activeTopic(topic, selectedTopic) {
-  if (topic == selectedTopic) return 'border-ajwa-green';
-}
+import activeTopic from "@/lib/activeTopic";
 
 export default function Topic({ selectedTopic, topics, posts }) {
   const title = `${selectedTopic} - ${name}`;
