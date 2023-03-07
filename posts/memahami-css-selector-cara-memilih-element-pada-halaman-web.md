@@ -2,7 +2,7 @@
 title: "Memahami CSS Selector: Cara Memilih Element pada Halaman Web"
 date: "2022-01-21T20:24:00.000Z"
 topics: ["PHP", "CSS"]
-slug: "how-facebook-is-changing-the-way-we-interact"
+slug: "memahami-css-selector-cara-memilih-element-pada-halaman-web"
 ---
 
 CSS selector adalah cara untuk memilih elemen tertentu pada halaman web dan memberikan gaya atau style tertentu pada elemen tersebut. Dalam artikel ini, kita akan membahas penggunaan CSS selector secara lengkap, dari sintaks dasar hingga penggunaan selector yang lebih kompleks.

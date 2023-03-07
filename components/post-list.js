@@ -16,7 +16,7 @@ export default function PostList({ posts }) {
           <React.Fragment key={index}>
             {currentYear != year && <h3 className={`text-2xl font-bold mb-2 ${currentYear != 0 && 'mt-6'}`}>{year}</h3>}
             <li className={`py-2 md:py-1.5 ${currentYear === year && 'border-t'}`}>
-              <Link href="" className="flex flex-col md:flex-row md:justify-between no-underline hover:text-ajwa-green">
+              <Link href={`/blogs/${post.slug}`} className="flex flex-col md:flex-row md:justify-between no-underline hover:text-ajwa-green">
                 <h3 className="text-xl">{post.title}</h3>
                 <time className="font-light md:basis-24 md:text-right">{dayjs(post.date).format('DD MMM')}</time>
               </Link>

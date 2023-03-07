@@ -15,7 +15,7 @@ export default function Blogs({ topics, posts }) {
       <header className="mt-24 text-gray-800">
         <h1 className="text-5xl font-bold">Blog</h1>
       </header>
-      <section className="mt-12">
+      <section className="mt-12 text-gray-800">
         <h2 className="text-3xl font-bold">Topik</h2>
         <small className="text-gray-600">Klik pada salah satu topik tulisan untuk melihat semua tulisan dengan topik itu!</small>
         <div className="mt-7 flex flex-wrap gap-2">

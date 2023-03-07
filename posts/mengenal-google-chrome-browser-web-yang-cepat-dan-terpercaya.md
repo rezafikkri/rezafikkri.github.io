@@ -16,13 +16,9 @@ Google Chrome pertama kali dirilis pada tahun 2008 oleh Google. Browser ini dike
 Google Chrome dilengkapi dengan berbagai fitur yang membuatnya menjadi salah satu browser web yang paling digemari. Berikut adalah beberapa fitur yang dimiliki Google Chrome:
 
 - Kecepatan: Google Chrome dikembangkan dengan fokus pada kecepatan. Browser ini menggunakan mesin rendering bernama Blink yang dirancang untuk mempercepat pengalaman menjelajah web.
-
 - Keamanan: Google Chrome juga sangat diakui karena fitur keamanannya. Browser ini memiliki proteksi terhadap malware dan phishing, serta dilengkapi dengan fitur pembaruan otomatis yang membantu melindungi pengguna dari ancaman keamanan.
-
 - Sinkronisasi: Google Chrome memungkinkan pengguna untuk menyinkronkan data mereka di berbagai perangkat, termasuk bookmark, history, dan pengaturan. Ini memungkinkan pengguna untuk dengan mudah beralih dari satu perangkat ke perangkat lain tanpa kehilangan data penting.
-
 - Ekstensi: Google Chrome memiliki banyak ekstensi yang dapat diunduh dan dipasang dari Chrome Web Store. Ekstensi ini dapat membantu pengguna meningkatkan produktivitas dan meningkatkan pengalaman browsing mereka.
-
 - Mode penyamaran: Google Chrome dilengkapi dengan mode penyamaran (incognito mode) yang memungkinkan pengguna untuk menjelajah web tanpa meninggalkan jejak di browser. Mode ini dapat berguna untuk melindungi privasi pengguna.
 
 ## Kesimpulan

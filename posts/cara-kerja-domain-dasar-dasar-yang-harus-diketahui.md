@@ -2,7 +2,7 @@
 title: "Cara Kerja Domain: Dasar-Dasar yang Harus Diketahui"
 date: "2021-01-09T20:24:00.000Z"
 topics: ["CSS", "PHP", "JavaScript"]
-slug: "cara-kerja-domain-dasar-dasar-hyang-harus-diketahui"
+slug: "cara-kerja-domain-dasar-dasar-yang-harus-diketahui"
 ---
 
 Domain adalah alamat unik yang digunakan untuk mengakses situs web. Di balik alamat domain yang mudah diingat ini, ada mekanisme yang rumit yang menghubungkan domain dengan server web yang sesuai. Dalam artikel ini, kita akan membahas dasar-dasar tentang cara kerja domain.
