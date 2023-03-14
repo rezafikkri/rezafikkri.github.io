@@ -1,6 +1,7 @@
 import Head from "next/head";
-import Layout, { name } from "@/components/layout";
 import Link from "next/link";
+import Layout, { name } from "@/components/layout";
+import LargeTopics from "@/components/large-topics";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
 import 'dayjs/locale/id';
@@ -39,11 +40,7 @@ export default function Home({ topics, latestPosts }) {
       <section className="text-gray-800 mt-20"> 
         <h2 className="text-3xl font-bold">Topik Tulisan</h2>
         <small className="text-gray-600">Klik pada salah satu topik tulisan untuk melihat semua tulisan dengan topik itu!</small>
-        <div className="mt-7 flex flex-wrap gap-2">
-          {topics.map((topic, index) => (
-            <Link key={index} href={`/blogs/topics/${topic}`} className="no-underline bg-white border-2 border-gray-500 hover:border-ajwa-green px-2 py-1 rounded-lg">{topic}</Link>
-          ))}
-        </div>
+        <LargeTopics topics={topics} mt="mt-7" />
       </section>
       <section className="text-gray-800 mt-20">
         <h2 className="text-3xl font-bold">Projek</h2>
