@@ -14,6 +14,7 @@ export default function Post({ post }) {
     <Layout>
       <Head>
         <title>{title}</title>
+        <meta name="description" content={post.excerpt} />
       </Head>
       <article className="mt-24">
         <time className="text-gray-600 inline-block">{dayjs(post.date).format('DD MMMM YYYY')}</time>

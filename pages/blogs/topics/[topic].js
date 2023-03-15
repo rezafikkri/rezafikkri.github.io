@@ -13,6 +13,7 @@ export default function Topic({ selectedTopic, topics, posts }) {
     <Layout>
       <Head>
         <title>{title}</title>
+        <meta name="description" content={`Kumpulan tulisan mengenai ${selectedTopic}.`} />
       </Head>
       <header className="mt-24 text-gray-800">
         <small className="text-gray-600">Klik pada salah satu topik tulisan untuk melihat semua tulisan dengan topik itu!</small>

@@ -9,6 +9,7 @@ export default function Projects() {
     <Layout>
       <Head>
         <title>{title}</title>
+        <meta name="description" content="Karya-karya open source" />
       </Head>
       <header className="mt-24 text-gray-800">
         <h1 className="text-5xl font-bold">Projek</h1>

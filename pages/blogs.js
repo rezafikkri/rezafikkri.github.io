@@ -11,6 +11,7 @@ export default function Blogs({ topics, posts }) {
     <Layout>
       <Head>
         <title>{title}</title>
+        <meta name="description" content="Kumpulan tulisan mengenai programming dan teknologi secara umum." />
       </Head>
       <header className="mt-24 text-gray-800">
         <h1 className="text-5xl font-bold">Blog</h1>

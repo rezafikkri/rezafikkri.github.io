@@ -16,12 +16,13 @@ export default function Home({ topics, latestPosts }) {
   return (
     <Layout>
       <Head>
-        <title>{title}</title> 
+        <title>{title}</title>
+        <meta name="description" content="Website yang membahas mengenai programming, khususnya di bidang pengembangan web, menggunakan bahasa PHP dan JavaScript, dan hal-hal umum seputar teknologi." />
       </Head>
       <header className="mt-24 text-gray-800"> 
         <h1 className="text-5xl font-bold">Halo, Saya Reza!</h1>
-        <p className="mt-7 text-xl">Terimakasih sudah berkunjung.</p>
-        <p className="mt-7 text-xl">Saya suka membuat aplikasi <Link href="/projects">open-source</Link> dan <Link href="/blogs">menulis</Link> mengenai , khususnya di bidang pengembangan web, menggunakan bahasa pemrograman php dan javascript dan hal-hal umum seputar teknologi.</p>
+        <p className="mt-7 text-xl">Ini adalah website pribadi saya.</p>
+        <p className="mt-7 text-xl">Dalam website ini saya <Link href="/blogs">menulis</Link> mengenai programming, khususnya di bidang pengembangan web, menggunakan bahasa PHP dan JavaScript dan hal-hal umum seputar teknologi. Selain itu saya juga suka membuat aplikasi <Link href="/projects">open-source</Link>.</p>
       </header>
       <section className="text-gray-800 mt-20">
         <h2 className="text-3xl font-bold">Tulisan Terbaru</h2>
