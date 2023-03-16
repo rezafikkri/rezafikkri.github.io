@@ -11,6 +11,9 @@ export default function About() {
       <Head>
         <title>{title}</title>
         <meta name="description" content="Seorang web developer, suka menulis dan juga membuat aplikasi open source." />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content="Seorang web developer, suka menulis dan juga membuat aplikasi open source." />
+        <meta property="og:image" content="/rezas.jpg" />
       </Head>
       <header className="mt-24 text-gray-800">
         <h1 className="text-5xl font-bold">Tentang Saya</h1>

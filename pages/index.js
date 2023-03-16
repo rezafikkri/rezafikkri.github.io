@@ -17,7 +17,10 @@ export default function Home({ topics, latestPosts }) {
     <Layout>
       <Head>
         <title>{title}</title>
-        <meta name="description" content="Website yang membahas mengenai programming, khususnya di bidang pengembangan web, menggunakan bahasa PHP dan JavaScript, dan hal-hal umum seputar teknologi." />
+        <meta name="description" content="Website yang membahas mengenai programming, khususnya di bidang pengembangan web dan hal-hal umum seputar teknologi." />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content="Website yang membahas mengenai programming, khususnya di bidang pengembangan web dan hal-hal umum seputar teknologi." />
+        <meta property="og:image" content="/rezas.jpg" />
       </Head>
       <header className="mt-24 text-gray-800"> 
         <h1 className="text-5xl font-bold">Halo, Saya Reza!</h1>

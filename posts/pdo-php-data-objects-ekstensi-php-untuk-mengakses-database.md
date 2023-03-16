@@ -3,6 +3,7 @@ title: "PDO (PHP Data Objects): Ekstensi PHP untuk mengakses database"
 date: "2023-03-12T03:37:25.934Z"
 topics: ["PHP","Database"]
 slug: "pdo-php-data-objects-ekstensi-php-untuk-mengakses-database"
+ogImage: "/posts/phppdo.png"
 ---
 
 Bismillah, hari ini kita akan mempelajari PDO (PHP Data Objects).

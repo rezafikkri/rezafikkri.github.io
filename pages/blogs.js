@@ -12,6 +12,9 @@ export default function Blogs({ topics, posts }) {
       <Head>
         <title>{title}</title>
         <meta name="description" content="Kumpulan tulisan mengenai programming dan teknologi secara umum." />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content="Kumpulan tulisan mengenai programming dan teknologi secara umum." />
+        <meta property="og:image" content="/Reza logo.svg" />
       </Head>
       <header className="mt-24 text-gray-800">
         <h1 className="text-5xl font-bold">Blog</h1>

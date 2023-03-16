@@ -15,6 +15,9 @@ export default function Post({ post }) {
       <Head>
         <title>{title}</title>
         <meta name="description" content={post.excerpt} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={post.excerpt} />
+        <meta property="og:image" content={post.ogImage} />
       </Head>
       <article className="mt-24">
         <time className="text-gray-600 inline-block">{dayjs(post.date).format('DD MMMM YYYY')}</time>
