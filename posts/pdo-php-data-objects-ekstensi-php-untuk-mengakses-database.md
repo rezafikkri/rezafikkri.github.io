@@ -23,7 +23,7 @@ Sebelum menggunakan PDO, pastikan bahwa ekstensi PDO sudah aktif, caranya buat s
 <?= phpinfo(); ?>
 ```
 dan buka lewat browser. Setelah itu kamu bisa gunakan fitur pencarian yang ada di browser dengan menekan ctrl+f, cari dengan kata kunci *pdo*, pastikan kamu menemukan seperti pada gambar dibawah:
-![cek ekstensi PDO!](/posts/PHP-PDO-extension.png)
+![cek ekstensi PDO](/posts/PHP-PDO-extension.png)<!--rehype:width=974&height=585&loading=lazy-->
 Pada gambar diatas, dibagian table PDO, pada kolom *enabled* tertera `mysql, pgsql` yang berarti bahwa PDO mendukung untuk koneksi ke database MariaDB dan PostgreSQL. Jika belum menemukan, kemungkinan ekstensi PDO nya belum aktif, kamu bisa googling untuk mencari cara mengaktifkannya.
 
 Jika kamu menggunakan paket server XAMPP, kamu hanya perlu mencari baris code `;extension=php_pdo.dll` dan `;extension=php_pdo_mysql.dll` didalam file php.ini, lalu hapus `;` pada awal dari kedua baris code tersebut, jangan lupa untuk restart server php dan databasenya. Letak dari file php.ini di XAMPP biasanya ada di `/xampp/php/php.ini`. Sedangkan untuk kamu yang menggunakan paket server Laragon, caranya sangat mudah, buka Laragon > klik *Menu* > pilih *PHP* > pilih *Extentions* > dan klik pada ekstensi yang ingin diaktifkan.
