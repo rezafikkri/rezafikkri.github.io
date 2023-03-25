@@ -3,12 +3,12 @@ title: "PDO (PHP Data Objects): Ekstensi PHP untuk mengakses database"
 date: "2023-03-12T03:37:25.934Z"
 topics: ["PHP","Database"]
 slug: "pdo-php-data-objects-ekstensi-php-untuk-mengakses-database"
-ogImage: "/posts/phppdo.png"
+ogImage: "/posts/php-pdo/php-pdo.png"
 ---
 
 Bismillah, hari ini kita akan mempelajari PDO (PHP Data Objects).
 
-Tetapi, seperti biasanya sebelum lanjut, yang perlu dipersiapkan adalah, kamu harus memahami beberapa perintah dasar sql, seperti Insert, Update, dll, pada database MariaDB. Jika belum kamu bisa belajar di  [belajarphp.net](https://belajarphp.net/belajar-tutorial-php-mysql/). Mengapa database MariaDB? karena pada tutorial ini kita akan menggunakan database MariaDB. Serta sangat di sarankan juga kamu untuk belajar dasar-dasar OOP (Object Oriented Programming) dengan bahasa pemrograman PHP. Teman-teman bisa mempelajarinya di channel Web Programming Unpas pada playlist  [OOP DASAR pada PHP](https://youtube.com/playlist?list=PLFIM0718LjIWvxxll-6wLXrC_16h_Bl_p).
+Tetapi, seperti biasanya sebelum lanjut, yang perlu dipersiapkan adalah, kamu harus memahami beberapa perintah dasar sql, seperti Insert, Update, dll, pada database MariaDB. Jika belum kamu bisa belajar di channel Indonesia Belajar pada playlist [Tutorial Belajar Database MySQL | MaraDB](https://youtube.com/playlist?list=PL2O3HdJI4voGs6CiEUPXwt1fhLLqu30E_). Mengapa database MariaDB? karena pada tutorial ini kita akan menggunakan database MariaDB. Serta sangat di sarankan juga kamu untuk belajar dasar-dasar OOP (Object Oriented Programming) dengan bahasa pemrograman PHP. Teman-teman bisa mempelajarinya di channel Web Programming Unpas pada playlist  [OOP DASAR pada PHP](https://youtube.com/playlist?list=PLFIM0718LjIWvxxll-6wLXrC_16h_Bl_p).
 
 ## Apa Itu PDO?
 
@@ -16,14 +16,12 @@ Tetapi, seperti biasanya sebelum lanjut, yang perlu dipersiapkan adalah, kamu ha
 
 > Catatan : Kamu tidak bisa menjalankan fungsi database apapun dengan hanya menggunakan ekstensi PDO, kamu harus menggunakan driver PDO database khusus untuk mengakses database server. Misalnya untuk database MariaDB kamu butuh MySQL PDO Driver, supaya bisa mengakses database MariaDB.
 
-Sebagai pengetahuan database MariaDB merupakan salah satu RDBMS (Relational Database Management System) yang populer dan open source. MariaDB di kembangkan oleh pengembang asli dari MySQL dan dijamin tetap open source. MariaDB awalnya didesign sebagai pengganti yang disempurnakan untuk MySQL.
-
 Sebelum menggunakan PDO, pastikan bahwa ekstensi PDO sudah aktif, caranya buat satu file php (namanya bebas), lalu masukkan code:
 ```php
 <?= phpinfo(); ?>
 ```
 dan buka lewat browser. Setelah itu kamu bisa gunakan fitur pencarian yang ada di browser dengan menekan ctrl+f, cari dengan kata kunci *pdo*, pastikan kamu menemukan seperti pada gambar dibawah:
-![cek ekstensi PDO](/posts/PHP-PDO-extension.png)<!--rehype:width=974&height=585&loading=lazy-->
+![cek ekstensi PDO](/posts/php-pdo/PHP-PDO-extension.png)<!--rehype:width=974&height=585&loading=lazy-->
 Pada gambar diatas, dibagian table PDO, pada kolom *enabled* tertera `mysql, pgsql` yang berarti bahwa PDO mendukung untuk koneksi ke database MariaDB dan PostgreSQL. Jika belum menemukan, kemungkinan ekstensi PDO nya belum aktif, kamu bisa googling untuk mencari cara mengaktifkannya.
 
 Jika kamu menggunakan paket server XAMPP, kamu hanya perlu mencari baris code `;extension=php_pdo.dll` dan `;extension=php_pdo_mysql.dll` didalam file php.ini, lalu hapus `;` pada awal dari kedua baris code tersebut, jangan lupa untuk restart server php dan databasenya. Letak dari file php.ini di XAMPP biasanya ada di `/xampp/php/php.ini`. Sedangkan untuk kamu yang menggunakan paket server Laragon, caranya sangat mudah, buka Laragon > klik *Menu* > pilih *PHP* > pilih *Extentions* > dan klik pada ekstensi yang ingin diaktifkan.
@@ -207,4 +205,7 @@ Pada bagian terakhir ini kita akan sedikit membahas mengenai penanganan error ko
 ```
 Jika terjadi error koneksi apa saja, maka sebuah object PDOException akan di buat, karena itu pada bagian `catch()` kita memberitahu untuk menangkap object PDOException tersebut, sehingga errornya bisa kita tangani didalam block catch. Kita tampilkan errornya dengan sedikit di ubah formatnya didalam blok catch. Formatnya bebas kamu tentukan sesuka hati. Untuk lebih jelas mengenai penggunaan blok try catch untuk exeception handling, seperti yang kita lakukan diatas, kamu bisa googling saja, atau salah satunya kamu bisa memperlajarinya di [Jago Ngoding: Penanganan Exception](https://jagongoding.com/web/php/menengah/penanganan-exception/).
 
-Terima kasih buat yang sudah membaca, semoga bermanfaat. Jika ada yang ingin ditanyakan silahkan kirim email ke fikkri.reza@gmail.com. Jangan lupa follow Twitter @RezaFikkri untuk mendapatkan tulisan terbaru.
+Terima kasih buat yang sudah membaca, semoga bermanfaat. Jika ada yang ingin ditanyakan atau ada saran silahkan kirim email ke fikkri.reza@gmail.com. Jangan lupa follow twitter @RezaFikkri untuk mendapatkan tulisan terbaru.
+
+### Referensi:
+[PHP: PDO - Manual](https://www.php.net/manual/en/book.pdo.php)
