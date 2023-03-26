@@ -14,7 +14,7 @@ Tetapi, seperti biasanya sebelum lanjut, yang perlu dipersiapkan adalah, kamu ha
 
 <!-- excerpt -->PDO atau PHP Data Objects merupakan PHP ekstensi yang mendefiniskan ekstensi yang ringan, antarmuka yang konsisten untuk mengakses database di PHP.<!-- excerpt -->Intinya PDO adalah PHP ekstensi yang digunakan untuk mengakses database di PHP.
 
-> Catatan : Kamu tidak bisa menjalankan fungsi database apapun dengan hanya menggunakan ekstensi PDO, kamu harus menggunakan driver PDO database khusus untuk mengakses database server. Misalnya untuk database MariaDB kamu butuh MySQL PDO Driver, supaya bisa mengakses database MariaDB.
+> Kamu tidak bisa menjalankan fungsi database apapun dengan hanya menggunakan ekstensi PDO, kamu harus menggunakan driver PDO database khusus untuk mengakses database server. Misalnya untuk database MariaDB kamu butuh MySQL PDO Driver, supaya bisa mengakses database MariaDB.
 
 Sebelum menggunakan PDO, pastikan bahwa ekstensi PDO sudah aktif, caranya buat satu file php (namanya bebas), lalu masukkan code:
 ```php

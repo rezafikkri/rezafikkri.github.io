@@ -22,9 +22,9 @@ Descendant Combinator adalah combinator yang menggunakan satu spasi ( ) sebagai 
   color: red;  
 }
 ```
-Arti dari script css diatas adalah, "*seleksi semua element `<p>` yang merupakan descendant (keturunan) dari element dengan class 'reza', lalu ubah warna textnya menjadi merah*".
+Arti dari script css diatas adalah, *seleksi semua element `<p>` yang merupakan descendant (keturunan) dari element dengan class "reza", lalu ubah warna textnya menjadi merah*.
 
-> Catatan: Suatu element bisa dikatakan descendant (keturunan) dari element lain adalah ketika element tersebut berada di dalam element lain. Misalnya kita punya element `<div>` dan element `<p>`, supaya element `<p>` bisa dikatakan descendant (keturunan) dari element `<div>`, maka tempatkan element `<p>` di dalam element `<div>`. Tidak masalah jika element `<p>` berada di dalam element lain, element `<article>` misalnya, intinya adalah selama element `<p>` tersebut barada di dalam element `<div>`, maka element `<p>` bisa dikatakan descendant (keturunan) dari element `<div>`. Keadaan dimana suatu element berada di dalam element lain biasa disebut dengan *nested element* atau element bersarang.
+> Suatu element bisa dikatakan descendant (keturunan) dari element lain adalah ketika element tersebut berada di dalam element lain. Misalnya kita punya element `<div>` dan element `<p>`, supaya element `<p>` bisa dikatakan descendant (keturunan) dari element `<div>`, maka tempatkan element `<p>` di dalam element `<div>`. Tidak masalah jika element `<p>` berada di dalam element lain, element `<article>` misalnya, intinya adalah selama element `<p>` tersebut barada di dalam element `<div>`, maka element `<p>` bisa dikatakan descendant (keturunan) dari element `<div>`. Keadaan dimana suatu element berada di dalam element lain biasa disebut dengan *nested element* atau element bersarang.
 
 Berikut contoh implementasinya:
 
@@ -65,9 +65,9 @@ Child Combinator adalah combinator yang menggunakan karakter lebih besar dari (>
   color: red;  
 }
 ```
-Arti dari script diatas adalah, "*seleksi semua element `<p>` yang termasuk child (anak) dari element dengan class 'reza' lalu ubah warna textnya menjadi merah*".
+Arti dari script diatas adalah, *seleksi semua element `<p>` yang termasuk child (anak) dari element dengan class "reza" lalu ubah warna textnya menjadi merah*.
 
-> Catatan: Suatu element bisa dikatakan child (anak) dari element lain adalah ketika element tersebut berada di dalam elemen lain dan element tersebut tidak berada di dalam element lain lagi. Misalnya kita punya element `<div>` dan element `<p>`, supaya element `<p>` bisa dikatakan child (anak) dari element `<div>`, maka element `<p>` harus berada di dalam element `<div>` dan tidak boleh berada di dalam element lain lagi, element `<article>` misalnya. Dengan kata lain, walaupun kita menempatkan element `<article>` yang di dalamnya ada element `<p>` di dalam element `<div>`, element `<p>` bukanlah child (anak) dari element `<div>`, melainkan cucu dari element `<div>`, sedangkan element `<article>`-lah yang merupakan child (anak) dari element `<div>`.
+> Suatu element bisa dikatakan child (anak) dari element lain adalah ketika element tersebut berada di dalam elemen lain dan element tersebut tidak berada di dalam element lain lagi. Misalnya kita punya element `<div>` dan element `<p>`, supaya element `<p>` bisa dikatakan child (anak) dari element `<div>`, maka element `<p>` harus berada di dalam element `<div>` dan tidak boleh berada di dalam element lain lagi, element `<article>` misalnya. Dengan kata lain, walaupun kita menempatkan element `<article>` yang di dalamnya ada element `<p>` di dalam element `<div>`, element `<p>` bukanlah child (anak) dari element `<div>`, melainkan cucu dari element `<div>`, sedangkan element `<article>`-lah yang merupakan child (anak) dari element `<div>`.
 
 Berikut contoh implementasinya:
 
@@ -106,9 +106,9 @@ Adjacent Sibling Combinator adalah combinator yang menggunakan karakter plus (+)
   color: red;  
 }
 ```
-Arti dari script diatas adalah, “*seleksi element `<p>` yang merupakan adjacent sibling (saudara kandung terdekat) dari element dengan class 'reza', lalu ubah warna textnya menjadi merah*”.
+Arti dari script diatas adalah, *seleksi element `<p>` yang merupakan adjacent sibling (saudara kandung terdekat) dari element dengan class "reza", lalu ubah warna textnya menjadi merah*.
 
-> Catatan: Suatu element dikatakan adjacent sibling (saudara kandung terdekat) dari element lain adalah ketika element tersebut berada di posisi setelah elemen lain dan element yang menjadi adjacent sibling (saudara kandung terdekat) hanya element yang pertama. Misalnya kita punya beberapa element, yaitu: element `<p>` dengan id '1', element `<article>`, element `<p>` dengan id '2' dan element `<p>` dengan id '3'. Supaya element `<p>` dengan id '1' bisa dikatakan adjacent sibling (saudara kandung terdekat) dari element `<article>`, maka kita harus menempatkan element `<p>` dengan id '1'  pada urutan dari atas ke bawah, tepat setelah element `<article>`, sedangkan element `<p>` yang lain bebas ditempatkan di mana saja, di atas element `<article>` atau di bawah element `<p>` dengan id '1'. Jadi misalnya kita buat urutan element-element tersebut dari atas ke bawah menjadi, pertama element `<p>` dengan id '2', element `<article>`, element `<p>` dengan id '1' dan element `<p>` dengan id '3'. Dengan urutan tersebut element `<p>` dengan id '1' merupakan adjacent sibling (saudara kandung terdekat) dari element `<article>`, sedangkan element `<p>` dengan id '2' dan '3' bukanlah adjacent sibling (saudara kandung terdekat) dari element `<article>`.
+> Suatu element dikatakan adjacent sibling (saudara kandung terdekat) dari element lain adalah ketika element tersebut berada di posisi setelah elemen lain dan element yang menjadi adjacent sibling (saudara kandung terdekat) hanya element yang pertama. Misalnya kita punya beberapa element, yaitu: element `<p>` dengan id 1, element `<article>`, element `<p>` dengan id "2" dan element `<p>` dengan id 3. Supaya element `<p>` dengan id 1 bisa dikatakan adjacent sibling (saudara kandung terdekat) dari element `<article>`, maka kita harus menempatkan element `<p>` dengan id 1  pada urutan dari atas ke bawah, tepat setelah element `<article>`, sedangkan element `<p>` yang lain bebas ditempatkan di mana saja, di atas element `<article>` atau di bawah element `<p>` dengan id 1. Jadi misalnya kita buat urutan element-element tersebut dari atas ke bawah menjadi, pertama element `<p>` dengan id 2, element `<article>`, element `<p>` dengan id 1 dan element `<p>` dengan id 3. Dengan urutan tersebut element `<p>` dengan id 1 merupakan adjacent sibling (saudara kandung terdekat) dari element `<article>`, sedangkan element `<p>` dengan id 2 dan 3 bukanlah adjacent sibling (saudara kandung terdekat) dari element `<article>`.
 
 Berikut contoh implementasinya:
 
@@ -137,7 +137,7 @@ HASIL
 
 Atau kamu juga bisa melihat  [hasilnya secara online di CodePen](https://codepen.io/rezafikkri/pen/YzOJgNM).
 
-Jika kamu lihat hasil diatas, hanya element `<p>` dengan text *Semoga bermanfaat* yang textnya berubah menjadi merah. Sedangkan element `<p>` yang berada di dalam element `<div>` dengan class 'reza' textnya tidak berubah menjadi merah, ini karena element `<p>` tersebut bukanlah adjacent sibling (saudara kandung terdekat) dari element `<div>` dengan class 'reza', melainkan element `<p>` tersebut adalah child (anak) dari element `<div>` dengan class 'reza'. Kemudian, element `<p>` dengan text *Hello Dunia* juga tidak berubah menjadi merah, ini karena element yang dianggap sebagai adjacent sibling (saudara kandung terdekat) adalah element pertama berada di posisi setelah element `<div>` dengan class 'reza'.  Lalu, element `<p>` dengan text *Hay salam kenal* juga tidak berubah menjadi merah, memang posisi element `<p>` dengan text *Hay salam kenal* berada setelah element `<div>` dengan class 'reza', tetapi urutannya tidak berada pada urutan pertama.
+Jika kamu lihat hasil diatas, hanya element `<p>` dengan text *Semoga bermanfaat* yang textnya berubah menjadi merah. Sedangkan element `<p>` yang berada di dalam element `<div>` dengan class "reza" textnya tidak berubah menjadi merah, ini karena element `<p>` tersebut bukanlah adjacent sibling (saudara kandung terdekat) dari element `<div>` dengan class "reza", melainkan element `<p>` tersebut adalah child (anak) dari element `<div>` dengan class "reza". Kemudian, element `<p>` dengan text *Hello Dunia* juga tidak berubah menjadi merah, ini karena element yang dianggap sebagai adjacent sibling (saudara kandung terdekat) adalah element pertama berada di posisi setelah element `<div>` dengan class "reza".  Lalu, element `<p>` dengan text *Hay salam kenal* juga tidak berubah menjadi merah, memang posisi element `<p>` dengan text *Hay salam kenal* berada setelah element `<div>` dengan class "reza", tetapi urutannya tidak berada pada urutan pertama.
 
 ## General Sibling Combinator (Kombinator Saudara Kandung Umum)
 
@@ -147,9 +147,9 @@ General Sibling Combinator adalah combinator yang menggunakan karakter tilde ( ~
   color: red;  
 }
 ```
-Arti dari script diatas adalah, "*seleksi semua element `<p>` yang merupakan general sibling (saudara kandung umum) dari element dengan class ‘reza’, lalu ubah warna textnya menjadi merah*".
+Arti dari script diatas adalah, *seleksi semua element `<p>` yang merupakan general sibling (saudara kandung umum) dari element dengan class "reza", lalu ubah warna textnya menjadi merah*.
 
-> Catatan:  Cara kerja dari general sibling combinator (kombinator saudara kandung umum) mirip dengan cara kerja adjacent sibling combinator (kombinator saudara kandung terdekat), hanya saja yang membedakan adalah semua element yang berada di posisi setelah element lain adalah general sibling (saudara kandung umum) dari element lain tersebut. Misalnya (dengan contoh yang sama), kita punya beberapa element, dengan urutan: element `<p>` dengan id '1', element `<article>`, element `<p>` dengan id '2' dan element `<p>` dengan id '3'. Dengan urutan tersebut yang termasuk general sibling (saudara kandung umum) dari element `<article>` adalah element `<p>` dengan id '2' dan element `<p>` dengan id '3'.
+> Cara kerja dari general sibling combinator (kombinator saudara kandung umum) mirip dengan cara kerja adjacent sibling combinator (kombinator saudara kandung terdekat), hanya saja yang membedakan adalah semua element yang berada di posisi setelah element lain adalah general sibling (saudara kandung umum) dari element lain tersebut. Misalnya (dengan contoh yang sama), kita punya beberapa element, dengan urutan: element `<p>` dengan id 1, element `<article>`, element `<p>` dengan id 2 dan element `<p>` dengan id 3. Dengan urutan tersebut yang termasuk general sibling (saudara kandung umum) dari element `<article>` adalah element `<p>` dengan id 2 dan element `<p>` dengan id 3.
 
 Berikut contoh implementasinya:
 
@@ -178,7 +178,7 @@ HASIL
 
 Atau kamu juga bisa melihat  [hasilnya secara online di CodePen](https://codepen.io/rezafikkri/pen/eYLbJMQ).
 
-Nah jika teman-teman lihat hasil diatas, kedua element `<p>` dengan text *Semoga bermanfaat*, dan *Hay salam kenal* textnya berubah menjadi merah, karena keduanya berada di posisi setelah element `<div>` dengan class 'reza', sehingga dianggap sebagai general sibling (saudara kandung umum) dari element `<div>` dengan class 'reza'. Sedangkan element `<p>` dengan text *Hello Dunia* tidak berubah menjadi merah, ini dikarenakan posisi element `<p>` dengan text *Hello Dunia* tidak berada setelah element `<div>` dengan class 'reza'. Dan element `<p>` yang berada di dalam element `<div>` dengan class 'reza', tentu textnya tidak akan berubah menjadi merah, karena mereka adalah child (anak) dari element `<div>` dengan class 'reza'.
+Nah jika teman-teman lihat hasil diatas, kedua element `<p>` dengan text *Semoga bermanfaat*, dan *Hay salam kenal* textnya berubah menjadi merah, karena keduanya berada di posisi setelah element `<div>` dengan class "reza", sehingga dianggap sebagai general sibling (saudara kandung umum) dari element `<div>` dengan class "reza". Sedangkan element `<p>` dengan text *Hello Dunia* tidak berubah menjadi merah, ini dikarenakan posisi element `<p>` dengan text *Hello Dunia* tidak berada setelah element `<div>` dengan class "reza". Dan element `<p>` yang berada di dalam element `<div>` dengan class "reza", tentu textnya tidak akan berubah menjadi merah, karena mereka adalah child (anak) dari element `<div>` dengan class "reza".
 
 Oke, terima kasih buat kamu yang sudah membaca, semoga bermanfaat. Jika ada yang ingin ditanyakan atau ada saran silahkan kirim email ke fikkri.reza@gmail.com. Jangan lupa follow twitter @RezaFikkri untuk mendapatkan tulisan terbaru.
 

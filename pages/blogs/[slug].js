@@ -24,7 +24,7 @@ export default function Post({ post }) {
         <h1 className="text-5xl font-bold mt-2 text-gray-800">{post.title}</h1>
         <SmallTopics topics={post.topics} mt="mt-6" />
         <div
-          className="mt-9 prose prose-ajwa prose-xl max-w-none prose-h2:text-3xl prose-h3:text-2xl prose-a:font-normal prose-code:bg-gray-200 prose-code:py-0.5 prose-code:rounded prose-code:font-normal"
+          className="mt-9 prose prose-ajwa prose-xl max-w-none prose-h2:text-3xl prose-h3:text-2xl prose-a:font-normal prose-blockquote:not-italic"
           id="content"
           dangerouslySetInnerHTML={{ __html: post.contentHTML }}
         />

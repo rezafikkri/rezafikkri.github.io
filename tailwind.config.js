@@ -11,9 +11,6 @@ module.exports = {
       colors: {
         "ajwa-green": "#72C71D",
       },
-      fontFamily: {
-        'sans': ['var(--font-roboto)', ...defaultTheme.fontFamily.sans],
-      },
       typography: ({ theme }) => ({
         DEFAULT: {
           css: {
@@ -26,6 +23,17 @@ module.exports = {
             'p code': {
               paddingLeft: '0.25rem',
               paddingRight: '0.25rem',
+              paddingTop: '0.125rem',
+              paddingBottom: '0.125rem',
+              backgroundColor: theme('colors.gray[200]'),
+              borderRadius: '0.25rem',
+              fontWeight: '400',
+            },
+            'blockquote p:first-of-type::before': {
+              content: '',
+            },
+            'blockquote p:first-of-type::after': {
+              content: '',
             },
           },
         },
