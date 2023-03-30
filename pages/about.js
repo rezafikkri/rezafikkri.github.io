@@ -1,7 +1,6 @@
 import Head from "next/head";
 import Layout, { name } from "@/components/layout";
 import Link from "next/link";
-import Image from "next/image";
 
 export default function About() { 
   const title = `Tentang Saya - ${name}`;
@@ -20,7 +19,7 @@ export default function About() {
       </header>
       <section className="mt-12">
         <div className="rounded-full inline-block border-4 border-gray-600">
-          <Image src="/rezas.jpg" height={150} width={150} alt="Photo Profile" className="rounded-full" />
+          <img src="/rezas.jpg" height={150} width={150} alt="Photo Profile" className="rounded-full" loading="lazy" decoding="async" />
         </div>
         <div className="flex gap-2 mt-5">
           <Link href="https://github.com/rezafikkri" rel="noopener noreferrer" target="_blank" className="border-2 border-gray-500 hover:border-ajwa-green rounded-lg px-2.5 py-1.5">

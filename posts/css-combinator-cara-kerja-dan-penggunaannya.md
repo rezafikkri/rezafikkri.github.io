@@ -51,7 +51,7 @@ CSS
 }
 ```
 HASIL
-![hasil implementasi Descendant Combinator](/posts/css-combinators/css%20combinator%201.png)<!--rehype:width=1042&height=626&loading=lazy&mt-6-->
+![hasil implementasi Descendant Combinator](/posts/css-combinators/css%20combinator%201.png)<!--rehype:width=1042&height=626&loading=lazy&mt-6&decoding=async-->
 
 Atau kamu juga bisa melihat [hasilnya secara online di CodePen](https://codepen.io/rezafikkri/pen/bGxxdrN).
 
@@ -92,7 +92,7 @@ CSS
 }
 ```
 HASIL
-![hasil imlementasi Child Combinator](/posts/css-combinators/css%20combinator%202.png)<!--rehype:width=992&height=626&loading=lazy&class=mt-6-->
+![hasil imlementasi Child Combinator](/posts/css-combinators/css%20combinator%202.png)<!--rehype:width=992&height=626&loading=lazy&class=mt-6&decoding=async-->
 
 Atau kamu juga bisa melihat  [hasilnya secara online di CodePen](https://codepen.io/rezafikkri/pen/BaOOKQg).
 
@@ -133,7 +133,7 @@ CSS
 }
 ```
 HASIL
-![hasil implementasi Adjacent Sibling Combinator](/posts/css-combinators/css%20combinator%203.png)<!--rehype:width=997&height=626&loading=lazy&class=mt-6-->
+![hasil implementasi Adjacent Sibling Combinator](/posts/css-combinators/css%20combinator%203.png)<!--rehype:width=997&height=626&loading=lazy&class=mt-6&decoding=async-->
 
 Atau kamu juga bisa melihat  [hasilnya secara online di CodePen](https://codepen.io/rezafikkri/pen/YzOJgNM).
 
@@ -174,7 +174,7 @@ CSS
 }
 ```
 HASIL
-![hasil implementasi General Sibling Combinator](/posts/css-combinators/css%20combinator%204.png)<!--rehype:width=972&height=626&loading=lazy&class=mt-6-->
+![hasil implementasi General Sibling Combinator](/posts/css-combinators/css%20combinator%204.png)<!--rehype:width=972&height=626&loading=lazy&class=mt-6&decoding=async-->
 
 Atau kamu juga bisa melihat  [hasilnya secara online di CodePen](https://codepen.io/rezafikkri/pen/eYLbJMQ).
 
