@@ -1,16 +1,14 @@
-import { useEffect } from "react";
 import Head from "next/head";
 import Link from "next/link";
-import Layout, { name } from "@/components/layout";
 import PostList from "@/components/post-list";
 import { getPosts, getTopics } from "@/lib/posts";
 import activeTopic from "@/lib/activeTopic";
 
-export default function Topic({ selectedTopic, topics, posts }) {
+export default function Topic({ selectedTopic, topics, posts, name }) {
   const title = `${selectedTopic} - ${name}`;
 
   return (
-    <Layout>
+    <>
       <Head>
         <title>{title}</title>
         <meta name="description" content={`Kumpulan tulisan mengenai ${selectedTopic}.`} />
@@ -37,7 +35,7 @@ export default function Topic({ selectedTopic, topics, posts }) {
         <h2 className="text-5xl font-bold mt-2 mb-10">{selectedTopic}</h2>
         <PostList posts={posts} />
       </section>
-    </Layout>
+    </>
   );
 }
 

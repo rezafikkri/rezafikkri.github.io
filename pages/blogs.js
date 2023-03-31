@@ -1,14 +1,13 @@
 import Head from "next/head";
-import Layout, { name } from "@/components/layout";
 import PostList from "@/components/post-list";
 import LargeTopics from "@/components/large-topics";
 import { getTopics, getPosts } from "@/lib/posts";
 
-export default function Blogs({ topics, posts }) {
+export default function Blogs({ topics, posts, name }) {
   const title = `Blog - ${name}`;
 
   return (
-    <Layout>
+    <>
       <Head>
         <title>{title}</title>
         <meta name="description" content="Kumpulan tulisan mengenai programming dan teknologi secara umum." />
@@ -28,7 +27,7 @@ export default function Blogs({ topics, posts }) {
         <h2 className="text-3xl font-bold mb-7">Tulisan</h2>
         <PostList posts={posts} />
       </section>
-    </Layout>
+    </>
   );
 }
 

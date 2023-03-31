@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Layout, { name } from "@/components/layout";
 import SmallTopics from "@/components/small-topics";
 import { getPost, getSlugs } from "@/lib/posts";
 import dayjs from "dayjs";
@@ -7,11 +6,11 @@ import 'dayjs/locale/id';
 
 dayjs.locale('id');
 
-export default function Post({ post }) {
+export default function Post({ post, name }) {
   const title = `${post.title} - ${name}`;
 
   return (
-    <Layout>
+    <>
       <Head>
         <title>{title}</title>
         <meta name="description" content={post.excerpt} />
@@ -31,7 +30,7 @@ export default function Post({ post }) {
         <small className="mt-16 block text-gray-600">Klik salah satu topik tulisan untuk melihat semua tulisan pada topik tersebut!</small>
         <SmallTopics topics={post.topics} mt="mt-3" />
       </article>
-    </Layout>
+    </>
   );
 }
 

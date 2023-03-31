@@ -1,6 +1,5 @@
 import Head from "next/head";
 import Link from "next/link";
-import Layout, { name } from "@/components/layout";
 import LargeTopics from "@/components/large-topics";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
@@ -10,11 +9,11 @@ import { getTopics, getLatestPosts } from "@/lib/posts";
 dayjs.extend(relativeTime);
 dayjs.locale('id');
 
-export default function Home({ topics, latestPosts }) {
+export default function Home({ topics, latestPosts, name }) {
   const title = `${name} - Web Developer`;
 
   return (
-    <Layout>
+    <>
       <Head>
         <title>{title}</title>
         <meta name="description" content="Website yang membahas mengenai programming, khususnya di bidang pengembangan web dan hal-hal umum seputar teknologi." />
@@ -76,7 +75,7 @@ export default function Home({ topics, latestPosts }) {
         </div>
         <Link href="/projects" className="inline-block no-underline mt-5 hover:text-ajwa-green">Lihat Semua &raquo;</Link>
       </section>
-    </Layout>
+    </>
   )
 }
 

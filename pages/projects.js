@@ -1,12 +1,11 @@
 import Head from "next/head";
-import Layout, { name } from "@/components/layout";
 import Link from "next/link";
 
-export default function Projects() {
+export default function Projects({ name }) {
   const title = `Projek - ${name}`;
 
   return (
-    <Layout>
+    <>
       <Head>
         <title>{title}</title>
         <meta name="description" content="Karya-karya open source." />
@@ -45,6 +44,6 @@ export default function Projects() {
           </div>
         </div>
       </section>
-    </Layout>
+    </>
   );
 }
