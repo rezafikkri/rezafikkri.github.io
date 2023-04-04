@@ -39,7 +39,7 @@ export default function App({ Component, pageProps }) {
     <div className={`max-w-4xl mx-auto px-4 sm:px-8 ${roboto.className}`}>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="http://localhost:3000/favicon.ico" />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
       <main><Component {...pageProps} name={name} /></main>
