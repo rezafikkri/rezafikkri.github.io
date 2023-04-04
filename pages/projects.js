@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
 
-export default function Projects({ name }) {
+export default function Projects({ name, baseUrl }) {
   const title = `Projek - ${name}`;
 
   return (
@@ -11,7 +11,7 @@ export default function Projects({ name }) {
         <meta name="description" content="Karya-karya open source." />
         <meta property="og:title" content={title} />
         <meta property="og:description" content="Karya-karya open source." />
-        <meta property="og:image" content="/Reza logo.svg" />
+        <meta property="og:image" content={`${baseUrl}/Reza logo.svg`} />
       </Head>
       <header className="mt-24 text-gray-800">
         <h1 className="text-5xl font-bold">Projek</h1>

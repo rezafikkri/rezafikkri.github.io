@@ -14,6 +14,12 @@ export default function App({ Component, pageProps }) {
   const name = "Reza Sariful Fikri";
   const router = useRouter();
 
+  const isGithubActions = process.env.GITHUB_ACTIONS || false;
+  let baseUrl = '';
+  if (isGithubActions) {
+    baseUrl = 'https://rezafikkri.github.io';
+  }
+
   useEffect(() => {
     const handleStart = (url) => {
       console.log(`Loading: ${url}`)
@@ -42,7 +48,7 @@ export default function App({ Component, pageProps }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <main><Component {...pageProps} name={name} /></main>
+      <main><Component {...pageProps} name={name} baseUrl={baseUrl} /></main>
       <Footer />
     </div> 
   </>;

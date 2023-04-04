@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
 
-export default function About({ name }) { 
+export default function About({ name, baseUrl }) { 
   const title = `Tentang Saya - ${name}`;
 
   return (
@@ -11,7 +11,7 @@ export default function About({ name }) {
         <meta name="description" content="Seorang web developer, suka menulis dan juga membuat aplikasi open source." />
         <meta property="og:title" content={title} />
         <meta property="og:description" content="Seorang web developer, suka menulis dan juga membuat aplikasi open source." />
-        <meta property="og:image" content="/rezas.jpg" />
+        <meta property="og:image" content={`${baseUrl}/rezas.jpg`} />
       </Head>
       <header className="mt-24 text-gray-800">
         <h1 className="text-5xl font-bold">Tentang Saya</h1>

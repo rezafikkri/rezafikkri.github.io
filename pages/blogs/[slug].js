@@ -6,7 +6,7 @@ import 'dayjs/locale/id';
 
 dayjs.locale('id');
 
-export default function Post({ post, name }) {
+export default function Post({ post, name, baseUrl }) {
   const title = `${post.title} - ${name}`;
 
   return (
@@ -16,7 +16,7 @@ export default function Post({ post, name }) {
         <meta name="description" content={post.excerpt} />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={post.excerpt} />
-        <meta property="og:image" content={post.ogImage} />
+        <meta property="og:image" content={baseUrl + post.ogImage} />
       </Head>
       <article className="mt-24">
         <time className="text-gray-600 inline-block">{dayjs(post.date).format('DD MMMM YYYY')}</time>

@@ -4,7 +4,7 @@ import PostList from "@/components/post-list";
 import { getPosts, getTopics } from "@/lib/posts";
 import activeTopic from "@/lib/activeTopic";
 
-export default function Topic({ selectedTopic, topics, posts, name }) {
+export default function Topic({ selectedTopic, topics, posts, name, baseUrl }) {
   const title = `${selectedTopic} - ${name}`;
 
   return (
@@ -14,7 +14,7 @@ export default function Topic({ selectedTopic, topics, posts, name }) {
         <meta name="description" content={`Kumpulan tulisan mengenai ${selectedTopic}.`} />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={`Kumpulan tulisan mengenai ${selectedTopic}.`} />
-        <meta property="og:image" content="/Reza logo.svg" />
+        <meta property="og:image" content={`${baseUrl}/Reza logo.svg`} />
       </Head>
       <header className="mt-24 text-gray-800">
         <small className="text-gray-600">Klik pada salah satu topik tulisan untuk melihat semua tulisan dengan topik itu!</small>
