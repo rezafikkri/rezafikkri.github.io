@@ -3,15 +3,18 @@ import Link from "next/link";
 
 export default function Projects({ name, baseUrl }) {
   const title = `Projek - ${name}`;
+  const description = "Karya-karya open source.";
 
   return (
     <>
       <Head>
         <title>{title}</title>
-        <meta name="description" content="Karya-karya open source." />
+        <meta name="description" content={description} />
         <meta property="og:title" content={title} />
-        <meta property="og:description" content="Karya-karya open source." />
+        <meta property="og:description" content={description} />
         <meta property="og:image" content={`${baseUrl}/Reza logo.svg`} />
+        <meta property="og:url" content={`${baseUrl}/projects`} />
+        <meta property="og:type" content="website" />
       </Head>
       <header className="mt-24 text-gray-800">
         <h1 className="text-5xl font-bold">Projek</h1>

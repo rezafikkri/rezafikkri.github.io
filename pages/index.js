@@ -11,15 +11,18 @@ dayjs.locale('id');
 
 export default function Home({ topics, latestPosts, name, baseUrl }) {
   const title = `${name} - Web Developer`;
+  const description = "Website yang membahas mengenai programming, khususnya di bidang pengembangan web dan hal-hal umum seputar teknologi.";
 
   return (
     <>
       <Head>
         <title>{title}</title>
-        <meta name="description" content="Website yang membahas mengenai programming, khususnya di bidang pengembangan web dan hal-hal umum seputar teknologi." />
+        <meta name="description" content={description} />
         <meta property="og:title" content={title} />
-        <meta property="og:description" content="Website yang membahas mengenai programming, khususnya di bidang pengembangan web dan hal-hal umum seputar teknologi." />
+        <meta property="og:description" content={description} />
         <meta property="og:image" content={`${baseUrl}/rezas.jpg`} />
+        <meta property="og:url" content={baseUrl} />
+        <meta property="og:type" content="website" />
       </Head>
       <header className="mt-24 text-gray-800"> 
         <h1 className="text-5xl font-bold">Halo, Saya Reza!</h1>

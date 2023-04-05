@@ -5,15 +5,18 @@ import { getTopics, getPosts } from "@/lib/posts";
 
 export default function Blogs({ topics, posts, name, baseUrl }) {
   const title = `Blog - ${name}`;
+  const description = "Kumpulan tulisan mengenai programming dan teknologi secara umum.";
 
   return (
     <>
       <Head>
         <title>{title}</title>
-        <meta name="description" content="Kumpulan tulisan mengenai programming dan teknologi secara umum." />
+        <meta name="description" content={description} />
         <meta property="og:title" content={title} />
-        <meta property="og:description" content="Kumpulan tulisan mengenai programming dan teknologi secara umum." />
+        <meta property="og:description" content={description} />
         <meta property="og:image" content={`${baseUrl}/Reza logo.svg`} />
+        <meta property="og:url" content={`${baseUrl}/blogs`} />
+        <meta property="og:type" content="article" />
       </Head>
       <header className="mt-24 text-gray-800">
         <h1 className="text-5xl font-bold">Blog</h1>

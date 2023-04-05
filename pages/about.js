@@ -3,15 +3,18 @@ import Link from "next/link";
 
 export default function About({ name, baseUrl }) { 
   const title = `Tentang Saya - ${name}`;
+  const description = "Seorang web developer, suka menulis dan juga membuat aplikasi open source.";
 
   return (
     <>
       <Head>
         <title>{title}</title>
-        <meta name="description" content="Seorang web developer, suka menulis dan juga membuat aplikasi open source." />
+        <meta name="description" content={description} />
         <meta property="og:title" content={title} />
-        <meta property="og:description" content="Seorang web developer, suka menulis dan juga membuat aplikasi open source." />
+        <meta property="og:description" content={description} />
         <meta property="og:image" content={`${baseUrl}/rezas.jpg`} />
+        <meta property="og:url" content={`${baseUrl}/about`} />
+        <meta property="og:type" content="profile" />
       </Head>
       <header className="mt-24 text-gray-800">
         <h1 className="text-5xl font-bold">Tentang Saya</h1>

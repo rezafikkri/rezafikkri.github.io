@@ -6,7 +6,7 @@ import 'dayjs/locale/id';
 
 dayjs.locale('id');
 
-export default function Post({ post, name, baseUrl }) {
+export default function Post({ post, slug, name, baseUrl }) {
   const title = `${post.title} - ${name}`;
 
   return (
@@ -17,6 +17,8 @@ export default function Post({ post, name, baseUrl }) {
         <meta property="og:title" content={title} />
         <meta property="og:description" content={post.excerpt} />
         <meta property="og:image" content={baseUrl + post.ogImage} />
+        <meta property="og:url" content={`${baseUrl}/blogs/${slug}`} />
+        <meta property="og:type" content="article" />
       </Head>
       <article className="mt-24">
         <time className="text-gray-600 inline-block">{dayjs(post.date).format('DD MMMM YYYY')}</time>
@@ -39,6 +41,7 @@ export async function getStaticProps({ params }) {
   return {
     props: {
       post,
+      slug: params.slug,
     },
   };
 }

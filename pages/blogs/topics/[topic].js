@@ -6,15 +6,18 @@ import activeTopic from "@/lib/activeTopic";
 
 export default function Topic({ selectedTopic, topics, posts, name, baseUrl }) {
   const title = `${selectedTopic} - ${name}`;
+  const description = `Kumpulan tulisan mengenai ${selectedTopic}.`;
 
   return (
     <>
       <Head>
         <title>{title}</title>
-        <meta name="description" content={`Kumpulan tulisan mengenai ${selectedTopic}.`} />
+        <meta name="description" content={description} />
         <meta property="og:title" content={title} />
-        <meta property="og:description" content={`Kumpulan tulisan mengenai ${selectedTopic}.`} />
+        <meta property="og:description" content={description} />
         <meta property="og:image" content={`${baseUrl}/Reza logo.svg`} />
+        <meta property="og:url" content={`${baseUrl}/blogs/topics/${selectedTopic}`} />
+        <meta property="og:type" content="article" />
       </Head>
       <header className="mt-24 text-gray-800">
         <small className="text-gray-600">Klik pada salah satu topik tulisan untuk melihat semua tulisan dengan topik itu!</small>
