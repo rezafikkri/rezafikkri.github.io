@@ -34,7 +34,7 @@ export default function Home({ topics, latestPosts, name, baseUrl }) {
         <ul className="mt-6 flex flex-col divide-y divide-gray-200">
           {latestPosts.map((post, index) => (
             <li className="py-2 md:py-1.5" key={index}>
-              <Link href={`/blogs/${post.slug}`} className="flex flex-col md:flex-row md:justify-between no-underline hover:text-ajwa-green">
+              <Link href={`/blogs/${post.slug}`} className="flex flex-col md:flex-row md:justify-between no-underline hover:text-ajwa-blue">
                 <h3 className="text-xl">{post.title}</h3>
                 <time className="font-light md:basis-40 md:text-right">{dayjs(post.date).fromNow()}</time>
               </Link>
@@ -76,7 +76,7 @@ export default function Home({ topics, latestPosts, name, baseUrl }) {
             </div>
           </div>
         </div>
-        <Link href="/projects" className="inline-block no-underline mt-5 hover:text-ajwa-green">Lihat Semua &raquo;</Link>
+        <Link href="/projects" className="inline-block no-underline mt-5 hover:text-ajwa-blue">Lihat Semua &raquo;</Link>
       </section>
     </>
   )

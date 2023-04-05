@@ -2,7 +2,6 @@ import Head from "next/head";
 import Link from "next/link";
 import PostList from "@/components/post-list";
 import { getPosts, getTopics } from "@/lib/posts";
-import activeTopic from "@/lib/activeTopic";
 
 export default function Topic({ selectedTopic, topics, posts, name, baseUrl }) {
   const title = `${selectedTopic} - ${name}`;
@@ -26,7 +25,7 @@ export default function Topic({ selectedTopic, topics, posts, name, baseUrl }) {
             <Link
               key={index}
               href={`/blogs/topics/${topic}`}
-              className={`no-underline bg-white border-2 border-gray-500 hover:border-ajwa-green px-2 py-1 rounded-lg ${activeTopic(topic, selectedTopic)}`}
+              className={`no-underline bg-white border-2 ${selectedTopic == topic ? 'border-ajwa-blue' : 'border-gray-500'} hover:border-ajwa-blue px-2 py-1 rounded-lg`}
             >
               {topic}
             </Link>

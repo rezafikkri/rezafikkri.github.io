@@ -9,7 +9,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "ajwa-green": "#72C71D",
+        "ajwa-blue": "#0066FF",
       },
       typography: ({ theme }) => ({
         DEFAULT: {
@@ -42,7 +42,7 @@ module.exports = {
             '--tw-prose-body': theme('colors.gray[700]'),
             '--tw-prose-headings': theme('colors.gray[800]'),
             '--tw-prose-lead': theme('colors.gray[700]'),
-            '--tw-prose-links': theme('colors.ajwa-green'),
+            '--tw-prose-links': theme('colors.ajwa-blue'),
             '--tw-prose-bold': theme('colors.gray[800]'),
             '--tw-prose-counters': theme('colors.gray[600]'),
             '--tw-prose-bullets': theme('colors.gray[400]'),
