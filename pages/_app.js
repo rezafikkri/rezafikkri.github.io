@@ -45,6 +45,7 @@ export default function App({ Component, pageProps }) {
     <div className={`max-w-4xl mx-auto px-4 sm:px-8 ${roboto.className}`}>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="google-site-verification" content="fLcDg3KFF-m2xDnm4TGsRylXksSQTGGfLq6FqSe8cUs" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
