@@ -10,7 +10,6 @@
     "export": "next export"
   },
   "dependencies": {
-    "@next/font": "13.1.6",
     "dayjs": "^1.11.7",
     "gray-matter": "^4.0.3",
     "inquirer": "^9.1.4",
