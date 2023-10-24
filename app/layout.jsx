@@ -6,6 +6,10 @@ import "../styles/globals.css";
 import "../styles/prism-one-dark.css";
 
 export const metadata = {
+  title: {
+    template: "%s - Reza Sariful Fikri",
+    default: "Reza Sariful Fikri"
+  },
   icons: {
     icon: '/favicon.ico',
     verification: {
