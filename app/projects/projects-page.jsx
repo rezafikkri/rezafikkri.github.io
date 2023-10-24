@@ -1,6 +1,6 @@
 import ProjectList from "../_components/project/project-list";
 
-export default function ProjectPage() {
+export default function ProjectsPage() {
   return (
     <>
       <header className="mt-24 text-gray-800">
@@ -12,6 +12,5 @@ export default function ProjectPage() {
         </div>
       </section>
     </>
-
   );
 }
