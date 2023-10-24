@@ -25,9 +25,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="h-screen bg-gray-50">
-        <div className={`max-w-4xl mx-auto px-4 sm:px-8 ${roboto.className}`}>
-          <Header />
+      <body className={`h-screen bg-gray-50 ${roboto.className}`}>
+        <div className="max-w-5xl mx-auto px-4 sm:px-8"><Header /></div>
+        <div className={`max-w-4xl mx-auto px-4 sm:px-8`}>
           <main>{children}</main>
           <Footer />
         </div>
