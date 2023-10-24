@@ -1,6 +1,6 @@
 import { roboto } from "./_lib/fonts";
-import Header from "./_components/header";
-import Footer from "./_components/footer";
+import Header from "./_components/layout/header";
+import Footer from "./_components/layout/footer";
 
 import "../styles/globals.css";
 import "../styles/prism-one-dark.css";
