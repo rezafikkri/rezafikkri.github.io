@@ -22,7 +22,7 @@ export const metadata = {
         height: 400,
       }, 
     ],
-    locale: 'en_US',
+    type: 'website',
   },
 };
 
