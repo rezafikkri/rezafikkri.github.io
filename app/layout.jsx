@@ -4,7 +4,6 @@ import Footer from "./_components/layout/footer";
 import getBaseUrl from "./_lib/getBaseUrl";
 
 import "../styles/globals.css";
-import "../styles/prism-one-dark.css";
 
 const baseUrl = getBaseUrl();
 

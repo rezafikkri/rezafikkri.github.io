@@ -4,7 +4,6 @@ import matter from 'gray-matter';
 import { unified } from 'unified';
 import remarkParse from 'remark-parse';
 import remarkGfm from 'remark-gfm';
-import remarkPrism from 'remark-prism';
 import remarkRehype from 'remark-rehype';
 import rehypeStringify from 'rehype-stringify';
 import rehypeRaw from 'rehype-raw';
@@ -82,16 +81,14 @@ export function getPost(slug) {
   const contentHTML = unified()
     .use(remarkParse)
     .use(remarkGfm)
-    .use(remarkPrism)
     .use(remarkRehype, { allowDangerousHtml: true })
     .use(rehypeRaw)
     .use(rehypeAttrs, { properties: 'attr' })
     .use(rehypeStringify)
     .processSync(matterResult.content)
-    .toString();
 
   return {
-    contentHTML,
+    contentHTML: String(contentHTML),
     ...matterResult.data,
     excerpt: matterResult.excerpt,
   };
@@ -100,11 +97,5 @@ export function getPost(slug) {
 export function getSlugs() {
   const fileNames = readdirSync(postsDirectory);
 
-  return fileNames.map(fileName => {
-    return {
-      params: {
-        slug: fileName.replace(/\.md$/, ''),
-      },
-    };
-  });
+  return fileNames.map(fileName => ({slug: fileName.replace(/\.md$/, '')}));
 }

@@ -20,6 +20,7 @@ Sebelum menggunakan PDO, pastikan bahwa ekstensi PDO sudah aktif, caranya buat s
 ```php
 <?= phpinfo(); ?>
 ```
+<!--rehype:class=not-prose-->
 dan buka lewat browser. Setelah itu kamu bisa gunakan fitur pencarian yang ada di browser dengan menekan ctrl+f, cari dengan kata kunci *pdo*, pastikan kamu menemukan seperti pada gambar dibawah:
 ![cek ekstensi PDO](/posts/php-pdo/PHP-PDO-extension.png)<!--rehype:width=974&height=585&loading=lazy&decoding=async-->
 Pada gambar diatas, dibagian table PDO, pada kolom *enabled* tertera `mysql, pgsql` yang berarti bahwa PDO mendukung untuk koneksi ke database MariaDB dan PostgreSQL. Jika belum menemukan, kemungkinan ekstensi PDO nya belum aktif, kamu bisa googling untuk mencari cara mengaktifkannya.
@@ -44,6 +45,7 @@ Berikut contoh code untuk koneksi ke database dengan PDO:
     $dbh = new PDO('mysql:host=localhost;dbname=test', $user, $password);
 ?>
 ```
+<!--rehype:class=not-prose-->
 Untuk koneksi ke database dengan PDO kamu perlu membuat instansiasi dari class PDO, serta memasukkan beberapa argumen mengenai database yang digunakan, yang dikenal dengan DSN dan username, password (opsional). Berikut penjelasan rinci dari argumen tersebut:
 
  1. Data Source Name (DSN)
@@ -58,6 +60,7 @@ Prepared statement dapat dianggap sebagai template terkompilasi untuk SQL yang i
 ```sql
 INSERT INTO users(username, password) VALUES(:username, :password)
 ```
+<!--rehype:class=not-prose-->
 Dan contoh detailnya adalah:
 ```php
 <?php
@@ -71,6 +74,7 @@ Dan contoh detailnya adalah:
     $stmt->execute();
 ?>
 ```
+<!--rehype:class=not-prose-->
 Jadi seperti kita menyiapkan template, pada query SQL diatas ada yang disebut sebagai named placeholders, yaitu `:username` dan `:password`. Fungsi `prepare()` berfungsi untuk menyiapkan sebuah SQL statement untuk di jalankan dan menghasilkan sebuah statement object. Disana juga ada fungsi `bindParam()`, yang berfungsi untuk mengikat PHP variabel ke pada placeholders yang sesuai. Dan terakhir adalah fungsi `execute()` berfungsi untuk menjalankan prepared statement. Nantinya placeholders akan diganti dengan value dari variabel `$username` dan `$password`. Salah satu keuntungan menggunakan prepared statement ini adalah akan mencegah terjadinya serangan berbahaya seperti Injeksi SQL atau SQl Injection.
 
 Selain dengan named placeholders, teman-teman juga bisa menggunakan positional placeholders, seperti:
@@ -86,6 +90,7 @@ Selain dengan named placeholders, teman-teman juga bisa menggunakan positional p
     $stmt->execute();
 ?>
 ```
+<!--rehype:class=not-prose-->
 Perbedaanya dengan named placeholders adalah pada positional placeholders kita menggunakan tanda tanya (?) dan nomor index yang dimulai dari 1, pada fungsi `bindParam()`.
 
 Berdasarkan pengalaman saya dalam menggunakan PDO, jika tipe data dari value yang ingin kita masukkan kedalam database itu bertipe string semua, kita bisa tidak menggunakan fungsi `bindParam()`, yaitu dengan cara memasukkan langsung variabel sebagai array pada saat memanggil fungsi `execute()`, jadi seperti:
@@ -101,6 +106,7 @@ Berdasarkan pengalaman saya dalam menggunakan PDO, jika tipe data dari value yan
     $stmt->execute([':username' => $username, ':password' => $password]);
 ?>
 ```
+<!--rehype:class=not-prose-->
 Bagaimana jika menggunakan positional placeholders? yang perlu kamu ingat adalah, jika menggunakan named placeholders maka harus menggunakan array asosiatif, sedangkan jika menggunakan positional placeholders maka menggunakan array biasa, seperti:
 ```php
 <?php
@@ -111,6 +117,7 @@ Bagaimana jika menggunakan positional placeholders? yang perlu kamu ingat adalah
     $stmt->execute([$username, $password]);
 ?>
 ```
+<!--rehype:class=not-prose-->
 Jadi kapan kita harus menggunakan fungsi `bindParam()`? kita butuh menggunakan fungsi `bindparam()` ketika value yang harus dimasukkan itu bukan bertipe string, yaitu salah satu contohnya ketika kita butuh perintah SQl yang menggunakan perintah `limit`, mengapa? karena data yang dimasukkan harus bertipe integer, tidak bisa string, maka kita perlu menggunakan fungsi `bindParam()`. Pada fungsi `bindParam()` selain dua argument yang sebelumnya, yaitu yang pertama named placeholders-nya atau nomor index-nya, yang kedua adalah nama variabel-nya, dan yang ke tiga yaitu eksplisit tipe data untuk value yang akan kita masukkan, caranya adalah dengan menggunakan `PDO::PARAM_*constants`, seperti:
 ```php
 <?php
@@ -124,6 +131,7 @@ Jadi kapan kita harus menggunakan fungsi `bindParam()`? kita butuh menggunakan f
     $stmt->execute();
 ?>
 ```
+<!--rehype:class=not-prose-->
 Untuk daftar rinci dari PDO Constants teman-teman bisa lihat di [Manual PDO Constants](https://www.php.net/manual/en/pdo.constants.php). 
 
 Selain menggunakan fungsi `prepare()`, teman-teman juga bisa menggunakan fungsi `query()`, ini bisa digunakan jika query SQL tidak menggunakan placeholders sama sekali, seperti
@@ -137,7 +145,7 @@ Selain menggunakan fungsi `prepare()`, teman-teman juga bisa menggunakan fungsi 
     }
 ?>
 ```
-
+<!--rehype:class=not-prose-->
 Sebagai tambahan, berikut adalah contoh code CRUD (Create Read Update Delete) dengan PDO dan Prepared Statement:
 
  - Create : memasukkan data ke dalam database
@@ -150,6 +158,7 @@ Sebagai tambahan, berikut adalah contoh code CRUD (Create Read Update Delete) de
     $stmt->execute([':username' => $username, ':password' => $password]);
 ?>
 ```
+<!--rehype:class=not-prose-->
  - Read : mengambil data dari database
 ```php
 <?php
@@ -162,6 +171,7 @@ Sebagai tambahan, berikut adalah contoh code CRUD (Create Read Update Delete) de
     }
 ?>
 ```
+<!--rehype:class=not-prose-->
 - Update : mengubah data di database
 ```php
 <?php
@@ -173,6 +183,7 @@ Sebagai tambahan, berikut adalah contoh code CRUD (Create Read Update Delete) de
     $stmt->execute([':username' => $username, ':password' => $password, ':id' => $id]);
 ?>
 ```
+<!--rehype:class=not-prose-->
 - Delete : menghapus data dari database
 ```php
 <?php
@@ -181,7 +192,7 @@ Sebagai tambahan, berikut adalah contoh code CRUD (Create Read Update Delete) de
     $stmt->execute([':id' => $id]);
 ?>
 ```
-
+<!--rehype:class=not-prose-->
 ## Penanganan Error Koneksi
 Pada bagian terakhir ini kita akan sedikit membahas mengenai penanganan error koneksi pada saat mengakses database dengan PDO. Untuk menangani error yang dihasilkan, teman-teman bisa menggunakan blok try catch, seperti:
 ```php
@@ -203,6 +214,7 @@ Pada bagian terakhir ini kita akan sedikit membahas mengenai penanganan error ko
     }
 ?>
 ```
+<!--rehype:class=not-prose-->
 Jika terjadi error koneksi apa saja, maka sebuah object PDOException akan di buat, karena itu pada bagian `catch()` kita memberitahu untuk menangkap object PDOException tersebut, sehingga errornya bisa kita tangani didalam block catch. Kita tampilkan errornya dengan sedikit di ubah formatnya didalam blok catch. Formatnya bebas kamu tentukan sesuka hati. Untuk lebih jelas mengenai penggunaan blok try catch untuk exeception handling, seperti yang kita lakukan diatas, kamu bisa googling saja, atau salah satunya kamu bisa memperlajarinya di [Jago Ngoding: Penanganan Exception](https://jagongoding.com/web/php/menengah/penanganan-exception/).
 
 Terima kasih buat yang sudah membaca, semoga bermanfaat. Jika ada yang ingin ditanyakan atau ada saran silahkan kirim email ke fikkri.reza@gmail.com. Jangan lupa follow twitter @RezaFikkri untuk mendapatkan tulisan terbaru.
