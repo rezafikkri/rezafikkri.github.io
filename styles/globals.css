@@ -14,12 +14,4 @@
   p a:hover {
     @apply no-underline;
   }
-
-  pre {
-    font-size: 0.8em;
-  }
-
-  pre code {
-    @apply rounded-lg;
-  }
 }

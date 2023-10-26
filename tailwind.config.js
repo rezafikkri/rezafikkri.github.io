@@ -54,6 +54,10 @@ module.exports = {
           },
         },
       }),
+      fontFamily: {
+        roboto: ['var(--font-roboto)'],
+        'fira-code': ['var(--font-fira-code)'],
+      },
     },
   },
   plugins: [

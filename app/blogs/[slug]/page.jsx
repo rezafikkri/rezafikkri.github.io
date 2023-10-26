@@ -8,6 +8,22 @@ import 'dayjs/locale/id';
 // dayjs register locale
 dayjs.locale('id');
 
+export function generateMetadata({ params: { slug } }) {
+  const post = getPost(slug);
+
+  return {
+    title: post.title,
+    description: post.excerpt,
+    openGraph: {
+      title: post.title,
+      description: post.excerpt,
+      url: `/blogs/${post.slug}`,
+      images: [ post.ogImage ],
+      type: 'article',
+    },
+  };
+}
+
 export function generateStaticParams() {
   return getSlugs();
 }

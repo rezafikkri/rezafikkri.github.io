@@ -15,6 +15,11 @@ hljs.registerLanguage('html', html);
 hljs.registerLanguage('php', php);
 hljs.registerLanguage('sql', sql);
 
+hljs.configure({
+  cssSelector: 'pre',
+  ignoreUnescapedHTML: true
+});
+
 export default function PostContent({ post }) {
   useEffect(() => {
     hljs.highlightAll();
@@ -22,7 +27,7 @@ export default function PostContent({ post }) {
 
   return (
     <div
-      className="mt-9 prose prose-ajwa prose-xl max-w-none prose-h2:text-3xl prose-h3:text-2xl prose-a:font-normal prose-blockquote:not-italic"
+      className="mt-9 prose prose-ajwa prose-xl max-w-none prose-h2:text-3xl prose-h3:text-2xl prose-a:font-normal prose-blockquote:not-italic prose-pre:text-[0.8em] prose-pre:leading-normal prose-pre:font-fira-code"
       id="content"
       dangerouslySetInnerHTML={{ __html: post.contentHTML }}
     />
