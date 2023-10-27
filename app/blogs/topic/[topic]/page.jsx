@@ -1,5 +1,4 @@
 import { getPosts, getTopics } from "@/app/_lib/posts.mjs";
-import Link from "next/link";
 import PostList from "@/app/_components/post/post-list";
 import LargeTopics from "@/app/_components/post/large-topics";
 

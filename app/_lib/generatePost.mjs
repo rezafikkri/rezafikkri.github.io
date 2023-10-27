@@ -3,7 +3,7 @@ import inquirer from 'inquirer';
 import { writeFileSync, readFileSync } from 'fs';
 import slug from 'slug';
 import dayjs from 'dayjs';
-import { getPost, getTopics } from './posts.mjs';
+import { getTopics } from './posts.mjs';
 import { Builder, parseStringPromise } from 'xml2js';
 
 async function generateSiteMap(slug, lastmod) {
