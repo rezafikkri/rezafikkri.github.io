@@ -1,6 +1,6 @@
 import PostContent from "@/app/_components/post/post-content";
-import SmallTopics from "../../_components/post/small-topics";
-import { getPost, getSlugs } from "../../_lib/posts"
+import SmallTopics from "@/app/_components/post/small-topics";
+import { getPost, getSlugs } from "@/app/_lib/posts.mjs";
 
 import dayjs from "dayjs";
 import 'dayjs/locale/id';

@@ -6,7 +6,7 @@ export default function SmallTopics({ topics, mt })  {
       {topics.map((topic, index) => (
         <Link
           key={index}
-          href={`/blogs/topics/${topic}`} 
+          href={`/blogs/topic/${topic}`} 
           className="no-underline text-xs bg-white border border-gray-500 hover:border-ajwa-blue px-2 py-1 rounded-lg"
         >
           {topic}
