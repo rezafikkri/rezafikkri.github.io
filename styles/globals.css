@@ -14,4 +14,12 @@
   p a:hover {
     @apply no-underline;
   }
+
+  pre code.hljs {
+    padding: 0px !important;
+  }
+
+  .prose ol li > code {
+    @apply py-0.5 px-1 bg-gray-200 font-normal rounded;
+  }
 }
