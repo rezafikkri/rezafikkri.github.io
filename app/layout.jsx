@@ -1,6 +1,6 @@
 import Header from "./_components/layout/header";
 import Footer from "./_components/layout/footer";
-import getBaseUrl from "./_lib/getBaseUrl";
+import getBaseUrl from "./_lib/get-base-url";
 
 import "../styles/globals.css";
 
