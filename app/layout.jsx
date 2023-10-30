@@ -48,8 +48,8 @@ export default function RootLayout({
         <div className="max-w-5xl mx-auto px-4 sm:px-8"><Header /></div>
         <div className={`max-w-4xl mx-auto px-4 sm:px-8`}>
           <main>{children}</main>
-          <Footer />
         </div>
+        <div className="max-w-5xl mx-auto px-4 sm:px-8"><Footer /></div>
       </body>
     </html>
   );
