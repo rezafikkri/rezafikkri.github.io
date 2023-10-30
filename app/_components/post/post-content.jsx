@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect } from "react";
+import HljsToolbar from "@/app/_lib/hljs-toolbar.mjs";
 
 import hljs from 'highlight.js/lib/core';
 import 'highlight.js/styles/tokyo-night-dark.min.css';
@@ -18,6 +19,7 @@ hljs.registerLanguage('sql', sql);
 hljs.configure({
   ignoreUnescapedHTML: true
 });
+hljs.addPlugin(new HljsToolbar());
 
 export default function PostContent({ post }) {
   useEffect(() => {
@@ -26,7 +28,7 @@ export default function PostContent({ post }) {
 
   return (
     <div
-      className="mt-9 prose prose-ajwa prose-xl max-w-none prose-h2:text-3xl prose-h3:text-2xl prose-a:font-normal prose-blockquote:not-italic prose-pre:text-[0.9em] prose-pre:leading-normal prose-code:font-fira-code prose-pre:bg-[#1a1b26]"
+      className="mt-10 prose prose-ajwa prose-xl max-w-none prose-h2:text-3xl prose-h3:text-2xl prose-a:font-normal prose-blockquote:not-italic prose-pre:text-[0.9em] prose-pre:leading-normal prose-code:font-fira-code prose-pre:bg-[#1a1b26] prose-pre:relative prose-pre:pt-12"
       id="content"
       dangerouslySetInnerHTML={{ __html: post.contentHTML }}
     />
