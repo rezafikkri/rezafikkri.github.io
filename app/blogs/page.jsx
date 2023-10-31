@@ -1,5 +1,5 @@
 import BlogsPage from "./blogs-page"; 
-import { getTopics, getPosts } from "../_lib/posts";
+import { getTopics, getPosts } from "@/lib/posts";
 
 const title = "Blog";
 const description = "Kumpulan tulisan mengenai programming dan teknologi secara umum.";

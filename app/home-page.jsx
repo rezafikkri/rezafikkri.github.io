@@ -1,10 +1,10 @@
 'use client'
 
 import Link from "next/link";
-import LargeTopics from "./_components/post/large-topics";
-import HomeHeader from "./_components/home/home-header";
-import HomePostList from "./_components/home/home-post-list";
-import ProjectList from "./_components/project/project-list";
+import LargeTopics from "@/components/post/large-topics";
+import HomeHeader from "@/components/home/home-header";
+import HomePostList from "@/components/home/home-post-list";
+import ProjectList from "@/components/project/project-list";
 
 export default function HomePage({ topics, latestPosts }) {
   return (

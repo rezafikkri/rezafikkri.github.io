@@ -1,6 +1,6 @@
-import { getPosts, getTopics } from "@/app/_lib/posts.mjs";
-import PostList from "@/app/_components/post/post-list";
-import LargeTopics from "@/app/_components/post/large-topics";
+import { getPosts, getTopics } from "@/lib/posts.mjs";
+import PostList from "@/components/post/post-list";
+import LargeTopics from "@/components/post/large-topics";
 
 export function generateMetadata({ params: { topic: selectedTopic } }) {
   const description = `Kumpulan tulisan mengenai ${selectedTopic}.`;

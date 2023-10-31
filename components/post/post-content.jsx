@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect } from "react";
-import HljsToolbar from "@/app/_lib/hljs-toolbar.mjs";
+import HljsToolbar from "@/lib/hljs-toolbar.mjs";
 
 import hljs from 'highlight.js/lib/core';
 import 'highlight.js/styles/tokyo-night-dark.min.css';

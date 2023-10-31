@@ -4,7 +4,8 @@ const defaultTheme = require('tailwindcss/defaultTheme');
 module.exports = {
   content: [
     './app/**/*.jsx',
-    './app/_lib/hljs-toolbar.mjs'
+    './components/**/*.jsx',
+    './lib/hljs-toolbar.mjs'
   ],
   theme: {
     extend: {

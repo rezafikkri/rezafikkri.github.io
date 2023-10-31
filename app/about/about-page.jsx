@@ -1,8 +1,8 @@
 'use client'
 
 import Link from "next/link";
-import Profile from "../_components/about/profile";
-import Summary from "../_components/about/summary";
+import Profile from "@/components/about/profile";
+import Summary from "@/components/about/summary";
 
 export default function AboutPage() {
   return (

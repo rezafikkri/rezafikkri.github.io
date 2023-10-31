@@ -1,5 +1,5 @@
-import LargeTopics from "../_components/post/large-topics";
-import PostList from "../_components/post/post-list";
+import LargeTopics from "@/components/post/large-topics";
+import PostList from "@/components/post/post-list";
 
 export default function BlogsPage({ topics, posts }) {
   return (

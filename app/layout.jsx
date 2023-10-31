@@ -1,8 +1,8 @@
-import Header from "./_components/layout/header";
-import Footer from "./_components/layout/footer";
-import getBaseUrl from "./_lib/get-base-url";
+import Header from "@/components/layout/header";
+import Footer from "@/components/layout/footer";
+import getBaseUrl from "@/lib/get-base-url";
 
-import "../styles/globals.css";
+import "@/styles/globals.css";
 
 // font config
 import { Roboto, Fira_Code } from 'next/font/google';

@@ -1,5 +1,5 @@
 import HomePage from "./home-page";
-import { getLatestPosts, getTopics } from "./_lib/posts.mjs";
+import { getLatestPosts, getTopics } from "@/lib/posts.mjs";
 
 const title = "Reza Sariful Fikri - Web Developer";
 const description = "Website yang membahas mengenai programming, khususnya di bidang pengembangan web dan hal-hal umum seputar teknologi.";
