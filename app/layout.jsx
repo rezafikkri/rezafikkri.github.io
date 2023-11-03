@@ -45,11 +45,11 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${roboto.variable} ${fira_code.variable}`}>
       <body className="h-screen bg-gray-50 font-roboto">
-        <div className="max-w-5xl mx-auto px-4 sm:px-8"><Header /></div>
-        <div className={`max-w-4xl mx-auto px-4 sm:px-8`}>
+        <div className="max-w-full sm:max-w-5xl mx-auto px-4 sm:px-8"><Header /></div>
+        <div className="max-w-full sm:max-w-4xl mx-auto px-4 sm:px-8">
           <main>{children}</main>
         </div>
-        <div className="max-w-5xl mx-auto px-4 sm:px-8"><Footer /></div>
+        <div className="max-w-full sm:max-w-5xl mx-auto px-4 sm:px-8"><Footer /></div>
       </body>
     </html>
   );
