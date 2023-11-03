@@ -28,7 +28,7 @@ export default function PostContent({ post }) {
 
   return (
     <div
-      className="mt-10 prose prose-ajwa prose-xl max-w-none prose-h2:text-3xl prose-h3:text-2xl prose-a:font-normal prose-blockquote:not-italic prose-pre:text-[0.9em] prose-pre:leading-normal prose-code:font-fira-code prose-pre:bg-[#1a1b26] prose-pre:relative prose-pre:pt-12"
+      className="mt-10 prose prose-ajwa prose-xl max-w-none prose-h2:text-3xl prose-h3:text-2xl prose-a:font-normal prose-blockquote:not-italic prose-pre:text-[0.9em] prose-pre:leading-normal prose-code:font-fira-code prose-pre:bg-[#1a1b26] prose-pre:relative prose-pre:pt-12 prose-code:break-words"
       id="content"
       dangerouslySetInnerHTML={{ __html: post.contentHTML }}
     />
