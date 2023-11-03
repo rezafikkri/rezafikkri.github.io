@@ -22,4 +22,12 @@
   .prose pre code {
     @apply py-2 px-0 !important;
   }
+
+  footer a {
+    @apply no-underline;
+  }
+
+  footer a:hover {
+    @apply text-ajwa-blue;
+  }
 }
