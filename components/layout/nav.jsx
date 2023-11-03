@@ -33,9 +33,9 @@ export default function Nav() {
         <li className="inline-block pr-8">
           <Link
             href="/projects"
-            className={`hover:text-ajwa-blue no-underline ${activeNav('/projects')}`}
+            className={`hover:text-ajwa-blue no-underline ${activeNav('/portfolio')}`}
           >
-            Projek
+            Portofolio
           </Link>
         </li>
         <li className="inline-block">
