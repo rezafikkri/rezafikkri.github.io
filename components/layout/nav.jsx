@@ -12,7 +12,7 @@ function activeNav(href) {
 
 export default function Nav() {
   return (
-    <nav className={"text-gray-700 font-medium"}>
+    <nav className="text-gray-700 font-medium">
       <ul>
         <li className="inline-block pr-8">
           <Link
