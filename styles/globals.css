@@ -30,4 +30,12 @@
   footer a:hover {
     @apply text-ajwa-blue;
   }
+
+  #pagination-list li::marker {
+    @apply text-gray-500;
+  }
+
+  #pagination-list li > a:hover {
+    @apply text-ajwa-blue;
+  }
 }

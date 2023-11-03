@@ -1,3 +1,4 @@
+import Pagination from "@/components/post/pagination";
 import PostContent from "@/components/post/post-content";
 import SmallTopics from "@/components/post/small-topics";
 import { getPost, getSlugs } from "@/lib/posts.mjs";
@@ -38,8 +39,7 @@ export default function Page({ params: { slug } }) {
         <h1 className="text-5xl font-bold mt-2 text-gray-800">{post.title}</h1>
         <SmallTopics topics={post.topics} mt="mt-6" />
         <PostContent post={post} />
-        <small className="mt-16 block text-gray-600">Klik salah satu topik tulisan untuk melihat semua tulisan pada topik tersebut!</small>
-        <SmallTopics topics={post.topics} mt="mt-3" />
+        <Pagination />
       </article>
     </>
   );
