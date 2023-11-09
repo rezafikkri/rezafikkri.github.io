@@ -2,22 +2,18 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-
-function activeNav(href) {
-  const pathName = usePathname();
-  const regex = new RegExp(`${href}*`);
-
-  if (regex.test(pathName)) return 'text-ajwa-blue';
-}
+import activeLink from "@/lib/active-link";
 
 export default function Nav() {
+  const pathName = usePathname();
+
   return (
     <nav className="text-gray-700 font-medium">
       <ul>
         <li className="inline-block pr-8">
           <Link
             href="/about"
-            className={`hover:text-ajwa-blue no-underline ${activeNav('/about')}`}
+            className={`hover:text-ajwa-blue no-underline ${activeLink('/about', pathName)}`}
           >
             Tentang
           </Link>
@@ -25,7 +21,7 @@ export default function Nav() {
         <li className="inline-block pr-8">
           <Link
             href="/blogs"
-            className={`hover:text-ajwa-blue no-underline ${activeNav('/blogs')}`}
+            className={`hover:text-ajwa-blue no-underline ${activeLink('/blogs', pathName)}`}
           >
             Blog
           </Link>
@@ -33,7 +29,7 @@ export default function Nav() {
         <li className="inline-block pr-8">
           <Link
             href="/projects"
-            className={`hover:text-ajwa-blue no-underline ${activeNav('/portfolio')}`}
+            className={`hover:text-ajwa-blue no-underline ${activeLink('/portfolio', pathName)}`}
           >
             Portofolio
           </Link>

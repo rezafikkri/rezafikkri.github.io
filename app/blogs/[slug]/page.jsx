@@ -39,7 +39,7 @@ export default function Page({ params: { slug } }) {
         <h1 className="text-5xl font-bold mt-2 text-gray-800">{post.title}</h1>
         <SmallTopics topics={post.topics} mt="mt-6" />
         <PostContent post={post} />
-        <Pagination />
+        <Pagination serial={post.serial} slug={post.slug} />
       </article>
     </>
   );

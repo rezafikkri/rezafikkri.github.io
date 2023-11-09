@@ -5,7 +5,8 @@ module.exports = {
   content: [
     './app/**/*.jsx',
     './components/**/*.jsx',
-    './lib/hljs-toolbar.mjs'
+    './lib/hljs-toolbar.mjs',
+    './lib/active-link.js'
   ],
   theme: {
     extend: {
