@@ -11,8 +11,8 @@ export default function HomePostList({ latestPosts }) {
     <section className="text-gray-800 mt-20">
       <h2 className="text-3xl font-bold">Tulisan Terbaru</h2>
       <ul className="mt-6 flex flex-col divide-y divide-gray-200">
-        {latestPosts.map((post, index) => (
-          <li className="py-2 md:py-1.5" key={index}>
+        {latestPosts.map((post) => (
+          <li className="py-2 md:py-1.5" key={post.slug}>
             <Link href={`/blogs/${post.slug}`} className="flex flex-col md:flex-row md:justify-between no-underline hover:text-ajwa-blue">
               <h3 className="text-xl">{post.title}</h3>
               <time className="font-light md:basis-40 md:text-right">{dayjs(post.date).fromNow()}</time>
