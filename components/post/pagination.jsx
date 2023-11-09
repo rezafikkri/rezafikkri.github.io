@@ -8,7 +8,11 @@ export default function Pagination({ serial, slug }) {
   
     return (
       <>
-        <h2 id="other-writing" className="text-3xl mt-14 mb-6 font-semibold text-gray-800">Tulisan lainnya:</h2>
+        <div className="flex justify-center mt-12 gap-4">
+          <hr width="10%" />
+          <hr width="30%" />
+        </div>
+        <h2 id="other-writing" className="text-3xl mt-12 mb-6 font-semibold text-gray-800">Tulisan lainnya:</h2>
         <ol className="text-gray-700 text-xl list-decimal list-inside flex flex-col gap-3" id="pagination-list">
           {posts.map(post => (
             <li key={post.slug}>
