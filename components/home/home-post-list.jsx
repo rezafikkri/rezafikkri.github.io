@@ -15,7 +15,7 @@ export default function HomePostList({ latestPosts }) {
           <li className="py-2 md:py-1.5" key={post.id}>
             <Link href={`/blogs/${post.slug}`} className="flex flex-col md:flex-row md:justify-between no-underline hover:text-ajwa-blue">
               <h3 className="text-xl">{post.title}</h3>
-              <time className="font-light md:basis-40 md:text-right">{dayjs(post.date).fromNow()}</time>
+              <time className="font-light md:basis-40 md:shrink-0 md:text-right">{dayjs(post.date).fromNow()}</time>
             </Link>
           </li>
         ))}
