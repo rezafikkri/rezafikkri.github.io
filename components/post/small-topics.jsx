@@ -9,7 +9,7 @@ export default function SmallTopics({ topics, mt })  {
           href={`/blogs/topic/${topic}`} 
           className="no-underline text-xs bg-white border border-gray-500 hover:border-ajwa-blue px-2 py-1 rounded-lg"
         >
-          {topic}
+          {topic.replace(/-/g, ' ')}
         </Link>
       ))}
     </div>
