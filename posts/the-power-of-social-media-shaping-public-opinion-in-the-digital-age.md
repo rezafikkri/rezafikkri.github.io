@@ -40,3 +40,6 @@ The rise of fake news and disinformation on social media poses a significant cha
 As social media continues to evolve, its role as the main influencer of public opinion becomes increasingly pronounced. The democratization of information, rapid virality, and the ability to mobilize social movements highlight the positive aspects of this influence. However, the challenges of filter bubbles, political polarization, and the spread of disinformation underscore the need for responsible use, regulation, and continued efforts to foster an informed and diverse public discourse in the digital age. Social media, when wielded thoughtfully, has the potential to enrich public opinion and contribute to a more vibrant and participatory democratic society.
 
 Oke, terima kasih buat kamu yang sudah membaca, semoga bermanfaat. Jika ada yang ingin ditanyakan atau ada saran silahkan kirim email ke fikkri.reza@gmail.com. Jangan lupa follow twitter @RezaFikkri untuk mendapatkan tulisan terbaru.
+
+### Referensi:
+[MDN Combinators](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors/Combinators)
