@@ -1,10 +1,10 @@
 ---
 title: "Unleashing the Power of Artificial Intelligence: Revolutionizing the Future"
-date: "2023-11-09T12:42:39.657Z"
+date: "2023-11-10T23:46:44.081Z"
 topics: ["Software"]
 slug: "unleashing-the-power-of-artificial-intelligence-revolutionizing-the-future"
-ogImage: "gege"
-serial: {"name":"AI","order":1,"next":"gege","prev":""}
+ogImage: "hehe"
+serial: {"name":"AI","order":1}
 ---
 
 ## Introduction

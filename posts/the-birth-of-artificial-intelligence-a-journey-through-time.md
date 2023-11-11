@@ -1,10 +1,10 @@
 ---
 title: "The Birth of Artificial Intelligence: A Journey Through Time"
-date: "2023-11-09T12:45:41.881Z"
+date: "2023-11-10T23:52:39.538Z"
 topics: ["Software"]
 slug: "the-birth-of-artificial-intelligence-a-journey-through-time"
-ogImage: "hhe"
-serial: {"name":"AI","order":2,"next":"","prev":"nene"}
+ogImage: "jeje"
+serial: {"name":"AI","order":2}
 ---
 
 ## Introduction
