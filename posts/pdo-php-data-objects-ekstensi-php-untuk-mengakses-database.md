@@ -1,4 +1,5 @@
 ---
+id: "e2b7af83-c3b4-4e3f-95fb-013cd05d4614"
 title: "PDO (PHP Data Objects): Ekstensi PHP untuk mengakses database"
 date: "2023-03-12T03:37:25.934Z"
 topics: ["PHP","Database"]

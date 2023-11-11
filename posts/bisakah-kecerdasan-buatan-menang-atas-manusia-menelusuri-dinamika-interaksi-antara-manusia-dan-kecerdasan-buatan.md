@@ -1,4 +1,5 @@
 ---
+id: "fc22dbfc-67cc-49be-855d-b423b9e1d843"
 title: "Bisakah Kecerdasan Buatan Menang Atas Manusia? Menelusuri Dinamika Interaksi Antara Manusia dan Kecerdasan Buatan"
 date: "2023-11-10T23:57:05.933Z"
 topics: ["Software"]

@@ -15,7 +15,7 @@ export default function Pagination({ serial, slug }) {
         <h2 id="other-writing" className="text-3xl mt-12 mb-6 font-semibold text-gray-800">Tulisan lainnya:</h2>
         <ol className="text-gray-700 text-xl list-decimal list-outside flex flex-col gap-3 pl-8" id="pagination-list">
           {posts.map(post => (
-            <li key={post.slug} className="pl-1.5">
+            <li key={post.id} className="pl-1.5">
               <Link
                 href={`/blogs/${post.slug}`}
                 className={`no-underline ${activeLink(post.slug, slug)}`}

@@ -13,7 +13,7 @@ export default function PostList({ posts }) {
       {posts.map((post) => {
         const year = dayjs(post.date).year();
         const li = (
-          <React.Fragment key={post.slug}>
+          <React.Fragment key={post.id}>
             {currentYear != year && <h3 className={`text-2xl font-bold mb-2 ${currentYear != 0 && 'mt-6'}`}>{year}</h3>}
             <li className={`py-2 md:py-1.5 ${currentYear === year && 'border-t'}`}>
               <Link href={`/blogs/${post.slug}`} className="flex flex-col md:flex-row md:justify-between no-underline hover:text-ajwa-blue">

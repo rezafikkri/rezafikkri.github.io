@@ -1,4 +1,5 @@
 ---
+id: "6f096981-3026-489d-baff-ec22a4f564e2"
 title: "Alternatif Software Berbayar"
 date: "2023-03-28T10:34:54.791Z"
 topics: ["Software"]
