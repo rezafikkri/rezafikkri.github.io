@@ -1,11 +1,11 @@
 ---
-id: "fc22dbfc-67cc-49be-855d-b423b9e1d843"
+id: "95e47e0c-cfa7-4caa-a59f-e78be98e5fb9"
 title: "Bisakah Kecerdasan Buatan Menang Atas Manusia? Menelusuri Dinamika Interaksi Antara Manusia dan Kecerdasan Buatan"
-date: "2023-11-10T23:57:05.933Z"
-topics: ["Software"]
+date: "2023-11-12T05:03:21.585Z"
+topics: ["0fff756a-1ad2-4ee2-9c70-3db8d713b476","74044a8d-cf35-4ba4-b123-8de37063cca6"]
 slug: "bisakah-kecerdasan-buatan-menang-atas-manusia-menelusuri-dinamika-interaksi-antara-manusia-dan-kecerdasan-buatan"
-ogImage: "jeje"
-serial: {"name":"AI","order":3}
+ogImage: "hehe"
+serial: {"id":"3e9cb1ad-2d24-426b-88d1-7d977af9fa49","order":3}
 ---
 
 ## Pendahuluan

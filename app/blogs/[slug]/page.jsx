@@ -1,7 +1,7 @@
 import Pagination from "@/components/post/pagination";
 import PostContent from "@/components/post/post-content";
 import SmallTopics from "@/components/post/small-topics";
-import { getPost, getSlugs } from "@/lib/posts.mjs";
+import { getPost, getSlugs, getTopics } from "@/lib/posts.mjs";
 
 import dayjs from "dayjs";
 import 'dayjs/locale/id';
@@ -31,13 +31,14 @@ export function generateStaticParams() {
 
 export default function Page({ params: { slug } }) {
   const post = getPost(slug);
+  const topics = getTopics(post.topics);
 
   return (
     <>
       <article className="mt-24">
         <time className="text-gray-600 inline-block">{dayjs(post.date).format('DD MMMM YYYY')}</time>
         <h1 className="text-5xl font-bold mt-2 text-gray-800">{post.title}</h1>
-        <SmallTopics topics={post.topics} mt="mt-6" />
+        <SmallTopics topics={topics} mt="mt-6" />
         <PostContent post={post} />
         <Pagination serial={post.serial} slug={post.slug} />
       </article>

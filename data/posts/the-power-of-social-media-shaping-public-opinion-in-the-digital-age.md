@@ -1,11 +1,11 @@
 ---
-id: "1b920000-4dd8-4365-b772-f7428bf55efe"
+id: "2544f8c4-21b8-4719-92c0-ee877c305c7f"
 title: "The Power of Social Media: Shaping Public Opinion in the Digital Age"
-date: "2023-11-11T00:46:47.649Z"
-topics: ["Software","Social-Media"]
+date: "2023-11-12T04:49:49.477Z"
+topics: ["0fff756a-1ad2-4ee2-9c70-3db8d713b476","3de72746-404b-4648-99f0-e1940c8fd7fd"]
 slug: "the-power-of-social-media-shaping-public-opinion-in-the-digital-age"
 ogImage: "jeje"
-serial: {"name":"Social Media","order":1}
+serial: {"id":"af74a68b-4512-41d2-be45-94bf5adaeea7","order":2}
 ---
 
 ## Introduction

@@ -1,11 +1,11 @@
 ---
-id: "ad21d119-1ca8-4673-93fb-f05ee1d32964"
+id: "e6e32b3f-c024-414a-b640-4e77d2f63959"
 title: "Exploring the Pros and Cons of Social Media: Navigating the Digital Landscape"
-date: "2023-11-11T11:12:52.431Z"
-topics: ["Software","Social-Media"]
+date: "2023-11-12T04:53:57.912Z"
+topics: ["0fff756a-1ad2-4ee2-9c70-3db8d713b476","3de72746-404b-4648-99f0-e1940c8fd7fd"]
 slug: "exploring-the-pros-and-cons-of-social-media-navigating-the-digital-landscape"
-ogImage: "keke"
-serial: {"name":"Social Media","order":2}
+ogImage: "hehe"
+serial: {"id":"af74a68b-4512-41d2-be45-94bf5adaeea7","order":3}
 ---
 
 ## Introduction

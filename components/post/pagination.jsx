@@ -1,10 +1,10 @@
-import { getPostsBySerialName } from "@/lib/posts.mjs";
+import { getPostsBySerialId } from "@/lib/posts.mjs";
 import Link from "next/link";
 import activeLink from "@/lib/active-link";
 
 export default function Pagination({ serial, slug }) { 
   if (serial != undefined) {
-    const posts = getPostsBySerialName(serial.name);
+    const posts = getPostsBySerialId(serial.id);
   
     return (
       <>

@@ -1,4 +1,4 @@
-import { getPosts, getTopics } from "@/lib/posts.mjs";
+import { getPosts, getTopicId, getTopics } from "@/lib/posts.mjs";
 import PostList from "@/components/post/post-list";
 import LargeTopics from "@/components/post/large-topics";
 
@@ -25,12 +25,13 @@ export function generateMetadata({ params: { topic: selectedTopic } }) {
 }
 
 export function generateStaticParams() {
-  return getTopics().map(topic => ({ topic }));
+  return getTopics().map(topic => ({ topic: topic.name }));
 }
 
 export default function Page({ params: { topic: selectedTopic } }) {
   const topics = getTopics();
-  const posts = getPosts(selectedTopic);
+  const topicId = getTopicId(selectedTopic);
+  const posts = getPosts(topicId);
 
   return (
     <>
