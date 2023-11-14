@@ -12,14 +12,14 @@ export const roboto = Roboto({
   subsets: ['latin'],
   style: ['normal', 'italic'],
   variable: '--font-roboto',
-  fallback: ['sans-serif']
+  // fallback: ['sans-serif']
 });
 
 export const fira_code = Fira_Code({
   weight: ['400'],
   subsets: ['latin'],
   variable: '--font-fira-code',
-  fallback: ['monospace']
+  // fallback: ['monospace']
 })
 
 // metadata config

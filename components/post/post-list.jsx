@@ -9,26 +9,29 @@ export default function PostList({ posts }) {
   let currentYear = 0;
 
   return (
-    <ul>
+    <dl className="flex flex-col space-y-3.5">
       {posts.map((post) => {
         const year = dayjs(post.date).year();
-        const li = (
-          <React.Fragment key={post.id}>
+        const dli = (
+          <div key={post.id}>
             {currentYear != year && <h3 className={`text-2xl font-bold mb-2 ${currentYear != 0 && 'mt-6'}`}>{year}</h3>}
-            <li className={`py-2 md:py-1.5 ${currentYear === year && 'border-t'}`}>
-              <Link href={`/blogs/${post.slug}`} className="flex flex-col md:flex-row md:justify-between no-underline hover:text-ajwa-blue">
-                <h3 className="text-xl">{post.title}</h3>
-                <time className="font-light md:basis-24 md:text-right">{dayjs(post.date).format('DD MMM')}</time>
+            <dt className="flex flex-col-reverse md:flex-row md:justify-between">
+              <Link href={`/blogs/${post.slug}`} className="no-underline hover:text-ajwa-blue">
+                <h3 className="text-xl font-medium">{post.title}</h3>
               </Link>
-            </li>
-          </React.Fragment>
+            </dt>
+            <dd>
+              <time className="font-light text-gray-500 text-sm">{dayjs(post.date).format('DD MMM')} — </time>
+              <span className="text-gray-600">{post.excerpt}...</span>
+            </dd>
+          </div>
         );
 
         // if currentYear != year, then update currentYear
         if (currentYear != year) currentYear = year;
 
-        return li;
+        return dli;
       })}
-    </ul>
+    </dl>
   );
 }

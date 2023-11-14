@@ -10,16 +10,21 @@ export default function HomePostList({ latestPosts }) {
   return (
     <section className="text-gray-800 mt-20">
       <h2 className="text-3xl font-bold">Tulisan Terbaru</h2>
-      <ul className="mt-6 flex flex-col divide-y divide-gray-200">
-        {latestPosts.map((post) => (
-          <li className="py-2 md:py-1.5" key={post.id}>
-            <Link href={`/blogs/${post.slug}`} className="flex flex-col md:flex-row md:justify-between no-underline hover:text-ajwa-blue">
-              <h3 className="text-xl">{post.title}</h3>
-              <time className="font-light md:basis-40 md:shrink-0 md:text-right">{dayjs(post.date).fromNow()}</time>
-            </Link>
-          </li>
+      <dl className="mt-2 flex flex-col space-y-3.5">
+        {latestPosts.map(post => (
+          <div key={post.id}>
+            <dt className="flex flex-col-reverse md:flex-row md:justify-between">
+              <Link href={`/blogs/${post.slug}`} className="no-underline hover:text-ajwa-blue">
+                <h3 className="text-xl font-medium">{post.title}</h3>
+              </Link>
+            </dt>
+            <dd>
+              <time className="font-light text-gray-500 text-sm">{dayjs(post.date).fromNow()} — </time>
+              <span className="text-gray-600">{post.excerpt}...</span>
+            </dd>
+          </div>
         ))}
-      </ul>
+      </dl>
       <Link href="/blogs" className="mt-5 inline-block no-underline bg-white hover:bg-gray-100 border border-gray-200 px-4 py-2 rounded-lg">Lihat Semua &raquo;</Link>
     </section>
   );

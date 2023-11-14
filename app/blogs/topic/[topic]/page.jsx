@@ -41,7 +41,7 @@ export default function Page({ params: { topic: selectedTopic } }) {
       </header>
       <section className="mt-20 text-gray-800">
         <p className="text-lg font-medium text-gray-500">{posts.length} tulisan dengan topik:</p>
-        <h2 className="text-5xl font-bold mt-2 mb-10">{selectedTopic.replace(/-/g, ' ')}</h2>
+        <h1 className="text-5xl font-bold mt-2 mb-10">{selectedTopic.replace(/-/g, ' ')}</h1>
         <PostList posts={posts} />
       </section>
     </>
