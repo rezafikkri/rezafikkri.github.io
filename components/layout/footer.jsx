@@ -10,8 +10,8 @@ export default function Footer() {
           <li><Link href="">Twitter</Link></li>
         </ul>
         <ul className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-          <li><Link href="/cheatsheet">Cheatsheet</Link></li>
-          <li><Link href="/portfolio">Portofolio</Link></li>
+          <li><Link href="/blogs">Blog</Link></li>
+          <li><Link href="/projects">Projek</Link></li>
         </ul>
       </div>
       <div className="flex justify-between flex-col sm:flex-row gap-2 sm:gap-5">
