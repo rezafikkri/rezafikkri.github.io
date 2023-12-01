@@ -1,6 +1,7 @@
 import Header from "@/components/layout/header";
 import Footer from "@/components/layout/footer";
 import getBaseUrl from "@/lib/get-base-url";
+import Palestine from "@/components/layout/Palestine";
 
 import "@/styles/globals.css";
 
@@ -43,6 +44,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${roboto.variable} ${fira_code.variable}`}>
       <body className="h-screen bg-gray-50 font-roboto">
+        <Palestine />
         <div className="max-w-5xl mx-auto px-4 sm:px-8"><Header /></div>
         <div className="max-w-4xl mx-auto px-4 sm:px-8">
           <main>{children}</main>
