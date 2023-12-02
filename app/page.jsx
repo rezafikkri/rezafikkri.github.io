@@ -46,7 +46,7 @@ export default function Page() {
         <div className="mt-7 grid sm:grid-cols-2 gap-4">
           <ProjectList />
         </div>
-        <Link href="/project" className="inline-block no-underline mt-5 hover:text-ajwa-blue">Lihat Semua &raquo;</Link>
+        <Link href="/projects" className="inline-block no-underline mt-5 hover:text-ajwa-blue">Lihat Semua &raquo;</Link>
       </section>
     </>
   );
