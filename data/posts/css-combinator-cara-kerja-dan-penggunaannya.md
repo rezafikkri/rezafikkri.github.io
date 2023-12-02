@@ -29,7 +29,6 @@ Arti dari script css diatas adalah, *seleksi semua element `<p>` yang merupakan 
 
 Berikut contoh implementasinya:
 
-HTML
 ```html
 <div class="reza">  
   <p>Hay saya programmer</p>
@@ -45,13 +44,14 @@ HTML
 </div>
 <p>Saya biasa</p>
 ```
-CSS
+
 ```css
 .reza p {  
   color: red;  
 }
 ```
-HASIL
+
+Hasil:
 ![hasil implementasi Descendant Combinator](/posts/css-combinators/css%20combinator%201.png)<!--rehype:width=1042&height=626&loading=lazy&mt-6&decoding=async-->
 
 Atau kamu juga bisa melihat [hasilnya secara online di CodePen](https://codepen.io/rezafikkri/pen/bGxxdrN).
@@ -72,7 +72,6 @@ Arti dari script diatas adalah, *seleksi semua element `<p>` yang termasuk child
 
 Berikut contoh implementasinya:
 
-HTML
 ```html
 <div class="reza">  
   <p>Hay saya programmer</p>
@@ -86,13 +85,14 @@ HTML
 </div>  
 <p>Semoga bermanfaat</p>
 ```
-CSS
+
 ```css
 .reza > p {  
   color: red;  
 }
 ```
-HASIL
+
+Hasil:
 ![hasil imlementasi Child Combinator](/posts/css-combinators/css%20combinator%202.png)<!--rehype:width=992&height=626&loading=lazy&class=mt-6&decoding=async-->
 
 Atau kamu juga bisa melihat  [hasilnya secara online di CodePen](https://codepen.io/rezafikkri/pen/BaOOKQg).
@@ -113,7 +113,6 @@ Arti dari script diatas adalah, *seleksi element `<p>` yang merupakan adjacent s
 
 Berikut contoh implementasinya:
 
-HTML
 ```html
 <div class="dian">  
   <p>Hello Dunia</p>
@@ -127,13 +126,14 @@ HTML
   <p>Hay salam kenal</p>  
 </div>
 ```
-CSS
+
 ```css
 .reza + p {  
   color: red;  
 }
 ```
-HASIL
+
+Hasil:
 ![hasil implementasi Adjacent Sibling Combinator](/posts/css-combinators/css%20combinator%203.png)<!--rehype:width=997&height=626&loading=lazy&class=mt-6&decoding=async-->
 
 Atau kamu juga bisa melihat  [hasilnya secara online di CodePen](https://codepen.io/rezafikkri/pen/YzOJgNM).
@@ -154,7 +154,6 @@ Arti dari script diatas adalah, *seleksi semua element `<p>` yang merupakan gene
 
 Berikut contoh implementasinya:
 
-HTML
 ```html
 <div class="dian">  
   <p>Hello Dunia</p>
@@ -168,13 +167,14 @@ HTML
   <p>Hay salam kenal</p>  
 </div>
 ```
-CSS
+
 ```css
 .reza ~ p {  
   color: red;  
 }
 ```
-HASIL
+
+Hasil:
 ![hasil implementasi General Sibling Combinator](/posts/css-combinators/css%20combinator%204.png)<!--rehype:width=972&height=626&loading=lazy&class=mt-6&decoding=async-->
 
 Atau kamu juga bisa melihat  [hasilnya secara online di CodePen](https://codepen.io/rezafikkri/pen/eYLbJMQ).
