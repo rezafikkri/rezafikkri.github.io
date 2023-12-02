@@ -1,0 +1,204 @@
+1:HL["/_next/static/media/0e4fe491bf84089c-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+2:HL["/_next/static/media/1deec1af325840fd-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+3:HL["/_next/static/media/3a04115668d8070d-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+4:HL["/_next/static/media/3a18fc8da1cdcd01-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+5:HL["/_next/static/media/627622453ef56b0d-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+6:HL["/_next/static/media/699512af39861afa-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+7:HL["/_next/static/media/7d8c9b0ca4a64a5a-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+8:HL["/_next/static/media/8db47a8bf03b7d2f-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+9:HL["/_next/static/media/934c4b7cb736f2a3-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+a:HL["/_next/static/media/df99695897be762b-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+b:HL["/_next/static/media/ee65d20c5e82dfb1-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+c:HL["/_next/static/css/c81005e90ae6254e.css","style",{"crossOrigin":""}]
+0:["9JRlQ5Mmj0bj7pf2sk_oi",[[["",{"children":["blogs",{"children":[["slug","pdo-php-data-objects-ekstensi-php-untuk-mengakses-database","d"],{"children":["__PAGE__?{\"slug\":\"pdo-php-data-objects-ekstensi-php-untuk-mengakses-database\"}",{}]}]}]},"$undefined","$undefined",true],"$Ld",[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/c81005e90ae6254e.css","precedence":"next","crossOrigin":""}]],"$Le"]]]]
+f:HL["/_next/static/css/f16eaa9e44b97d3f.css","style",{"crossOrigin":""}]
+10:I[8326,["326","static/chunks/326-976d427cb6019efb.js","919","static/chunks/919-65fa08d33132c0a0.js","688","static/chunks/app/blogs/%5Bslug%5D/page-295820ba057e4e8a.js"],""]
+11:I[9877,["326","static/chunks/326-976d427cb6019efb.js","185","static/chunks/app/layout-d69720986ad23935.js"],""]
+12:I[6954,[],""]
+13:I[7264,[],""]
+15:I[1160,["326","static/chunks/326-976d427cb6019efb.js","919","static/chunks/919-65fa08d33132c0a0.js","688","static/chunks/app/blogs/%5Bslug%5D/page-295820ba057e4e8a.js"],""]
+e:[["$","meta","0",{"charSet":"utf-8"}],["$","title","1",{"children":"PDO (PHP Data Objects): Ekstensi PHP untuk mengakses database - Reza Sariful Fikri"}],["$","meta","2",{"name":"description","content":"PDO atau PHP Data Objects merupakan PHP ekstensi yang mendefiniskan ekstensi yang ringan, antarmuka yang konsisten untuk mengakses database di PHP."}],["$","meta","3",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","4",{"property":"og:title","content":"PDO (PHP Data Objects): Ekstensi PHP untuk mengakses database"}],["$","meta","5",{"property":"og:description","content":"PDO atau PHP Data Objects merupakan PHP ekstensi yang mendefiniskan ekstensi yang ringan, antarmuka yang konsisten untuk mengakses database di PHP."}],["$","meta","6",{"property":"og:url","content":"https://rezafikkri.github.io/blogs/pdo-php-data-objects-ekstensi-php-untuk-mengakses-database"}],["$","meta","7",{"property":"og:image","content":"https://rezafikkri.github.io/posts/php-pdo/php-pdo.png"}],["$","meta","8",{"property":"og:type","content":"article"}],["$","meta","9",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","10",{"name":"twitter:title","content":"PDO (PHP Data Objects): Ekstensi PHP untuk mengakses database"}],["$","meta","11",{"name":"twitter:description","content":"PDO atau PHP Data Objects merupakan PHP ekstensi yang mendefiniskan ekstensi yang ringan, antarmuka yang konsisten untuk mengakses database di PHP."}],["$","meta","12",{"name":"twitter:image","content":"https://rezafikkri.github.io/posts/php-pdo/php-pdo.png"}],["$","link","13",{"rel":"icon","href":"/favicon.ico"}],["$","meta","14",{"name":"next-size-adjust"}]]
+16:T337d,<p>Bismillah, hari ini kita akan mempelajari PDO (PHP Data Objects).</p>
+<p>Tetapi, seperti biasanya sebelum lanjut, yang perlu dipersiapkan adalah, kamu harus memahami beberapa perintah dasar sql, seperti Insert, Update, dll, pada database MariaDB. Jika belum kamu bisa belajar di channel Indonesia Belajar pada playlist <a href="https://youtube.com/playlist?list=PL2O3HdJI4voGs6CiEUPXwt1fhLLqu30E_">Tutorial Belajar Database MySQL | MaraDB</a>. Mengapa database MariaDB? karena pada tutorial ini kita akan menggunakan database MariaDB. Serta sangat di sarankan juga kamu untuk belajar dasar-dasar OOP (Object Oriented Programming) dengan bahasa pemrograman PHP. Teman-teman bisa mempelajarinya di channel Web Programming Unpas pada playlist  <a href="https://youtube.com/playlist?list=PLFIM0718LjIWvxxll-6wLXrC_16h_Bl_p">OOP DASAR pada PHP</a>.</p>
+<h2>Apa Itu PDO?</h2>
+<p>PDO atau PHP Data Objects merupakan PHP ekstensi yang mendefiniskan ekstensi yang ringan, antarmuka yang konsisten untuk mengakses database di PHP.Intinya PDO adalah PHP ekstensi yang digunakan untuk mengakses database di PHP.</p>
+<blockquote>
+<p>Kamu tidak bisa menjalankan fungsi database apapun dengan hanya menggunakan ekstensi PDO, kamu harus menggunakan driver PDO database khusus untuk mengakses database server. Misalnya untuk database MariaDB kamu butuh MySQL PDO Driver, supaya bisa mengakses database MariaDB.</p>
+</blockquote>
+<p>Sebelum menggunakan PDO, pastikan bahwa ekstensi PDO sudah aktif, caranya buat satu file php (namanya bebas), lalu masukkan code:</p>
+<pre><code class="language-php">&#x3C;?= phpinfo(); ?>
+</code></pre>
+<p>dan buka lewat browser. Setelah itu kamu bisa gunakan fitur pencarian yang ada di browser dengan menekan ctrl+f, cari dengan kata kunci <em>pdo</em>, pastikan kamu menemukan seperti pada gambar dibawah:
+<img src="/posts/php-pdo/PHP-PDO-extension.png" alt="cek ekstensi PDO" width="974" height="585" loading="lazy" decoding="async"><!--rehype:width=974&height=585&loading=lazy&decoding=async-->
+Pada gambar diatas, dibagian table PDO, pada kolom <em>enabled</em> tertera <code>mysql, pgsql</code> yang berarti bahwa PDO mendukung untuk koneksi ke database MariaDB dan PostgreSQL. Jika belum menemukan, kemungkinan ekstensi PDO nya belum aktif, kamu bisa googling untuk mencari cara mengaktifkannya.</p>
+<p>Jika kamu menggunakan paket server XAMPP, kamu hanya perlu mencari baris code <code>;extension=php_pdo.dll</code> dan <code>;extension=php_pdo_mysql.dll</code> didalam file php.ini, lalu hapus <code>;</code> pada awal dari kedua baris code tersebut, jangan lupa untuk restart server php dan databasenya. Letak dari file php.ini di XAMPP biasanya ada di <code>/xampp/php/php.ini</code>. Sedangkan untuk kamu yang menggunakan paket server Laragon, caranya sangat mudah, buka Laragon > klik <em>Menu</em> > pilih <em>PHP</em> > pilih <em>Extentions</em> > dan klik pada ekstensi yang ingin diaktifkan.</p>
+<p>Bagi kamu yang menggunakan os linux, terutama distro Debian, Ubuntu, dan Linux Mint serta tidak menggunakan paket server apapun seperti XAMPP atau Laragon, biasanya kamu harus menginstall ekstensi pdo_mysql untuk MariaDB, ikuti langkah berikut untuk menginstall ekstensinya:</p>
+<ol>
+<li>Update Daftar Package
+<code>sudo apt update</code></li>
+<li>Install Ekstensi
+<code>sudo apt install php8.2-mysql</code></li>
+</ol>
+<p>Untuk versi php silahkan disesuaikan dengan versi php yang kamu gunakan, misalnya kamu menggunakan php7.4 maka <code>... php7.4-mysql</code>.</p>
+<h2>Membuat Koneksi Ke Database MySQL</h2>
+<p>Berikut contoh code untuk koneksi ke database dengan PDO:</p>
+<pre><code class="language-php">&#x3C;?php
+    $user = 'dbuser';
+    $password = 'dbpass';
+    $dbh = new PDO('mysql:host=localhost;dbname=test', $user, $password);
+?>
+</code></pre>
+<p>Untuk koneksi ke database dengan PDO kamu perlu membuat instansiasi dari class PDO, serta memasukkan beberapa argumen mengenai database yang digunakan, yang dikenal dengan DSN dan username, password (opsional). Berikut penjelasan rinci dari argumen tersebut:</p>
+<ol>
+<li>Data Source Name (DSN)
+Bagian yang disebut DSN adalah <code>mysql:host=localhost;dbname=test</code>. DSN terbagi menjadi beberapa bagian, yang umum dipakai adalah DSN prefix, host, database name. DSN prefix pada contoh diatas adalah <code>mysql:</code>, host merupakan nama host tempat basis data berada, yang mana pada contoh yaitu <code>localhost</code>, database name adalah nama database kamu, pada contoh yaitu <code>test</code>. Penjelasan lebih lanjut bisa baca di <a href="https://www.php.net/manual/en/ref.pdo-mysql.connection.php">Manual PDO Mysql Connection</a>.</li>
+<li>Username
+Username merupakan username untuk koneksi ke database. Pada contoh, usernamenya yaitu <code>dbuser</code>.</li>
+<li>Password
+Password merupakan password untuk koneksi ke database. pada contoh, passwordnya yaitu <code>dbpass</code>.</li>
+</ol>
+<h2>Prepared Statement</h2>
+<p>Prepared statement dapat dianggap sebagai template terkompilasi untuk SQL yang ingin dijalankan oleh aplikasi, yang dapat dikustomasisasi menggunakan parameter variabel. Begitulah pengertian dari website php.net. Bingung? oke, supaya lebih paham lihat contoh berikut!</p>
+<pre><code class="language-sql">INSERT INTO users(username, password) VALUES(:username, :password)
+</code></pre>
+<p>Dan contoh detailnya adalah:</p>
+<pre><code class="language-php">&#x3C;?php
+    $username = 'rezauser';
+    $password = 'rezapass';
+
+    $stmt = $dbh->prepare("INSERT INTO users(username, password) VALUES(:username, :password)");
+    $stmt->bindParam(':username', $username);
+    $stmt->bindParam(':password', $password);
+
+    $stmt->execute();
+?>
+</code></pre>
+<p>Jadi seperti kita menyiapkan template, pada query SQL diatas ada yang disebut sebagai named placeholders, yaitu <code>:username</code> dan <code>:password</code>. Fungsi <code>prepare()</code> berfungsi untuk menyiapkan sebuah SQL statement untuk di jalankan dan menghasilkan sebuah statement object. Disana juga ada fungsi <code>bindParam()</code>, yang berfungsi untuk mengikat PHP variabel ke pada placeholders yang sesuai. Dan terakhir adalah fungsi <code>execute()</code> berfungsi untuk menjalankan prepared statement. Nantinya placeholders akan diganti dengan value dari variabel <code>$username</code> dan <code>$password</code>. Salah satu keuntungan menggunakan prepared statement ini adalah akan mencegah terjadinya serangan berbahaya seperti Injeksi SQL atau SQl Injection.</p>
+<p>Selain dengan named placeholders, teman-teman juga bisa menggunakan positional placeholders, seperti:</p>
+<pre><code class="language-php">&#x3C;?php
+    $username = 'rezauser';
+    $password = 'rezapass';
+
+    $stmt = $dbh->prepare("INSERT INTO users(username, password) VALUES(?, ?)");
+    $stmt->bindParam(1, $username);
+    $stmt->bindParam(2, $password);
+
+    $stmt->execute();
+?>
+</code></pre>
+<p>Perbedaanya dengan named placeholders adalah pada positional placeholders kita menggunakan tanda tanya (?) dan nomor index yang dimulai dari 1, pada fungsi <code>bindParam()</code>.</p>
+<p>Berdasarkan pengalaman saya dalam menggunakan PDO, jika tipe data dari value yang ingin kita masukkan kedalam database itu bertipe string semua, kita bisa tidak menggunakan fungsi <code>bindParam()</code>, yaitu dengan cara memasukkan langsung variabel sebagai array pada saat memanggil fungsi <code>execute()</code>, jadi seperti:</p>
+<pre><code class="language-php">&#x3C;?php
+    $username = 'rezauser';
+    $password = 'rezapass';
+
+    $stmt = $dbh->prepare("INSERT INTO users(username, password) VALUES(:username, :password)");
+    //$stmt->bindParam(':username', $username);
+    //$stmt->bindParam(':password', $password);
+
+    $stmt->execute([':username' => $username, ':password' => $password]);
+?>
+</code></pre>
+<p>Bagaimana jika menggunakan positional placeholders? yang perlu kamu ingat adalah, jika menggunakan named placeholders maka harus menggunakan array asosiatif, sedangkan jika menggunakan positional placeholders maka menggunakan array biasa, seperti:</p>
+<pre><code class="language-php">&#x3C;?php
+    $username = 'rezauser';
+    $password = 'rezapass';
+
+    $stmt = $dbh->prepare("INSERT INTO users(username, password) VALUES(?, ?)");
+    $stmt->execute([$username, $password]);
+?>
+</code></pre>
+<p>Jadi kapan kita harus menggunakan fungsi <code>bindParam()</code>? kita butuh menggunakan fungsi <code>bindparam()</code> ketika value yang harus dimasukkan itu bukan bertipe string, yaitu salah satu contohnya ketika kita butuh perintah SQl yang menggunakan perintah <code>limit</code>, mengapa? karena data yang dimasukkan harus bertipe integer, tidak bisa string, maka kita perlu menggunakan fungsi <code>bindParam()</code>. Pada fungsi <code>bindParam()</code> selain dua argument yang sebelumnya, yaitu yang pertama named placeholders-nya atau nomor index-nya, yang kedua adalah nama variabel-nya, dan yang ke tiga yaitu eksplisit tipe data untuk value yang akan kita masukkan, caranya adalah dengan menggunakan <code>PDO::PARAM_*constants</code>, seperti:</p>
+<pre><code class="language-php">&#x3C;?php
+    $skip = 0;
+    $max = 50;
+
+    $stmt = $dbh->prepare("SELECT * FROM users LIMIT :skip, :max");
+    $stmt->bindParam(':skip', $skip, PDO::PARAM_INT);
+    $stmt->bindParam(':max', $max, PDO::PARAM_INT);
+
+    $stmt->execute();
+?>
+</code></pre>
+<p>Untuk daftar rinci dari PDO Constants teman-teman bisa lihat di <a href="https://www.php.net/manual/en/pdo.constants.php">Manual PDO Constants</a>.</p>
+<p>Selain menggunakan fungsi <code>prepare()</code>, teman-teman juga bisa menggunakan fungsi <code>query()</code>, ini bisa digunakan jika query SQL tidak menggunakan placeholders sama sekali, seperti</p>
+<pre><code class="language-php">&#x3C;?php
+    $stmt = $dbh->query('SELECT * FROM users');
+    $result = $stmt->fetchAll();
+
+    foreach($result as $row) {
+        echo $row['username'].'&#x3C;br>';
+    }
+?>
+</code></pre>
+<p>Sebagai tambahan, berikut adalah contoh code CRUD (Create Read Update Delete) dengan PDO dan Prepared Statement:</p>
+<ul>
+<li>Create : memasukkan data ke dalam database</li>
+</ul>
+<pre><code class="language-php">&#x3C;?php
+    $username = 'rezauser';
+    $password = 'rezapass';
+
+    $stmt = $dbh->prepare("INSERT INTO users(username, password) VALUES(:username, :password)");
+    $stmt->execute([':username' => $username, ':password' => $password]);
+?>
+</code></pre>
+<ul>
+<li>Read : mengambil data dari database</li>
+</ul>
+<pre><code class="language-php">&#x3C;?php
+    $stmt = $dbh->prepare("SELECT * FROM users WHERE username != :username");
+    $stmt->execute([':username' => 'reza']);
+    $users = $stmt->fetchAll();
+
+    foreach($users as $u) {
+        echo $u['username'].'&#x3C;br>';
+    }
+?>
+</code></pre>
+<ul>
+<li>Update : mengubah data di database</li>
+</ul>
+<pre><code class="language-php">&#x3C;?php
+    $username = 'rezauser';
+    $password = 'rezapass';
+    $id = '123';
+
+    $stmt = $dbh->prepare("UPDATE users SET username = :username, password = :password WHERE id = :id");
+    $stmt->execute([':username' => $username, ':password' => $password, ':id' => $id]);
+?>
+</code></pre>
+<ul>
+<li>Delete : menghapus data dari database</li>
+</ul>
+<pre><code class="language-php">&#x3C;?php
+    $id = '123';
+    $stmt = $dbh->prepare("DELETE FROM users WHERE id = :id");
+    $stmt->execute([':id' => $id]);
+?>
+</code></pre>
+<h2>Penanganan Error Koneksi</h2>
+<p>Pada bagian terakhir ini kita akan sedikit membahas mengenai penanganan error koneksi pada saat mengakses database dengan PDO. Untuk menangani error yang dihasilkan, teman-teman bisa menggunakan blok try catch, seperti:</p>
+<pre><code class="language-php">&#x3C;?php
+    $user = 'dbuser';
+    $password = 'dbpass';
+
+    try {
+        $dbh = new PDO('mysql:host=localhost;dbname=test', $user, $password);
+
+        $stmt = $dbh->prepare("SELECT * FROM users LIMIT :skip :max");
+        $stmt->bindParam(':skip', 0, PDO::PARAM_INT);
+        $stmt->bindParam(':max', 50, PDO::PARAM_INT);
+
+        $stmt->execute();
+    } catch (PDOException $e) {
+        echo "Error!: ".$e->getMessage().'&#x3C;br>';
+        die;
+    }
+?>
+</code></pre>
+<p>Jika terjadi error koneksi apa saja, maka sebuah object PDOException akan di buat, karena itu pada bagian <code>catch()</code> kita memberitahu untuk menangkap object PDOException tersebut, sehingga errornya bisa kita tangani didalam block catch. Kita tampilkan errornya dengan sedikit di ubah formatnya didalam blok catch. Formatnya bebas kamu tentukan sesuka hati. Untuk lebih jelas mengenai penggunaan blok try catch untuk exeception handling, seperti yang kita lakukan diatas, kamu bisa googling saja, atau salah satunya kamu bisa memperlajarinya di <a href="https://jagongoding.com/web/php/menengah/penanganan-exception/">Jago Ngoding: Penanganan Exception</a>.</p>
+<p>Terima kasih buat yang sudah membaca, semoga bermanfaat. Jika ada yang ingin ditanyakan atau ada saran silahkan kirim email ke <a href="mailto:fikkri.reza@gmail.com">fikkri.reza@gmail.com</a>. Jangan lupa follow twitter @RezaFikkri untuk mendapatkan tulisan terbaru.</p>
+<h3>Referensi:</h3>
+<p><a href="https://www.php.net/manual/en/book.pdo.php">PHP: PDO - Manual</a></p>d:[null,["$","html",null,{"lang":"en","className":"__variable_534393 __variable_bef9c6","children":["$","body",null,{"className":"h-screen bg-gray-50 font-roboto","children":[["$","div",null,{"className":"flex justify-center p-4 bg-gray-100 text-gray-700","children":["$","$L10",null,{"href":"https://inh.or.id/","rel":"noopener noreferrer","target":"_blank","className":"ms-1 no-underline hover:text-ajwa-blue","children":[["$","span",null,{"children":"Dukung Palestina 🇵🇸"}],["$","span",null,{"className":"ms-1 me-1","children":"Dengan Memberi Bantuan Kemanusiaan Melalui INH"}]]}]}],["$","div",null,{"className":"max-w-5xl mx-auto px-4 sm:px-8","children":["$","header",null,{"className":"pt-7 flex flex-col sm:flex-row sm:justify-between content-center sm:items-center","children":[["$","$L10",null,{"className":"no-underline mb-2 sm:mb-0","href":"/","children":["$","img",null,{"src":"/Reza logo.svg","width":35,"height":35,"alt":"Reza logo","loading":"lazy","decoding":"async"}]}],["$","$L11",null,{}]]}]}],["$","div",null,{"className":"max-w-4xl mx-auto px-4 sm:px-8","children":["$","main",null,{"children":["$","$L12",null,{"parallelRouterKey":"children","segmentPath":["children"],"loading":"$undefined","loadingStyles":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","template":["$","$L13",null,{}],"templateStyles":"$undefined","notFound":[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":"404"}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],"notFoundStyles":[],"childProp":{"current":["$","$L12",null,{"parallelRouterKey":"children","segmentPath":["children","blogs","children"],"loading":"$undefined","loadingStyles":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","template":["$","$L13",null,{}],"templateStyles":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","childProp":{"current":["$","$L12",null,{"parallelRouterKey":"children","segmentPath":["children","blogs","children",["slug","pdo-php-data-objects-ekstensi-php-untuk-mengakses-database","d"],"children"],"loading":"$undefined","loadingStyles":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","template":["$","$L13",null,{}],"templateStyles":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","childProp":{"current":["$L14",["$","article",null,{"className":"mt-24","children":[["$","time",null,{"className":"text-gray-600 inline-block","children":"12 Maret 2023"}],["$","h1",null,{"className":"text-5xl font-bold mt-2 text-gray-800","children":"PDO (PHP Data Objects): Ekstensi PHP untuk mengakses database"}],["$","div",null,{"className":"flex flex-wrap gap-1 mt-6","children":[["$","$L10","cdc80207-597b-4fb7-b572-53b68c9f1a78",{"href":"/blogs/topic/PHP","className":"no-underline text-xs bg-white border border-gray-500 hover:border-ajwa-blue px-2 py-1 rounded-lg","children":"PHP"}],["$","$L10","597f5651-dfe2-4aad-81aa-7c8b090ff468",{"href":"/blogs/topic/Database","className":"no-underline text-xs bg-white border border-gray-500 hover:border-ajwa-blue px-2 py-1 rounded-lg","children":"Database"}]]}],["$","$L15",null,{"post":{"contentHTML":"$16","id":"e2b7af83-c3b4-4e3f-95fb-013cd05d4614","title":"PDO (PHP Data Objects): Ekstensi PHP untuk mengakses database","date":"2023-03-12T03:37:25.934Z","topics":["cdc80207-597b-4fb7-b572-53b68c9f1a78","597f5651-dfe2-4aad-81aa-7c8b090ff468"],"slug":"pdo-php-data-objects-ekstensi-php-untuk-mengakses-database","ogImage":"/posts/php-pdo/php-pdo.png","excerpt":"PDO atau PHP Data Objects merupakan PHP ekstensi yang mendefiniskan ekstensi yang ringan, antarmuka yang konsisten untuk mengakses database di PHP."}}],null]}],null],"segment":"__PAGE__?{\"slug\":\"pdo-php-data-objects-ekstensi-php-untuk-mengakses-database\"}"},"styles":[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/f16eaa9e44b97d3f.css","precedence":"next","crossOrigin":""}]]}],"segment":["slug","pdo-php-data-objects-ekstensi-php-untuk-mengakses-database","d"]},"styles":[]}],"segment":"blogs"},"styles":[]}]}]}],["$","div",null,{"className":"max-w-5xl mx-auto px-4 sm:px-8","children":["$","footer",null,{"className":"mt-20 md:mt-32 pt-4 pb-5 text-sm text-gray-500","children":[["$","div",null,{"className":"flex flex-col sm:flex-row justify-between mb-4 sm:mb-3 sm:mb-4 gap-3","children":[["$","ul",null,{"className":"flex flex-col sm:flex-row gap-3 sm:gap-4","children":[["$","li",null,{"children":["$","$L10",null,{"href":"https://github.com/rezafikkri","children":"Github"}]}],["$","li",null,{"children":["$","$L10",null,{"href":"https://www.linkedin.com/in/reza-sariful-fikri-9356ab16a/","children":"Linkedin"}]}],["$","li",null,{"children":["$","$L10",null,{"href":"https://twitter.com/fikkrireza","children":"Twitter"}]}],["$","li",null,{"children":["$","$L10",null,{"href":"https://web.facebook.com/reza.sariful.fikri","children":"Facebook"}]}]]}],["$","ul",null,{"className":"flex flex-col sm:flex-row gap-3 sm:gap-4","children":[["$","li",null,{"children":["$","$L10",null,{"href":"/blogs","children":"Blog"}]}],["$","li",null,{"children":["$","$L10",null,{"href":"/projects","children":"Projek"}]}]]}]]}],["$","div",null,{"className":"flex justify-between flex-col sm:flex-row gap-2 sm:gap-5","children":[["$","p",null,{"className":"basis-2/4","children":"Dibuat dengan Next.js dan Tailwind CSS"}],["$","p",null,{"className":"basis-2/4 sm:text-end","children":"©2023 Reza Sariful Fikri 🇮🇩🇵🇸"}]]}]]}]}]]}]}],null]
+14:null

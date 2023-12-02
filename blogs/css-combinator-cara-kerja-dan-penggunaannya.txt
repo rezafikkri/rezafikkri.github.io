@@ -1,0 +1,156 @@
+1:HL["/_next/static/media/0e4fe491bf84089c-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+2:HL["/_next/static/media/1deec1af325840fd-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+3:HL["/_next/static/media/3a04115668d8070d-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+4:HL["/_next/static/media/3a18fc8da1cdcd01-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+5:HL["/_next/static/media/627622453ef56b0d-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+6:HL["/_next/static/media/699512af39861afa-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+7:HL["/_next/static/media/7d8c9b0ca4a64a5a-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+8:HL["/_next/static/media/8db47a8bf03b7d2f-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+9:HL["/_next/static/media/934c4b7cb736f2a3-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+a:HL["/_next/static/media/df99695897be762b-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+b:HL["/_next/static/media/ee65d20c5e82dfb1-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+c:HL["/_next/static/css/c81005e90ae6254e.css","style",{"crossOrigin":""}]
+0:["9JRlQ5Mmj0bj7pf2sk_oi",[[["",{"children":["blogs",{"children":[["slug","css-combinator-cara-kerja-dan-penggunaannya","d"],{"children":["__PAGE__?{\"slug\":\"css-combinator-cara-kerja-dan-penggunaannya\"}",{}]}]}]},"$undefined","$undefined",true],"$Ld",[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/c81005e90ae6254e.css","precedence":"next","crossOrigin":""}]],"$Le"]]]]
+f:HL["/_next/static/css/f16eaa9e44b97d3f.css","style",{"crossOrigin":""}]
+10:I[8326,["326","static/chunks/326-976d427cb6019efb.js","919","static/chunks/919-65fa08d33132c0a0.js","688","static/chunks/app/blogs/%5Bslug%5D/page-295820ba057e4e8a.js"],""]
+11:I[9877,["326","static/chunks/326-976d427cb6019efb.js","185","static/chunks/app/layout-d69720986ad23935.js"],""]
+12:I[6954,[],""]
+13:I[7264,[],""]
+15:I[1160,["326","static/chunks/326-976d427cb6019efb.js","919","static/chunks/919-65fa08d33132c0a0.js","688","static/chunks/app/blogs/%5Bslug%5D/page-295820ba057e4e8a.js"],""]
+e:[["$","meta","0",{"charSet":"utf-8"}],["$","title","1",{"children":"CSS Combinator: Cara Kerja dan Penggunaannya - Reza Sariful Fikri"}],["$","meta","2",{"name":"description","content":"Combinator merupakan suatu karakter yang menyatakan hubungan antara selector, untuk menargetkan element dalam dokumen. Misalnya untuk menyeleksi semua"}],["$","meta","3",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","4",{"property":"og:title","content":"CSS Combinator: Cara Kerja dan Penggunaannya"}],["$","meta","5",{"property":"og:description","content":"Combinator merupakan suatu karakter yang menyatakan hubungan antara selector, untuk menargetkan element dalam dokumen. Misalnya untuk menyeleksi semua"}],["$","meta","6",{"property":"og:url","content":"https://rezafikkri.github.io/blogs/css-combinator-cara-kerja-dan-penggunaannya"}],["$","meta","7",{"property":"og:image","content":"https://rezafikkri.github.io/posts/css-combinators/css-combinators.png"}],["$","meta","8",{"property":"og:type","content":"article"}],["$","meta","9",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","10",{"name":"twitter:title","content":"CSS Combinator: Cara Kerja dan Penggunaannya"}],["$","meta","11",{"name":"twitter:description","content":"Combinator merupakan suatu karakter yang menyatakan hubungan antara selector, untuk menargetkan element dalam dokumen. Misalnya untuk menyeleksi semua"}],["$","meta","12",{"name":"twitter:image","content":"https://rezafikkri.github.io/posts/css-combinators/css-combinators.png"}],["$","link","13",{"rel":"icon","href":"/favicon.ico"}],["$","meta","14",{"name":"next-size-adjust"}]]
+16:T3b50,<p>Bismillah, hari ini kita akan membahas mengenai Combinator di CSS. Apa itu Combinator? Combinator merupakan suatu karakter yang menyatakan hubungan antara selector, untuk menargetkan element dalam dokumen. Misalnya untuk menyeleksi semua element <code>&#x3C;p></code> yang ada di dalam element <code>&#x3C;article></code>, kita menggunakan Descendant Combinator ( ):</p>
+<pre><code class="language-css">article p { }
+</code></pre>
+<p>Selain Descendant Combinator ( ), ada juga Child combinator (>), Adjacent sibling combinator (+) dan General sibling combinator (~).</p>
+<p>Sebelum lanjut, seperti biasa kamu harus sudah memahami dasar-dasar CSS, terutama CSS Selector. Jika belum, kamu bisa mempelajarinya di <a href="https://youtube.com/playlist?list=PLFIM0718LjIUBrbm6Gdh6k7ZUvPIAZm7p">playlist CSS Dasar Web Programming Unpas</a>.</p>
+<p>Berikut penjelasan dari masing-masing combinator:</p>
+<h2>Descendant Combinator (Kombinator Keturunan)</h2>
+<p>Descendant Combinator adalah combinator yang menggunakan satu spasi ( ) sebagai penghubung diantara selector nya, contoh:</p>
+<pre><code class="language-css">.reza p {  
+  color: red;  
+}
+</code></pre>
+<p>Arti dari script css diatas adalah, <em>seleksi semua element <code>&#x3C;p></code> yang merupakan descendant (keturunan) dari element dengan class "reza", lalu ubah warna textnya menjadi merah</em>.</p>
+<blockquote>
+<p>Suatu element bisa dikatakan descendant (keturunan) dari element lain adalah ketika element tersebut berada di dalam element lain. Misalnya kita punya element <code>&#x3C;div></code> dan element <code>&#x3C;p></code>, supaya element <code>&#x3C;p></code> bisa dikatakan descendant (keturunan) dari element <code>&#x3C;div></code>, maka tempatkan element <code>&#x3C;p></code> di dalam element <code>&#x3C;div></code>. Tidak masalah jika element <code>&#x3C;p></code> berada di dalam element lain, element <code>&#x3C;article></code> misalnya, intinya adalah selama element <code>&#x3C;p></code> tersebut barada di dalam element <code>&#x3C;div></code>, maka element <code>&#x3C;p></code> bisa dikatakan descendant (keturunan) dari element <code>&#x3C;div></code>. Keadaan dimana suatu element berada di dalam element lain biasa disebut dengan <em>nested element</em> atau element bersarang.</p>
+</blockquote>
+<p>Berikut contoh implementasinya:</p>
+<pre><code class="language-html">&#x3C;div class="reza">  
+  &#x3C;p>Hay saya programmer&#x3C;/p>
+  
+  &#x3C;div class="dian">  
+    &#x3C;p>Hay salam kenal&#x3C;/p>  
+    &#x3C;p>Selamat datang&#x3C;/p>
+    &#x3C;div class="hallo">  
+        &#x3C;p>Hallo apa kabar&#x3C;/p>  
+    &#x3C;/div>  
+  &#x3C;/div> 
+   
+&#x3C;/div>
+&#x3C;p>Saya biasa&#x3C;/p>
+</code></pre>
+<pre><code class="language-css">.reza p {  
+  color: red;  
+}
+</code></pre>
+<p>Hasil:
+<img src="/posts/css-combinators/css%20combinator%201.png" alt="hasil implementasi Descendant Combinator" width="1042" height="626" loading="lazy" decoding="async"><!--rehype:width=1042&height=626&loading=lazy&mt-6&decoding=async--></p>
+<p>Atau kamu juga bisa melihat <a href="https://codepen.io/rezafikkri/pen/bGxxdrN">hasilnya secara online di CodePen</a>.</p>
+<p>Jika kamu lihat hasil di atas, semua element <code>&#x3C;p></code> yang berada di dalam element <code>&#x3C;div></code> dengan class "reza" warna text-nya berubah menjadi merah, walaupun mereka berada di dalam element lain, asalkan element lain tersebut masih berada di dalam element <code>&#x3C;div></code> dengan class "reza", atau bisa kita sebut, selama element <code>&#x3C;p></code> tersebut masih termasuk descendant (keturunan) dari element <code>&#x3C;div></code> dengan class "reza". Jika kamu lihat element <code>&#x3C;p></code> yang berada diluar element <code>&#x3C;div></code> dengan class "reza" warna text-nya tidak berubah menjadi merah, karena element <code>&#x3C;p></code> tersebut bukan descendant (keturunan) dari element <code>&#x3C;div></code> dengan class "reza".</p>
+<h2>Child Combinator (Kombinator Anak)</h2>
+<p>Child Combinator adalah combinator yang menggunakan karakter lebih besar dari (>) sebagai penghubung diantara selectornya, contoh:</p>
+<pre><code class="language-css">.reza > p {  
+  color: red;  
+}
+</code></pre>
+<p>Arti dari script diatas adalah, <em>seleksi semua element <code>&#x3C;p></code> yang termasuk child (anak) dari element dengan class "reza" lalu ubah warna textnya menjadi merah</em>.</p>
+<blockquote>
+<p>Suatu element bisa dikatakan child (anak) dari element lain adalah ketika element tersebut berada di dalam elemen lain dan element tersebut tidak berada di dalam element lain lagi. Misalnya kita punya element <code>&#x3C;div></code> dan element <code>&#x3C;p></code>, supaya element <code>&#x3C;p></code> bisa dikatakan child (anak) dari element <code>&#x3C;div></code>, maka element <code>&#x3C;p></code> harus berada di dalam element <code>&#x3C;div></code> dan tidak boleh berada di dalam element lain lagi, element <code>&#x3C;article></code> misalnya. Dengan kata lain, walaupun kita menempatkan element <code>&#x3C;article></code> yang di dalamnya ada element <code>&#x3C;p></code> di dalam element <code>&#x3C;div></code>, element <code>&#x3C;p></code> bukanlah child (anak) dari element <code>&#x3C;div></code>, melainkan cucu dari element <code>&#x3C;div></code>, sedangkan element <code>&#x3C;article></code>-lah yang merupakan child (anak) dari element <code>&#x3C;div></code>.</p>
+</blockquote>
+<p>Berikut contoh implementasinya:</p>
+<pre><code class="language-html">&#x3C;div class="reza">  
+  &#x3C;p>Hay saya programmer&#x3C;/p>
+  
+  &#x3C;div class="dian">  
+    &#x3C;p>Hay salam kenal&#x3C;/p>  
+    &#x3C;p>Selamat datang&#x3C;/p>  
+  &#x3C;/div>
+  
+  &#x3C;p>Saya biasa&#x3C;/p>  
+&#x3C;/div>  
+&#x3C;p>Semoga bermanfaat&#x3C;/p>
+</code></pre>
+<pre><code class="language-css">.reza > p {  
+  color: red;  
+}
+</code></pre>
+<p>Hasil:
+<img src="/posts/css-combinators/css%20combinator%202.png" alt="hasil imlementasi Child Combinator" width="992" height="626" loading="lazy" class="mt-6" decoding="async"><!--rehype:width=992&height=626&loading=lazy&class=mt-6&decoding=async--></p>
+<p>Atau kamu juga bisa melihat  <a href="https://codepen.io/rezafikkri/pen/BaOOKQg">hasilnya secara online di CodePen</a>.</p>
+<p>Jika kamu lihat hasil di atas, hanya element <code>&#x3C;p></code> dengan text <em>Hay saya programmer</em> dan <em>Saya biasa</em> yang berada di dalam element <code>&#x3C;div></code> dengan class "reza" yang textnya berubah menjadi merah, sedangkan element <code>&#x3C;p></code> dengan text <em>Hay salam kenal</em> dan <em>Selamat datang</em> yang berada di dalam element <code>&#x3C;div></code> dengan class "dian" textnya tidak berubah menjadi merah, padahal element <code>&#x3C;div></code> dengan class “dian” berada di dalam element <code>&#x3C;div></code> dengan class "reza". Itu karena element <code>&#x3C;p></code> yang berada di di dalam element <code>&#x3C;div></code> dengan class "dian" bukanlah child (anak) dari element <code>&#x3C;div></code> dengan class "reza", melainkan element <code>&#x3C;p></code> tersebut adalah child (anak) dari element <code>&#x3C;div></code> dengan class “dian”, sedangkan element <code>&#x3C;div></code> dengan class "dian" lah yang merupakan child (anak) dari element <code>&#x3C;div></code> dengan class "reza". Dan juga tentunya element yang berada diluar element <code>&#x3C;div></code> dengan class "reza" sudah jelas bukan child (anak) dari element <code>&#x3C;div></code> dengan class "reza", itulah sebabnya text pada element <code>&#x3C;p></code> tersebut tidak berubah menjadi merah.</p>
+<h2>Adjacent Sibling Combinator (Kombinator Saudara Kandung Terdekat)</h2>
+<p>Adjacent Sibling Combinator adalah combinator yang menggunakan karakter plus (+) sebagai penguhubung diantara selectornya, contoh:</p>
+<pre><code class="language-css">.reza + p {  
+  color: red;  
+}
+</code></pre>
+<p>Arti dari script diatas adalah, <em>seleksi element <code>&#x3C;p></code> yang merupakan adjacent sibling (saudara kandung terdekat) dari element dengan class "reza", lalu ubah warna textnya menjadi merah</em>.</p>
+<blockquote>
+<p>Suatu element dikatakan adjacent sibling (saudara kandung terdekat) dari element lain adalah ketika element tersebut berada di posisi setelah elemen lain dan element yang menjadi adjacent sibling (saudara kandung terdekat) hanya element yang pertama. Misalnya kita punya beberapa element, yaitu: element <code>&#x3C;p></code> dengan id 1, element <code>&#x3C;article></code>, element <code>&#x3C;p></code> dengan id "2" dan element <code>&#x3C;p></code> dengan id 3. Supaya element <code>&#x3C;p></code> dengan id 1 bisa dikatakan adjacent sibling (saudara kandung terdekat) dari element <code>&#x3C;article></code>, maka kita harus menempatkan element <code>&#x3C;p></code> dengan id 1  pada urutan dari atas ke bawah, tepat setelah element <code>&#x3C;article></code>, sedangkan element <code>&#x3C;p></code> yang lain bebas ditempatkan di mana saja, di atas element <code>&#x3C;article></code> atau di bawah element <code>&#x3C;p></code> dengan id 1. Jadi misalnya kita buat urutan element-element tersebut dari atas ke bawah menjadi, pertama element <code>&#x3C;p></code> dengan id 2, element <code>&#x3C;article></code>, element <code>&#x3C;p></code> dengan id 1 dan element <code>&#x3C;p></code> dengan id 3. Dengan urutan tersebut element <code>&#x3C;p></code> dengan id 1 merupakan adjacent sibling (saudara kandung terdekat) dari element <code>&#x3C;article></code>, sedangkan element <code>&#x3C;p></code> dengan id 2 dan 3 bukanlah adjacent sibling (saudara kandung terdekat) dari element <code>&#x3C;article></code>.</p>
+</blockquote>
+<p>Berikut contoh implementasinya:</p>
+<pre><code class="language-html">&#x3C;div class="dian">  
+  &#x3C;p>Hello Dunia&#x3C;/p>
+  
+  &#x3C;div class="reza">  
+    &#x3C;p>Hay saya programmer&#x3C;/p>  
+    &#x3C;p>Saya biasa&#x3C;/p>  
+  &#x3C;/div>
+  
+  &#x3C;p>Semoga bermanfaat&#x3C;/p>  
+  &#x3C;p>Hay salam kenal&#x3C;/p>  
+&#x3C;/div>
+</code></pre>
+<pre><code class="language-css">.reza + p {  
+  color: red;  
+}
+</code></pre>
+<p>Hasil:
+<img src="/posts/css-combinators/css%20combinator%203.png" alt="hasil implementasi Adjacent Sibling Combinator" width="997" height="626" loading="lazy" class="mt-6" decoding="async"><!--rehype:width=997&height=626&loading=lazy&class=mt-6&decoding=async--></p>
+<p>Atau kamu juga bisa melihat  <a href="https://codepen.io/rezafikkri/pen/YzOJgNM">hasilnya secara online di CodePen</a>.</p>
+<p>Jika kamu lihat hasil diatas, hanya element <code>&#x3C;p></code> dengan text <em>Semoga bermanfaat</em> yang textnya berubah menjadi merah. Sedangkan element <code>&#x3C;p></code> yang berada di dalam element <code>&#x3C;div></code> dengan class "reza" textnya tidak berubah menjadi merah, ini karena element <code>&#x3C;p></code> tersebut bukanlah adjacent sibling (saudara kandung terdekat) dari element <code>&#x3C;div></code> dengan class "reza", melainkan element <code>&#x3C;p></code> tersebut adalah child (anak) dari element <code>&#x3C;div></code> dengan class "reza". Kemudian, element <code>&#x3C;p></code> dengan text <em>Hello Dunia</em> juga tidak berubah menjadi merah, ini karena element yang dianggap sebagai adjacent sibling (saudara kandung terdekat) adalah element pertama berada di posisi setelah element <code>&#x3C;div></code> dengan class "reza".  Lalu, element <code>&#x3C;p></code> dengan text <em>Hay salam kenal</em> juga tidak berubah menjadi merah, memang posisi element <code>&#x3C;p></code> dengan text <em>Hay salam kenal</em> berada setelah element <code>&#x3C;div></code> dengan class "reza", tetapi urutannya tidak berada pada urutan pertama.</p>
+<h2>General Sibling Combinator (Kombinator Saudara Kandung Umum)</h2>
+<p>General Sibling Combinator adalah combinator yang menggunakan karakter tilde ( ~ ) sebagai penghubung diantara selectornya, contoh:</p>
+<pre><code class="language-css">.reza ~ p {
+  color: red;  
+}
+</code></pre>
+<p>Arti dari script diatas adalah, <em>seleksi semua element <code>&#x3C;p></code> yang merupakan general sibling (saudara kandung umum) dari element dengan class "reza", lalu ubah warna textnya menjadi merah</em>.</p>
+<blockquote>
+<p>Cara kerja dari general sibling combinator (kombinator saudara kandung umum) mirip dengan cara kerja adjacent sibling combinator (kombinator saudara kandung terdekat), hanya saja yang membedakan adalah semua element yang berada di posisi setelah element lain adalah general sibling (saudara kandung umum) dari element lain tersebut. Misalnya (dengan contoh yang sama), kita punya beberapa element, dengan urutan: element <code>&#x3C;p></code> dengan id 1, element <code>&#x3C;article></code>, element <code>&#x3C;p></code> dengan id 2 dan element <code>&#x3C;p></code> dengan id 3. Dengan urutan tersebut yang termasuk general sibling (saudara kandung umum) dari element <code>&#x3C;article></code> adalah element <code>&#x3C;p></code> dengan id 2 dan element <code>&#x3C;p></code> dengan id 3.</p>
+</blockquote>
+<p>Berikut contoh implementasinya:</p>
+<pre><code class="language-html">&#x3C;div class="dian">  
+  &#x3C;p>Hello Dunia&#x3C;/p>
+  
+  &#x3C;div class="reza">  
+    &#x3C;p>Hay saya programmer&#x3C;/p>  
+    &#x3C;p>Saya biasa&#x3C;/p>  
+  &#x3C;/div>
+  
+  &#x3C;p>Semoga bermanfaat&#x3C;/p>  
+  &#x3C;p>Hay salam kenal&#x3C;/p>  
+&#x3C;/div>
+</code></pre>
+<pre><code class="language-css">.reza ~ p {  
+  color: red;  
+}
+</code></pre>
+<p>Hasil:
+<img src="/posts/css-combinators/css%20combinator%204.png" alt="hasil implementasi General Sibling Combinator" width="972" height="626" loading="lazy" class="mt-6" decoding="async"><!--rehype:width=972&height=626&loading=lazy&class=mt-6&decoding=async--></p>
+<p>Atau kamu juga bisa melihat  <a href="https://codepen.io/rezafikkri/pen/eYLbJMQ">hasilnya secara online di CodePen</a>.</p>
+<p>Nah jika teman-teman lihat hasil diatas, kedua element <code>&#x3C;p></code> dengan text <em>Semoga bermanfaat</em>, dan <em>Hay salam kenal</em> textnya berubah menjadi merah, karena keduanya berada di posisi setelah element <code>&#x3C;div></code> dengan class "reza", sehingga dianggap sebagai general sibling (saudara kandung umum) dari element <code>&#x3C;div></code> dengan class "reza". Sedangkan element <code>&#x3C;p></code> dengan text <em>Hello Dunia</em> tidak berubah menjadi merah, ini dikarenakan posisi element <code>&#x3C;p></code> dengan text <em>Hello Dunia</em> tidak berada setelah element <code>&#x3C;div></code> dengan class "reza". Dan element <code>&#x3C;p></code> yang berada di dalam element <code>&#x3C;div></code> dengan class "reza", tentu textnya tidak akan berubah menjadi merah, karena mereka adalah child (anak) dari element <code>&#x3C;div></code> dengan class "reza".</p>
+<p>Oke, terima kasih buat kamu yang sudah membaca, semoga bermanfaat. Jika ada yang ingin ditanyakan atau ada saran silahkan kirim email ke <a href="mailto:fikkri.reza@gmail.com">fikkri.reza@gmail.com</a>. Jangan lupa follow twitter @RezaFikkri untuk mendapatkan tulisan terbaru.</p>
+<h3>Referensi:</h3>
+<p><a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors/Combinators">MDN Combinators</a></p>d:[null,["$","html",null,{"lang":"en","className":"__variable_534393 __variable_bef9c6","children":["$","body",null,{"className":"h-screen bg-gray-50 font-roboto","children":[["$","div",null,{"className":"flex justify-center p-4 bg-gray-100 text-gray-700","children":["$","$L10",null,{"href":"https://inh.or.id/","rel":"noopener noreferrer","target":"_blank","className":"ms-1 no-underline hover:text-ajwa-blue","children":[["$","span",null,{"children":"Dukung Palestina 🇵🇸"}],["$","span",null,{"className":"ms-1 me-1","children":"Dengan Memberi Bantuan Kemanusiaan Melalui INH"}]]}]}],["$","div",null,{"className":"max-w-5xl mx-auto px-4 sm:px-8","children":["$","header",null,{"className":"pt-7 flex flex-col sm:flex-row sm:justify-between content-center sm:items-center","children":[["$","$L10",null,{"className":"no-underline mb-2 sm:mb-0","href":"/","children":["$","img",null,{"src":"/Reza logo.svg","width":35,"height":35,"alt":"Reza logo","loading":"lazy","decoding":"async"}]}],["$","$L11",null,{}]]}]}],["$","div",null,{"className":"max-w-4xl mx-auto px-4 sm:px-8","children":["$","main",null,{"children":["$","$L12",null,{"parallelRouterKey":"children","segmentPath":["children"],"loading":"$undefined","loadingStyles":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","template":["$","$L13",null,{}],"templateStyles":"$undefined","notFound":[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":"404"}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],"notFoundStyles":[],"childProp":{"current":["$","$L12",null,{"parallelRouterKey":"children","segmentPath":["children","blogs","children"],"loading":"$undefined","loadingStyles":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","template":["$","$L13",null,{}],"templateStyles":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","childProp":{"current":["$","$L12",null,{"parallelRouterKey":"children","segmentPath":["children","blogs","children",["slug","css-combinator-cara-kerja-dan-penggunaannya","d"],"children"],"loading":"$undefined","loadingStyles":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","template":["$","$L13",null,{}],"templateStyles":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","childProp":{"current":["$L14",["$","article",null,{"className":"mt-24","children":[["$","time",null,{"className":"text-gray-600 inline-block","children":"24 Maret 2023"}],["$","h1",null,{"className":"text-5xl font-bold mt-2 text-gray-800","children":"CSS Combinator: Cara Kerja dan Penggunaannya"}],["$","div",null,{"className":"flex flex-wrap gap-1 mt-6","children":[["$","$L10","12ca2718-3365-465d-b35e-12d05d9a9873",{"href":"/blogs/topic/CSS","className":"no-underline text-xs bg-white border border-gray-500 hover:border-ajwa-blue px-2 py-1 rounded-lg","children":"CSS"}]]}],["$","$L15",null,{"post":{"contentHTML":"$16","id":"bee5cd43-e243-4ce8-9016-5fe7d3e08c69","title":"CSS Combinator: Cara Kerja dan Penggunaannya","date":"2023-03-24T03:32:26.132Z","topics":["12ca2718-3365-465d-b35e-12d05d9a9873"],"slug":"css-combinator-cara-kerja-dan-penggunaannya","ogImage":"/posts/css-combinators/css-combinators.png","excerpt":"Combinator merupakan suatu karakter yang menyatakan hubungan antara selector, untuk menargetkan element dalam dokumen. Misalnya untuk menyeleksi semua"}}],null]}],null],"segment":"__PAGE__?{\"slug\":\"css-combinator-cara-kerja-dan-penggunaannya\"}"},"styles":[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/f16eaa9e44b97d3f.css","precedence":"next","crossOrigin":""}]]}],"segment":["slug","css-combinator-cara-kerja-dan-penggunaannya","d"]},"styles":[]}],"segment":"blogs"},"styles":[]}]}]}],["$","div",null,{"className":"max-w-5xl mx-auto px-4 sm:px-8","children":["$","footer",null,{"className":"mt-20 md:mt-32 pt-4 pb-5 text-sm text-gray-500","children":[["$","div",null,{"className":"flex flex-col sm:flex-row justify-between mb-4 sm:mb-3 sm:mb-4 gap-3","children":[["$","ul",null,{"className":"flex flex-col sm:flex-row gap-3 sm:gap-4","children":[["$","li",null,{"children":["$","$L10",null,{"href":"https://github.com/rezafikkri","children":"Github"}]}],["$","li",null,{"children":["$","$L10",null,{"href":"https://www.linkedin.com/in/reza-sariful-fikri-9356ab16a/","children":"Linkedin"}]}],["$","li",null,{"children":["$","$L10",null,{"href":"https://twitter.com/fikkrireza","children":"Twitter"}]}],["$","li",null,{"children":["$","$L10",null,{"href":"https://web.facebook.com/reza.sariful.fikri","children":"Facebook"}]}]]}],["$","ul",null,{"className":"flex flex-col sm:flex-row gap-3 sm:gap-4","children":[["$","li",null,{"children":["$","$L10",null,{"href":"/blogs","children":"Blog"}]}],["$","li",null,{"children":["$","$L10",null,{"href":"/projects","children":"Projek"}]}]]}]]}],["$","div",null,{"className":"flex justify-between flex-col sm:flex-row gap-2 sm:gap-5","children":[["$","p",null,{"className":"basis-2/4","children":"Dibuat dengan Next.js dan Tailwind CSS"}],["$","p",null,{"className":"basis-2/4 sm:text-end","children":"©2023 Reza Sariful Fikri 🇮🇩🇵🇸"}]]}]]}]}]]}]}],null]
+14:null
