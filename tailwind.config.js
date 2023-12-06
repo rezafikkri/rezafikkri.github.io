@@ -59,7 +59,7 @@ module.exports = {
       }),
       fontFamily: {
         roboto: ['var(--font-roboto)'],
-        'fira-code': ['var(--font-fira-code)'],
+        'source-code-pro': ['var(--font-source-code-pro)'],
       },
     }
   },

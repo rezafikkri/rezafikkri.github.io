@@ -127,7 +127,7 @@ Jadi kapan kita harus menggunakan fungsi `bindParam()`? kita butuh menggunakan f
 ```
 Untuk daftar rinci dari PDO Constants teman-teman bisa lihat di [Manual PDO Constants](https://www.php.net/manual/en/pdo.constants.php). 
 
-Selain menggunakan fungsi `prepare()`, teman-teman juga bisa menggunakan fungsi `query()`, ini bisa digunakan jika query SQL tidak menggunakan placeholders sama sekali, seperti
+Selain menggunakan fungsi `prepare()`, teman-teman juga bisa menggunakan fungsi `query()`, ini bisa digunakan jika query SQL tidak menggunakan placeholders sama sekali, seperti:
 ```php
 <?php
     $stmt = $dbh->query('SELECT * FROM users');
@@ -138,6 +138,8 @@ Selain menggunakan fungsi `prepare()`, teman-teman juga bisa menggunakan fungsi 
     }
 ?>
 ```
+
+> Praktik terbaik dalam penggunaan `prepare()` dan `execute()` adalah ketika printah SQL tersebut membutuhkan data dari luar, misalnya ketika kita ingin memasukkan data ke database. Sedangkan `query()`  digunakan ketika perintah SQL tersebut tidak membutuhkan data dari luar, misalnya perintah untuk menampilkan semua user seperti di atas.
 
 Sebagai tambahan, berikut adalah contoh code CRUD (Create Read Update Delete) dengan PDO dan Prepared Statement:
 

@@ -6,7 +6,7 @@ import Palestine from "@/components/layout/Palestine";
 import "@/styles/globals.css";
 
 // font config
-import { Roboto, Fira_Code } from 'next/font/google';
+import { Roboto, Source_Code_Pro } from 'next/font/google';
 
 export const roboto = Roboto({
   weight: ['300','400', '500', '700', '900'],
@@ -16,12 +16,12 @@ export const roboto = Roboto({
   fallback: ['sans-serif']
 });
 
-export const fira_code = Fira_Code({
+export const fira_code = Source_Code_Pro({
   weight: ['400'],
   subsets: ['latin'],
-  variable: '--font-fira-code',
+  variable: '--font-source-code-pro',
   fallback: ['monospace']
-})
+});
 
 // metadata config
 const baseUrl = getBaseUrl();
