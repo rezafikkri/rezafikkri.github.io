@@ -10,7 +10,7 @@
 a:HL["/_next/static/media/934c4b7cb736f2a3-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 b:HL["/_next/static/media/ee65d20c5e82dfb1-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 c:HL["/_next/static/css/0ff7cea8e9561e5f.css","style",{"crossOrigin":""}]
-0:["b8kUwZYYmLexSRNOPaeKI",[[["",{"children":["blogs",{"children":[["slug","pdo-php-data-objects-ekstensi-php-untuk-mengakses-database","d"],{"children":["__PAGE__?{\"slug\":\"pdo-php-data-objects-ekstensi-php-untuk-mengakses-database\"}",{}]}]}]},"$undefined","$undefined",true],"$Ld",[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/0ff7cea8e9561e5f.css","precedence":"next","crossOrigin":""}]],"$Le"]]]]
+0:["5alDC6aBUNhJe_BniIp4H",[[["",{"children":["blogs",{"children":[["slug","pdo-php-data-objects-ekstensi-php-untuk-mengakses-database","d"],{"children":["__PAGE__?{\"slug\":\"pdo-php-data-objects-ekstensi-php-untuk-mengakses-database\"}",{}]}]}]},"$undefined","$undefined",true],"$Ld",[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/0ff7cea8e9561e5f.css","precedence":"next","crossOrigin":""}]],"$Le"]]]]
 f:HL["/_next/static/css/f16eaa9e44b97d3f.css","style",{"crossOrigin":""}]
 10:I[8326,["326","static/chunks/326-976d427cb6019efb.js","919","static/chunks/919-65fa08d33132c0a0.js","688","static/chunks/app/blogs/%5Bslug%5D/page-f276987412987fa7.js"],""]
 11:I[9877,["326","static/chunks/326-976d427cb6019efb.js","185","static/chunks/app/layout-cdc7c0430e7fb6a1.js"],""]
@@ -18,7 +18,7 @@ f:HL["/_next/static/css/f16eaa9e44b97d3f.css","style",{"crossOrigin":""}]
 13:I[7264,[],""]
 15:I[1160,["326","static/chunks/326-976d427cb6019efb.js","919","static/chunks/919-65fa08d33132c0a0.js","688","static/chunks/app/blogs/%5Bslug%5D/page-f276987412987fa7.js"],""]
 e:[["$","meta","0",{"charSet":"utf-8"}],["$","title","1",{"children":"PDO (PHP Data Objects): Ekstensi PHP untuk mengakses database - Reza Sariful Fikri"}],["$","meta","2",{"name":"description","content":"PDO atau PHP Data Objects merupakan PHP ekstensi yang mendefiniskan ekstensi yang ringan, antarmuka yang konsisten untuk mengakses database di PHP."}],["$","meta","3",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","4",{"property":"og:title","content":"PDO (PHP Data Objects): Ekstensi PHP untuk mengakses database"}],["$","meta","5",{"property":"og:description","content":"PDO atau PHP Data Objects merupakan PHP ekstensi yang mendefiniskan ekstensi yang ringan, antarmuka yang konsisten untuk mengakses database di PHP."}],["$","meta","6",{"property":"og:url","content":"https://rezafikkri.github.io/blogs/pdo-php-data-objects-ekstensi-php-untuk-mengakses-database"}],["$","meta","7",{"property":"og:image","content":"https://rezafikkri.github.io/posts/php-pdo/php-pdo.png"}],["$","meta","8",{"property":"og:type","content":"article"}],["$","meta","9",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","10",{"name":"twitter:title","content":"PDO (PHP Data Objects): Ekstensi PHP untuk mengakses database"}],["$","meta","11",{"name":"twitter:description","content":"PDO atau PHP Data Objects merupakan PHP ekstensi yang mendefiniskan ekstensi yang ringan, antarmuka yang konsisten untuk mengakses database di PHP."}],["$","meta","12",{"name":"twitter:image","content":"https://rezafikkri.github.io/posts/php-pdo/php-pdo.png"}],["$","link","13",{"rel":"icon","href":"/favicon.ico"}],["$","meta","14",{"name":"next-size-adjust"}]]
-16:T3703,<p>Bismillah, hari ini kita akan mempelajari PDO (PHP Data Objects).</p>
+16:T380e,<p>Bismillah, hari ini kita akan mempelajari PDO (PHP Data Objects).</p>
 <p>Tetapi, seperti biasanya sebelum lanjut, yang perlu dipersiapkan adalah, kamu harus memahami beberapa perintah dasar sql, seperti Insert, Update, dll, pada database MariaDB. Jika belum kamu bisa belajar di channel Indonesia Belajar pada playlist <a href="https://youtube.com/playlist?list=PL2O3HdJI4voGs6CiEUPXwt1fhLLqu30E_">Tutorial Belajar Database MySQL | MaraDB</a>. Mengapa database MariaDB? karena pada tutorial ini kita akan menggunakan database MariaDB. Serta sangat di sarankan juga kamu untuk belajar dasar-dasar OOP (Object Oriented Programming) dengan bahasa pemrograman PHP. kamu bisa mempelajarinya di channel Web Programming Unpas pada playlist  <a href="https://youtube.com/playlist?list=PLFIM0718LjIWvxxll-6wLXrC_16h_Bl_p">OOP DASAR pada PHP</a>.</p>
 <h2>Apa Itu PDO?</h2>
 <p>PDO atau PHP Data Objects merupakan PHP ekstensi yang mendefiniskan ekstensi yang ringan, antarmuka yang konsisten untuk mengakses database di PHP.Intinya PDO adalah PHP ekstensi yang digunakan untuk mengakses database di PHP.</p>
@@ -73,8 +73,8 @@ Password merupakan password untuk koneksi ke database. pada contoh, passwordnya 
     $stmt->execute();
 ?>
 </code></pre>
-<p>Jadi seperti kita menyiapkan template, pada query SQL diatas ada yang disebut sebagai named placeholders, yaitu <code>:username</code> dan <code>:password</code>. Fungsi <code>prepare()</code> berfungsi untuk menyiapkan sebuah SQL statement untuk di jalankan dan menghasilkan sebuah statement object. Disana juga ada fungsi <code>bindParam()</code>, yang berfungsi untuk mengikat PHP variabel ke pada placeholders yang sesuai. Dan terakhir adalah fungsi <code>execute()</code> berfungsi untuk menjalankan prepared statement. Nantinya placeholders akan diganti dengan value dari variabel <code>$username</code> dan <code>$password</code>. Salah satu keuntungan menggunakan prepared statement ini adalah akan mencegah terjadinya serangan berbahaya seperti Injeksi SQL atau SQl Injection.</p>
-<p>Selain dengan named placeholders, kamu juga bisa menggunakan positional placeholders, seperti:</p>
+<p>Jadi seperti kita menyiapkan template, pada query SQL diatas ada yang disebut sebagai <em>named placeholders</em>, yaitu <code>:username</code> dan <code>:password</code>. Fungsi <code>prepare()</code> berfungsi untuk menyiapkan sebuah SQL statement untuk di jalankan dan menghasilkan sebuah statement object. Disana juga ada fungsi <code>bindParam()</code>, yang berfungsi untuk mengikat PHP variabel ke pada placeholders yang sesuai. Dan terakhir adalah fungsi <code>execute()</code> berfungsi untuk menjalankan prepared statement. Nantinya placeholders akan diganti dengan value dari variabel <code>$username</code> dan <code>$password</code>. Salah satu keuntungan menggunakan prepared statement ini adalah akan mencegah terjadinya serangan berbahaya seperti Injeksi SQL atau SQl Injection.</p>
+<p>Selain dengan <em>named placeholders</em>, kamu juga bisa menggunakan <em>positional placeholders</em>, seperti:</p>
 <pre><code class="language-php">&#x3C;?php
     $username = 'rezauser';
     $password = 'rezapass';
@@ -86,8 +86,8 @@ Password merupakan password untuk koneksi ke database. pada contoh, passwordnya 
     $stmt->execute();
 ?>
 </code></pre>
-<p>Perbedaanya dengan named placeholders adalah pada positional placeholders kita menggunakan tanda tanya (?) dan nomor index yang dimulai dari 1, pada fungsi <code>bindParam()</code>.</p>
-<p>Berdasarkan pengalaman saya dalam menggunakan PDO, jika tipe data dari value yang ingin kita masukkan kedalam database itu bertipe string semua, kita bisa tidak menggunakan fungsi <code>bindParam()</code>, yaitu dengan cara memasukkan langsung variabel sebagai array pada saat memanggil fungsi <code>execute()</code>, jadi seperti:</p>
+<p>Perbedaanya dengan <em>named placeholders</em> adalah pada <em>positional placeholders</em> kita menggunakan tanda tanya (?) dan nomor index yang dimulai dari 1, pada fungsi <code>bindParam()</code>.</p>
+<p>Jika tipe data dari value yang ingin kita masukkan kedalam database itu bertipe string semua, kita bisa tidak menggunakan fungsi <code>bindParam()</code>, yaitu dengan cara memasukkan langsung variabel sebagai array pada saat memanggil fungsi <code>execute()</code>, jadi seperti:</p>
 <pre><code class="language-php">&#x3C;?php
     $username = 'rezauser';
     $password = 'rezapass';
@@ -99,7 +99,7 @@ Password merupakan password untuk koneksi ke database. pada contoh, passwordnya 
     $stmt->execute([':username' => $username, ':password' => $password]);
 ?>
 </code></pre>
-<p>Bagaimana jika menggunakan positional placeholders? yang perlu kamu ingat adalah, jika menggunakan named placeholders maka harus menggunakan array asosiatif, sedangkan jika menggunakan positional placeholders maka menggunakan array biasa, seperti:</p>
+<p>Bagaimana jika menggunakan <em>positional placeholders</em>? yang perlu kamu ingat adalah, jika menggunakan <em>named placeholders</em> maka harus menggunakan array asosiatif, sedangkan jika menggunakan <em>positional placeholders</em> maka menggunakan <em>indexed array</em>, seperti:</p>
 <pre><code class="language-php">&#x3C;?php
     $username = 'rezauser';
     $password = 'rezapass';
@@ -108,7 +108,10 @@ Password merupakan password untuk koneksi ke database. pada contoh, passwordnya 
     $stmt->execute([$username, $password]);
 ?>
 </code></pre>
-<p>Jadi kapan kita harus menggunakan fungsi <code>bindParam()</code>? kita butuh menggunakan fungsi <code>bindparam()</code> ketika value yang harus dimasukkan itu bukan bertipe string, yaitu salah satu contohnya ketika kita butuh perintah SQl yang menggunakan perintah <code>limit</code>, mengapa? karena data yang dimasukkan harus bertipe integer, tidak bisa string, maka kita perlu menggunakan fungsi <code>bindParam()</code>. Pada fungsi <code>bindParam()</code> selain dua argument yang sebelumnya, yaitu yang pertama named placeholders-nya atau nomor index-nya, yang kedua adalah nama variabel-nya, dan yang ke tiga yaitu eksplisit tipe data untuk value yang akan kita masukkan, caranya adalah dengan menggunakan <code>PDO::PARAM_*constants</code>, seperti:</p>
+<blockquote>
+<p>Perbedaan <em>indexed array</em> dan array asosiatif adalah tipe <em>key</em> yang digunakan, <em>indexed array</em> menggunakan <em>key</em> bertipe integer, sedangkan array asosiatif menggunakan <em>key</em> bertipe string</p>
+</blockquote>
+<p>Jadi kapan kita harus menggunakan fungsi <code>bindParam()</code>? kita butuh menggunakan fungsi <code>bindparam()</code> ketika value yang harus dimasukkan itu bukan bertipe string, yaitu salah satu contohnya ketika kita butuh perintah SQl yang menggunakan perintah <code>limit</code>, mengapa? karena data yang dimasukkan harus bertipe integer, tidak bisa string, maka kita perlu menggunakan fungsi <code>bindParam()</code>. Pada fungsi <code>bindParam()</code> selain dua argument yang sebelumnya, yaitu yang pertama string dari <em>named placeholders</em> atau nomor index dari <em>positional placeholders</em>, yang kedua adalah nama variabel-nya, dan yang ke tiga yaitu eksplisit tipe data untuk value yang akan kita masukkan, caranya adalah dengan menggunakan <code>PDO::PARAM_*constants</code>, seperti:</p>
 <pre><code class="language-php">&#x3C;?php
     $skip = 0;
     $max = 50;
@@ -123,10 +126,8 @@ Password merupakan password untuk koneksi ke database. pada contoh, passwordnya 
 <p>Untuk daftar rinci dari PDO Constants kamu bisa lihat di <a href="https://www.php.net/manual/en/pdo.constants.php">Manual PDO Constants</a>.</p>
 <p>Selain menggunakan fungsi <code>prepare()</code> dan <code>execute()</code>, kamu juga bisa menggunakan fungsi <code>query()</code> atau <code>exec()</code>, seperti:</p>
 <pre><code class="language-php">&#x3C;?php
-    $stmt = $dbh->query('SELECT * FROM users');
-    $result = $stmt->fetchAll();
-
-    foreach($result as $row) {
+    $sql = 'SELECT * FROM users';
+    foreach($dbh->query() as $row) {
         echo $row['username'].'&#x3C;br>';
     }
 ?>
@@ -157,9 +158,8 @@ Password merupakan password untuk koneksi ke database. pada contoh, passwordnya 
 <pre><code class="language-php">&#x3C;?php
     $stmt = $dbh->prepare("SELECT * FROM users WHERE username != :username");
     $stmt->execute([':username' => 'reza']);
-    $users = $stmt->fetchAll();
 
-    foreach($users as $u) {
+    foreach($stmt as $u) {
         echo $u['username'].'&#x3C;br>';
     }
 ?>
