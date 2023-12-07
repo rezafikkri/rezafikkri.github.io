@@ -72,9 +72,9 @@ Dan contoh detailnya adalah:
     $stmt->execute();
 ?>
 ```
-Jadi seperti kita menyiapkan template, pada query SQL diatas ada yang disebut sebagai named placeholders, yaitu `:username` dan `:password`. Fungsi `prepare()` berfungsi untuk menyiapkan sebuah SQL statement untuk di jalankan dan menghasilkan sebuah statement object. Disana juga ada fungsi `bindParam()`, yang berfungsi untuk mengikat PHP variabel ke pada placeholders yang sesuai. Dan terakhir adalah fungsi `execute()` berfungsi untuk menjalankan prepared statement. Nantinya placeholders akan diganti dengan value dari variabel `$username` dan `$password`. Salah satu keuntungan menggunakan prepared statement ini adalah akan mencegah terjadinya serangan berbahaya seperti Injeksi SQL atau SQl Injection.
+Jadi seperti kita menyiapkan template, pada query SQL diatas ada yang disebut sebagai *named placeholders*, yaitu `:username` dan `:password`. Fungsi `prepare()` berfungsi untuk menyiapkan sebuah SQL statement untuk di jalankan dan menghasilkan sebuah statement object. Disana juga ada fungsi `bindParam()`, yang berfungsi untuk mengikat PHP variabel ke pada placeholders yang sesuai. Dan terakhir adalah fungsi `execute()` berfungsi untuk menjalankan prepared statement. Nantinya placeholders akan diganti dengan value dari variabel `$username` dan `$password`. Salah satu keuntungan menggunakan prepared statement ini adalah akan mencegah terjadinya serangan berbahaya seperti Injeksi SQL atau SQl Injection.
 
-Selain dengan named placeholders, kamu juga bisa menggunakan positional placeholders, seperti:
+Selain dengan *named placeholders*, kamu juga bisa menggunakan *positional placeholders*, seperti:
 ```php
 <?php
     $username = 'rezauser';
@@ -87,9 +87,9 @@ Selain dengan named placeholders, kamu juga bisa menggunakan positional placehol
     $stmt->execute();
 ?>
 ```
-Perbedaanya dengan named placeholders adalah pada positional placeholders kita menggunakan tanda tanya (?) dan nomor index yang dimulai dari 1, pada fungsi `bindParam()`.
+Perbedaanya dengan *named placeholders* adalah pada *positional placeholders* kita menggunakan tanda tanya (?) dan nomor index yang dimulai dari 1, pada fungsi `bindParam()`.
 
-Berdasarkan pengalaman saya dalam menggunakan PDO, jika tipe data dari value yang ingin kita masukkan kedalam database itu bertipe string semua, kita bisa tidak menggunakan fungsi `bindParam()`, yaitu dengan cara memasukkan langsung variabel sebagai array pada saat memanggil fungsi `execute()`, jadi seperti:
+Jika tipe data dari value yang ingin kita masukkan kedalam database itu bertipe string semua, kita bisa tidak menggunakan fungsi `bindParam()`, yaitu dengan cara memasukkan langsung variabel sebagai array pada saat memanggil fungsi `execute()`, jadi seperti:
 ```php
 <?php
     $username = 'rezauser';
@@ -102,7 +102,7 @@ Berdasarkan pengalaman saya dalam menggunakan PDO, jika tipe data dari value yan
     $stmt->execute([':username' => $username, ':password' => $password]);
 ?>
 ```
-Bagaimana jika menggunakan positional placeholders? yang perlu kamu ingat adalah, jika menggunakan named placeholders maka harus menggunakan array asosiatif, sedangkan jika menggunakan positional placeholders maka menggunakan array biasa, seperti:
+Bagaimana jika menggunakan *positional placeholders*? yang perlu kamu ingat adalah, jika menggunakan *named placeholders* maka harus menggunakan array asosiatif, sedangkan jika menggunakan *positional placeholders* maka menggunakan *indexed array*, seperti:
 ```php
 <?php
     $username = 'rezauser';
@@ -112,7 +112,10 @@ Bagaimana jika menggunakan positional placeholders? yang perlu kamu ingat adalah
     $stmt->execute([$username, $password]);
 ?>
 ```
-Jadi kapan kita harus menggunakan fungsi `bindParam()`? kita butuh menggunakan fungsi `bindparam()` ketika value yang harus dimasukkan itu bukan bertipe string, yaitu salah satu contohnya ketika kita butuh perintah SQl yang menggunakan perintah `limit`, mengapa? karena data yang dimasukkan harus bertipe integer, tidak bisa string, maka kita perlu menggunakan fungsi `bindParam()`. Pada fungsi `bindParam()` selain dua argument yang sebelumnya, yaitu yang pertama named placeholders-nya atau nomor index-nya, yang kedua adalah nama variabel-nya, dan yang ke tiga yaitu eksplisit tipe data untuk value yang akan kita masukkan, caranya adalah dengan menggunakan `PDO::PARAM_*constants`, seperti:
+
+> Perbedaan *indexed array* dan array asosiatif adalah tipe *key* yang digunakan, *indexed array* menggunakan *key* bertipe integer, sedangkan array asosiatif menggunakan *key* bertipe string
+
+Jadi kapan kita harus menggunakan fungsi `bindParam()`? kita butuh menggunakan fungsi `bindparam()` ketika value yang harus dimasukkan itu bukan bertipe string, yaitu salah satu contohnya ketika kita butuh perintah SQl yang menggunakan perintah `limit`, mengapa? karena data yang dimasukkan harus bertipe integer, tidak bisa string, maka kita perlu menggunakan fungsi `bindParam()`. Pada fungsi `bindParam()` selain dua argument yang sebelumnya, yaitu yang pertama string dari *named placeholders* atau nomor index dari *positional placeholders*, yang kedua adalah nama variabel-nya, dan yang ke tiga yaitu eksplisit tipe data untuk value yang akan kita masukkan, caranya adalah dengan menggunakan `PDO::PARAM_*constants`, seperti:
 ```php
 <?php
     $skip = 0;
@@ -130,10 +133,8 @@ Untuk daftar rinci dari PDO Constants kamu bisa lihat di [Manual PDO Constants](
 Selain menggunakan fungsi `prepare()` dan `execute()`, kamu juga bisa menggunakan fungsi `query()` atau `exec()`, seperti:
 ```php
 <?php
-    $stmt = $dbh->query('SELECT * FROM users');
-    $result = $stmt->fetchAll();
-
-    foreach($result as $row) {
+    $sql = 'SELECT * FROM users';
+    foreach($dbh->query($sql) as $row) {
         echo $row['username'].'<br>';
     }
 ?>
@@ -165,9 +166,8 @@ Sebagai tambahan, berikut adalah contoh code CRUD (Create Read Update Delete) de
 <?php
     $stmt = $dbh->prepare("SELECT * FROM users WHERE username != :username");
     $stmt->execute([':username' => 'reza']);
-    $users = $stmt->fetchAll();
 
-    foreach($users as $u) {
+    foreach($stmt as $u) {
         echo $u['username'].'<br>';
     }
 ?>
