@@ -10,7 +10,7 @@
 a:HL["/_next/static/media/934c4b7cb736f2a3-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 b:HL["/_next/static/media/ee65d20c5e82dfb1-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 c:HL["/_next/static/css/0ff7cea8e9561e5f.css","style",{"crossOrigin":""}]
-0:["-EVbySW8ieMW11U4odxpt",[[["",{"children":["blogs",{"children":[["slug","alternatif-software-berbayar","d"],{"children":["__PAGE__?{\"slug\":\"alternatif-software-berbayar\"}",{}]}]}]},"$undefined","$undefined",true],"$Ld",[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/0ff7cea8e9561e5f.css","precedence":"next","crossOrigin":""}]],"$Le"]]]]
+0:["bg8DKV3QLOLioASENxQFD",[[["",{"children":["blogs",{"children":[["slug","alternatif-software-berbayar","d"],{"children":["__PAGE__?{\"slug\":\"alternatif-software-berbayar\"}",{}]}]}]},"$undefined","$undefined",true],"$Ld",[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/0ff7cea8e9561e5f.css","precedence":"next","crossOrigin":""}]],"$Le"]]]]
 f:HL["/_next/static/css/f16eaa9e44b97d3f.css","style",{"crossOrigin":""}]
 10:I[8326,["326","static/chunks/326-976d427cb6019efb.js","919","static/chunks/919-65fa08d33132c0a0.js","688","static/chunks/app/blogs/%5Bslug%5D/page-f276987412987fa7.js"],""]
 11:I[9877,["326","static/chunks/326-976d427cb6019efb.js","185","static/chunks/app/layout-cdc7c0430e7fb6a1.js"],""]
