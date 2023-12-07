@@ -1,7 +1,7 @@
 ---
 id: "e2b7af83-c3b4-4e3f-95fb-013cd05d4614"
 title: "PDO (PHP Data Objects): Ekstensi PHP untuk mengakses database"
-date: "2023-03-12T03:37:25.934Z"
+date: "2023-12-07T08:13:00.750Z"
 topics: ["cdc80207-597b-4fb7-b572-53b68c9f1a78","597f5651-dfe2-4aad-81aa-7c8b090ff468"]
 slug: "pdo-php-data-objects-ekstensi-php-untuk-mengakses-database"
 ogImage: "/posts/php-pdo/php-pdo.png"
@@ -9,7 +9,7 @@ ogImage: "/posts/php-pdo/php-pdo.png"
 
 Bismillah, hari ini kita akan mempelajari PDO (PHP Data Objects).
 
-Tetapi, seperti biasanya sebelum lanjut, yang perlu dipersiapkan adalah, kamu harus memahami beberapa perintah dasar sql, seperti Insert, Update, dll, pada database MariaDB. Jika belum kamu bisa belajar di channel Indonesia Belajar pada playlist [Tutorial Belajar Database MySQL | MaraDB](https://youtube.com/playlist?list=PL2O3HdJI4voGs6CiEUPXwt1fhLLqu30E_). Mengapa database MariaDB? karena pada tutorial ini kita akan menggunakan database MariaDB. Serta sangat di sarankan juga kamu untuk belajar dasar-dasar OOP (Object Oriented Programming) dengan bahasa pemrograman PHP. Teman-teman bisa mempelajarinya di channel Web Programming Unpas pada playlist  [OOP DASAR pada PHP](https://youtube.com/playlist?list=PLFIM0718LjIWvxxll-6wLXrC_16h_Bl_p).
+Tetapi, seperti biasanya sebelum lanjut, yang perlu dipersiapkan adalah, kamu harus memahami beberapa perintah dasar sql, seperti Insert, Update, dll, pada database MariaDB. Jika belum kamu bisa belajar di channel Indonesia Belajar pada playlist [Tutorial Belajar Database MySQL | MaraDB](https://youtube.com/playlist?list=PL2O3HdJI4voGs6CiEUPXwt1fhLLqu30E_). Mengapa database MariaDB? karena pada tutorial ini kita akan menggunakan database MariaDB. Serta sangat di sarankan juga kamu untuk belajar dasar-dasar OOP (Object Oriented Programming) dengan bahasa pemrograman PHP. kamu bisa mempelajarinya di channel Web Programming Unpas pada playlist  [OOP DASAR pada PHP](https://youtube.com/playlist?list=PLFIM0718LjIWvxxll-6wLXrC_16h_Bl_p).
 
 ## Apa Itu PDO?
 
@@ -74,7 +74,7 @@ Dan contoh detailnya adalah:
 ```
 Jadi seperti kita menyiapkan template, pada query SQL diatas ada yang disebut sebagai named placeholders, yaitu `:username` dan `:password`. Fungsi `prepare()` berfungsi untuk menyiapkan sebuah SQL statement untuk di jalankan dan menghasilkan sebuah statement object. Disana juga ada fungsi `bindParam()`, yang berfungsi untuk mengikat PHP variabel ke pada placeholders yang sesuai. Dan terakhir adalah fungsi `execute()` berfungsi untuk menjalankan prepared statement. Nantinya placeholders akan diganti dengan value dari variabel `$username` dan `$password`. Salah satu keuntungan menggunakan prepared statement ini adalah akan mencegah terjadinya serangan berbahaya seperti Injeksi SQL atau SQl Injection.
 
-Selain dengan named placeholders, teman-teman juga bisa menggunakan positional placeholders, seperti:
+Selain dengan named placeholders, kamu juga bisa menggunakan positional placeholders, seperti:
 ```php
 <?php
     $username = 'rezauser';
@@ -125,9 +125,9 @@ Jadi kapan kita harus menggunakan fungsi `bindParam()`? kita butuh menggunakan f
     $stmt->execute();
 ?>
 ```
-Untuk daftar rinci dari PDO Constants teman-teman bisa lihat di [Manual PDO Constants](https://www.php.net/manual/en/pdo.constants.php). 
+Untuk daftar rinci dari PDO Constants kamu bisa lihat di [Manual PDO Constants](https://www.php.net/manual/en/pdo.constants.php). 
 
-Selain menggunakan fungsi `prepare()`, teman-teman juga bisa menggunakan fungsi `query()`, ini bisa digunakan jika query SQL tidak menggunakan placeholders sama sekali, seperti:
+Selain menggunakan fungsi `prepare()` dan `execute()`, kamu juga bisa menggunakan fungsi `query()` atau `exec()`, seperti:
 ```php
 <?php
     $stmt = $dbh->query('SELECT * FROM users');
@@ -139,7 +139,14 @@ Selain menggunakan fungsi `prepare()`, teman-teman juga bisa menggunakan fungsi 
 ?>
 ```
 
-> Praktik terbaik dalam penggunaan `prepare()` dan `execute()` adalah ketika printah SQL tersebut membutuhkan data dari luar, misalnya ketika kita ingin memasukkan data ke database. Sedangkan `query()`  digunakan ketika perintah SQL tersebut tidak membutuhkan data dari luar, misalnya perintah untuk menampilkan semua user seperti di atas.
+```php
+<?php
+    $count = $dbh->exec('DELETE FROM users');
+    echo $count . 'baris telah dihapus';
+?>
+```
+
+> Praktik terbaik dalam penggunaan `prepare()` dan `execute()` adalah ketika printah SQL tersebut membutuhkan data dari luar, misalnya ketika kita ingin memasukkan data ke database, ataupun ketika ingin menghapus suatu data berdasarkan id tertentu. Sedangkan `query()`  digunakan ketika perintah SQL tersebut tidak membutuhkan data dari luar, misalnya perintah untuk menampilkan semua user seperti di atas. Adapun `exec()` hampir sama seperti `query()`, tetapi fungsi `exec()` mengembalikan jumlah baris yang terkena dampak dari perintah SQL dan tidak mengembalikan hasil dari perintah `SELECT`, sehingga lebih cocok untuk perintah seperti `DELETE`, `UPDATE` dan `CREATE`.
 
 Sebagai tambahan, berikut adalah contoh code CRUD (Create Read Update Delete) dengan PDO dan Prepared Statement:
 
@@ -186,7 +193,7 @@ Sebagai tambahan, berikut adalah contoh code CRUD (Create Read Update Delete) de
 ```
 
 ## Penanganan Error Koneksi
-Pada bagian terakhir ini kita akan sedikit membahas mengenai penanganan error koneksi pada saat mengakses database dengan PDO. Untuk menangani error yang dihasilkan, teman-teman bisa menggunakan blok try catch, seperti:
+Pada bagian terakhir ini kita akan sedikit membahas mengenai penanganan error koneksi pada saat mengakses database dengan PDO. Untuk menangani error yang dihasilkan, kamu bisa menggunakan blok try catch, seperti:
 ```php
 <?php
     $user = 'dbuser';
