@@ -9,7 +9,7 @@ ogImage: "/posts/php-pdo/php-pdo.png"
 
 Bismillah, hari ini kita akan mempelajari PDO (PHP Data Objects).
 
-Tetapi, seperti biasanya sebelum lanjut, yang perlu dipersiapkan adalah, kamu harus memahami beberapa perintah dasar sql, seperti Insert, Update, dll, pada database MariaDB. Jika belum kamu bisa belajar di channel Indonesia Belajar pada playlist [Tutorial Belajar Database MySQL | MaraDB](https://youtube.com/playlist?list=PL2O3HdJI4voGs6CiEUPXwt1fhLLqu30E_). Mengapa database MariaDB? karena pada tutorial ini kita akan menggunakan database MariaDB. Serta sangat di sarankan juga kamu untuk belajar dasar-dasar OOP (Object Oriented Programming) dengan bahasa pemrograman PHP. kamu bisa mempelajarinya di channel Web Programming Unpas pada playlist  [OOP DASAR pada PHP](https://youtube.com/playlist?list=PLFIM0718LjIWvxxll-6wLXrC_16h_Bl_p).
+Tetapi, seperti biasanya sebelum lanjut, yang perlu dipersiapkan adalah, kamu harus memahami beberapa perintah dasar sql, seperti Insert, Update, dll, pada database MariaDB. Jika belum kamu bisa belajar di channel Indonesia Belajar pada playlist [Tutorial Belajar Database MySQL | MariaDB](https://youtube.com/playlist?list=PL2O3HdJI4voGs6CiEUPXwt1fhLLqu30E_). Mengapa database MariaDB? karena pada tutorial ini kita akan menggunakan database MariaDB. Serta sangat di sarankan juga kamu untuk belajar dasar-dasar OOP (Object Oriented Programming) dengan bahasa pemrograman PHP. kamu bisa mempelajarinya di channel Web Programming Unpas pada playlist  [OOP DASAR pada PHP](https://youtube.com/playlist?list=PLFIM0718LjIWvxxll-6wLXrC_16h_Bl_p).
 
 ## Apa Itu PDO?
 
