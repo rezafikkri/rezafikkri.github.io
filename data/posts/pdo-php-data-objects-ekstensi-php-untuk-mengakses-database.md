@@ -72,9 +72,14 @@ Dan contoh detailnya adalah:
     $stmt->execute();
 ?>
 ```
-Jadi seperti kita menyiapkan template, pada query SQL diatas ada yang disebut sebagai *named placeholders*, yaitu `:username` dan `:password`. Fungsi `prepare()` berfungsi untuk menyiapkan sebuah SQL statement untuk di jalankan dan menghasilkan sebuah statement object. Disana juga ada fungsi `bindParam()`, yang berfungsi untuk mengikat PHP variabel ke pada placeholders yang sesuai. Dan terakhir adalah fungsi `execute()` berfungsi untuk menjalankan prepared statement. Nantinya placeholders akan diganti dengan value dari variabel `$username` dan `$password`. Salah satu keuntungan menggunakan prepared statement ini adalah akan mencegah terjadinya serangan berbahaya seperti Injeksi SQL atau SQl Injection.
+Pada kode diatas kita menggunakan prepared statement dengan *named placeholders*, yaitu dengan penggunaan placeholders `:username` dan `:password` pada fungsi `prepare()`. Fungsi `prepare()` berfungsi untuk menyiapkan sebuah SQL statement untuk di jalankan dan menghasilkan sebuah statement object.
 
-Selain dengan *named placeholders*, kamu juga bisa menggunakan *positional placeholders*, seperti:
+Disana juga ada fungsi `bindParam()`, yang berfungsi untuk mengikat PHP variabel ke pada placeholders yang sesuai.
+Argumen pertama yang dimasukkan pada fungsi `bindParam()`, adalah *parameter identifier*, yang mana itu berisi nama placeholders yang digunakan pada fungsi `prepare()`. Argumen keduanya adalah nama variabel.
+
+Dan terakhir adalah fungsi `execute()` berfungsi untuk menjalankan prepared statement. Nantinya placeholders akan diganti dengan value dari variabel `$username` dan `$password`. Salah satu keuntungan menggunakan prepared statement ini adalah akan mencegah terjadinya serangan berbahaya seperti Injeksi SQL atau SQl Injection.
+
+Selain dengan *named placeholders*, kamu juga bisa menggunakan *positional placeholders* atau bisa juga disebut *question mark placeholders*, seperti:
 ```php
 <?php
     $username = 'rezauser';
@@ -87,7 +92,7 @@ Selain dengan *named placeholders*, kamu juga bisa menggunakan *positional place
     $stmt->execute();
 ?>
 ```
-Perbedaanya dengan *named placeholders* adalah pada *positional placeholders* kita menggunakan tanda tanya (?) dan nomor index yang dimulai dari 1, pada fungsi `bindParam()`.
+Perbedaanya dengan *named placeholders* adalah pada *positional placeholders* kita menggunakan tanda tanya (?) dan pada fungsi `bindParam()`, di argumen pertama kita menggunakan nomor index yang dimulai dari 1.
 
 Jika tipe data dari value yang ingin kita masukkan kedalam database itu bertipe string semua, kita bisa tidak menggunakan fungsi `bindParam()`, yaitu dengan cara memasukkan langsung variabel sebagai array pada saat memanggil fungsi `execute()`, jadi seperti:
 ```php
@@ -102,7 +107,7 @@ Jika tipe data dari value yang ingin kita masukkan kedalam database itu bertipe 
     $stmt->execute([':username' => $username, ':password' => $password]);
 ?>
 ```
-Bagaimana jika menggunakan *positional placeholders*? yang perlu kamu ingat adalah, jika menggunakan *named placeholders* maka harus menggunakan array asosiatif, sedangkan jika menggunakan *positional placeholders* maka menggunakan *indexed array*, seperti:
+Bagaimana dengan *positional placeholders*? jika menggunakan *named placeholders* maka harus menggunakan array asosiatif, sedangkan jika menggunakan *positional placeholders* maka menggunakan *indexed array*, seperti:
 ```php
 <?php
     $username = 'rezauser';
@@ -115,7 +120,7 @@ Bagaimana jika menggunakan *positional placeholders*? yang perlu kamu ingat adal
 
 > Perbedaan *indexed array* dan array asosiatif adalah tipe *key* yang digunakan, *indexed array* menggunakan *key* bertipe integer, sedangkan array asosiatif menggunakan *key* bertipe string
 
-Jadi kapan kita harus menggunakan fungsi `bindParam()`? kita butuh menggunakan fungsi `bindparam()` ketika value yang harus dimasukkan itu bukan bertipe string, yaitu salah satu contohnya ketika kita butuh perintah SQl yang menggunakan perintah `limit`, mengapa? karena data yang dimasukkan harus bertipe integer, tidak bisa string, maka kita perlu menggunakan fungsi `bindParam()`. Pada fungsi `bindParam()` selain dua argument yang sebelumnya, yaitu yang pertama string dari *named placeholders* atau nomor index dari *positional placeholders*, yang kedua adalah nama variabel-nya, dan yang ke tiga yaitu eksplisit tipe data untuk value yang akan kita masukkan, caranya adalah dengan menggunakan `PDO::PARAM_*constants`, seperti:
+Kapan kita harus menggunakan fungsi `bindParam()`? kita butuh menggunakan fungsi `bindparam()` ketika value yang harus dimasukkan itu bukan bertipe string, contohnya ketika kita butuh perintah SQl yang menggunakan perintah `limit`, mengapa? karena data yang dimasukkan harus bertipe integer, tidak bisa string, maka kita perlu menggunakan fungsi `bindParam()`. Pada fungsi `bindParam()` selain dua argument yang sebelumnya, yaitu, pertama string dari *named placeholders* atau nomor index dari *positional placeholders*, yang kedua adalah nama variabel-nya, dan yang ke tiga yaitu eksplisit tipe data untuk value yang akan kita masukkan, caranya adalah dengan menggunakan `PDO::PARAM_*constants`, seperti:
 ```php
 <?php
     $skip = 0;
@@ -130,7 +135,7 @@ Jadi kapan kita harus menggunakan fungsi `bindParam()`? kita butuh menggunakan f
 ```
 Untuk daftar rinci dari PDO Constants kamu bisa lihat di [Manual PDO Constants](https://www.php.net/manual/en/pdo.constants.php). 
 
-Selain menggunakan fungsi `prepare()` dan `execute()`, kamu juga bisa menggunakan fungsi `query()` atau `exec()`, seperti:
+Selain menggunakan fungsi `prepare()`, kamu juga bisa menggunakan fungsi `query()` atau `exec()`, seperti:
 ```php
 <?php
     $sql = 'SELECT * FROM users';
@@ -147,7 +152,9 @@ Selain menggunakan fungsi `prepare()` dan `execute()`, kamu juga bisa menggunaka
 ?>
 ```
 
-> Praktik terbaik dalam penggunaan `prepare()` dan `execute()` adalah ketika printah SQL tersebut membutuhkan data dari luar, misalnya ketika kita ingin memasukkan data ke database, ataupun ketika ingin menghapus suatu data berdasarkan id tertentu. Sedangkan `query()`  digunakan ketika perintah SQL tersebut tidak membutuhkan data dari luar, misalnya perintah untuk menampilkan semua user seperti di atas. Adapun `exec()` hampir sama seperti `query()`, tetapi fungsi `exec()` mengembalikan jumlah baris yang terkena dampak dari perintah SQL dan tidak mengembalikan hasil dari perintah `SELECT`, sehingga lebih cocok untuk perintah seperti `DELETE`, `UPDATE` dan `CREATE`.
+> Praktik terbaik dalam penggunaan `prepare()` adalah ketika perintah SQL tersebut membutuhkan data dari input user, misalnya ketika kita ingin memasukkan data ke database, ataupun ketika ingin menghapus suatu data berdasarkan id tertentu dan lain-lain.
+
+> Sedangkan `query()` digunakan ketika perintah SQL tersebut tidak membutuhkan data dari input user, misalnya perintah untuk menampilkan semua user seperti di atas. Adapun `exec()` hampir sama seperti `query()`, tetapi fungsi `exec()` mengembalikan jumlah baris yang terkena dampak dari perintah SQL dan tidak mengembalikan data hasil dari perintah `SELECT`, sehingga lebih cocok untuk perintah seperti `DELETE`, `UPDATE` dan `CREATE`.
 
 Sebagai tambahan, berikut adalah contoh code CRUD (Create Read Update Delete) dengan PDO dan Prepared Statement:
 
@@ -213,7 +220,7 @@ Pada bagian terakhir ini kita akan sedikit membahas mengenai penanganan error ko
     }
 ?>
 ```
-Jika terjadi error koneksi apa saja, maka sebuah object PDOException akan di buat, karena itu pada bagian `catch()` kita memberitahu untuk menangkap object PDOException tersebut, sehingga errornya bisa kita tangani didalam block catch. Kita tampilkan errornya dengan sedikit di ubah formatnya didalam blok catch. Formatnya bebas kamu tentukan sesuka hati. Untuk lebih jelas mengenai penggunaan blok try catch untuk exeception handling, seperti yang kita lakukan diatas, kamu bisa googling saja, atau salah satunya kamu bisa memperlajarinya di [Jago Ngoding: Penanganan Exception](https://jagongoding.com/web/php/menengah/penanganan-exception/).
+Jika terjadi error koneksi apa saja, maka sebuah object PDOException akan di buat, karena itu pada bagian `catch()` kita memberitahu untuk menangkap object PDOException tersebut, sehingga errornya bisa ditangani didalam block catch. Lalu kita tampilkan error tersebut dengan sedikit di ubah formatnya didalam blok catch. Format error bebas kamu tentukan sesuka hati. Untuk lebih jelas mengenai penggunaan blok try catch untuk exeception handling, seperti diatas, kamu bisa googling saja, atau kamu bisa memperlajarinya di [Jago Ngoding: Penanganan Exception](https://jagongoding.com/web/php/menengah/penanganan-exception/).
 
 Terima kasih buat yang sudah membaca, semoga bermanfaat. Jika ada yang ingin ditanyakan atau ada saran silahkan kirim email ke fikkri.reza@gmail.com. Jangan lupa follow twitter @RezaFikkri untuk mendapatkan tulisan terbaru.
 
