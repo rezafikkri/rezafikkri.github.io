@@ -152,9 +152,9 @@ Selain menggunakan fungsi `prepare()`, kamu juga bisa menggunakan fungsi `query(
 ?>
 ```
 
-> Praktik terbaik dalam penggunaan `prepare()` adalah ketika perintah SQL tersebut membutuhkan data dari input user, misalnya ketika kita ingin memasukkan data ke database, ataupun ketika ingin menghapus suatu data berdasarkan id tertentu dan lain-lain.
+> Praktik terbaik dalam penggunaan `prepare()` adalah ketika perintah SQL tersebut membutuhkan data dari luar, seperti dari input user. Biasanya kita membutuhkan data dari luar ketika kita ingin memasukkan data ke database, ataupun ketika ingin menghapus suatu data berdasarkan id tertentu dan lain-lain.
 
-> Sedangkan `query()` digunakan ketika perintah SQL tersebut tidak membutuhkan data dari input user, misalnya perintah untuk menampilkan semua user seperti di atas. Adapun `exec()` hampir sama seperti `query()`, tetapi fungsi `exec()` mengembalikan jumlah baris yang terkena dampak dari perintah SQL dan tidak mengembalikan data hasil dari perintah `SELECT`, sehingga lebih cocok untuk perintah seperti `DELETE`, `UPDATE` dan `CREATE`.
+> Sedangkan `query()` digunakan ketika perintah SQL tersebut tidak membutuhkan data dari luar, misalnya perintah untuk menampilkan semua user seperti di atas. Adapun `exec()` hampir sama seperti `query()`, tetapi fungsi `exec()` tidak mengembalikan data hasil dari perintah `SELECT`, tetapi mengembalikan jumlah baris yang terkena dampak dari perintah SQL, sehingga lebih cocok untuk perintah seperti `DELETE`, `UPDATE` dan `CREATE`.
 
 Sebagai tambahan, berikut adalah contoh code CRUD (Create Read Update Delete) dengan PDO dan Prepared Statement:
 
