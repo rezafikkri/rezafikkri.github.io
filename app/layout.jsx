@@ -42,7 +42,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${roboto.variable} ${fira_code.variable}`}>
+    <html lang="id" className={`${roboto.variable} ${fira_code.variable}`}>
       <body className="h-screen bg-gray-50 font-roboto">
         <Palestine />
         <div className="max-w-5xl mx-auto px-4 sm:px-8"><Header /></div>
