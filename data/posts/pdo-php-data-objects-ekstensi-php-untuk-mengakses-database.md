@@ -135,7 +135,7 @@ Kapan kita harus menggunakan fungsi `bindParam()`? kita butuh menggunakan fungsi
     $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 ```
-Pada code diatas, fungsi `fetchAll()` berfungsi untuk mengambil semua data hasil dari perintah `SELECT` dan `PDO::FETCH_ASSOC` digunakan agar data tersebut berbentuk array asosiatif. Untuk daftar rinci dari PDO Constants kamu bisa lihat di [Manual PDO Constants](https://www.php.net/manual/en/pdo.constants.php). 
+Pada code diatas, fungsi `fetchAll()` berfungsi untuk mengambil semua data hasil dari perintah `SELECT` dan `PDO::FETCH_ASSOC` digunakan agar data tersebut berbentuk array asosiatif. Untuk daftar rinci dari PDO Constants kamu bisa lihat di [Manual PDO Constants](https://www.php.net/manual/en/pdo.constants.php). Selain fungsi `fetchAll()` juga ada fungsi `fetch()`, yang berfungsi untuk mengambil satu data dari hasil perintah `SELECT`. Ketika kita memanggil fungsi `fetch()` untuk kedua kalinya, maka akan mengambil satu data berikutnya dan begitu seterusnya. Lebih rinci mengenai fungsi `fetch()` kamu bisa baca di [PDO fetch](https://www.php.net/manual/en/pdostatement.fetch.php).
 
 Selain menggunakan fungsi `prepare()`, kamu juga bisa menggunakan fungsi `query()` atau `exec()`, seperti:
 ```php
