@@ -1,7 +1,7 @@
 import Header from "@/components/layout/header";
 import Footer from "@/components/layout/footer";
 import getBaseUrl from "@/lib/get-base-url";
-import Palestine from "@/components/layout/Palestine";
+import Palestine from "@/components/layout/palestine";
 
 import "@/styles/globals.css";
 
