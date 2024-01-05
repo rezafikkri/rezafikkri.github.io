@@ -5,7 +5,7 @@ import HomeHeader from "@/components/home/home-header";
 import HomePostList from "@/components/home/home-post-list";
 import ProjectList from "@/components/project/project-list";
 
-const title = "Reza Sariful Fikri - Web Developer";
+const title = "Reza Sariful Fikri - Backend Web Developer";
 const description = "Website yang membahas mengenai programming, khususnya di bidang pengembangan web dan hal-hal umum seputar teknologi.";
 
 export const metadata = {
