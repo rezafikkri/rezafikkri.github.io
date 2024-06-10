@@ -12,7 +12,7 @@ export default function Pagination({ serial, slug }) {
           <hr width="10%" />
           <hr width="30%" />
         </div>
-        <h2 id="other-writing" className="text-3xl mt-12 mb-6 font-semibold text-gray-900">Tulisan lainnya:</h2>
+        <h2 id="other-writing" className="text-3xl mt-12 mb-6 font-semibold text-gray-900">Daftar Seri Tulisan:</h2>
         <ol className="text-gray-700 text-xl list-decimal list-outside flex flex-col gap-3 pl-8" id="pagination-list">
           {posts.map(post => (
             <li key={post.id} className="pl-1.5">

@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "npx serve@latest out"
+    "start": "npx serve@latest out",
+    "post": "node ./lib/generate-post.mjs"
   },
   "dependencies": {
     "@inquirer/checkbox": "^1.5.0",
