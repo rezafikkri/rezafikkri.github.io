@@ -24,7 +24,7 @@ export const metadata = {
 export default function Page() {
   return (
     <>
-      <header className="mt-24 text-gray-800">
+      <header className="mt-24 text-gray-900">
         <h1 className="text-5xl font-bold">Projek</h1>
       </header>
       <section className="mt-12 text-gray-800">

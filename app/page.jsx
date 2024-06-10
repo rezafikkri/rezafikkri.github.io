@@ -37,12 +37,12 @@ export default function Page() {
       <HomeHeader />
       <HomePostList latestPosts={latestPosts} />
       <section className="text-gray-800 mt-20"> 
-        <h2 className="text-3xl font-bold">Topik Tulisan</h2>
+        <h2 className="text-3xl font-bold text-gray-900">Topik Tulisan</h2>
         <small className="text-gray-600">Klik pada salah satu topik tulisan untuk melihat semua tulisan dengan topik itu!</small>
         <LargeTopics topics={topics} mt="mt-7" />
       </section>
       <section className="text-gray-800 mt-20">
-        <h2 className="text-3xl font-bold">Projek</h2>
+        <h2 className="text-3xl font-bold text-gray-900">Projek</h2>
         <div className="mt-7 grid sm:grid-cols-2 gap-4">
           <ProjectList />
         </div>

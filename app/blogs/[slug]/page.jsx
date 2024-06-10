@@ -37,7 +37,7 @@ export default function Page({ params: { slug } }) {
     <>
       <article className="mt-24">
         <time className="text-gray-600 inline-block">{dayjs(post.date).format('DD MMMM YYYY')}</time>
-        <h1 className="text-5xl font-bold mt-2 text-gray-800">{post.title}</h1>
+        <h1 className="text-5xl font-bold mt-2 text-gray-900">{post.title}</h1>
         <SmallTopics topics={topics} mt="mt-6" />
         <PostContent post={post} />
         <Pagination serial={post.serial} slug={post.slug} />

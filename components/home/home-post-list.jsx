@@ -9,7 +9,7 @@ dayjs.locale('id');
 export default function HomePostList({ latestPosts }) {
   return (
     <section className="text-gray-800 mt-20">
-      <h2 className="text-3xl font-bold">Tulisan Terbaru</h2>
+      <h2 className="text-3xl font-bold text-gray-900">Tulisan Terbaru</h2>
       <dl className="mt-2 flex flex-col space-y-3.5">
         {latestPosts.map(post => (
           <div key={post.id}>
