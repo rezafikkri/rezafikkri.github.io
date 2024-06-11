@@ -32,9 +32,6 @@ export const metadata = {
     template: "%s - Reza Sariful Fikri",
     default: "Reza Sariful Fikri"
   },
-  icons: {
-    icon: '/favicon.ico',
-  },
   verification: {
     google: 'fLcDg3KFF-m2xDnm4TGsRylXksSQTGGfLq6FqSe8cUs',
   }
