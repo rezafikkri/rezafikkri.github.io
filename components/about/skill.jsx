@@ -4,14 +4,14 @@ export default function Skill() {
   return (
     <section className="mt-10 text-gray-800">
       <h2 className="text-3xl font-bold text-gray-900">Keahlian</h2>
-      <h3 className="text-gray-500 mt-5 text-gray-900">Ahli</h3>
+      <h3 className="text-gray-500 mt-5">Ahli</h3>
       <p className="mt-1 text-lg">HTML - CSS - JavaScript - PHP - Git - Bootstrap</p>
 
-      <h3 className="text-gray-500 mt-5 text-gray-900">Menengah</h3>
+      <h3 className="text-gray-500 mt-5">Menengah</h3>
       <p className="mt-1 text-lg">CodeIgniter - Laravel - Tailwind CSS - MariaDB - PostgreSQL - Github - NodeJS - React - Next.js</p>
 
-      <h3 className="text-gray-500 mt-5 text-gray-900">Dasar</h3>
-      <p className="mt-1 text-lg">Linux - MongoDB - Redis - RabbitMQ - Webpack - GIMP - Inkscape - Kdenlive - Python</p>
+      <h3 className="text-gray-500 mt-5">Dasar</h3>
+      <p className="mt-1 text-lg">Lua - Electron - Linux - MongoDB - Redis - RabbitMQ - Webpack - GIMP - Inkscape - Kdenlive - Python</p>
 
       <Link href="/CV Reza SF.pdf" target="_blank" className="mt-5 inline-block no-underline bg-white hover:bg-gray-100 border border-gray-200 px-4 py-2 rounded-lg">
         <span className="mr-1.5">Unduh CV</span>
