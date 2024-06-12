@@ -181,7 +181,9 @@ Atau kamu juga bisa melihat  [hasilnya secara online di CodePen](https://codepen
 
 Nah jika teman-teman lihat hasil diatas, kedua element `<p>` dengan text *Semoga bermanfaat*, dan *Hay salam kenal* textnya berubah menjadi merah, karena keduanya berada di posisi setelah element `<div>` dengan class "reza", sehingga dianggap sebagai general sibling (saudara kandung umum) dari element `<div>` dengan class "reza". Sedangkan element `<p>` dengan text *Hello Dunia* tidak berubah menjadi merah, ini dikarenakan posisi element `<p>` dengan text *Hello Dunia* tidak berada setelah element `<div>` dengan class "reza". Dan element `<p>` yang berada di dalam element `<div>` dengan class "reza", tentu textnya tidak akan berubah menjadi merah, karena mereka adalah child (anak) dari element `<div>` dengan class "reza".
 
-Oke, terima kasih buat kamu yang sudah membaca, semoga bermanfaat. Jika ada yang ingin ditanyakan atau ada saran silahkan kirim email ke fikkri.reza@gmail.com. Jangan lupa follow twitter @RezaFikkri untuk mendapatkan tulisan terbaru.
+Oke, terima kasih buat kamu yang sudah membaca, semoga bermanfaat. Jika ada yang ingin ditanyakan atau ada saran silahkan kirim email ke fikkri.reza@gmail.com. Jangan lupa follow Linkedin [in/reza-sariful-fikri](https://www.linkedin.com/in/reza-sariful-fikri) ku atau bisa juga di Facebook [reza.sariful.fikri](https://web.facebook.com/reza.sariful.fikri) untuk mendapatkan tulisan terbaru.
+
+Kamu bisa juga berdonasi melalui [Saweria](https://saweria.co/rezafikkri) untuk mendukung saya.
 
 ### Referensi:
 [MDN Combinators](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors/Combinators)
