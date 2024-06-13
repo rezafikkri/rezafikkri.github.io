@@ -13,14 +13,14 @@ export const roboto = Roboto({
   subsets: ['latin'],
   style: ['normal', 'italic'],
   variable: '--font-roboto',
-  fallback: ['sans-serif']
+  // fallback: ['sans-serif']
 });
 
-export const fira_code = Source_Code_Pro({
+export const source_code_pro = Source_Code_Pro({
   weight: ['400'],
   subsets: ['latin'],
   variable: '--font-source-code-pro',
-  fallback: ['monospace']
+  // fallback: ['monospace']
 });
 
 // metadata config
@@ -39,7 +39,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="id" className={`${roboto.variable} ${fira_code.variable}`}>
+    <html lang="id" className={`${roboto.variable} ${source_code_pro.variable}`}>
       <body className="h-screen bg-gray-50 font-roboto">
         <Palestine />
         <div className="max-w-5xl mx-auto px-4 sm:px-8"><Header /></div>
