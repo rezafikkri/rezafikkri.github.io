@@ -12,4 +12,8 @@
     <loc>https://rezafikkri.github.io/blogs/alternatif-software-berbayar</loc>
     <lastmod>2023-03-28</lastmod>
   </url>
+  <url>
+    <loc>https://rezafikkri.github.io/blogs/deploy-vanilla-js-website-ke-vercel-dengan-vite-dan-github-action-cicd</loc>
+    <lastmod>2024-06-14</lastmod>
+  </url>
 </urlset>
