@@ -15,7 +15,8 @@
     @apply no-underline;
   }
 
-  .prose ol li > code {
+  .prose ol li > code,
+  .prose ul li > code {
     @apply py-0.5 px-1 bg-gray-200 font-normal rounded;
   }
 
