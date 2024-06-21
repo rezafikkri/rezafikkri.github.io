@@ -25,6 +25,24 @@ Vercel adalah cloud platform yang bersifat serverless dan didesain untuk static 
 
 Github Action adalah platform *continuous integration* dan *continuous delivery* (CI/CD) yang memungkinkan kita untuk mengotomatiskan alur build, test dan deployment, baca [disini](https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions) untuk mengetahui lebih lanjut tentang Github Action. Sedangkan yang dimaksud dengan *continuous integration* adalah praktik mengintegrasikan semua perubahan kode ke dalam repository kode secara cepat dan sering, lalu secara otomatis menguji setiap perubahan kode, ketika kita *commit* atau *merge*. Lalu yang dimaksud dengan CD adalah mengacu kepada *continuous delivery* atau *continuous deployment*, yang mana, setelah dari proses CI, CD akan memastikan kode dikemas dengan semua yang diperlukan untuk diterapkan ke environment manapun dan kapanpun. CD bisa mencangkup segalanya, mulai dari penyediaan infrastruktur hingga penerapan aplikasi hingga environment testing atau production.
 
+## Deploy Website ke Vercel
+### 1. Upload Website ke Remote Repository di Github
+Sebelumya pastikan kamu sudah mendownload website yang sudah saya sediakan (link ada di awal tutorial), lalu lakukan `npm install`, dan pastikan website berjalan dengan normal.
+
+  <ul>
+    <li>Buka terminal atau cmd pada *root* projek website yang telah di download, kemudian jalankan `git init` untuk membuat repository baru dan jangan lupa lakukan *commit*.</li>
+  </ul>
+
+  - Buat public remote repository baru pada akun Github-mu, isi *Repository name*, *Decription (optional)* dan langsung klik *Create repository* (biarkan value yang lain default saja), seperti di bawah ini: ![before create new repo](/posts/deploy-vercel-github-action/before-create-new-repo.png)<!--rehype:width=1336&height=1224&loading=lazy&mt-6&decoding=async-->
+  - Lalu pastikan setelah kamu klik *Create repository*, maka akan diarahkan ke halaman seperti di bawah ini (yang menandakan repository masih kosong):	![after create new repo](/posts/deploy-vercel-github-action/after-create-new-repo.png)<!--rehype:width=1336&height=656&loading=lazy&mt-6&decoding=async-->
+  - Kemudian jalankan script dibawah ini untuk upload atau *push* local repository kita ke Github 
+  ```
+  git remote add origin git@github.com:rezafikkri/counter-js.git
+  git branch -M main
+  git push -u origin main
+  ```
+  - Dan terakhir, pastikan projek website kita telah berhasil terupload ke Github (dengan refresh halaman)
+
 Oke, terima kasih buat kamu yang sudah membaca, semoga bermanfaat. Jika ada yang ingin ditanyakan atau ada saran silahkan kirim email ke fikkri.reza@gmail.com. Jangan lupa follow Linkedin [in/reza-sariful-fikri](https://www.linkedin.com/in/reza-sariful-fikri) ku atau bisa juga di Facebook [reza.sariful.fikri](https://web.facebook.com/reza.sariful.fikri) untuk mendapatkan tulisan terbaru.
 
 Kamu bisa juga berdonasi melalui [Saweria](https://saweria.co/rezafikkri) untuk mendukung saya.
