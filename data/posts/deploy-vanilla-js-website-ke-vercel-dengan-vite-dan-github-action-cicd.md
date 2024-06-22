@@ -27,21 +27,32 @@ Github Action adalah platform *continuous integration* dan *continuous delivery*
 
 ## Deploy Website ke Vercel
 ### 1. Upload Website ke Remote Repository di Github
-Sebelumya pastikan kamu sudah mendownload website yang sudah saya sediakan (link ada di awal tutorial), lalu lakukan `npm install`, dan pastikan website berjalan dengan normal.
+Sebelumya pastikan kamu sudah mendownload website yang sudah saya sediakan (link ada di awal tutorial), lalu lakukan `npm install` dan pastikan website berjalan dengan normal.
+
+> Sebaiknya ganti nama folder website yang telah didownload menjadi "counter-js".
 
   <ul>
-    <li>Buka terminal atau cmd pada *root* projek website yang telah di download, kemudian jalankan `git init` untuk membuat repository baru dan jangan lupa lakukan *commit*.</li>
+    <li>Buka terminal atau cmd pada <em>root</em> folder website <em>counter-js</em> yang telah di download, kemudian jalankan <code>git init</code> untuk membuat repository baru dan jangan lupa lakukan <em>commit</em>.</li>
+    <li>Buat public remote repository baru pada akun Github-mu, isi <em>Repository name</em>, <em>Decription (optional)</em> dan langsung klik <em>Create repository</em> (biarkan value yang lain default saja), seperti di bawah ini: <img alt="before create new repo" src="/posts/deploy-vercel-github-action/before-create-new-repo.png" width="1336" height="1224" loading="lazy" class="mt-6" decoding="async"/></li>
+    <li>Lalu pastikan setelah kamu klik <em>Create repository</em>, maka akan diarahkan ke halaman seperti di bawah ini (yang menandakan repository masih kosong): <img alt="after create new repo" src="/posts/deploy-vercel-github-action/after-create-new-repo.png" width="1336" height="656" loading="lazy" class="mt-6" decoding="async"/></li>
+    <li>
+      Kemudian buka kembali terminal pada <em>root</em> folder website dan tambahkan remote repository dengan nama "origin" (kamu bisa menggunakan <em>ssh</em> atau <em>https</em>)
+      <pre><code class="language-bash"># ssh
+git remote add origin git@github.com:[username]/[remote-repo-name].git
+# https
+git remote add origin https://github.com/[username]/[repo-name].git
+</code></pre>
+    </li>
+    <li>
+      Ganti nama branch <em>master</em> menjadi <em>main</em>
+      <pre><code class="language-bash">git branch -M master main</code></pre>
+    </li>
+    <li>
+      Dan lakukan <em>push</em> sekaligus <em>set upstream branch</em>
+      <pre><code class="language-bash">git push -u origin main</code></pre>
+    </li>
+    <li>Terakhir, pastikan website kita telah berhasil terupload ke Github (dengan merefresh halaman).</li>
   </ul>
-
-  - Buat public remote repository baru pada akun Github-mu, isi *Repository name*, *Decription (optional)* dan langsung klik *Create repository* (biarkan value yang lain default saja), seperti di bawah ini: ![before create new repo](/posts/deploy-vercel-github-action/before-create-new-repo.png)<!--rehype:width=1336&height=1224&loading=lazy&mt-6&decoding=async-->
-  - Lalu pastikan setelah kamu klik *Create repository*, maka akan diarahkan ke halaman seperti di bawah ini (yang menandakan repository masih kosong):	![after create new repo](/posts/deploy-vercel-github-action/after-create-new-repo.png)<!--rehype:width=1336&height=656&loading=lazy&mt-6&decoding=async-->
-  - Kemudian jalankan script dibawah ini untuk upload atau *push* local repository kita ke Github 
-  ```
-  git remote add origin git@github.com:rezafikkri/counter-js.git
-  git branch -M main
-  git push -u origin main
-  ```
-  - Dan terakhir, pastikan projek website kita telah berhasil terupload ke Github (dengan refresh halaman)
 
 Oke, terima kasih buat kamu yang sudah membaca, semoga bermanfaat. Jika ada yang ingin ditanyakan atau ada saran silahkan kirim email ke fikkri.reza@gmail.com. Jangan lupa follow Linkedin [in/reza-sariful-fikri](https://www.linkedin.com/in/reza-sariful-fikri) ku atau bisa juga di Facebook [reza.sariful.fikri](https://web.facebook.com/reza.sariful.fikri) untuk mendapatkan tulisan terbaru.
 
