@@ -10,6 +10,7 @@ import html from 'highlight.js/lib/languages/xml';
 import php from 'highlight.js/lib/languages/php';
 import sql from 'highlight.js/lib/languages/sql';
 import bash from 'highlight.js/lib/languages/bash';
+import yaml from 'highlight.js/lib/languages/yaml';
 
 // hljs register languages 
 hljs.registerLanguage('css', css);
@@ -18,6 +19,7 @@ hljs.registerLanguage('php', php);
 hljs.registerLanguage('sql', sql);
 hljs.registerLanguage('sql', sql);
 hljs.registerLanguage('bash', bash);
+hljs.registerLanguage('yaml', yaml);
 
 hljs.configure({
   ignoreUnescapedHTML: true

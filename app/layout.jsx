@@ -13,14 +13,14 @@ export const roboto = Roboto({
   subsets: ['latin'],
   style: ['normal', 'italic'],
   variable: '--font-roboto',
-  // fallback: ['sans-serif']
+  fallback: ['sans-serif']
 });
 
 export const source_code_pro = Source_Code_Pro({
   weight: ['400'],
   subsets: ['latin'],
   variable: '--font-source-code-pro',
-  // fallback: ['monospace']
+  fallback: ['monospace']
 });
 
 // metadata config
