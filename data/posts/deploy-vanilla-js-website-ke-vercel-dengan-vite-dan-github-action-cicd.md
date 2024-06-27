@@ -40,9 +40,9 @@ Berikut langkah-langkahnya:
   <li>
     Kemudian buka kembali terminal pada <em>root</em> direktori website dan tambahkan remote repository dengan nama "origin" (kamu bisa menggunakan <em>ssh</em> atau <em>https</em>)
     <pre><code class="language-bash"># ssh
-      git remote add origin git@github.com:[username]/[remote-repo-name].git
-      # https
-      git remote add origin https://github.com/[username]/[repo-name].git
+git remote add origin git@github.com:[username]/[remote-repo-name].git
+# https
+git remote add origin https://github.com/[username]/[repo-name].git
     </code></pre>
   </li>
   <li>
@@ -62,11 +62,37 @@ Workflow atau Github Action workflow adalah proses otomatis yang dapat dikonfigu
 
 Mengenai *event* dan *jobs*, *event* adalah aktivitas spesifik di dalam sebuah repositori yang memicu workflow dijalankan, sedangkan *jobs* adalah serangkaian langkah dalam workflow yang dijalankan pada *runner* yang sama dan *runner* itu sendiri adalah sebuah server yang menjalankan workflow ketika dipicu.
 
-Oke, untuk membuat workflow ikuti langkah berikut:
+Oke, untuk membuat workflow, buat direktori `.github/workflows/` di dalam root direktori website *counter-js*, lalu didalamnya buat file `ci.yml`, seperti dibawah ini:
+![create ci yml](/posts/deploy-vercel-github-action/create-ci-yml.png)<!--rehype:width=564&height=439&loading=lazy&class=mt-6&decoding=async-->
+Dan copy semua code dibawah ini ke dalam file `ci.yml`:
+```yaml
+name: Continious Integration
 
-<ul>
-  <li>Buat direktori <code>.github/workflows/</code> di dalam root direktori website <em>counter-js</em>, lalu didalamnya buat file <code>ci.yml</code>, seperti dibawah ini: <img alt="create ci yml" src="/posts/deploy-vercel-github-action/create-ci-yml.png" width="564" height="439" loading="lazy" class="mt-6" decoding="async"/></li>
-</ul>
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  test-and-lint:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Clean install dependencies
+        run: npm ci
+
+      - name: Run test and lint
+        run: |
+          npm run lint
+          npm test
+```
+> Catatan: untuk indentasi tiap baris juga harus disesuaikan, karena hal itu bukan hanya untuk gaya saja, tetapi memang memiliki peran penting. Jika kamu ingin mempelajari YAML lebih lanjut, lihat [Learn YAML in Y Minutes](https://learnxinyminutes.com/docs/yaml/).
 
 Oke, terima kasih buat kamu yang sudah membaca, semoga bermanfaat. Jika ada yang ingin ditanyakan atau ada saran silahkan kirim email ke fikkri.reza@gmail.com. Jangan lupa follow Linkedin [in/reza-sariful-fikri](https://www.linkedin.com/in/reza-sariful-fikri) ku atau bisa juga di Facebook [reza.sariful.fikri](https://web.facebook.com/reza.sariful.fikri) untuk mendapatkan tulisan terbaru.
 
