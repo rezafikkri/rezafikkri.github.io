@@ -12,14 +12,6 @@ export default function Nav() {
       <ul>
         <li className="inline-block pr-8">
           <Link
-            href="/about"
-            className={`hover:text-ajwa-blue no-underline ${activeLink('/about', pathName)}`}
-          >
-            Tentang
-          </Link>
-        </li>
-        <li className="inline-block pr-8">
-          <Link
             href="/blogs"
             className={`hover:text-ajwa-blue no-underline ${activeLink('/blogs', pathName)}`}
           >
@@ -32,6 +24,14 @@ export default function Nav() {
             className={`hover:text-ajwa-blue no-underline ${activeLink('/projects', pathName)}`}
           >
             Projek
+          </Link>
+        </li>
+        <li className="inline-block pr-8">
+          <Link
+            href="/about"
+            className={`hover:text-ajwa-blue no-underline ${activeLink('/about', pathName)}`}
+          >
+            Tentang
           </Link>
         </li>
       </ul>
