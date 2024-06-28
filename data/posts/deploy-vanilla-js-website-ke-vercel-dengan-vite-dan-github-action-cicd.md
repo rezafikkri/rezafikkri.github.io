@@ -11,9 +11,9 @@ Bismillah, pada tutorial ini, hanya akan berfokus pada cara deploy ke Vercel den
 
 ### Prasyarat
 Sebelum mengikuti tutorial ini, ada beberapa prasyarat yang harus kamu penuhi (hal ini bertujuan untuk memudahkan kamu dalam memahami tutorial). Berikut adalah beberapa prasyaratnya:
-1. Memahami dasar HTML, CSS dan JS, jika belum, kamu bisa berkunjung ke channel [WPU](https://www.youtube.com/@sandhikagalihWPU)
+1. Memahami dasar HTML, CSS, JS dan NodeJS, jika belum, kamu bisa berkunjung ke channel [WPU](https://www.youtube.com/@sandhikagalihWPU)
 2. Memahami dasar Vite, jika belum, kamu bisa belajar di channel [PZN](https://youtu.be/f8N0V-1dC0o?si=eMe0Ae5b9tKXdOba)
-3. Memahami dasar Git (seperti commit, push, merge, branch, dll) dan juga dasar Github, jika belum, kamu bisa belajar di channel [WPU >> Playlist Git & Github](https://youtube.com/playlist?list=PLFIM0718LjIVknj6sgsSceMqlq242-jNf&si=M99NbSj93ATIGxJ6)
+3. Memahami dasar Git (seperti commit, push, merge, branch, dll) dan juga dasar Github (seperti pull request, dll), jika belum, kamu bisa belajar di channel [WPU >> Playlist Git & Github](https://youtube.com/playlist?list=PLFIM0718LjIVknj6sgsSceMqlq242-jNf&si=M99NbSj93ATIGxJ6)
 4. Memahami mengenai testing dan linter (minimal pengertian dan kegunaannya), jika belum, kamu bisa mencari materinya dengan mudah di internet  dengan kata kunci *software testing* dan *linter*.
 
 Jika prasyarat di atas sudah terpenuhi, kamu bisa lanjut mengikuti tutorial.
@@ -60,7 +60,7 @@ git remote add origin https://github.com/[username]/[repo-name].git
 Workflow atau Github Action workflow adalah proses otomatis yang dapat dikonfigurasi yang akan menjalankan satu atau beberapa *jobs*. Workflow dibuat di direktori `.github/workflows` di dalam repositori, dengan bahasa YAML (*human-friendly data serialization
   language*). Workflow akan dijalankan ketika terpicu oleh suatu *event* di dalam repositori (seperti pull request, push, dll), atau dapat juga dipicu secara manual, atau juga bisa terpicu sesuai jadwal yang ditentukan. Satu repositori dapat memiliki banyak workflow dan masing-masing dari workflow itu dapat melakukan serangkaian tugas yang berbeda. Sebagai contoh, kamu dapat memiliki satu workflow untuk build dan test pull request, satu workflow lain untuk deploy aplikasi-mu setiap kali release dibuat dan satu workflow lain lagi yang menambahkan sebuah label setiap kali seseorang membuat *issue* baru.
 
-Mengenai *event* dan *jobs*, *event* adalah aktivitas spesifik di dalam sebuah repositori yang memicu workflow dijalankan, sedangkan *jobs* adalah serangkaian langkah dalam workflow yang dijalankan pada *runner* yang sama dan *runner* itu sendiri adalah sebuah server yang menjalankan workflow ketika dipicu.
+Mengenai *event* dan *jobs*, *event* adalah aktivitas spesifik di dalam sebuah repositori yang memicu workflow dijalankan, sedangkan *jobs* adalah serangkaian langkah dalam workflow yang dijalankan pada *runner* yang sama dan *runner* itu sendiri adalah sebuah server yang menjalankan workflow ketika dipicu. Setiap runner dapat menjalankan satu job dalam satu waktu. Github sendiri menyediakan beberapa runner, yaitu, Ubuntu Linux, Microsoft Windows dan macOS.
 
 Oke, untuk membuat workflow, buat direktori `.github/workflows/` di dalam root direktori website *counter-js*, lalu didalamnya buat file `ci.yml`, seperti dibawah ini:
 ![create ci yml](/posts/deploy-vercel-github-action/create-ci-yml.png)<!--rehype:width=564&height=439&loading=lazy&class=mt-6&decoding=async-->
@@ -93,6 +93,54 @@ jobs:
           npm test
 ```
 > Catatan: untuk indentasi tiap baris juga harus disesuaikan, karena hal itu bukan hanya untuk gaya saja, tetapi memang memiliki peran penting. Jika kamu ingin mempelajari YAML lebih lanjut, lihat [Learn YAML in Y Minutes](https://learnxinyminutes.com/docs/yaml/).
+
+Sekarang, saya akan menjelaskan setiap baris kode diatas, supaya kamu lebih memahami bagaimana YAML syntax digunakan untuk membuat workflow:
+
+<ul>
+  <li>
+    Mendefinisikan nama dari workflow, nama ini nanti akan ditampilkan pada tab "Actions" di repositori kamu.
+    <pre class="language-yaml"><code>name: Continious Integration</code></pre>
+  </li>
+  <li>
+    Mendefinisikan pemicu dari workflow. Pada tutorial ini digunakan <code>pull_request</code> event dan dengan filter <code>branches</code>, yang berarti bahwa workflow akan dijalankan ketika sebuah pull request dibuka atau ketika pull request yang sudah ditutup dibuka kembali, atau ketika <em>head branch</em> (branch yang berisi perubahan yang ingin kamu integrasikan/terapkan) dari pull request diupdate, dengan syarat <em>base branch</em> (branch dimana perubahan akan diterapkan) harus cocok dengan branch yang ada di filter <code>branches</code>, yaitu branch <code>main</code>. Dengan kata lain, ketika misalnya sebuah pull request dibuka dengan target <em>base branch</em> selain branch <code>main</code>, maka workflow tidak akan dijalankan.
+    <pre class="language-yaml"><code>on:
+  pull_request:
+    branches: [main]</code></pre>
+    Mungkin kamu bertanya kenapa ketika pull request pada branch main yang akan memicu workflow CI dijalankan, hal ini karena, dalam tutorial ini konsepnya adalah, branch main akan berperan sebagai branch utama, ketika ingin menambahkan fitur baru, dsb, maka harus melakukan pull request ke branch main. Di sisi lain, ketika ada perubahan pada branch main, Vercel secara otomatis akan melakukan proses deployment. Sehingga dengan ini perlu untuk menjalankan workflow CI ketika misalnya dibuka pull request dengan target <em>base branch</em> adalah branch main.
+  </li>
+  <li>
+    Mendefinisikan <em>job</em> dengan id <code>test-and-lint</code>.
+    <pre class="language-yaml"><code>jobs:
+  test-and-lint:</code></pre>
+  </li>
+  <li>
+    Mendefinisikan <em>runner</em> yang akan menjalankan job <code>test-and-lint</code>. Yang mana dalam tutorial ini digunakan runner Ubuntu Linux.
+    <pre class="language-yaml"><code>runs-on: ubuntu-latest</code></pre>
+  </li>
+  <li>
+    Mendefinisikan <em>steps</em> (langkah-langkah) yang akan dijalankan pada <em>job</em>. Setiap step diawali dengan tanda hubung (-), sehingga pada kode dibawah ini berarti terdapat 2 step. Step pertama, menggunakan keyword <code>uses</code> untuk menjalankan sebuah <em>action</em> yang bernama <code>actions/checkout</code> dengan versi <code>v4</code>. Sebuah <em>action</em> adalah unit kode yang dapat digunakan kembali, <em>action</em> dapat berupa file JavaScript atau Docker Container. <em>Action</em> <code>actions/checkout</code> adalah sebuah <em>action</em> yang memeriksa repositori kamu ke <em>runner</em>, sehingga memungkinkan kamu untuk menjalankan script atau <em>action</em> lain terhadap kode kamu (seperti testing, lint, build, dsb). Kamu harus menggunakan <em>action</em> <code>actions/checkout</code> kapan pun workflow kamu akan mengakses/menggunakan kode repositori, seperti pada tutorial ini, karena butuh untuk menjalankan script <code>npm test</code> dan <code>npm run lint</code>, yang mana harus dijalankan di dalam kode repositori website <em>conter-js</em>, sehingga workflow perlu mengakses/menggunakan kode repositori. Step kedua, menggunakan keyword <code>uses</code> untuk menjalankan <em>action</em> <code>actions/setup-node@v4</code>, <em>action</em> ini berfungsi untuk setup workflow dengan versi node.js tertentu dan pada tutorial ini digunakan node.js versi 20 serta juga menggunakan cache untuk npm dependencies.
+    <pre class="language-yaml"><code>steps:
+  - uses: actions/checkout@v4
+  - uses: actions/setup-node@v4
+    with:
+    node-version: 20
+    cache: 'npm'</code></pre>
+  </li>
+  <li>
+    Mendefinisikan 2 step terakhir yang menggunakan keyword <code>name</code> untuk menetapkan nama dari step dan keyword <code>run</code> untuk menjalankan command.
+    <pre class="language-yaml"><code>- name: Clean install dependencies
+  run: npm ci
+  <br/>
+- name: Run test and lint
+  run: |
+    npm run lint
+    npm test</code></pre>
+  </li>
+</ul>
+
+Jika kamu ingin melihat dan belajar lebih detail mengenai syntax workflow, bisa lihat di [workflow syntax for Github Actions](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions).
+
+## 3. Deploy ke Vercel (CD)
 
 Oke, terima kasih buat kamu yang sudah membaca, semoga bermanfaat. Jika ada yang ingin ditanyakan atau ada saran silahkan kirim email ke fikkri.reza@gmail.com. Jangan lupa follow Linkedin [in/reza-sariful-fikri](https://www.linkedin.com/in/reza-sariful-fikri) ku atau bisa juga di Facebook [reza.sariful.fikri](https://web.facebook.com/reza.sariful.fikri) untuk mendapatkan tulisan terbaru.
 
