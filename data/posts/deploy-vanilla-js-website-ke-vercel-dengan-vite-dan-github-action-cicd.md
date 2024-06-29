@@ -138,9 +138,17 @@ Sekarang, saya akan menjelaskan setiap baris kode diatas, supaya kamu lebih mema
   </li>
 </ul>
 
-Jika kamu ingin melihat dan belajar lebih detail mengenai syntax workflow, bisa lihat di [workflow syntax for Github Actions](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions).
+> Jika kamu ingin melihat dan belajar lebih detail mengenai syntax workflow, bisa lihat di [workflow syntax for Github Actions](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions).
 
-## 3. Deploy ke Vercel (CD)
+Setelah selesai membuat workflow saatnya mencoba workflow yang telah dibuat, untuk itu, kamu bisa melakukan *commit* lalu *push* terlebih dahulu untuk menyimpan workflow yang telah dibuat dan pastikan di remote repositori pada tab *Actions* pada sidebar menu sebelah kiri terdapat workflow dengan nama *Continious Integration* yang telah dibuat sebelumnya:
+![push ci yml](/posts/deploy-vercel-github-action/push-ci-yml.png)<!--rehype:width=1366&height=656&loading=lazy&class=mt-6&decoding=async-->
+
+Untuk memicu workflow, buat branch baru dan lakukan perubahan apapun di local repositori, setelah itu lakukan *commit* lalu *push* dan buka sebuah pull request ke branch main. Jika tidak ada masalah pada workflow yang dibuat, maka secara otomatis workflow akan dijalankan:
+![test workflow pending](/posts/deploy-vercel-github-action/test-workflow-pending.png)<!--rehype:width=1351&height=656&loading=lazy&class=mt-6&decoding=async-->
+Jika proses CI yang dijalankan berhasil (artinya lolos test dan lint) maka akan berstatus *pass*:
+![test workflow pass](/posts/deploy-vercel-github-action/test-workflow-pass.png)<!--rehype:width=1351&height=656&loading=lazy&class=mt-6&decoding=async-->
+Untuk sekarang harap jangan melakukan *Merge pull request* terlebih dahulu dan lanjut ke langkah selanjutnya, yaitu membuat proses deploy dengan Vercel, sehingga nantinya ketika dilakukan *Merge pull request*, maka Vercel akan secara otomatis men-deploy website *counter-js*.
+
 
 Oke, terima kasih buat kamu yang sudah membaca, semoga bermanfaat. Jika ada yang ingin ditanyakan atau ada saran silahkan kirim email ke fikkri.reza@gmail.com. Jangan lupa follow Linkedin [in/reza-sariful-fikri](https://www.linkedin.com/in/reza-sariful-fikri) ku atau bisa juga di Facebook [reza.sariful.fikri](https://web.facebook.com/reza.sariful.fikri) untuk mendapatkan tulisan terbaru.
 
