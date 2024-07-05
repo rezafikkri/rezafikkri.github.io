@@ -114,5 +114,5 @@ Oke, terima kasih buat kamu yang sudah membaca, semoga bermanfaat. Pada bagian s
 
 Kamu bisa juga berdonasi melalui [Saweria](https://saweria.co/rezafikkri) untuk mendukung saya.
 
-### Referensi
+### Referensi:
 [Creating a Pull Request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request)
