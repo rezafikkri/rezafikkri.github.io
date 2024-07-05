@@ -13,7 +13,11 @@
     <lastmod>2023-03-28</lastmod>
   </url>
   <url>
-    <loc>https://rezafikkri.github.io/blogs/deploy-vanilla-js-website-ke-vercel-dengan-vite-dan-github-action-cicd</loc>
-    <lastmod>2024-06-14</lastmod>
+    <loc>https://rezafikkri.github.io/blogs/deploy-vite-vanilla-js-website-dengan-cicd-1-pendahuluan</loc>
+    <lastmod>2024-07-04</lastmod>
+  </url>
+  <url>
+    <loc>https://rezafikkri.github.io/blogs/deploy-vite-vanilla-js-website-dengan-cicd-2-membuat-github-actions-workflow</loc>
+    <lastmod>2024-07-05</lastmod>
   </url>
 </urlset>
