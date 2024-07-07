@@ -7,48 +7,6 @@ slug: "deploy-vanilla-js-website-ke-vercel-dengan-vite-dan-github-action-cicd"
 ogImage: ""
 --- 
 
-## 3. Deploy Dengan Vercel (CD)
-Untuk deploy dengan vercel ikuti langkah-langkah berikut:
-
-> Dalam membuat akun vercel di tahap ini saya menggunakan akun Github lain (amruk53sh), untuk menunjukkan cara membuat akun Vercel dari awal.
-
-- Buat akun Vercel dengan buka halaman [Sign Up Vercel](https://vercel.com/signup), lalu pada bagian *Plan type*, karena ini tujuannya untuk belajar maka pilih *Hobby*, lalu pada kolom input *Your name*, isi dengan nama kamu dan klik button *Continue*:
-![sign up vercel](/posts/deploy-vercel-github-action/sign-up-vercel.png)<!--rehype:width=1351&height=656&loading=lazy&class=mt-6&decoding=async-->
-- Lalu kamu akan diarahkan ke suatu halaman untuk menghubungkan akun Vercel kamu dengan Git provider, karena dalam tutorial ini menggunakan Github, maka klik button *Continue With Github*:
-![connect vercel github](/posts/deploy-vercel-github-action/connect-vercel-github.png)<!--rehype:width=1351&height=656&loading=lazy&class=mt-6&decoding=async-->
-- Setelah itu akan terbuka pop up window *Authorize Vercel*, yang intinya Vercel ingin meminta persetujuan dari kamu untuk mengakses beberapa hal di akun Github kamu. Klik button *Authorize Vercel* untuk menyetujui:
-![authorize vercel](/posts/deploy-vercel-github-action/authorize-vercel.png)<!--rehype:width=818&height=680&loading=lazy&class=mt-6&decoding=async-->
-- Kemudian kamu akan diminta mengisi nomor telepon. Pilih negara Indonesia, lalu isi dengan nomor aktif kamu (ini hanya untuk verifikasi) dan klik button *Continue*:
-![insert phone number vercel](/posts/deploy-vercel-github-action/insert-phone-number-vercel.png)<!--rehype:width=826&height=682&loading=lazy&class=mt-6&decoding=async-->
-- Selanjutnya kamu perlu memasukkan 4 kode yang telah dikirim ke nomor telepon kamu dan selamat akun Vercel kamu sudah berhasil dibuat:
-![verify vercel sign up](/posts/deploy-vercel-github-action/verify-vercel-sign-up.png)<!--rehype:width=820&height=685&loading=lazy&class=mt-6&decoding=async-->
-- Tunggu sebentar sampai kamu diarahkan ke halaman untuk membuat projek baru (seperti dibawah ini), jika agak lama, tidak apa-apa, tetap tunggu. Karena sebelumnya sudah memiliki projek yang ingin dideploy, maka kamu hanya perlu untuk melakukan *Import Git Repository* saja. Untuk melakukan import, kamu perlu install Vercel di akun Github-mu, caranya dengan klik button *Install* pada bagian *Import Git Repository*:
-![install-github-app-vercel](/posts/deploy-vercel-github-action/install-vercel.png)<!--rehype:width=1366&height=1151&loading=lazy&class=mt-6&decoding=async-->
-- Lalu kamu akan dimintai semacam persetujuan oleh Vercel untuk beberapa izin terkait menginstall Vercel di akun Github-mu, kamu bisa membaca apa saja izin tersebut, selanjutnya jangan lupa untuk memilih *Only select repositories*, kemudian pilih repositori website *counter-js* dan klik button *Install* (scroll ke bawah jika kamu belum melihat button tersebut):
-![permission install github app vercel](/posts/deploy-vercel-github-action/permission-install-vercel.png)<!--rehype:width=818&height=682&loading=lazy&class=mt-6&decoding=async-->
-- Setelah itu kamu tinggal klik button *Import* di bagian *Import Git Repository*:
-![importing project counter js](/posts/deploy-vercel-github-action/importing-project-counter-js.png)<!--rehype:width=1351&height=656&loading=lazy&class=mt-6&decoding=async-->
-- Sebelum deploy, kamu akan diminta untuk melakukan konfigurasi projek, seperti *Project Name*, *Framework Preset*, *Root Directory*, *Build and Output Settings* dan *Environment Variables*. Tetapi untuk di tutorial ini, kamu tidak perlu merubah apapun karena Vercel sudah membuat konfigurasi default, kamu bisa langsung klik button *Deploy* untuk deploy website *counter-js* dan tunggu sampai proses deploy selesai:
-![configure project vercel](/posts/deploy-vercel-github-action/configure-project-vercel.png)<!--rehype:width=1351&height=656&loading=lazy&class=mt-6&decoding=async-->
-- Selamat kamu telah berhasil deploy website *counter-js* dengan Vercel. Selanjutnya kamu bisa klik button *Continue to Dashboard* untuk melihat detail dari website *counter-js* yang telah di deploy:
-![success deploy](/posts/deploy-vercel-github-action/success-deploy.png)<!--rehype:width=1351&height=656&loading=lazy&class=mt-6&decoding=async-->
-- Kemudian kamu akan dialihkan ke halaman dashboard dari website yang telah berhasil dideploy. Untuk mengunjungi website yang telah dideploy kamu bisa klik button *Visit*:
-![dashboard vercel](/posts/deploy-vercel-github-action/dashboard-vercel.png)<!--rehype:width=1366&height=759&loading=lazy&class=mt-6&decoding=async-->
-
-Setelah berhasil deploy website *counter-js* ke Vercel, seperti penjelasan saya sebelumnya, bahwa ketika ada perubahan yang diterapkan ke branch main, maka Vercel secara otomatis akan melakukan proses deployment. Maka untuk memastikan apakah betul berjalan seperti itu, buat branch baru, lalu lakukan perubahan apapun di repositori local (agar mudah melihat perbedaan antara deployment sebelumnya dan yang baru, buat perubahan pada tampilan website di file `main.js`) dan lakukan commit kemudian push.
-
-> Disini saya kembali menggunakan akun Github rezafikkri.
-
-Selanjutnya buka sebuah pull request ke branch main, tunggu semua pengecekan lolos dan lakukan *Merge pull request* dengan klik button *Merge pull request*:
-![merge pull request](/posts/deploy-vercel-github-action/merge-pull-request.png)<!--rehype:width=1351&height=656&loading=lazy&class=mt-6&decoding=async-->
-Karena melakukan *merge*, maka kamu akan diminta untuk mengisi commit *message* dan commit *description*, kamu bisa merubahnya atau biarkan default dan klik button *Confirm merge*:
-![confirm merge pull request](/posts/deploy-vercel-github-action/confirm-merge-pull-request.png)<!--rehype:width=1351&height=656&loading=lazy&class=mt-6&decoding=async-->
-Jika pada button tidak terdapat kata *Merge pull request*, maka klik dropdown menu pada button dan pilih *Create a merge commit*:
-![button merge pull request](/posts/deploy-vercel-github-action/button-merge-pull-request.png)<!--rehype:width=1351&height=656&loading=lazy&class=mt-6&decoding=async-->
-
-Setelah merge pull request berhasil, untuk melihat apakah deployment otomatis dijalankan, opsi pertama, kamu bisa melihat langsung pada website *counter-js* yang telah di deploy, apakah terdapat perubahan (jika kamu melakukan perubahan pada tampilan website), atau opsi kedua, kamu bisa membuka tab *Deployments* pada halaman dashboard website *counter-js*, disana kamu bisa melihat deployment terbaru adalah deployment dari merge pull request yang sebelumnya kamu lakukan, ini menandakan bahwa betul Vercel secara otomatis melakukan deployment ketika ada perubahan yang diterapkan pada branch main:
-![automatic deployment](/posts/deploy-vercel-github-action/automatic-deployment.png)<!--rehype:width=1351&height=656&loading=lazy&class=mt-6&decoding=async-->
-
 ## 4. Menambahkan Branch Ruleset
 Ruleset adalah daftar aturan yang berlaku pada repositori, yang dapat membantu kamu untuk mengontrol bagaimana orang berinteraksi dengan branch dan tag di dalam repositori. Misalnya seperti pada tutorial ini, ingin diterapkan aturan bahwa tidak ada satu orang pun yang diizinkan melakukan perubahan secara langsung pada branch main, jika ingin melakukan perubahan, harus membuat pull request (sehingga bisa dijalankan testing, lint secara otomatis dan pengecekan lainnya, serta juga perubahan yang dibuat bisa di review terlebih dahulu sebelum diterapkan ke branch main). Hal ini salah satunya untuk mencegah jangan sampai error ataupun celah keamanan ter-deploy, karena ketika ada perubahan yang diterapkan ke branch main, maka Vercel secara otomatis akan melakukan proses deployment. Kita juga sebagai manusia kadang ada saatnya lupa, lupa untuk melakukan testing misalnya, dll, maka alangkah baiknya untuk melakukan suatu pencegahan.
 
