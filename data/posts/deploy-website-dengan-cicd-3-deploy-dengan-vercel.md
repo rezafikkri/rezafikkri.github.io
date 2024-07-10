@@ -1,6 +1,6 @@
 ---
 id: "bc9d7d55-ad0a-4795-b926-87974edb0a2d"
-title: "Deploy Website dengan CI/CD #3: Deploy Dengan Vercel"
+title: "Deploy Website dengan CI/CD #3: Deploy dengan Vercel"
 date: "2024-07-06T07:27:02.722Z"
 topics: ["e5d6b8ea-d8e0-4bd2-8bb3-d74d08dc5669","ab8888e2-d055-4507-aec3-7cadb0d36d98","3b2bf050-b69c-4438-b3d9-ed0a3a5e0911"]
 slug: "deploy-website-dengan-cicd-3-deploy-dengan-vercel"
