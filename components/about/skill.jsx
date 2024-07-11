@@ -8,10 +8,10 @@ export default function Skill() {
       <p className="mt-1 text-lg">HTML - CSS - JavaScript - PHP - Git - Bootstrap</p>
 
       <h3 className="text-gray-500 mt-5">Menengah</h3>
-      <p className="mt-1 text-lg">CodeIgniter - Laravel - Tailwind CSS - MariaDB - PostgreSQL - Github - NodeJS - React - Next.js</p>
+      <p className="mt-1 text-lg">CodeIgniter - Tailwind CSS - MariaDB - PostgreSQL - GitHub - React - Next.js</p>
 
       <h3 className="text-gray-500 mt-5">Dasar</h3>
-      <p className="mt-1 text-lg">Lua - Electron - Linux - MongoDB - Redis - RabbitMQ - Webpack - GIMP - Inkscape - Kdenlive - Python</p>
+      <p className="mt-1 text-lg">Lua - Electron - Linux - Vite - GIMP - Inkscape - Kdenliven - GitHub Actions - Laravel - NodeJS</p>
 
       <Link href="/CV Reza SF.pdf" download target="_blank" className="mt-9 inline-block no-underline bg-white hover:bg-gray-100 border border-gray-200 px-4 py-2 rounded-lg">
         <span className="mr-1.5">Unduh CV</span>
