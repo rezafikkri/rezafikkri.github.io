@@ -1,25 +1,25 @@
 ---
 id: "e4ed6a0e-39cc-4f5a-aca9-bb482af687e6"
-title: "Deploy Website dengan CI/CD #2: Github Actions Workflow"
+title: "Deploy Website dengan CI/CD #2: GitHub Actions Workflow"
 date: "2024-07-05T00:20:23.963Z"
 topics: ["e5d6b8ea-d8e0-4bd2-8bb3-d74d08dc5669","ab8888e2-d055-4507-aec3-7cadb0d36d98","3b2bf050-b69c-4438-b3d9-ed0a3a5e0911"]
 slug: "deploy-website-dengan-cicd-2-github-actions-workflow"
-ogImage: ""
+ogImage: "/posts/deploy-vercel-github-action/2-deploy-vercel-github-action.png"
 serial: {"id":"ede13e57-95e1-425e-9e07-f5f686cb3990","order":2}
 ---
 
-Setelah membahas beberapa teori terkait lalu membuat remote repositori di Github dan mengupload website counter-js ke remote repositori tersebut pada seri ke-1. Pada seri ke-2 ini kita akan sama-sama belajar membuat Github Actions workflow untuk proses CI, yang nantinya secara otomatis akan menjalankan unit testing dan linting ketika pull request dibuka ke branch main atau ketika pull request yang sudah ditutup dibuka kembali, atau ketika *head branch* (branch yang berisi perubahan yang ingin kamu integrasikan/terapkan) dari pull request diupdate. Tetapi sebelum itu, tentunya perlu untuk memahami apa itu Github Actions workflow.
+Setelah membahas beberapa teori terkait lalu membuat remote repositori di GitHub dan mengupload website counter-js ke remote repositori tersebut pada seri ke-1. Pada seri ke-2 ini kita akan sama-sama belajar membuat GitHub Actions workflow untuk proses CI, yang nantinya secara otomatis akan menjalankan unit testing dan linting ketika pull request dibuka ke branch main atau ketika pull request yang sudah ditutup dibuka kembali, atau ketika *head branch* (branch yang berisi perubahan yang ingin kamu integrasikan/terapkan) dari pull request diupdate. Tetapi sebelum itu, tentunya perlu untuk memahami apa itu GitHub Actions workflow.
 
 > Pastikan kamu sudah mengikuti bagian ke-1. Jika belum kamu bisa scroll ke paling bawah halaman ini sampai pada bagian Daftar Seri Tulisan dan klik link pada bagian ke-1.
 
-## Apa itu Github Actions Workflow?
+## Apa itu GitHub Actions Workflow?
 
-<!-- excerpt -->Github Actions workflow adalah *automated process* (proses otomatis) yang dapat dikonfigurasi yang akan menjalankan satu atau beberapa *jobs*. Workflow dibuat di direktori<!-- excerpt --> `.github/workflows` di dalam repositori, dengan bahasa YAML (*human-friendly data serialization
+<!-- excerpt -->GitHub Actions workflow adalah *automated process* (proses otomatis) yang dapat dikonfigurasi yang akan menjalankan satu atau beberapa *jobs*. Workflow dibuat di direktori<!-- excerpt --> `.github/workflows` di dalam repositori, dengan bahasa YAML (*human-friendly data serialization
   language*). Workflow akan dijalankan ketika terpicu oleh suatu *event* di dalam repositori (seperti pull request, push, dll), atau dapat juga dipicu secara manual, atau juga bisa terpicu sesuai jadwal yang ditentukan. Satu repositori dapat memiliki banyak workflow dan masing-masing dari workflow itu dapat melakukan serangkaian tugas yang berbeda. Sebagai contoh, kamu dapat memiliki satu workflow untuk build dan test pull request, satu workflow lain untuk deploy aplikasi-mu setiap kali release dibuat dan satu workflow lain lagi yang menambahkan sebuah label setiap kali seseorang membuat *issue* baru.
 
-Mengenai *event* dan *jobs*, *event* adalah aktivitas spesifik di dalam sebuah repositori yang memicu workflow dijalankan, sedangkan *jobs* adalah serangkaian langkah dalam workflow yang dijalankan pada *runner* yang sama dan *runner* itu sendiri adalah sebuah server yang menjalankan workflow ketika dipicu. Setiap *runner* dapat menjalankan satu job dalam satu waktu. Github sendiri menyediakan beberapa *runner*, yaitu, Ubuntu Linux, Microsoft Windows dan macOS.
+Mengenai *event* dan *jobs*, *event* adalah aktivitas spesifik di dalam sebuah repositori yang memicu workflow dijalankan, sedangkan *jobs* adalah serangkaian langkah dalam workflow yang dijalankan pada *runner* yang sama dan *runner* itu sendiri adalah sebuah server yang menjalankan workflow ketika dipicu. Setiap *runner* dapat menjalankan satu job dalam satu waktu. GitHub sendiri menyediakan beberapa *runner*, yaitu, Ubuntu Linux, Microsoft Windows dan macOS.
 
-## Membuat Github Actions Workflow
+## Membuat GitHub Actions Workflow
 
 Oke, untuk membuat workflow, buat direktori `.github/workflows/` di dalam direktori utama website counter-js, lalu didalamnya buat file `ci.yml`, seperti dibawah ini:
 ![create ci yml](/posts/deploy-vercel-github-action/create-ci-yml.png)<!--rehype:width=564&height=439&loading=lazy&class=mt-6&decoding=async-->
@@ -97,7 +97,7 @@ Sekarang, saya akan menjelaskan setiap baris kode diatas, supaya kamu lebih mema
   </li>
 </ul>
 
-> Jika kamu ingin melihat dan belajar lebih detail mengenai syntax workflow, bisa lihat di [workflow syntax for Github Actions](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions).
+> Jika kamu ingin melihat dan belajar lebih detail mengenai syntax workflow, bisa lihat di [workflow syntax for GitHub Actions](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions).
 
 Setelah selesai membuat workflow saatnya mencoba workflow yang telah dibuat, untuk itu, kamu bisa melakukan commit lalu push terlebih dahulu untuk mengupload workflow ke remote repositori dan pastikan di remote repositori pada tab **Actions** &raquo; pada sidebar menu sebelah kiri terdapat workflow dengan nama **Continious Integration**:
 ![push ci yml](/posts/deploy-vercel-github-action/push-ci-yml.png)<!--rehype:width=1366&height=656&loading=lazy&class=mt-6&decoding=async-->

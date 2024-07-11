@@ -4,30 +4,30 @@ title: "Deploy Website dengan CI/CD #3: Deploy dengan Vercel"
 date: "2024-07-06T07:27:02.722Z"
 topics: ["e5d6b8ea-d8e0-4bd2-8bb3-d74d08dc5669","ab8888e2-d055-4507-aec3-7cadb0d36d98","3b2bf050-b69c-4438-b3d9-ed0a3a5e0911"]
 slug: "deploy-website-dengan-cicd-3-deploy-dengan-vercel"
-ogImage: ""
+ogImage: "/posts/deploy-vercel-github-action/3-deploy-vercel-github-action.png"
 serial: {"id":"ede13e57-95e1-425e-9e07-f5f686cb3990","order":3}
 ---
 
-Setelah membuat Github Actions workflow pada seri ke-2, pada seri ke-3 ini kita akan sama-sama belajar deployment dengan menggunakan Vercel untuk proses CD.
+Setelah membuat GitHub Actions workflow pada seri ke-2, pada seri ke-3 ini kita akan sama-sama belajar deployment dengan menggunakan Vercel untuk proses CD.
 
 > Pastikan kamu sudah mengikuti bagian ke-2. Jika belum kamu bisa scroll ke paling bawah halaman ini sampai pada bagian Daftar Seri Tulisan dan klik link pada bagian ke-2.
 
-> Disini saya menggunakan akun Github lain (amruk53sh) untuk menunjukkan bagaimana cara deploy dengan Vercel untuk pertama kalinya.
+> Disini saya menggunakan akun GitHub lain (amruk53sh) untuk menunjukkan bagaimana cara deploy dengan Vercel untuk pertama kalinya.
 
 Untuk deploy dengan vercel ikuti langkah-langkah berikut:
 <!-- excerpt -->1. Buat akun Vercel dengan buka halaman [Sign Up Vercel](https://vercel.com/signup), lalu pada bagian **Plan type**, karena ini tujuannya untuk belajar maka pilih **Hobby**, lalu<!-- excerpt --> pada kolom input **Your name**, isi dengan nama kamu dan klik button **Continue**:
 ![sign up vercel](/posts/deploy-vercel-github-action/sign-up-vercel.png)<!--rehype:width=1351&height=656&loading=lazy&class=mt-6&decoding=async-->
-2. Kamu akan diarahkan ke suatu halaman untuk menghubungkan akun Vercel kamu dengan Git provider, karena dalam tutorial ini menggunakan Github, maka klik button **Continue With Github**:
+2. Kamu akan diarahkan ke suatu halaman untuk menghubungkan akun Vercel kamu dengan Git provider, karena dalam tutorial ini menggunakan GitHub, maka klik button **Continue With GitHub**:
 ![connect vercel github](/posts/deploy-vercel-github-action/connect-vercel-github.png)<!--rehype:width=1351&height=656&loading=lazy&class=mt-6&decoding=async-->
-3. Akan terbuka pop up window *Authorize Vercel*, yang intinya Vercel ingin meminta persetujuan dari kamu untuk mengakses beberapa hal di akun Github kamu. Klik button **Authorize Vercel** untuk menyetujui:
+3. Akan terbuka pop up window *Authorize Vercel*, yang intinya Vercel ingin meminta persetujuan dari kamu untuk mengakses beberapa hal di akun GitHub kamu. Klik button **Authorize Vercel** untuk menyetujui:
 ![authorize vercel](/posts/deploy-vercel-github-action/authorize-vercel.png)<!--rehype:width=818&height=680&loading=lazy&class=mt-6&decoding=async-->
 4. Kamu akan diminta mengisi nomor telepon. Pilih negara Indonesia, lalu isi dengan nomor aktif kamu (ini hanya untuk verifikasi) dan klik button **Continue**:
 ![insert phone number vercel](/posts/deploy-vercel-github-action/insert-phone-number-vercel.png)<!--rehype:width=826&height=682&loading=lazy&class=mt-6&decoding=async-->
 5. Kamu perlu memasukkan 4 kode yang telah dikirim ke nomor telepon kamu dan selamat akun Vercel kamu sudah berhasil dibuat:
 ![verify vercel sign up](/posts/deploy-vercel-github-action/verify-vercel-sign-up.png)<!--rehype:width=820&height=685&loading=lazy&class=mt-6&decoding=async-->
-6. Tunggu sebentar sampai kamu diarahkan ke halaman untuk membuat projek baru (seperti dibawah ini), jika agak lama, tidak apa-apa, tetap tunggu. Karena sebelumnya sudah memiliki projek yang ingin dideploy, maka kamu hanya perlu untuk melakukan *Import Git Repository* saja. Untuk melakukan import, kamu perlu install Vercel Github App di akun Github-mu, caranya dengan klik button **Install** pada bagian **Import Git Repository**:
-![install-github-app-vercel](/posts/deploy-vercel-github-action/install-vercel.png)<!--rehype:width=1366&height=1151&loading=lazy&class=mt-6&decoding=async--> Di Github ada tools yang bernama Github Apps, Github Apps adalah tools yang memperluas fungsionalitas Github. Github Apps dapat melakukan sesuatu di Github seperti membuka *issues*, komen di dalam pull request dan mengelola *projects*. Github Apps juga bisa melakukan sesuatu di luar Github berdasarkan *event* yang terjadi di Github. Vercel yang kamu install di akun Github-mu adalah salah satu dari Github Apps. Lebih detail mengenai Github Apps bisa baca [disini](https://docs.github.com/en/apps/using-github-apps/about-using-github-apps).
-7. Kamu akan dimintai semacam persetujuan oleh Vercel untuk beberapa izin terkait menginstall Vercel Github App di akun Github-mu, kamu bisa membaca apa saja izin tersebut, selanjutnya jangan lupa untuk memilih **Only select repositories**, untuk install Vercel hanya di repositori yang dipilih saja, kemudian pilih repositori website counter-js dan klik button **Install** (scroll ke bawah jika kamu belum melihat button tersebut):
+6. Tunggu sebentar sampai kamu diarahkan ke halaman untuk membuat projek baru (seperti dibawah ini), jika agak lama, tidak apa-apa, tetap tunggu. Karena sebelumnya sudah memiliki projek yang ingin dideploy, maka kamu hanya perlu untuk melakukan *Import Git Repository* saja. Untuk melakukan import, kamu perlu install Vercel GitHub App di akun GitHub-mu, caranya dengan klik button **Install** pada bagian **Import Git Repository**:
+![install-github-app-vercel](/posts/deploy-vercel-github-action/install-vercel.png)<!--rehype:width=1366&height=1151&loading=lazy&class=mt-6&decoding=async--> Di GitHub ada tools yang bernama GitHub Apps, GitHub Apps adalah tools yang memperluas fungsionalitas GitHub. GitHub Apps dapat melakukan sesuatu di GitHub seperti membuka *issues*, komen di dalam pull request dan mengelola *projects*. GitHub Apps juga bisa melakukan sesuatu di luar GitHub berdasarkan *event* yang terjadi di GitHub. Vercel yang kamu install di akun GitHub-mu adalah salah satu dari GitHub Apps. Lebih detail mengenai GitHub Apps bisa baca [disini](https://docs.github.com/en/apps/using-github-apps/about-using-github-apps).
+7. Kamu akan dimintai semacam persetujuan oleh Vercel untuk beberapa izin terkait menginstall Vercel GitHub App di akun GitHub-mu, kamu bisa membaca apa saja izin tersebut, selanjutnya jangan lupa untuk memilih **Only select repositories**, untuk install Vercel hanya di repositori yang dipilih saja, kemudian pilih repositori website counter-js dan klik button **Install** (scroll ke bawah jika kamu belum melihat button tersebut):
 ![permission install github app vercel](/posts/deploy-vercel-github-action/permission-install-vercel.png)<!--rehype:width=818&height=682&loading=lazy&class=mt-6&decoding=async-->
 8. Klik button **Import** pada repositori website counter-js di bagian **Import Git Repository**:
 ![importing project counter js](/posts/deploy-vercel-github-action/importing-project-counter-js.png)<!--rehype:width=1351&height=656&loading=lazy&class=mt-6&decoding=async-->
@@ -40,7 +40,7 @@ Untuk deploy dengan vercel ikuti langkah-langkah berikut:
 
 Setelah berhasil deploy website counter-js ke Vercel, seperti penjelasan saya sebelumnya, bahwa ketika ada perubahan yang diterapkan ke branch main, maka Vercel secara otomatis akan melakukan proses deployment. Untuk memastikan apakah betul berjalan seperti itu, buat branch baru, lalu lakukan perubahan apapun di repositori local (agar mudah melihat perbedaan antara deployment sebelumnya dan yang baru, buat perubahan pada tampilan website di file `main.js`) dan lakukan commit kemudian push.
 
-> Disini saya kembali menggunakan akun Github utama saya (rezafikkri).
+> Disini saya kembali menggunakan akun GitHub utama saya (rezafikkri).
 
 Selanjutnya buka sebuah pull request ke branch main, tunggu semua pengecekan lolos dan lakukan *Merge pull request* dengan klik button **Merge pull request**:
 ![merge pull request](/posts/deploy-vercel-github-action/merge-pull-request.png)<!--rehype:width=1351&height=656&loading=lazy&class=mt-6&decoding=async-->
