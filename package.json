@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "npx serve@latest out",
-    "post": "node ./lib/generate-post.mjs"
+    "post": "node ./lib/generate-post.mjs",
+    "update-sitemap": "node ./lib/update-sitemap.mjs"
   },
   "dependencies": {
     "@inquirer/checkbox": "^2.3.10",
