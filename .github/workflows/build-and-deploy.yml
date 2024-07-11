@@ -1,6 +1,6 @@
 # .github/workflows/build-and-deploy.yml
 
-name: Node.js CI
+name: Continuous Deployment (CD)
 
 on:
   push:
