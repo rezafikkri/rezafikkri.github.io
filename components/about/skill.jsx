@@ -4,11 +4,11 @@ export default function Skill() {
   return (
     <section className="mt-10 text-gray-800">
       <h2 className="text-3xl font-bold text-gray-900">Keahlian</h2>
-      <h3 className="text-gray-500 mt-5">Ahli</h3>
-      <p className="mt-1 text-lg">HTML - CSS - JavaScript - PHP - Git - Bootstrap</p>
+      <h3 className="text-gray-500 mt-5">Mahir</h3>
+      <p className="mt-1 text-lg">HTML - CSS - JavaScript - PHP - Bootstrap</p>
 
       <h3 className="text-gray-500 mt-5">Menengah</h3>
-      <p className="mt-1 text-lg">CodeIgniter - Tailwind CSS - MariaDB - PostgreSQL - GitHub - React - Next.js</p>
+      <p className="mt-1 text-lg">CodeIgniter - Tailwind CSS - MariaDB - PostgreSQL - Git - GitHub - React - Next.js</p>
 
       <h3 className="text-gray-500 mt-5">Dasar</h3>
       <p className="mt-1 text-lg">Lua - Electron - Linux - Vite - GIMP - Inkscape - Kdenliven - GitHub Actions - Laravel - NodeJS</p>
