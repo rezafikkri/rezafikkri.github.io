@@ -10,7 +10,7 @@ serial: {"id":"ede13e57-95e1-425e-9e07-f5f686cb3990","order":2}
 
 Setelah membahas beberapa teori terkait lalu membuat remote repositori di GitHub dan mengupload website counter-js ke remote repositori tersebut pada seri ke-1. Pada seri ke-2 ini kita akan sama-sama belajar membuat GitHub Actions workflow untuk proses CI, yang nantinya secara otomatis akan menjalankan unit testing dan linting ketika pull request dibuka ke branch main atau ketika pull request yang sudah ditutup dibuka kembali, atau ketika *head branch* (branch yang berisi perubahan yang ingin kamu integrasikan/terapkan) dari pull request diupdate. Tetapi sebelum itu, tentunya perlu untuk memahami apa itu GitHub Actions workflow.
 
-> Pastikan kamu sudah mengikuti bagian ke-1. Jika belum kamu bisa scroll ke paling bawah halaman ini sampai pada bagian Daftar Seri Tulisan dan klik link pada bagian ke-1.
+> Pastikan kamu sudah mengikuti bagian ke-1. Jika belum, kamu bisa scroll ke paling bawah halaman ini sampai pada bagian Daftar Seri Tulisan dan klik link pada bagian ke-1.
 
 ## Apa itu GitHub Actions Workflow?
 

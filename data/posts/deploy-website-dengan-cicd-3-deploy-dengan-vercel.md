@@ -10,7 +10,7 @@ serial: {"id":"ede13e57-95e1-425e-9e07-f5f686cb3990","order":3}
 
 Setelah membuat GitHub Actions workflow pada seri ke-2, pada seri ke-3 ini kita akan sama-sama belajar deployment dengan menggunakan Vercel untuk proses CD.
 
-> Pastikan kamu sudah mengikuti bagian ke-2. Jika belum kamu bisa scroll ke paling bawah halaman ini sampai pada bagian Daftar Seri Tulisan dan klik link pada bagian ke-2.
+> Pastikan kamu sudah mengikuti bagian ke-2. Jika belum, kamu bisa scroll ke paling bawah halaman ini sampai pada bagian Daftar Seri Tulisan dan klik link pada bagian ke-2.
 
 > Disini saya menggunakan akun GitHub lain (amruk53sh) untuk menunjukkan bagaimana cara deploy dengan Vercel untuk pertama kalinya.
 
