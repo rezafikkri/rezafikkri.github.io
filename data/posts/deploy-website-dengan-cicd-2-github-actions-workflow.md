@@ -1,7 +1,7 @@
 ---
 id: "e4ed6a0e-39cc-4f5a-aca9-bb482af687e6"
 title: "Deploy Website dengan CI/CD #2: GitHub Actions Workflow"
-date: "2024-07-05T00:20:23.963Z"
+date: "2024-07-12T07:01:48.928Z"
 topics: ["e5d6b8ea-d8e0-4bd2-8bb3-d74d08dc5669","ab8888e2-d055-4507-aec3-7cadb0d36d98","3b2bf050-b69c-4438-b3d9-ed0a3a5e0911"]
 slug: "deploy-website-dengan-cicd-2-github-actions-workflow"
 ogImage: "/posts/deploy-vercel-github-action/2-deploy-vercel-github-action.png"
