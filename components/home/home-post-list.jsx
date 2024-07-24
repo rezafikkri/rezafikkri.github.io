@@ -1,3 +1,5 @@
+'use client';
+
 import Link from "next/link";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
