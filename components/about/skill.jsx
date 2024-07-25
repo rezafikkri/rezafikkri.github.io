@@ -5,41 +5,13 @@ export default function Skill() {
     <section className="mt-10 text-gray-800">
       <h2 className="text-3xl font-bold text-gray-900">Keahlian</h2>
       <h3 className="text-gray-500 mt-5">Mahir</h3>
-      <ul className="mt-1 text-lg grid sm:grid-cols-2 list-inside list-disc">
-        <li>PHP</li>
-        <li>CSS</li>
-        <li>JavaScript</li>
-        <li>Bootstrap</li>
-        <li>HTML</li>
-      </ul>
+      <p className="mt-1 text-lg">PHP, JavaScript, HTML, CSS, Bootstrap.</p>
 
       <h3 className="text-gray-500 mt-5">Menengah</h3>
-      <ul className="mt-1 text-lg grid sm:grid-cols-2 list-inside list-disc">
-        <li>CodeIgniter</li>
-        <li>Tailwind CSS</li>
-        <li>MariaDB</li>
-        <li>PostgreSQL</li>
-        <li>Git</li>
-        <li>GitHub</li>
-        <li>React</li>
-        <li>Next.js</li>
-        <li>PHPUnit</li>
-        <li>Vitest</li>
-      </ul>
+      <p className="mt-1 text-lg">CodeIgniter,Tailwind CSS, MariaDB, PostgreSQL, Git, GitHub, React, Next.js, PHPUnit, Vitest.</p>
 
       <h3 className="text-gray-500 mt-5">Dasar</h3>
-      <ul className="mt-1 text-lg grid sm:grid-cols-2 list-inside list-disc">
-        <li>Lua</li>
-        <li>Electron</li>
-        <li>Linux</li>
-        <li>Vite</li>
-        <li>GIMP</li>
-        <li>Inkscape</li>
-        <li>Kdenlive</li>
-        <li>GitHub Actions</li>
-        <li>Laravel</li>
-        <li>NodeJS</li>
-      </ul>
+      <p className="mt-1 text-lg">Lua, Electron, Linux, Vite, GIMP, Inkscape, Kdenlive, GitHub Actions, Laravel, NodeJS.</p>
 
       <Link href="/CV-Reza-Sariful-Fikri.pdf" download target="_blank" className="mt-9 inline-block no-underline bg-white hover:bg-gray-100 border border-gray-200 px-4 py-2 rounded-lg">
         <span className="mr-1.5">Unduh CV</span>
