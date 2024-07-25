@@ -8,10 +8,10 @@ export default function Skill() {
       <p className="mt-1 text-lg">PHP, JavaScript, HTML, CSS, Bootstrap.</p>
 
       <h3 className="text-gray-500 mt-5">Menengah</h3>
-      <p className="mt-1 text-lg">CodeIgniter,Tailwind CSS, MariaDB, PostgreSQL, Git, GitHub, React, Next.js, PHPUnit, Vitest.</p>
+      <p className="mt-1 text-lg">CodeIgniter, Tailwind CSS, MariaDB, PostgreSQL, Git, GitHub, React, Next.js, PHPUnit, Vitest.</p>
 
       <h3 className="text-gray-500 mt-5">Dasar</h3>
-      <p className="mt-1 text-lg">Lua, Electron, Linux, Vite, GIMP, Inkscape, Kdenlive, GitHub Actions, Laravel, NodeJS.</p>
+      <p className="mt-1 text-lg">Lua, Electron, Linux, GIMP, Inkscape, Kdenlive, GitHub Actions, Laravel, NodeJS.</p>
 
       <Link href="/CV-Reza-Sariful-Fikri.pdf" download target="_blank" className="mt-9 inline-block no-underline bg-white hover:bg-gray-100 border border-gray-200 px-4 py-2 rounded-lg">
         <span className="mr-1.5">Unduh CV</span>
