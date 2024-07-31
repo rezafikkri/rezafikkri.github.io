@@ -4,7 +4,7 @@ title: "PDO (PHP Data Objects): Ekstensi PHP untuk mengakses database"
 date: "2023-12-07T08:13:00.750Z"
 topics: ["cdc80207-597b-4fb7-b572-53b68c9f1a78","597f5651-dfe2-4aad-81aa-7c8b090ff468"]
 slug: "pdo-php-data-objects-ekstensi-php-untuk-mengakses-database"
-ogImage: "/posts/php-pdo/php-pdo.png"
+ogImage: "https://res.cloudinary.com/rezafikkri/image/upload/q_auto/php-pdo.png"
 ---
 
 Bismillah, hari ini kita akan mempelajari PDO (PHP Data Objects).
@@ -22,7 +22,7 @@ Sebelum menggunakan PDO, pastikan bahwa ekstensi PDO sudah aktif, caranya buat s
 <?= phpinfo(); ?>
 ```
 dan buka lewat browser. Setelah itu kamu bisa gunakan fitur pencarian yang ada di browser dengan menekan ctrl+f, cari dengan kata kunci *pdo*, pastikan kamu menemukan seperti pada gambar dibawah:
-![cek ekstensi PDO](/posts/php-pdo/PHP-PDO-extension.png)<!--rehype:width=974&height=585&loading=lazy&decoding=async-->
+![cek ekstensi PDO](https://res.cloudinary.com/rezafikkri/image/upload/q_auto/PHP-PDO-extension.png)<!--rehype:width=974&height=585&loading=lazy&decoding=async-->
 Pada gambar diatas, dibagian table PDO, pada kolom *enabled* tertera `mysql, pgsql` yang berarti bahwa PDO mendukung untuk koneksi ke database MariaDB dan PostgreSQL. Jika belum menemukan, kemungkinan ekstensi PDO nya belum aktif, kamu bisa googling untuk mencari cara mengaktifkannya.
 
 Jika kamu menggunakan paket server XAMPP, kamu hanya perlu mencari baris code `;extension=php_pdo.dll` dan `;extension=php_pdo_mysql.dll` didalam file php.ini, lalu hapus `;` pada awal dari kedua baris code tersebut, jangan lupa untuk restart server php dan databasenya. Letak dari file php.ini di XAMPP biasanya ada di `/xampp/php/php.ini`. Sedangkan untuk kamu yang menggunakan paket server Laragon, caranya sangat mudah, buka Laragon > klik *Menu* > pilih *PHP* > pilih *Extentions* > dan klik pada ekstensi yang ingin diaktifkan.
