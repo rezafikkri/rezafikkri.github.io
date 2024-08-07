@@ -1,7 +1,7 @@
 ---
 id: "e2b7af83-c3b4-4e3f-95fb-013cd05d4614"
 title: "PDO (PHP Data Objects): Ekstensi PHP untuk mengakses database"
-date: "2023-12-07T08:13:00.750Z"
+date: "2024-08-07T05:49:27.770Z"
 topics: ["cdc80207-597b-4fb7-b572-53b68c9f1a78","597f5651-dfe2-4aad-81aa-7c8b090ff468"]
 slug: "pdo-php-data-objects-ekstensi-php-untuk-mengakses-database"
 ogImage: "https://res.cloudinary.com/rezafikkri/image/upload/q_auto/php-pdo.png"
@@ -13,28 +13,26 @@ Tetapi, seperti biasanya sebelum lanjut, yang perlu dipersiapkan adalah, kamu ha
 
 ## Apa Itu PDO?
 
-<!-- excerpt -->PDO atau PHP Data Objects merupakan PHP ekstensi yang mendefiniskan ekstensi yang ringan, antarmuka yang konsisten untuk mengakses database di PHP.<!-- excerpt -->Intinya PDO adalah PHP ekstensi yang digunakan untuk mengakses database di PHP.
+PDO atau PHP Data Objects merupakan suatu ekstensi yang mendefinisikan antarmuka yang ringan dan konsisten untuk mengakses database di PHP. Namun kamu tidak bisa melakukan fungsi database apapun (insert, update, dsb) jika hanya menggunakan ekstensi PDO sendiri, kamu membutuhkan yang namanya PDO Driver untuk mengakses database. Setiap database punya PDO Driver tersendiri, misalnya untuk database MariaDB menggunakan driver PDO_MYSQL.
 
-> Kamu tidak bisa menjalankan fungsi database apapun dengan hanya menggunakan ekstensi PDO, kamu harus menggunakan driver PDO database khusus untuk mengakses database server. Misalnya untuk database MariaDB kamu butuh MySQL PDO Driver, supaya bisa mengakses database MariaDB.
+PDO menyediakan sebuah *data-access abstraction layer*, yang berarti bahwa, <!-- excerpt -->dengan PDO, tanpa peduli database apa yang kamu gunakan, kamu akan menggunakan *function* atau *method* yang sama untuk melakukan query dan fetch data<!-- excerpt -->.
 
-Sebelum menggunakan PDO, pastikan bahwa ekstensi PDO sudah aktif, caranya buat satu file php (namanya bebas), lalu masukkan code:
+Sebelum menggunakan PDO, pastikan bahwa ekstensi PDO sudah aktif serta mendukung untuk koneksi ke database MariaDB, caranya buat satu file php (namanya bebas), lalu masukkan code:
 ```php
 <?= phpinfo(); ?>
 ```
-dan buka lewat browser. Setelah itu kamu bisa gunakan fitur pencarian yang ada di browser dengan menekan ctrl+f, cari dengan kata kunci *pdo*, pastikan kamu menemukan seperti pada gambar dibawah:
+dan buka lewat browser. Setelah itu kamu bisa gunakan fitur pencarian yang ada di browser dengan menekan `ctrl+f`, cari dengan kata kunci **pdo**, pastikan kamu menemukan seperti pada gambar dibawah:
 ![cek ekstensi PDO](https://res.cloudinary.com/rezafikkri/image/upload/q_auto/PHP-PDO-extension.png)<!--rehype:width=974&height=585&loading=lazy&decoding=async-->
-Pada gambar diatas, dibagian table PDO, pada kolom *enabled* tertera `mysql, pgsql` yang berarti bahwa PDO mendukung untuk koneksi ke database MariaDB dan PostgreSQL. Jika belum menemukan, kemungkinan ekstensi PDO nya belum aktif, kamu bisa googling untuk mencari cara mengaktifkannya.
+Pada gambar diatas, dibagian table PDO, pada kolom *enabled*, pastikan tertera `mysql` yang berarti bahwa PDO mendukung untuk koneksi ke database MariaDB. Jika belum menemukan, kemungkinan ekstensi PDO nya belum aktif, atau mungkin juga kamu belum menginstall driver PDO_MYSQL.
 
-Jika kamu menggunakan paket server XAMPP, kamu hanya perlu mencari baris code `;extension=php_pdo.dll` dan `;extension=php_pdo_mysql.dll` didalam file php.ini, lalu hapus `;` pada awal dari kedua baris code tersebut, jangan lupa untuk restart server php dan databasenya. Letak dari file php.ini di XAMPP biasanya ada di `/xampp/php/php.ini`. Sedangkan untuk kamu yang menggunakan paket server Laragon, caranya sangat mudah, buka Laragon > klik *Menu* > pilih *PHP* > pilih *Extentions* > dan klik pada ekstensi yang ingin diaktifkan.
+Jika kamu menggunakan paket server seperti XAMPP, kamu tidak perlu menginstall driver PDO_MYSQL secara manual, kamu hanya perlu enable ekstensi `php_pdo` dan `php_pdo_mysql` saja, dengan cara, cari baris code `;extension=php_pdo.dll` dan `;extension=php_pdo_mysql.dll` didalam file php.ini, lalu hapus `;` pada awal dari kedua baris code tersebut, jangan lupa untuk restart server php dan databasenya. Letak dari file php.ini di XAMPP biasanya ada di `/xampp/php/php.ini`. Sedangkan untuk kamu yang menggunakan paket server Laragon, caranya sangat mudah, buka Laragon &raquo; klik **Menu** &raquo; pilih **PHP** &raquo; pilih **Extentions** &raquo; dan klik pada ekstensi yang ingin diaktifkan yaitu `pdo_mysql`.
 
-Bagi kamu yang menggunakan os linux, terutama distro Debian, Ubuntu, dan Linux Mint serta tidak menggunakan paket server apapun seperti XAMPP atau Laragon, biasanya kamu harus menginstall ekstensi pdo_mysql untuk MariaDB, ikuti langkah berikut untuk menginstall ekstensinya:
+Bagi kamu yang menggunakan os linux, terutama distro Debian dan turunannya, seperti Ubuntu, Linux Mint, dsb, serta tidak menggunakan paket server apapun seperti XAMPP atau Laragon, biasanya kamu harus menginstall secara manual driver PDO_MYSQL untuk MariaDB. Ikuti langkah berikut untuk menginstall drivernya:
 
- 1. Update Daftar Package
-`sudo apt update`
- 2. Install Ekstensi
-`sudo apt install php8.2-mysql`
+ 1. Update daftar package: `sudo apt update`
+ 2. Install package `php8.2-mysql`: `sudo apt install php8.2-mysql`
 
-Untuk versi php silahkan disesuaikan dengan versi php yang kamu gunakan, misalnya kamu menggunakan php7.4 maka `... php7.4-mysql`.
+Untuk versi php silahkan disesuaikan dengan versi php yang kamu gunakan, misalnya kamu menggunakan php7.4 maka `... php7.4-mysql`. Dengan menginstall package `php8.2-mysql` maka akan menginstall driver PDO_MYSQL.
 
 ## Membuat Koneksi Ke Database MySQL
 Berikut contoh code untuk koneksi ke database dengan PDO:
