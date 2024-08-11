@@ -1,7 +1,11 @@
+'use client';
+
 import React from "react";
+import Link from "next/link";
+import FormatTime from "../format-time";
+
 import dayjs from "dayjs";
 import 'dayjs/locale/id';
-import Link from "next/link";
 
 dayjs.locale('id');
 
@@ -11,7 +15,7 @@ export default function PostList({ posts }) {
   return (
     <dl className="flex flex-col space-y-3.5">
       {posts.map((post) => {
-        const year = dayjs(post.date).year();
+        const year = dayjs(post.lastmod).year();
         const dli = (
           <div key={post.id}>
             {currentYear != year && <h3 className={`text-2xl font-bold mb-2 ${currentYear != 0 && 'mt-6'}`}>{year}</h3>}
@@ -21,13 +25,14 @@ export default function PostList({ posts }) {
               </Link>
             </dt>
             <dd>
-              <time className="font-light text-gray-500 text-sm">{dayjs(post.date).format('DD MMM')} — </time>
+              <FormatTime className="font-light text-gray-500 text-sm" lastmod={post.lastmod} format={'DD MMM'}/>
+              <span className="font-light text-gray-500 text-sm"> — </span>
               <span className="text-gray-600">{post.excerpt}...</span>
             </dd>
           </div>
         );
 
-        // if currentYear != year, then update currentYear
+        // if currentYear != year, then uplastmod currentYear
         if (currentYear != year) currentYear = year;
 
         return dli;

@@ -1,12 +1,5 @@
-'use client';
-
-import Link from "next/link";
-import dayjs from "dayjs";
-import relativeTime from "dayjs/plugin/relativeTime";
-import 'dayjs/locale/id';
-
-dayjs.extend(relativeTime);
-dayjs.locale('id');
+import Link from 'next/link';
+import RelativeTime from '../relative-time';
 
 export default function HomePostList({ latestPosts }) {
   return (
@@ -21,7 +14,8 @@ export default function HomePostList({ latestPosts }) {
               </Link>
             </dt>
             <dd>
-              <time className="font-light text-gray-500 text-sm">{dayjs(post.date).fromNow()} — </time>
+              <RelativeTime className={"font-light text-gray-500 text-sm"} lastmod={post.lastmod} />
+              <span className="font-light text-gray-500 text-sm"> — </span>
               <span className="text-gray-600">{post.excerpt}...</span>
             </dd>
           </div>

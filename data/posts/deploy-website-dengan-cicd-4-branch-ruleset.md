@@ -1,7 +1,7 @@
 ---
 id: "d081e028-02a4-44cf-a729-ed7d3c8cec20"
 title: "Deploy Website dengan CI/CD #4: Branch Ruleset"
-date: "2024-07-12T07:06:08.252Z"
+lastmod: 1720767968252
 topics: ["e5d6b8ea-d8e0-4bd2-8bb3-d74d08dc5669","ab8888e2-d055-4507-aec3-7cadb0d36d98","3b2bf050-b69c-4438-b3d9-ed0a3a5e0911"]
 slug: "deploy-website-dengan-cicd-4-branch-ruleset"
 ogImage: "/posts/deploy-vercel-github-action/4-deploy-vercel-github-action.png"
