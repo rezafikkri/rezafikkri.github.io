@@ -1,7 +1,7 @@
 ---
 id: "6f096981-3026-489d-baff-ec22a4f564e2"
 title: "Alternatif Software Berbayar"
-date: "2023-03-28T10:34:54.791Z"
+lastmod: 1679999694791
 topics: ["0fff756a-1ad2-4ee2-9c70-3db8d713b476"]
 slug: "alternatif-software-berbayar"
 ogImage: "/posts/alternatif-software-berbayar/alternatif-software-berbayar.png"

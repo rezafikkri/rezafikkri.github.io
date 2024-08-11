@@ -1,7 +1,7 @@
 ---
 id: "77f54c1d-629d-4619-b627-738a3cfea9fa"
 title: "Deploy Website dengan CI/CD #1: Pendahuluan"
-date: "2024-07-12T06:46:48.794Z"
+lastmod: 1720766808794
 topics: ["e5d6b8ea-d8e0-4bd2-8bb3-d74d08dc5669","ab8888e2-d055-4507-aec3-7cadb0d36d98","3b2bf050-b69c-4438-b3d9-ed0a3a5e0911"]
 slug: "deploy-website-dengan-cicd-1-pendahuluan"
 ogImage: "/posts/deploy-vercel-github-action/1-deploy-vercel-github-action.png"
