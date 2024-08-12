@@ -25,7 +25,7 @@ dan buka lewat browser. Setelah itu kamu bisa gunakan fitur pencarian yang ada d
 ![cek ekstensi PDO](https://res.cloudinary.com/rezafikkri/image/upload/q_auto/PHP-PDO-extension.png)<!--rehype:width=974&height=585&loading=lazy&decoding=async-->
 Pada gambar diatas, dibagian table PDO, pada kolom *enabled*, pastikan tertera `mysql` yang berarti bahwa PDO mendukung untuk koneksi ke database MariaDB. Jika belum menemukan, kemungkinan ekstensi PDO nya belum aktif, atau mungkin juga kamu belum menginstall driver PDO_MYSQL.
 
-Jika kamu menggunakan paket server seperti XAMPP, kamu tidak perlu menginstall driver PDO_MYSQL secara manual, kamu hanya perlu enable ekstensi `php_pdo` dan `php_pdo_mysql` saja, dengan cara, cari baris code `;extension=php_pdo.dll` dan `;extension=php_pdo_mysql.dll` didalam file php.ini, lalu hapus `;` pada awal dari kedua baris code tersebut, jangan lupa untuk restart server php dan databasenya. Letak dari file php.ini di XAMPP biasanya ada di `/xampp/php/php.ini`. Sedangkan untuk kamu yang menggunakan paket server Laragon, caranya sangat mudah, buka Laragon &raquo; klik **Menu** &raquo; pilih **PHP** &raquo; pilih **Extentions** &raquo; dan klik pada ekstensi yang ingin diaktifkan yaitu `pdo_mysql`.
+Jika kamu menggunakan paket server seperti XAMPP, kamu tidak perlu menginstall driver PDO_MYSQL secara manual, kamu hanya perlu enable ekstensi `php_pdo` dan `php_pdo_mysql` saja, dengan cara, cari baris code `;extension=php_pdo.dll` dan `;extension=php_pdo_mysql.dll` di dalam file php.ini, lalu hapus `;` pada awal dari kedua baris code tersebut, jangan lupa untuk restart server php dan databasenya. Letak dari file php.ini di XAMPP biasanya ada di `/xampp/php/php.ini`. Sedangkan untuk kamu yang menggunakan paket server Laragon, caranya sangat mudah, buka Laragon &raquo; klik **Menu** &raquo; pilih **PHP** &raquo; pilih **Extentions** &raquo; dan klik pada ekstensi yang ingin diaktifkan yaitu `pdo_mysql`.
 
 Bagi kamu yang menggunakan os linux, terutama distro Debian dan turunannya, seperti Ubuntu, Linux Mint, dsb, serta tidak menggunakan paket server apapun seperti XAMPP atau Laragon, biasanya kamu harus menginstall secara manual driver PDO_MYSQL untuk MariaDB. Ikuti langkah berikut untuk menginstall drivernya:
 
@@ -53,6 +53,8 @@ Username merupakan username untuk koneksi ke database. Pada contoh, usernamenya 
 Password merupakan password untuk koneksi ke database. pada contoh, passwordnya yaitu `dbpass`.
 
 ## Prepared Statement
+Setelah berhasil membuat koneksi ke database MariaDB, kita akan belajar bagaimana menjalankan perintah SQL dengan PDO. Ada beberapa cara yang bisa digunakan, salah satunya adalah dengan Prepared Statement.
+
 Prepared statement dapat dianggap sebagai template terkompilasi untuk SQL yang ingin dijalankan oleh aplikasi, yang dapat dikustomasisasi menggunakan parameter variabel. Begitulah pengertian dari website php.net. Bingung? oke, supaya lebih paham lihat contoh berikut!
 ```sql
 INSERT INTO users(username, password) VALUES(:username, :password)
@@ -72,7 +74,7 @@ Dan contoh detailnya adalah:
 ```
 Pada kode diatas kita menggunakan prepared statement dengan *named placeholders*, yaitu dengan penggunaan placeholders `:username` dan `:password` pada fungsi `prepare()`. Fungsi `prepare()` berfungsi untuk menyiapkan sebuah SQL statement untuk di jalankan dan menghasilkan sebuah statement object.
 
-Disana juga ada fungsi `bindParam()`, yang berfungsi untuk mengikat PHP variabel ke pada placeholders yang sesuai.
+Disana juga ada fungsi `bindParam()`, yang berfungsi untuk mengikat PHP variabel kepada placeholders yang sesuai.
 Argumen pertama yang dimasukkan pada fungsi `bindParam()`, adalah *parameter identifier*, yang mana itu berisi nama placeholders yang digunakan pada fungsi `prepare()`. Argumen keduanya adalah nama variabel.
 
 Dan terakhir adalah fungsi `execute()` berfungsi untuk menjalankan prepared statement. Nantinya placeholders akan diganti dengan value dari variabel `$username` dan `$password`. Salah satu keuntungan menggunakan prepared statement ini adalah akan mencegah terjadinya serangan berbahaya seperti Injeksi SQL atau SQl Injection.
@@ -220,7 +222,7 @@ Pada bagian terakhir ini kita akan sedikit membahas mengenai penanganan error ko
     }
 ?>
 ```
-Jika terjadi error koneksi apa saja, maka sebuah object PDOException akan di buat, karena itu pada bagian `catch()` kita memberitahu untuk menangkap object PDOException tersebut, sehingga errornya bisa ditangani didalam block catch. Lalu kita tampilkan error tersebut dengan sedikit di ubah formatnya didalam blok catch. Format error bebas kamu tentukan sesuka hati. Untuk lebih jelas mengenai penggunaan blok try catch untuk exeception handling, seperti diatas, kamu bisa googling saja, atau kamu bisa memperlajarinya di [Jago Ngoding: Penanganan Exception](https://jagongoding.com/web/php/menengah/penanganan-exception/).
+Jika terjadi error koneksi apa saja, maka sebuah object PDOException akan di buat, karena itu pada bagian `catch()` kita memberitahu untuk menangkap object PDOException tersebut, sehingga errornya bisa ditangani di dalam block catch. Lalu kita tampilkan error tersebut dengan sedikit di ubah formatnya di dalam blok catch. Format error bebas kamu tentukan sesuka hati. Untuk lebih jelas mengenai penggunaan blok try catch untuk exeception handling, seperti diatas, kamu bisa googling saja, atau kamu bisa memperlajarinya di [Jago Ngoding: Penanganan Exception](https://jagongoding.com/web/php/menengah/penanganan-exception/).
 
 Oke, terima kasih buat kamu yang sudah membaca, semoga bermanfaat. Jika ada yang ingin ditanyakan atau ada saran silahkan kirim email ke fikkri.reza@gmail.com. Jangan lupa follow Linkedin [in/reza-sariful-fikri](https://www.linkedin.com/in/reza-sariful-fikri) ku atau bisa juga di Facebook [reza.sariful.fikri](https://web.facebook.com/reza.sariful.fikri) untuk mendapatkan tulisan terbaru.
 
