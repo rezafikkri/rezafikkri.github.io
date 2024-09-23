@@ -22,6 +22,18 @@ Sebelum lanjut membaca, ada beberapa prasyarat yang harus terpenuhi, supaya kamu
 Jika prasyarat di atas sudah terpenuhi, kamu bisa lanjut membaca.
 
 ## Apa itu Cookie?
+Cookie adalah kumpulan data kecil yang berisi informasi yang dikirim oleh Server ke *user agent* (yang dalam hal ini biasanya adalah Web Browser). Cookie juga dikenal sebagai *Web Cookie*, *Browser Cookie*, atau *Internet Cookie*. Cookie biasanya digunakan untuk beberapa tujuan seperti:
+1. Session Management (Mengelola Sesi): seperti menyimpan status sign-in pengguna, sehingga pengguna tidak perlu melakukan sign-in berulang-ulang, selain itu juga digunakan untuk menyimpan isi keranjang belanja, sehingga bisa mengurangi transaksi yang berlebihan dengan database.
+2. Personalization (Personalisasi): seperti menyimpan UI Theme yang dipilih oleh pengguna pada fitur dark dan light mode, ataupun menyimpan bahasa yang dipilih oleh pengguna.
+3. Tracking (Pelacakan): seperti merekam dan menganalisis perilaku pengguna. Sebagai contoh, mungkin kamu pernah mengalami, ketika ingin mencari layanan hosting di Google misalnya, lalu kemudian kamu membuka YouTube, maka mungkin akan tampil iklan-iklan mengenai layanan hosting.
+
+## Bagaimana Cara Kerja Cookie?
+
+
+### Referensi:
+[HTTP Cookies](https://http.dev/cookies)</br>
+[HTTP State Management Mechanism](https://www.rfc-editor.org/rfc/inline-errata/rfc6265.html)</br>
+[Using HTTP Cookie](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies)</br>
 
 Oke, terima kasih buat kamu yang sudah membaca, semoga bermanfaat. Jika ada yang ingin ditanyakan atau ada saran silahkan kirim email ke fikkri.reza@gmail.com. Jangan lupa follow Linkedin [in/reza-sariful-fikri](https://www.linkedin.com/in/reza-sariful-fikri) ku atau bisa juga di Facebook [reza.sariful.fikri](https://web.facebook.com/reza.sariful.fikri) untuk mendapatkan tulisan terbaru.
 
