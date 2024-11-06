@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "npx serve@latest out",
+    "start": "pnpm dlx serve@latest out",
     "post": "node ./lib/generate-post.mjs",
     "update-sitemap": "node ./lib/update-sitemap.mjs"
   },
