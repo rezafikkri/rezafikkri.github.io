@@ -4,7 +4,8 @@ import SmallTopics from "@/components/post/small-topics";
 import { getPost, getSlugs, getTopics } from "@/lib/posts.mjs";
 import FormatTime from "@/components/format-time";
 
-export function generateMetadata({ params: { slug } }) {
+export async function generateMetadata({ params }) {
+  const slug = (await params).slug;
   const post = getPost(slug);
 
   return {
@@ -24,7 +25,8 @@ export function generateStaticParams() {
   return getSlugs();
 }
 
-export default function Page({ params: { slug } }) {
+export default async function Page({ params }) {
+  const slug = (await params).slug;
   const post = getPost(slug);
   const topics = getTopics(post.topics);
 
