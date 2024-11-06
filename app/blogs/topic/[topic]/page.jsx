@@ -2,7 +2,8 @@ import { getPosts, getTopicId, getTopics } from "@/lib/posts.mjs";
 import PostList from "@/components/post/post-list";
 import LargeTopics from "@/components/post/large-topics";
 
-export function generateMetadata({ params: { topic: selectedTopic } }) {
+export async function generateMetadata({ params }) {
+  const selectedTopic = (await params).topic;
   const description = `Kumpulan tulisan mengenai ${selectedTopic}.`;
 
   return {
@@ -28,7 +29,8 @@ export function generateStaticParams() {
   return getTopics().map(topic => ({ topic: topic.name }));
 }
 
-export default function Page({ params: { topic: selectedTopic } }) {
+export default async function Page({ params }) {
+  const selectedTopic = (await params).topic;
   const topics = getTopics();
   const topicId = getTopicId(selectedTopic);
   const posts = getPosts(topicId);
