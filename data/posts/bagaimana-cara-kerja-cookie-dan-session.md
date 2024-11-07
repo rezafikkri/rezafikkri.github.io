@@ -41,7 +41,7 @@ Dalam membuat Cookie kamu harus memperhatikan batas (*limit*) yang telah ditentu
 
 Dalam membuat Cookie juga tidak disarankan memasukkan data terlalu banyak, karena semua data di Cookie akan selalu dikirim di setiap request, semakin banyak data, maka website kamu akan semakin lambat.
 
-Secara default Cookie memiliki waktu *Expired*, yaitu "session", yang mana ini berarti bahwa Coookie akan dihapus ketika sesi (*session*) berakhir, yaitu biasanya ketika Browser ditutup (*Browser closed*). Jika kamu ingin misalnya data Cookie tetap ada walaupun Browser ditutup, maka kamu bisa menyetel waktu kadaluarsa Cookie pada atribut `Expires`, contoh:
+Secara default Cookie memiliki waktu *Expired*, yaitu "session", yang mana ini berarti bahwa Coookie akan dihapus ketika sesi (*session*) berakhir, yaitu biasanya ketika Browser ditutup (*Browser closed*). Jika kamu ingin misalnya data Cookie tetap ada walaupun Browser ditutup, maka bisa menyetel waktu kadaluarsa Cookie pada atribut `Expires`, contoh:
 ```http
 Set-Cookie: SID=31d4d96e407aad42; Expires=Wed, 09 Jan 2024 10:18:14 GMT
 ```
@@ -50,14 +50,11 @@ Waktu kadaluarsa ini harus dalam timezone GMT/UTC, karena HTTP date selalu dieks
 <day-name>, <day> <month> <year> <hour>:<minute>:<second> GMT
 ```
 
-Sebenarnya, masalah waktu kadaluarsa ini tidak perlu terlalu dipusingkan, kamu hanya perlu mengikuti format diatas dan Browser akan otomatis melakukan validasi apakah Cookie tersebut sudah kadaluarsa atau belum relatif terhadap waktu *client* dimana Cookie disimpan.
-
-Penjelasan detailnya kira-kira seperti ini, jika waktu saat ini adalah `Thu, 07 Nov 2024 04:36:00 GMT`, lalu kamu setel waktu kadaluarsa Cookie adalah 1 hari, maka akan kadaluarsa pada `Fri, 08 Nov 2024 04:36:00 GMT`. Namun karena waktu *client* itu adalah GMT +7 atau WIB, maka Cookie akan kadaluarsa jika waktu *client* telah mencapai `Fri, 08 Nov 2024 11:30:02 WIB`. 
-> Note: Penjelasan diatas adalah hasil tes di Google Chrome.
+Sebenarnya, masalah waktu kadaluarsa ini tidak perlu terlalu dipusingkan, kamu hanya perlu mengikuti format diatas dan Browser akan otomatis melakukan validasi apakah Cookie tersebut sudah kadaluarsa atau belum, relatif terhadap waktu *client* dimana Cookie disimpan. Dengan kata lain Browser akan secara otomatis menyesuaikan timezone waktu kadaluarsa Cookie dengan timezone Browser, yang biasanya sama dengan pengaturan timezone di komputer kamu. Untuk lebih mudah dalam menentukan waktu kadaluarsa, kamu bisa menentukan waktu kadaluarsa dalam timezone saat ini, misalnya `Asia/Jakarta`, lalu konversi ke dalam timezone GMT/UTC, biasanya untuk setiap bahasa pemrograman, sudah menyediakan fungsi bawaan untuk kebutuhan seperti konversi timezone. Bahkan di bahasa pemrograman seperti PHP misalnya, kamu tidak perlu memikirkan masalah timezone, karena kamu hanya perlu memasukkan waktu kadaluarsa dalam format Epoch Time, misalnya kamu ingin Cookie kadaluarsa dalam waktu 30 hari, maka kamu bisa membuat Epoch Time untuk 30 hari dari hari sekarang dengan kode `time()+60*60*24*30`.
 
 Sebagai catatan, Browser mungkin menghapus Cookie sebelum waktu kadaluarsanya jika Cookie yang disimpan telah melebihi batas (*limit*), atau jika pengguna secara manual menghapus Cookie-nya, misalnya pengguna menghapus Cookie melalui Browser secara langsung atau ketika pengguna menggunakan software untuk membersihkan Sistem dan ruang penyimpanan, semacam BleachBit atau CCleaner.
 
-Selain waktu kadaluarsa, kita juga bisa menyetel *Scope* (Cangkupan) dari Cookie dengan menggunakan atribut `Path` dan `Domain`, sehingga nantinya Cookie hanya akan disertakan kita target dari HTTP Request sesuai dengan Path dan Domain (serta Subdomain-nya) yang kita setel. Sebagai contoh misalnya kita ingin suatu Cookie hanya disertakan pada HTTP Request ketika target-nya menuju ke `learncookie.rezafikkri/learn`, maka kita setel seperti ini:
+Selain waktu kadaluarsa, kamu juga bisa menyetel *Scope* (Cangkupan) dari Cookie dengan menggunakan atribut `Path` dan `Domain`, sehingga nantinya Cookie hanya akan disertakan ketika target dari HTTP Request sesuai dengan Path dan Domain (serta Subdomain-nya) yang kamu atur. Sebagai contoh misalnya kamu ingin suatu Cookie hanya disertakan pada HTTP Request ketika target-nya menuju ke `learncookie.rezafikkri/learn`, maka atur seperti ini:
 
 ## Apa itu Session dan Bagaimana Cara Kerjanya?
 
