@@ -23,16 +23,41 @@ Sebelum lanjut membaca, ada beberapa prasyarat yang harus terpenuhi, supaya kamu
 Jika prasyarat di atas sudah terpenuhi, kamu bisa lanjut membaca.
 
 ## Apa itu Cookie dan Bagaimana Cara Kerjanya?
-Cookie adalah kumpulan data kecil yang berisi informasi yang dikirim oleh Server ke *User Agent* (yang dalam hal ini biasanya adalah Web Browser). Cookie juga dikenal sebagai *Web Cookie*, *Browser Cookie*, atau *Internet Cookie*. 
+Cookie adalah kumpulan data kecil yang berisi informasi yang dikirim oleh Server ke *Client* (yang dalam hal ini biasanya adalah Web Browser). Cookie juga dikenal sebagai *Web Cookie*, *Browser Cookie*, atau *Internet Cookie*. 
 
 Cara kerja Cookie secara umum yaitu, Server akan menyertakan header `Set-Cookie` (yang berisi data cookie-nya) pada HTTP Response, lalu Browser akan menyimpan data yang terdapat pada header `Set-Cookie`, kemudian, pada request-request berikutnya, Browser akan menyertakan data Cookie tersebut pada HTTP Request header `Cookie`. Berikut jika digambarkan dalam bentuk diagram:
 ![Cookie Diagram](/posts/bagaimana-cara-kerja-cookie-dan-session/cookie-diagram.png)<!--rehype:width=802&height=441&loading=lazy&decoding=async-->
 
-Cookie memiliki waktu *Expired*, yang secara default adalah "session", yang mana ini berarti bahwa Coookie akan dihapus ketika sesi (*session*) berakhir, yaitu biasanya ketika Browser ditutup (*Browser closed*). Jika kita ingin misalnya data Cookie tetap ada walaupun Browser ditutup, maka kita bisa menyetel waktu kadaluarsa Cookie pada attribute `Expires`, contoh:
+Berikut adalah contoh dimana kita misalnya membuat Cookie "session identifier" dengan nama `SID` dan value `31d4d96e407aad42`:
+```http
+Set-Cookie: SID=31d4d96e407aad42
+```
+Lalu pada request-request berikutnya Browser akan menyertakan header `Cookie` seperti ini:
+```http
+Cookie: SID=31d4d96e407aad42
+```
 
-Sebagai catatan, Browser mungkin menghapus Cookie sebelum waktu kadaluarsanya jika Cookie yang disimpan telah melebihi batas, atau jika pengguna secara manual menghapus Cookie-nya, misalnya pengguna menghapus Cookie melalui Browser secara langsung atau ketika pengguna menggunakan software untuk membersihkan Sistem dan ruang penyimpanan, semacam BleachBit atau CCleaner.
+Dalam membuat Cookie kamu harus memperhatikan batas (*limit*) yang telah ditentukan, yaitu setidaknya maksimal ukuran per Cookie adalah 4096 bytes, ukuran tersebut tidak hanya dihitung dari value Cookie, tetapi juga nama dan atribut-atributnya. Selain itu juga, setidaknya per domain maksimal hanya 50 Cookie. Batasan tersebut adalah sebagaimana ditetapkan pada [RFC 6265](https://www.rfc-editor.org/rfc/rfc6265.html#page-27). Batasan tersebut juga bisa berbeda disetiap browser, tetapi biasanya perbedaannya tidak terlalu jauh.
 
-Selain waktu kadaluarsa, kita juga bisa menyetel *Scope* (Cangkupan) dari Cookie dengan menggunakan attribute `Path` dan `Domain`, sehingga nantinya Cookie hanya akan disertakan kita target dari HTTP Request sesuai dengan Path dan Domain (serta Subdomain-nya) yang kita setel. Sebagai contoh misalnya kita ingin suatu Cookie hanya disertakan pada HTTP Request ketika target-nya menuju ke `learncookie.rezafikkri/learn`, maka kita setel seperti ini:
+Dalam membuat Cookie juga tidak disarankan memasukkan data terlalu banyak, karena semua data di Cookie akan selalu dikirim di setiap request, semakin banyak data, maka website kamu akan semakin lambat.
+
+Secara default Cookie memiliki waktu *Expired*, yaitu "session", yang mana ini berarti bahwa Coookie akan dihapus ketika sesi (*session*) berakhir, yaitu biasanya ketika Browser ditutup (*Browser closed*). Jika kamu ingin misalnya data Cookie tetap ada walaupun Browser ditutup, maka kamu bisa menyetel waktu kadaluarsa Cookie pada atribut `Expires`, contoh:
+```http
+Set-Cookie: SID=31d4d96e407aad42; Expires=Wed, 09 Jan 2024 10:18:14 GMT
+```
+Waktu kadaluarsa ini harus dalam timezone GMT/UTC, karena HTTP date selalu diekspresikan dalam GMT/UTC, tidak pernah dalam waktu local. Dan format waktu kadaluarsa ini berdasarkan [spesifikasi HTTP date](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Date) adalah:
+```http
+<day-name>, <day> <month> <year> <hour>:<minute>:<second> GMT
+```
+
+Sebenarnya, masalah waktu kadaluarsa ini tidak perlu terlalu dipusingkan, kamu hanya perlu mengikuti format diatas dan Browser akan otomatis melakukan validasi apakah Cookie tersebut sudah kadaluarsa atau belum relatif terhadap waktu *client* dimana Cookie disimpan.
+
+Penjelasan detailnya kira-kira seperti ini, jika waktu saat ini adalah `Thu, 07 Nov 2024 04:36:00 GMT`, lalu kamu setel waktu kadaluarsa Cookie adalah 1 hari, maka akan kadaluarsa pada `Fri, 08 Nov 2024 04:36:00 GMT`. Namun karena waktu *client* itu adalah GMT +7 atau WIB, maka Cookie akan kadaluarsa jika waktu *client* telah mencapai `Fri, 08 Nov 2024 11:30:02 WIB`. 
+> Note: Penjelasan diatas adalah hasil tes di Google Chrome.
+
+Sebagai catatan, Browser mungkin menghapus Cookie sebelum waktu kadaluarsanya jika Cookie yang disimpan telah melebihi batas (*limit*), atau jika pengguna secara manual menghapus Cookie-nya, misalnya pengguna menghapus Cookie melalui Browser secara langsung atau ketika pengguna menggunakan software untuk membersihkan Sistem dan ruang penyimpanan, semacam BleachBit atau CCleaner.
+
+Selain waktu kadaluarsa, kita juga bisa menyetel *Scope* (Cangkupan) dari Cookie dengan menggunakan atribut `Path` dan `Domain`, sehingga nantinya Cookie hanya akan disertakan kita target dari HTTP Request sesuai dengan Path dan Domain (serta Subdomain-nya) yang kita setel. Sebagai contoh misalnya kita ingin suatu Cookie hanya disertakan pada HTTP Request ketika target-nya menuju ke `learncookie.rezafikkri/learn`, maka kita setel seperti ini:
 
 ## Apa itu Session dan Bagaimana Cara Kerjanya?
 
