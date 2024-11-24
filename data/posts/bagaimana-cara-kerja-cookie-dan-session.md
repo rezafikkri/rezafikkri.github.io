@@ -28,13 +28,13 @@ Cookie adalah kumpulan data kecil yang berisi informasi yang dikirim oleh Server
 Cara kerja Cookie secara umum yaitu, Server akan menyertakan header `Set-Cookie` (yang berisi data cookie-nya) pada HTTP Response, lalu Browser akan menyimpan data yang terdapat pada header `Set-Cookie`, kemudian, pada request-request berikutnya, Browser akan menyertakan data Cookie tersebut pada HTTP Request header `Cookie`. Berikut jika digambarkan dalam bentuk diagram:
 ![Cookie Diagram](/posts/bagaimana-cara-kerja-cookie-dan-session/cookie-diagram.png)<!--rehype:width=802&height=441&loading=lazy&decoding=async-->
 
-Berikut adalah contoh dimana kita misalnya membuat Cookie "session identifier" dengan nama `SID` dan value `31d4d96e407aad42`:
+Berikut adalah contoh dimana kita misalnya membuat Cookie "session identifier" dengan nama `SIDR` dan value `31d4d96e407aad42`:
 ```http
-Set-Cookie: SID=31d4d96e407aad42
+Set-Cookie: SIDR=31d4d96e407aad42
 ```
 Lalu pada request-request berikutnya Browser akan menyertakan header `Cookie` seperti ini:
 ```http
-Cookie: SID=31d4d96e407aad42
+Cookie: SIDR=31d4d96e407aad42
 ```
 
 Dalam membuat Cookie kamu harus memperhatikan batas (*limit*) yang telah ditentukan, yaitu setidaknya maksimal ukuran per Cookie adalah 4096 bytes, ukuran tersebut tidak hanya dihitung dari value Cookie, tetapi juga nama dan atribut-atributnya. Selain itu juga, setidaknya per domain maksimal hanya 50 Cookie. Batasan tersebut adalah sebagaimana ditetapkan pada [RFC 6265](https://www.rfc-editor.org/rfc/rfc6265.html#page-27). Batasan tersebut juga bisa berbeda disetiap browser, tetapi biasanya perbedaannya tidak terlalu jauh.
@@ -43,7 +43,7 @@ Dalam membuat Cookie juga tidak disarankan memasukkan data terlalu banyak, karen
 
 Secara default Cookie memiliki waktu *Expired*, yaitu "session", yang mana ini berarti bahwa Coookie akan dihapus ketika sesi (*session*) berakhir, yaitu biasanya ketika Browser ditutup (*Browser closed*). Jika kamu ingin misalnya data Cookie tetap ada walaupun Browser ditutup, maka bisa menyetel waktu kadaluarsa Cookie pada atribut `Expires`, contoh:
 ```http
-Set-Cookie: SID=31d4d96e407aad42; Expires=Wed, 09 Jan 2024 10:18:14 GMT
+Set-Cookie: SIDR=31d4d96e407aad42; Expires=Wed, 09 Jan 2024 10:18:14 GMT
 ```
 Waktu kadaluarsa ini harus dalam timezone GMT/UTC, karena HTTP date selalu diekspresikan dalam GMT/UTC, tidak pernah dalam waktu local. Dan format waktu kadaluarsa ini berdasarkan [spesifikasi HTTP date](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Date) adalah:
 ```http
@@ -54,15 +54,48 @@ Sebenarnya, masalah waktu kadaluarsa ini tidak perlu terlalu dipusingkan, kamu h
 
 Sebagai catatan, Browser mungkin menghapus Cookie sebelum waktu kadaluarsanya jika Cookie yang disimpan telah melebihi batas (*limit*), atau jika pengguna secara manual menghapus Cookie-nya, misalnya pengguna menghapus Cookie melalui Browser secara langsung atau ketika pengguna menggunakan software untuk membersihkan Sistem dan ruang penyimpanan, semacam BleachBit atau CCleaner.
 
-Selain waktu kadaluarsa, kamu juga bisa menyetel *Scope* (Cangkupan) dari Cookie dengan menggunakan atribut `Path` dan `Domain`, sehingga nantinya Cookie hanya akan disertakan ketika target dari HTTP Request sesuai dengan Path dan Domain (serta Subdomain-nya) yang kamu atur. Sebagai contoh misalnya kamu ingin suatu Cookie hanya disertakan pada HTTP Request ketika target-nya menuju ke `learncookie.rezafikkri/learn`, maka atur seperti ini:
+Selain waktu kadaluarsa, kamu juga bisa menyetel *Scope* (Cangkupan) dari Cookie dengan menggunakan atribut `Path` dan `Domain`, sehingga nantinya Cookie hanya akan disertakan pada HTTP Request, ketika target dari HTTP Request sesuai dengan Path (serta sub-pathnya) dan Domain (serta sub-domainnya) yang kamu atur. Sebagai contoh misalnya kamu ingin suatu Cookie hanya disertakan pada HTTP Request ketika target-nya menuju ke Path `/cookie` (serta sub-pathnya) dari Domain `coba.rezafikkri` (serta sub-domainnya), maka atur seperti ini:
+```http
+Set-Cookie: SIDR=31d4d96e407aad42; Path=/cookie; Domain=coba.rezafikkri
+```
+Maka nanti ketika kamu mengakses halaman `coba.rezafikkri/cookie`, `coba.rezafikkri/cookie/other`, atau `cookie.coba.rezafikkri/cookie` dan sebagainya, Cookie akan terus disertakan pada setiap HTTP Request, tetapi ketika kamu mengakses halaman `coba.rezafikkri`, `coba.rezafikkri/other` atau `cookie.coba.rezafikkri` misalnya, Cookie tidak akan disertakan pada HTTP Request, karena walaupun Domain dari halaman-halaman tersebut sesuai dengan yang kita atur, tetapi pada bagian Path-nya tidak sesuai, karena bukan Path atau sub-path dari `/cookie`. 
+
+Atau contoh lainnya, jika kamu ingin Cookie disertakan untuk setiap Request ke semua Path dari Domain `coba.rezafikkri` (serta sub-domainnya), maka kamu bisa atur seperti ini:
+```http
+Set-Cookie: SIDR=31d4d96e407aad42; Path=/; Domain=coba.rezafikkri
+```
+Maka Cookie akan disertakan untuk setiap HTTP Request yang mengarah ke: `coba.rezafikkri`, `cookie.coba.rezafikkri`, `coba.rezafikkri/cookie`, `cookie.coba.rezafikkri/other` dan sebagainya.
+
+> Catatan: jika value dari atribut `Domain` adalah sub-domain, maka Cookie hanya akan disertekan untuk HTTP Request ke subdomain itu saja, jika kamu melakukan HTTP Request ke root domain dari sub-domain tersebut, Cookie tidak akan disertakan, begitu juga untuk sub-domain lainnya dari root domain tersebut.
+
+Secara default, value dari atribut `Path` dan `Domain` adalah sesuai dengan dimana Cookie tersebut dibuat, contoh jika Cookie dibuat pada Path `/cookie` dan Domain `coba.rezafikkri`, maka `Path=/cookie` dan `Domain=coba.rezafikkri`.
+
+Jika kamu ingin membuat lebih dari satu Cookie, kamu bisa atur seperti ini:
+```http
+Set-Cookie: SIDR=31d4d96e407aad42; Path=/; Domain=coba.rezafikkri
+Set-Cookie: lang=en-US; Path=/cookie Expires=Wed, 09 Jan 2024 10:18:14 GMT
+```
+
+> Catatan: Kamu tidak bisa membuat Cookie dengan Domain yang berbeda dari Domain yang kamu gunakan saat membuat Cookie, misal pada saat membuat Cookie kamu menggunakan Domain `coba.rezafikkri`, maka kamu tidak bisa atur atribut Domain menjadi `Domain=php.net` dan lain-lain.
+
+Terahir, untuk menghapus Cookie, caranya cukup mudah, kamu hanya perlu mengatur waktu kadaluarsa menjadi sebelum waktu saat ini, sehingga nantinya Browser akan secara otomatis menghapus Cookie tersebut, karena dianggap sudah kadaluarsa. Tetapi perlu diingat, value dari atribut `Path` dan `Domain` harus sama dengan Cookie yang ingin dihapus. Misalnya saat membuat Cookie:
+```http
+Set-Cookie: SIDR=31d4d96e407aad42; Path=/cookie; Domain=coba.rezafikkri
+```
+Lalu karena saat menghapus Cookie waktu saat ini adalah `Sun, 24 Nov 2024 03:42:10 GMT`, maka atur waktu kadaluarsa menjadi waktu sebelum itu dan jangan lupa pastikan value dari atribut `Path` dan `Domain` sama:
+```http
+Set-Cookie: SIDR=; Path=/cookie; Domain=coba.rezafikkri; Expires=Sun, 24 Nov 2024 02:42:10 GMT
+```
 
 ## Apa itu Session dan Bagaimana Cara Kerjanya?
+Setelah membahas mengenai Cookie, sekarang kita akan membahas mengenai Session, yang sebenarnya masih berkaitan dengan Cookie, karena Session juga menggunakan Cookie.
+
+Oke, terima kasih buat kamu yang sudah membaca, semoga bermanfaat. Jika ada yang ingin ditanyakan atau ada saran silahkan kirim email ke fikkri.reza@gmail.com. Jangan lupa follow Linkedin [in/reza-sariful-fikri](https://www.linkedin.com/in/reza-sariful-fikri) ku atau bisa juga di Facebook [reza.sariful.fikri](https://web.facebook.com/reza.sariful.fikri) untuk mendapatkan tulisan terbaru.
+
+Kamu bisa juga berdonasi melalui [Saweria](https://saweria.co/rezafikkri) untuk mendukung saya.
 
 ### Referensi:
 [HTTP Cookies](https://http.dev/cookies)</br>
 [HTTP State Management Mechanism](https://www.rfc-editor.org/rfc/inline-errata/rfc6265.html)</br>
 [Using HTTP Cookie](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies)</br>
 
-Oke, terima kasih buat kamu yang sudah membaca, semoga bermanfaat. Jika ada yang ingin ditanyakan atau ada saran silahkan kirim email ke fikkri.reza@gmail.com. Jangan lupa follow Linkedin [in/reza-sariful-fikri](https://www.linkedin.com/in/reza-sariful-fikri) ku atau bisa juga di Facebook [reza.sariful.fikri](https://web.facebook.com/reza.sariful.fikri) untuk mendapatkan tulisan terbaru.
-
-Kamu bisa juga berdonasi melalui [Saweria](https://saweria.co/rezafikkri) untuk mendukung saya.
