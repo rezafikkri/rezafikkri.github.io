@@ -6,8 +6,8 @@
    version="1.1"
    id="svg8"
    inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
-   sodipodi:docname="Reza logo.svg"
-   inkscape:export-filename="../../../../Documents/Other Design/Reza.png"
+   sodipodi:docname="icon.svg"
+   inkscape:export-filename="../../../../Documents/Other Design/Reza Icon.png"
    inkscape:export-xdpi="96"
    inkscape:export-ydpi="96"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
@@ -26,9 +26,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.49497476"
-     inkscape:cx="286.88332"
-     inkscape:cy="437.39604"
+     inkscape:zoom="0.70000002"
+     inkscape:cx="35.714285"
+     inkscape:cy="289.28571"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
@@ -69,19 +69,19 @@
      id="layer1">
     <g
        id="g295"
-       transform="matrix(2.4380941,0,0,2.4380941,6.8430306e-5,6.8430306e-5)">
+       transform="matrix(1.0412648,0,0,1.0412648,-10.563784,-10.563784)">
       <path
-         style="fill:#020202;fill-opacity:0.999062;stroke:none;stroke-width:0.645922;stroke-opacity:1"
-         d="M -4.7584025e-5,-4.7584025e-5 V 210.00005 H 210.00005 V -4.7584025e-5 Z"
+         style="fill:#020202;fill-opacity:0.999062;stroke:none;stroke-width:1.39288;stroke-opacity:1"
+         d="M 29.575706,29.575706 V 482.4242 H 482.4242 V 29.575706 Z"
          id="rect832" />
       <path
-         style="fill:#ffffff;fill-opacity:0.999062;stroke-width:0.600219"
-         d="m 80.941538,112.39477 h 94.528892 v 25.39732 h -68.23552 v 35.52523 H 80.941538 v -35.52523 z"
+         style="fill:#ffffff;fill-opacity:0.999062;stroke-width:1.29432"
+         d="m 204.11979,271.94618 h 203.84403 v 54.7673 H 260.81936 v 76.60733 h -56.69957 v -76.60733 z"
          id="path1629"
          sodipodi:nodetypes="cccccccc" />
       <path
-         style="fill:#ffffff;fill-opacity:0.999062;stroke-width:0.600219"
-         d="M 37.597689,35.444583 H 175.47043 V 97.123925 H 149.17706 V 61.737953 H 63.891061 V 173.31732 H 37.597689 Z"
+         style="fill:#ffffff;fill-opacity:0.999062;stroke-width:1.29432"
+         d="M 110.65223,106.00923 H 407.96382 V 239.01582 H 351.26426 V 162.70879 H 167.3518 v 240.61202 h -56.69957 z"
          id="path1627"
          sodipodi:nodetypes="ccccccccc" />
     </g>
