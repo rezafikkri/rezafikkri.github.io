@@ -3,7 +3,7 @@ import Summary from "@/components/about/summary";
 import Skill from "@/components/about/skill";
 
 const title = "Tentang Saya";
-const description = "Seorang web developer, suka menulis dan juga membuat aplikasi open source.";
+const description = "Seorang backend web developer, suka menulis dan juga membuat aplikasi open source.";
 
 export const metadata = {
   title,
