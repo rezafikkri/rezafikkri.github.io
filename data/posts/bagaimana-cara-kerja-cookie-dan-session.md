@@ -20,7 +20,7 @@ Sebelum lanjut membaca, ada beberapa prasyarat yang harus terpenuhi, supaya kamu
 3. Memahami bagaimana cara Browser bekerja
 4. Memagami apa itu URL dan bagaian-bagian yang menyusunnya.
 
-Jika prasyarat di atas sudah terpenuhi, kamu bisa lanjut membaca.
+Untuk semua prasyarat diatas kecuali nomor 3, bisa kamu pelajari di kelas gratis [Belajar HTTP Untuk Pemula Programmer Zaman Now](https://www.udemy.com/course/belajar-http-untuk-pemula). Jika prasyarat di atas sudah terpenuhi, kamu bisa lanjut membaca.
 
 ## Apa itu Cookie dan Bagaimana Cara Kerjanya?
 Cookie adalah kumpulan data kecil yang berisi informasi yang dikirim oleh Server ke *Client* (yang dalam hal ini biasanya adalah Web Browser). Cookie juga dikenal sebagai *Web Cookie*, *Browser Cookie*, atau *Internet Cookie*. 
@@ -41,24 +41,27 @@ Dalam membuat Cookie kamu harus memperhatikan batas (*limit*) yang telah ditentu
 
 Dalam membuat Cookie juga tidak disarankan memasukkan data terlalu banyak, karena semua data di Cookie akan selalu dikirim di setiap request, semakin banyak data, maka website kamu akan semakin lambat.
 
-Secara default Cookie memiliki waktu *Expired*, yaitu "session", yang mana ini berarti bahwa Coookie akan dihapus ketika sesi (*session*) berakhir, yaitu biasanya ketika Browser ditutup (*Browser closed*). Jika kamu ingin misalnya data Cookie tetap ada walaupun Browser ditutup, maka bisa menyetel waktu kadaluarsa Cookie pada atribut `Expires`, contoh:
+Secara default Cookie memiliki waktu *Expired* (kadaluarsa), yaitu "session", yang mana ini berarti bahwa Coookie akan dihapus ketika sesi (*session*) berakhir, yaitu biasanya ketika Browser ditutup (*Browser closed*). Jika kamu ingin misalnya data Cookie tetap ada walaupun Browser ditutup, maka bisa mengatur waktu kadaluarsa Cookie pada atribut `Expires`, contoh:
 ```http
 Set-Cookie: SIDR=31d4d96e407aad42; Expires=Wed, 09 Jan 2024 10:18:14 GMT
 ```
+
+> Titik koma (;) digunakan sebagai pemisah antara atribut, maka dari itu nama Cookie tidak bisa mengandung karakter tersebut, lebih detailnya silahkan kunjungi [cookie-name](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie#cookie-namecookie-value).
+
 Waktu kadaluarsa ini harus dalam timezone GMT/UTC, karena HTTP date selalu diekspresikan dalam GMT/UTC, tidak pernah dalam waktu local. Dan format waktu kadaluarsa ini berdasarkan [spesifikasi HTTP date](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Date) adalah:
 ```http
 <day-name>, <day> <month> <year> <hour>:<minute>:<second> GMT
 ```
 
-Sebenarnya, masalah waktu kadaluarsa ini tidak perlu terlalu dipusingkan, kamu hanya perlu mengikuti format diatas dan Browser akan otomatis melakukan validasi apakah Cookie tersebut sudah kadaluarsa atau belum, relatif terhadap waktu *client* dimana Cookie disimpan. Dengan kata lain Browser akan secara otomatis menyesuaikan timezone waktu kadaluarsa Cookie dengan timezone Browser, yang biasanya sama dengan pengaturan timezone di komputer kamu. Untuk lebih mudah dalam menentukan waktu kadaluarsa, kamu bisa menentukan waktu kadaluarsa dalam timezone saat ini, misalnya `Asia/Jakarta`, lalu konversi ke dalam timezone GMT/UTC, biasanya untuk setiap bahasa pemrograman, sudah menyediakan fungsi bawaan untuk kebutuhan seperti konversi timezone. Bahkan di bahasa pemrograman seperti PHP misalnya, kamu tidak perlu memikirkan masalah timezone, karena kamu hanya perlu memasukkan waktu kadaluarsa dalam format Epoch Time, misalnya kamu ingin Cookie kadaluarsa dalam waktu 30 hari, maka kamu bisa membuat Epoch Time untuk 30 hari dari hari sekarang dengan kode `time()+60*60*24*30`.
+Sebenarnya, masalah waktu kadaluarsa ini tidak perlu terlalu dipusingkan, kamu hanya perlu mengikuti format diatas dan Browser akan otomatis melakukan validasi apakah Cookie tersebut sudah kadaluarsa atau belum, relatif terhadap waktu *client* (Browser) dimana Cookie disimpan. Dengan kata lain Browser akan secara otomatis menyesuaikan timezone waktu kadaluarsa Cookie dengan timezone Browser, yang biasanya sama dengan pengaturan timezone di komputer kamu. Untuk lebih mudah dalam menentukan waktu kadaluarsa, kamu bisa menentukan waktu kadaluarsa dalam timezone saat ini, misalnya `Asia/Jakarta`, lalu konversi ke dalam timezone GMT/UTC, biasanya untuk setiap bahasa pemrograman, sudah menyediakan fungsi bawaan untuk kebutuhan seperti konversi timezone. Bahkan di bahasa pemrograman seperti PHP misalnya, kamu tidak perlu memikirkan masalah timezone, karena kamu hanya perlu memasukkan waktu kadaluarsa dalam format Epoch Time, misalnya kamu ingin Cookie kadaluarsa dalam waktu 30 hari, maka kamu bisa membuat Epoch Time untuk 30 hari dari hari sekarang dengan kode `time()+60*60*24*30`.
 
 Sebagai catatan, Browser mungkin menghapus Cookie sebelum waktu kadaluarsanya jika Cookie yang disimpan telah melebihi batas (*limit*), atau jika pengguna secara manual menghapus Cookie-nya, misalnya pengguna menghapus Cookie melalui Browser secara langsung atau ketika pengguna menggunakan software untuk membersihkan Sistem dan ruang penyimpanan, semacam BleachBit atau CCleaner.
 
-Selain waktu kadaluarsa, kamu juga bisa menyetel *Scope* (Cangkupan) dari Cookie dengan menggunakan atribut `Path` dan `Domain`, sehingga nantinya Cookie hanya akan disertakan pada HTTP Request, ketika target dari HTTP Request sesuai dengan Path (serta sub-pathnya) dan Domain (serta sub-domainnya) yang kamu atur. Sebagai contoh misalnya kamu ingin suatu Cookie hanya disertakan pada HTTP Request ketika target-nya menuju ke Path `/cookie` (serta sub-pathnya) dari Domain `coba.rezafikkri` (serta sub-domainnya), maka atur seperti ini:
+Selain waktu kadaluarsa, kamu juga bisa mengatur *Scope* (Cangkupan) dari Cookie dengan menggunakan atribut `Path` dan `Domain`, sehingga nantinya Cookie hanya akan disertakan pada HTTP Request, ketika target dari HTTP Request sesuai dengan Path (serta sub-pathnya) dan Domain (serta sub-domainnya) yang kamu atur. Sebagai contoh misalnya kamu ingin suatu Cookie hanya disertakan pada HTTP Request ketika target-nya menuju ke Path `/cookie` (serta sub-pathnya) dari Domain `coba.rezafikkri` (serta sub-domainnya), maka atur seperti ini:
 ```http
 Set-Cookie: SIDR=31d4d96e407aad42; Path=/cookie; Domain=coba.rezafikkri
 ```
-Maka nanti ketika kamu mengakses halaman `coba.rezafikkri/cookie`, `coba.rezafikkri/cookie/other`, atau `cookie.coba.rezafikkri/cookie` dan sebagainya, Cookie akan terus disertakan pada setiap HTTP Request, tetapi ketika kamu mengakses halaman `coba.rezafikkri`, `coba.rezafikkri/other` atau `cookie.coba.rezafikkri` misalnya, Cookie tidak akan disertakan pada HTTP Request, karena walaupun Domain dari halaman-halaman tersebut sesuai dengan yang kita atur, tetapi pada bagian Path-nya tidak sesuai, karena bukan Path atau sub-path dari `/cookie`. 
+Maka nanti ketika kamu mengakses halaman `coba.rezafikkri/cookie`, `coba.rezafikkri/cookie/other`, atau `cookie.coba.rezafikkri/cookie` dan sebagainya, Cookie akan terus disertakan pada setiap HTTP Request, tetapi ketika kamu mengakses halaman `coba.rezafikkri`, `coba.rezafikkri/other` atau `cookie.coba.rezafikkri` misalnya, Cookie tidak akan disertakan pada HTTP Request, karena walaupun Domain dari halaman-halaman tersebut sesuai dengan yang kita atur, tetapi pada bagian Path-nya tidak sesuai, karena Path-nya bukan `/cookie` dan bukan sub-path dari `/cookie`. 
 
 Atau contoh lainnya, jika kamu ingin Cookie disertakan untuk setiap Request ke semua Path dari Domain `coba.rezafikkri` (serta sub-domainnya), maka kamu bisa atur seperti ini:
 ```http
@@ -66,19 +69,37 @@ Set-Cookie: SIDR=31d4d96e407aad42; Path=/; Domain=coba.rezafikkri
 ```
 Maka Cookie akan disertakan untuk setiap HTTP Request yang mengarah ke: `coba.rezafikkri`, `cookie.coba.rezafikkri`, `coba.rezafikkri/cookie`, `cookie.coba.rezafikkri/other` dan sebagainya.
 
-> Catatan: jika value dari atribut `Domain` adalah sub-domain, maka Cookie hanya akan disertekan untuk HTTP Request ke subdomain itu saja, jika kamu melakukan HTTP Request ke root domain dari sub-domain tersebut, Cookie tidak akan disertakan, begitu juga untuk sub-domain lainnya dari root domain tersebut.
+Pada intinya untuk domain, jika kamu menentukan nilai dari atribut `Domain`, maka Cookie hanya akan disertakan untuk HTTP Request yang mengarah ke domain tersebut dan semua subdomain-nya. Tetapi jika kamu tidak menentukan nilai dari atribut `Domain`, maka Cookie hanya akan disertakan untuk HTTP Request yang mengarah ke domain dimana Cookie dibuat (karena nilai default dari atribut `Domain` adalah domain dimana Cookie dibuat) dan tidak untuk semua subdomain-nya. Dan mau kamu menentukan atau tidak nilai dari atribut `Domain`, Cookie tidak akan pernah disertakan pada HTTP Request yang mengarah ke parent domain dari domain tersebut (jika domain tersebut memiliki parent domain).
 
-Secara default, value dari atribut `Path` dan `Domain` adalah sesuai dengan dimana Cookie tersebut dibuat, contoh jika Cookie dibuat pada Path `/cookie` dan Domain `coba.rezafikkri`, maka `Path=/cookie` dan `Domain=coba.rezafikkri`.
+Sedangkan untuk path, mau kamu menentukan atau tidak nilai dari atribut `Path`, maka Cookie hanya akan disertakan untuk HTTP Request yang mengarah ke path tersebut dan semua subpath-nya. Nilai default dari atribut `Path` adalah path dimana Cookie dibuat.
 
-Jika kamu ingin membuat lebih dari satu Cookie, kamu bisa atur seperti ini:
+Dan tentunya Cookie hanya akan disertakan jika path dan domain dari HTTP Request tersebut cocok dengan nilai dari atribut `Path` dan `Domain`.
+
+Nilai untuk atribut `Domain` hanya bisa domain dimana kamu membuat Cookie, atau parent domain dari domain tersebut (jika domain tersebut memiliki parent domain), tidak bisa domain lain yang benar-benar berbeda. Contoh, jika kamu membuat Cookie pada domain `coba.rezafikkri`, maka nilai dari atribut `Domain` hanya bisa domain itu saja (karena domain tersebut merupakan [root domain](https://www.siteground.com/kb/what-is-a-root-domain/) yang tidak memiliki parent domain) dan tidak bisa domain lain yang benar-benar berbeda seperti `php.net` misalnya, namun jika kamu membuat Cookie pada subdomain `cookie.coba.rezafikkri`, maka nilai dari atribut `Domain` hanya bisa subdomain itu saja dan parent domainnya, yaitu `coba.rezafikkri` dan tentu juga tidak bisa domain lain yang benar-benar berbeda.
+
+Jika kamu ingin membuat lebih dari satu Cookie dalam satu HTTP Response, kamu bisa bisa mendefinisikan dua atau lebih header `Set-Cookie` sekaligus seperti ini:
 ```http
-Set-Cookie: SIDR=31d4d96e407aad42; Path=/; Domain=coba.rezafikkri
-Set-Cookie: lang=en-US; Path=/cookie Expires=Wed, 09 Jan 2024 10:18:14 GMT
+Set-Cookie: sidr=31d4d96e407aad42; Path=/; Domain=coba.rezafikkri
+Set-Cookie: lang=en-US; Path=/; Expires=Wed, 09 Jan 2024 10:18:14 GMT
+```
+dan pada request-request berikutnya Browser akan menyertakan header `Cookie` seperti ini:
+```http
+Cookie: SIDR=31d4d96e407aad42; lang=en-US
 ```
 
-> Catatan: Kamu tidak bisa membuat Cookie dengan Domain yang berbeda dari Domain yang kamu gunakan saat membuat Cookie, misal pada saat membuat Cookie kamu menggunakan Domain `coba.rezafikkri`, maka kamu tidak bisa atur atribut Domain menjadi `Domain=php.net` dan lain-lain.
+Selain mengatur waktu kadaluarsa dan scope dari Cookie, kamu juga bisa mengatur supaya Cookie tidak bisa diakses melalui JavaScript yang ada di Browser (seperti menggunakan `document.cookie`), yaitu dengan mengatur atribut `HttpOnly`, seperti ini:
+```http
+Set-Cookie: SIDR=31d4d96e407aad42; Path=/; HttpOnly; Expires=Wed, 12 Des 2024 10:18:14 GMT
+```
+Jika kamu membuat fitur Login yang bertahan lama, sehingga walaupun Browser ditutup pengguna akan tetap login, yang sekarang banyak diterapkan oleh perusahaan besar seperti Google misalnya dan kamu menggunakan Cookie untuk menentukan pengguna sudah login atau belum, maka sangat disarankan untuk mengatur atribut `HttpOnly`. Dengan mengatur atribut `HttpOnly` pada fitur login misalnya, akan membantu mencegah serangan yang bernama [Cross-Site Scripting (XSS)](https://developer.mozilla.org/en-US/docs/Web/Security/Types_of_attacks#cross-site_scripting_xss) yang bisa mencuri Cookie yang digunakan untuk menentukan suatu pengguna sudah login atau belum.
 
-Terahir, untuk menghapus Cookie, caranya cukup mudah, kamu hanya perlu mengatur waktu kadaluarsa menjadi sebelum waktu saat ini, sehingga nantinya Browser akan secara otomatis menghapus Cookie tersebut, karena dianggap sudah kadaluarsa. Tetapi perlu diingat, value dari atribut `Path` dan `Domain` harus sama dengan Cookie yang ingin dihapus. Misalnya saat membuat Cookie:
+Selain atribut `HttpOnly`, kamu juga bisa mengatur supaya Cookie hanya akan dikirim untuk Request yang menggunakan protocol HTTPS, yaitu dengan mengatur atribut `Secure`, seperti ini:
+```http
+Set-Cookie: SIDR=31d4d96e407aad42; Path=/; Secure; HttpOnly; Expires=Wed, 12 Des 2024 10:18:14 GMT
+```
+Dengan mengatur atribut `Secure`, akan membantu mencegah penyerang [Man-in-the-middle](https://en.wikipedia.org/wiki/Man-in-the-middle_attack) mengakses Cookie dengan mudah. Dan juga website yang menggunakan protocol HTTP tidak bisa membuat Cookie dengan atribut `Secure`. Tetapi jika kamu membuat website di localhost (dengan menggunakan host localhost dan tidak menggunakan [virtual host](https://httpd.apache.org/docs/2.4/vhosts/)), Cookie akan tetap bisa dibuat dan dikirim, walaupun menggunakan protocol HTTP.
+
+Terakhir, untuk menghapus Cookie, caranya cukup mudah, kamu hanya perlu mengatur waktu kadaluarsa menjadi sebelum waktu saat ini, sehingga nantinya Browser akan secara otomatis menghapus Cookie tersebut, karena dianggap sudah kadaluarsa. Tetapi perlu diingat, value dari atribut `Path` dan `Domain` harus sama dengan Cookie yang ingin dihapus. Misalnya saat membuat Cookie:
 ```http
 Set-Cookie: SIDR=31d4d96e407aad42; Path=/cookie; Domain=coba.rezafikkri
 ```
