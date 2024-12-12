@@ -23,9 +23,9 @@ Sebelum lanjut membaca, ada beberapa prasyarat yang harus terpenuhi, supaya kamu
 Untuk semua prasyarat diatas kecuali nomor 3, bisa kamu pelajari di kelas gratis [Belajar HTTP Untuk Pemula Programmer Zaman Now](https://www.udemy.com/course/belajar-http-untuk-pemula). Jika prasyarat di atas sudah terpenuhi, kamu bisa lanjut membaca.
 
 ## Apa itu Cookie dan Bagaimana Cara Kerjanya?
-Cookie adalah kumpulan data kecil yang berisi informasi yang dikirim oleh Server ke *Client* (yang dalam hal ini biasanya adalah Web Browser). Cookie juga dikenal sebagai *Web Cookie*, *Browser Cookie*, atau *Internet Cookie*. 
+Cookie adalah kumpulan data kecil yang berisi informasi yang dikirim oleh Web Server ke *Client* (yang dalam hal ini biasanya adalah Web Browser). Cookie juga dikenal sebagai *Web Cookie*, *Browser Cookie*, atau *Internet Cookie*. 
 
-Cara kerja Cookie secara umum yaitu, Server akan menyertakan header `Set-Cookie` (yang berisi data cookie-nya) pada HTTP Response, lalu Browser akan menyimpan data yang terdapat pada header `Set-Cookie`, kemudian, pada request-request berikutnya, Browser akan menyertakan data Cookie tersebut pada HTTP Request header `Cookie`. Berikut jika digambarkan dalam bentuk diagram:
+Cara kerja Cookie secara umum yaitu, Browser mengirim HTTP Request ke Server, lalu Server akan menyertakan header `Set-Cookie` (yang berisi data cookie-nya) pada HTTP Response, selanjutnya Browser akan menyimpan data yang terdapat pada header `Set-Cookie`, kemudian, pada request-request berikutnya, Browser akan menyertakan data Cookie tersebut pada HTTP Request header `Cookie`. Berikut jika digambarkan dalam bentuk diagram:
 ![Cookie Diagram](/posts/bagaimana-cara-kerja-cookie-dan-session/cookie-diagram.png)<!--rehype:width=802&height=441&loading=lazy&decoding=async-->
 
 Berikut adalah contoh dimana kita misalnya membuat Cookie "session identifier" dengan nama `SIDR` dan value `31d4d96e407aad42`:
@@ -109,9 +109,16 @@ Set-Cookie: SIDR=; Path=/cookie; Domain=coba.rezafikkri; Expires=Sun, 24 Nov 202
 ```
 
 ## Apa itu Session dan Bagaimana Cara Kerjanya?
-Setelah membahas mengenai Cookie, sekarang kita akan membahas mengenai Session, yang sebenarnya masih berkaitan dengan Cookie, karena Session juga menggunakan Cookie.
+Setelah membahas mengenai Cookie, sekarang kita akan membahas mengenai Session, yang sebenarnya masih berkaitan dengan Cookie.
 
-Oke, terima kasih buat kamu yang sudah membaca, semoga bermanfaat. Jika ada yang ingin ditanyakan atau ada saran silahkan kirim email ke fikkri.reza@gmail.com. Jangan lupa follow Linkedin [in/reza-sariful-fikri](https://www.linkedin.com/in/reza-sariful-fikri) ku atau bisa juga di Facebook [reza.sariful.fikri](https://web.facebook.com/reza.sariful.fikri) untuk mendapatkan tulisan terbaru.
+Session adalah cara atau teknik untuk menyimpan informasi client di Server, sehingga kita bisa tahu ketika ada request dari client yang sama. Session juga sebenarnya menggunakan Cookie, namun bedanya nilai expire dari cookie Session biasanya adalah "session", yang berarti jika sesi telah berakhir maka Session akan otomatis dihapus dan tidak seperti Cookie yang mana informasi-nya disimpan di Client (Browser), kalau Session, informasi-nya disimpan di Server, baik itu di dalam file, di dalam database dan lain-lain. Sedangkan yang dikembalikan oleh Server melalui header `Set-Cookie` pada HTTP Response adalah biasanya ID dari Sessionnya. Selain itu juga, Session tidak ada di spesifikasi HTTP, berbeda dengan Cookie yang mana ada di spesifikasi HTTP.
+
+Cara kerja Session secara umum adalah, Browser mengirim HTTP Request ke Server, lalu Server akan membuat Session dan menyimpan Session tersebut, misalnya di database, selanjutnya Server akan mengirim HTTP Response ke Browser disertai header `Set-Cookie` yang berisi ID dari Session tersebut, pada request selanjutnya Browser akan menyertakan Cookie yang berisi ID dari Session, lalu Server akan mengecek (misalnya ke database) apakah Session dengan ID tersebut ada, jika ada maka data Session-nya akan diload sehingga bisa diakses di sisi server *([server side](https://www.enonic.com/blog/what-is-the-difference-between-server-side-and-client-side)*). Berikut jika digambarkan dalam bentuk diagram:
+![Session Diagram](/posts/bagaimana-cara-kerja-cookie-dan-session/session-diagram.png)<!--rehype:width=861&height=373&loading=lazy&decoding=async-->
+
+Seperti yang dijelaskan sebelumnya pada bagian Cookie, pertimbangkan juga untuk mengatur atribut `HttpOnly` dan `Secure` pada cookie Session.
+
+Oke, terima kasih buat kamu yang sudah membaca, semoga bermanfaat. Jika ada yang ingin ditanyakan atau ada saran silahkan kirim email ke fikkri.reza@gmail.com. Jangan lupa follow Linkedin saya di [in/reza-sariful-fikri](https://www.linkedin.com/in/reza-sariful-fikri) untuk mendapatkan tulisan terbaru. Serta jangan lupa baca artikel dan tutorial saya lainnya pada halaman Blog dengan mengklik menu Blog pada navbar atau footer.
 
 Kamu bisa juga berdonasi melalui [Saweria](https://saweria.co/rezafikkri) untuk mendukung saya.
 
@@ -119,4 +126,6 @@ Kamu bisa juga berdonasi melalui [Saweria](https://saweria.co/rezafikkri) untuk 
 [HTTP Cookies](https://http.dev/cookies)</br>
 [HTTP State Management Mechanism](https://www.rfc-editor.org/rfc/inline-errata/rfc6265.html)</br>
 [Using HTTP Cookie](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies)</br>
+[Session](https://mojoauth.com/blog/session-management-a-beginners-guide-for-web-developers/)</br>
+[OWASP Session Management Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html#cookies)</br>
 
