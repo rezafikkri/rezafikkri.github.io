@@ -43,4 +43,16 @@
   #pagination-list li > a:hover {
     @apply text-ajwa-blue;
   }
+
+  .prose blockquote {
+    position: relative;
+    @apply ps-4;
+    @apply bg-gray-100;
+    @apply rounded-lg;
+  }
+
+  .prose blockquote > p {
+    @apply py-1.5;
+    @apply pe-1.5;
+  }
 }
