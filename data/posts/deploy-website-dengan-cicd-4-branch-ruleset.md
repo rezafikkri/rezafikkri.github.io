@@ -10,7 +10,7 @@ serial: {"id":"ede13e57-95e1-425e-9e07-f5f686cb3990","order":4}
 
 Setelah pada seri sebelumnya (ke-3) kita membuat deployment dengan menggunakan Vercel, di seri terakhir ini (ke-4) <!-- excerpt -->kita akan sama-sama belajar bagaimana cara melindungi branch main, karena jika sekarang kamu mencoba melakukan perubahan secara langsung pada branch main<!-- excerpt -->, itu bisa dilakukan dengan mudah dan proses CI tidak akan dijalankan, sehingga ada kemungkinan kode yang error ter-deploy oleh Vercel ke production. Maka perlu untuk melindungi branch main sehingga tidak ada yang bisa melakukan perubahan secara langsung pada branch main, termasuk user dengan hak akses *Repository admin*, yaitu *owner* (pemilik) repositori tersebut (kamu bisa membaca lebih lanjut mengenai hak akses pada GitHub [disini](https://docs.github.com/en/get-started/learning-about-github/access-permissions-on-github)), lalu jika ingin melakukan perubahan harus melalui pull request sehingga proses CI otomatis dijalankan. Dan jika ingin melakukan *Merge pull request* maka harus lolos proses CI (test-and-lint). Lalu bagaimana cara melindungi branch main? caranya adalah dengan membuat Branch Ruleset.
 
-> Pastikan kamu sudah mengikuti bagian ke-3. Jika belum, kamu bisa scroll ke paling bawah halaman ini sampai pada bagian Daftar Seri Tulisan dan klik link pada bagian ke-3.
+> **Info:** Pastikan kamu sudah mengikuti bagian ke-3. Jika belum, kamu bisa scroll ke paling bawah halaman ini sampai pada bagian Daftar Seri Tulisan dan klik link pada bagian ke-3.
 
 Ruleset adalah daftar aturan yang berlaku pada repositori, yang dapat membantu kamu untuk mengontrol bagaimana orang berinteraksi dengan branch dan tag di dalam repositori. Yang bisa menggunakan fitur ruleset ini adalah orang dengan hak akses *Repository admin* atau hak akses *Edit repository rules*, yang mana orang dengan hak akses ini dapat membuat, edit dan menghapus ruleset untuk sebuah repositori. Kamu juga dapat memiliki hingga 75 ruleset per repositori. Lebih detail mengenai ruleset bisa baca [disini](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/about-rulesets).
 
@@ -36,7 +36,7 @@ Yang menandakan bahwa ruleset telah berjalan sebagaimana mestinya. Kamu bisa mem
 git reset --hard HEAD~1
 ```
 
-> Jika kamu belum mengetahui mengenai git-reset, bisa baca [disini](https://git-scm.com/docs/git-reset).
+> **Info:** Jika kamu belum mengetahui mengenai git-reset, bisa baca [disini](https://git-scm.com/docs/git-reset).
 
 Selain test dengan membuat perubahan langsung pada branch main, kamu juga bisa membuka pull request dengan sengaja membuat CI test menjadi error dan kamu bisa melihat bahwa button **Merge pull request** tidak bisa diklik, baik ketika *check* masih berjalan ataupun ketika *check* sudah selesai dan ada *check* yang error. Ketika ada *check* yang error seperti ini, kamu bisa melakukan update pada local repositori untuk memperbaiki error, lalu lakukan push dan proses CI akan dijalankan kembali. Ketika semua *check* lolos, maka kamu bisa melakukan **Merge pull request**.
 

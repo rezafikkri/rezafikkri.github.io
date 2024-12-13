@@ -10,9 +10,9 @@ serial: {"id":"ede13e57-95e1-425e-9e07-f5f686cb3990","order":3}
 
 Setelah membuat GitHub Actions workflow pada seri ke-2, pada seri ke-3 ini kita akan sama-sama belajar deployment dengan menggunakan Vercel untuk proses CD.
 
-> Pastikan kamu sudah mengikuti bagian ke-2. Jika belum, kamu bisa scroll ke paling bawah halaman ini sampai pada bagian Daftar Seri Tulisan dan klik link pada bagian ke-2.
+> **Info:** Pastikan kamu sudah mengikuti bagian ke-2. Jika belum, kamu bisa scroll ke paling bawah halaman ini sampai pada bagian Daftar Seri Tulisan dan klik link pada bagian ke-2.
 
-> Disini saya menggunakan akun GitHub lain (amruk53sh) untuk menunjukkan bagaimana cara deploy dengan Vercel untuk pertama kalinya.
+> **Info:** Disini saya menggunakan akun GitHub lain (amruk53sh) untuk menunjukkan bagaimana cara deploy dengan Vercel untuk pertama kalinya.
 
 Untuk deploy dengan vercel ikuti langkah-langkah berikut:
 <!-- excerpt -->1. Buat akun Vercel dengan buka halaman [Sign Up Vercel](https://vercel.com/signup), lalu pada bagian **Plan type**, karena ini tujuannya untuk belajar maka pilih **Hobby**, lalu<!-- excerpt --> pada kolom input **Your name**, isi dengan nama kamu dan klik button **Continue**:
@@ -40,7 +40,7 @@ Untuk deploy dengan vercel ikuti langkah-langkah berikut:
 
 Setelah berhasil deploy website counter-js ke Vercel, seperti penjelasan saya sebelumnya, bahwa ketika ada perubahan yang diterapkan ke branch main, maka Vercel secara otomatis akan melakukan proses deployment. Untuk memastikan apakah betul berjalan seperti itu, buat branch baru, lalu lakukan perubahan apapun di repositori local (agar mudah melihat perbedaan antara deployment sebelumnya dan yang baru, buat perubahan pada tampilan website di file `main.js`) dan lakukan commit kemudian push.
 
-> Disini saya kembali menggunakan akun GitHub utama saya (rezafikkri).
+> **Info:** Disini saya kembali menggunakan akun GitHub utama saya (rezafikkri).
 
 Selanjutnya buka sebuah pull request ke branch main, tunggu semua pengecekan lolos dan lakukan *Merge pull request* dengan klik button **Merge pull request**:
 ![merge pull request](/posts/deploy-vercel-github-action/merge-pull-request.png)<!--rehype:width=1351&height=656&loading=lazy&class=mt-6&decoding=async-->

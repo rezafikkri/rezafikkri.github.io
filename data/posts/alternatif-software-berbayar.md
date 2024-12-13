@@ -21,7 +21,7 @@ Ekstensi file dari LibreOffice Writer ini adalah .odt berbeda dengan Microsoft O
 ## Google Apps
 Di Google Apps selain YouTube, Google Transalate, ada juga Google Docs (alternatif Microsoft Office Word), Google Sheets (alternatif Microsoft Office Excel), dan Google Slides (alternatif Microsoft Office Power Point). Software-software tersebut bisa kamu gunakan secara gratis, bisa digunakan online maupun offline. Saya sendiri juga menggunakan google docs, salah satunya untuk membuat skripsi.
 
-> Aplikasi yang ada di Google Apps bukan termasuk aplikasi open source, tetapi kita tetap bisa menggunakannya dengan gratis, dengan batasan tertentu.
+> **Catatan:** Aplikasi yang ada di Google Apps bukan termasuk aplikasi open source, tetapi kita tetap bisa menggunakannya dengan gratis, dengan batasan tertentu.
 
 Untuk Google Docs salah satu fitur menariknya adalah kita bisa mengerjakan satu dokumen secara bersama-sama pada waktu yang sama. Kita juga tidak perlu menekan tombol simpan, semua akan otomatis disimpan saat kita mengetik. Dan juga kompatibel dengan Microsoft office Word, salah satunya kita bisa mengkonversikan file Google Dokumen ke file Word, atau sebaliknya, serta sudah ada starter template untuk resume, projek proposal, dll. Berikut tampilan dari Google Docs :
 ![Google Docs](/posts/alternatif-software-berbayar/googledocs.png)<!--rehype:width=1366&height=746&loading=lazy&decoding=async-->

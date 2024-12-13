@@ -32,7 +32,7 @@ Pada seri tutorial ini GitHub Actions akan digunakan untuk menerapkan praktik CI
 ## Upload Website ke Remote Repository di GitHub
 Setelah memahami beberapa teori diatas, langkah awal yang harus dilakukan tentunya membuat remote repositori di GitHub dan mengupload website yang telah didownload ke remote repositori tersebut. Sebelumya pastikan kamu sudah mendownload website yang sudah saya sediakan (link ada di awal tutorial), lalu lakukan `npm install` dan pastikan website berjalan dengan normal.
 
-> Sebaiknya ganti nama direktori website yang telah didownload menjadi "counter-js".
+> **Catatan:** Sebaiknya ganti nama direktori website yang telah didownload menjadi "counter-js".
 
 Berikut langkah-langkahnya:
 
