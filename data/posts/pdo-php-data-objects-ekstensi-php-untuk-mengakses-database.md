@@ -118,7 +118,7 @@ Bagaimana dengan *positional placeholders*? jika menggunakan *named placeholders
 ?>
 ```
 
-> Perbedaan *indexed array* dan array asosiatif adalah tipe *key* yang digunakan, *indexed array* menggunakan *key* bertipe integer, sedangkan array asosiatif menggunakan *key* bertipe string
+> **Catatan:** Perbedaan *indexed array* dan array asosiatif adalah tipe *key* yang digunakan, *indexed array* menggunakan *key* bertipe integer, sedangkan array asosiatif menggunakan *key* bertipe string
 
 Kapan kita harus menggunakan fungsi `bindParam()`? kita butuh menggunakan fungsi `bindparam()` ketika value yang harus dimasukkan itu bukan bertipe string, contohnya ketika kita butuh perintah SQl yang menggunakan perintah `limit`, mengapa? karena data yang dimasukkan harus bertipe integer, tidak bisa string, maka kita perlu menggunakan fungsi `bindParam()`. Pada fungsi `bindParam()` selain dua argument yang sebelumnya, yaitu, pertama string dari *named placeholders* atau nomor index dari *positional placeholders*, yang kedua adalah nama variabel-nya, dan yang ke tiga yaitu eksplisit tipe data untuk value yang akan kita masukkan, caranya adalah dengan menggunakan `PDO::PARAM_*constants`, seperti:
 ```php
@@ -154,9 +154,9 @@ Selain menggunakan fungsi `prepare()`, kamu juga bisa menggunakan fungsi `query(
 ?>
 ```
 
-> Praktik terbaik dalam penggunaan `prepare()` adalah ketika perintah SQL tersebut membutuhkan data dari luar, seperti dari input user. Biasanya kita membutuhkan data dari luar ketika kita ingin memasukkan data ke database, ataupun ketika ingin menghapus suatu data berdasarkan id tertentu dan lain-lain.
+> **Catatan:** Praktik terbaik dalam penggunaan `prepare()` adalah ketika perintah SQL tersebut membutuhkan data dari luar, seperti dari input user. Biasanya kita membutuhkan data dari luar ketika kita ingin memasukkan data ke database, ataupun ketika ingin menghapus suatu data berdasarkan id tertentu dan lain-lain.
 
-> Sedangkan `query()` digunakan ketika perintah SQL tersebut tidak membutuhkan data dari luar, misalnya perintah untuk menampilkan semua user seperti di atas. Adapun `exec()` hampir sama seperti `query()`, tetapi fungsi `exec()` tidak mengembalikan data hasil dari perintah `SELECT`, tetapi mengembalikan jumlah baris yang terkena dampak dari perintah SQL, sehingga lebih cocok untuk perintah seperti `DELETE`, `UPDATE` dan `CREATE`.
+> **Catatan:** Sedangkan `query()` digunakan ketika perintah SQL tersebut tidak membutuhkan data dari luar, misalnya perintah untuk menampilkan semua user seperti di atas. Adapun `exec()` hampir sama seperti `query()`, tetapi fungsi `exec()` tidak mengembalikan data hasil dari perintah `SELECT`, tetapi mengembalikan jumlah baris yang terkena dampak dari perintah SQL, sehingga lebih cocok untuk perintah seperti `DELETE`, `UPDATE` dan `CREATE`.
 
 Sebagai tambahan, berikut adalah contoh code CRUD (Create Read Update Delete) dengan PDO dan Prepared Statement:
 

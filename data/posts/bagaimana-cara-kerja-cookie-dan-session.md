@@ -46,7 +46,7 @@ Secara default Cookie memiliki waktu *Expired* (kadaluarsa), yaitu "session", ya
 Set-Cookie: SIDR=31d4d96e407aad42; Expires=Wed, 09 Jan 2024 10:18:14 GMT
 ```
 
-> Titik koma (;) digunakan sebagai pemisah antara atribut, maka dari itu nama Cookie tidak bisa mengandung karakter tersebut, lebih detailnya bisa kunjungi [cookie-name](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie#cookie-namecookie-value).
+> **Catatan:** Titik koma (;) digunakan sebagai pemisah antara atribut, maka dari itu nama Cookie tidak bisa mengandung karakter tersebut, lebih detailnya bisa kunjungi [cookie-name](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie#cookie-namecookie-value).
 
 Waktu kadaluarsa ini harus dalam timezone GMT (*Greenwich Mean Time*), karena HTTP date selalu dibuat atau direpresentasikan dalam GMT, tidak pernah dalam waktu local. Dan format waktu kadaluarsa ini berdasarkan [spesifikasi HTTP date](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Date) adalah:
 ```http

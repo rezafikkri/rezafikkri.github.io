@@ -10,7 +10,7 @@ serial: {"id":"ede13e57-95e1-425e-9e07-f5f686cb3990","order":2}
 
 Setelah membahas beberapa teori terkait lalu membuat remote repositori di GitHub dan mengupload website counter-js ke remote repositori tersebut pada seri ke-1. Pada seri ke-2 ini kita akan sama-sama belajar membuat GitHub Actions workflow untuk proses CI, yang nantinya secara otomatis akan menjalankan unit testing dan linting ketika pull request dibuka ke branch main atau ketika pull request yang sudah ditutup dibuka kembali, atau ketika *head branch* (branch yang berisi perubahan yang ingin kamu integrasikan/terapkan) dari pull request diupdate. Tetapi sebelum itu, tentunya perlu untuk memahami apa itu GitHub Actions workflow.
 
-> Pastikan kamu sudah mengikuti bagian ke-1. Jika belum, kamu bisa scroll ke paling bawah halaman ini sampai pada bagian Daftar Seri Tulisan dan klik link pada bagian ke-1.
+> **Info:** Pastikan kamu sudah mengikuti bagian ke-1. Jika belum, kamu bisa scroll ke paling bawah halaman ini sampai pada bagian Daftar Seri Tulisan dan klik link pada bagian ke-1.
 
 ## Apa itu GitHub Actions Workflow?
 
@@ -51,7 +51,7 @@ jobs:
           npm run lint
           npm test
 ```
-> Catatan: untuk indentasi tiap baris juga harus disesuaikan, karena hal itu bukan hanya untuk gaya saja, tetapi memang memiliki peran penting. Jika kamu ingin mempelajari YAML lebih lanjut, lihat [Learn YAML in Y Minutes](https://learnxinyminutes.com/docs/yaml/).
+> **Catatan:** untuk indentasi tiap baris juga harus disesuaikan, karena hal itu bukan hanya untuk gaya saja, tetapi memang memiliki peran penting. Jika kamu ingin mempelajari YAML lebih lanjut, lihat [Learn YAML in Y Minutes](https://learnxinyminutes.com/docs/yaml/).
 
 Sekarang, saya akan menjelaskan setiap baris kode diatas, supaya kamu lebih memahami bagaimana YAML syntax digunakan untuk membuat workflow:
 
@@ -97,7 +97,7 @@ Sekarang, saya akan menjelaskan setiap baris kode diatas, supaya kamu lebih mema
   </li>
 </ul>
 
-> Jika kamu ingin melihat dan belajar lebih detail mengenai syntax workflow, bisa lihat di [workflow syntax for GitHub Actions](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions).
+> **Info:** Jika kamu ingin melihat dan belajar lebih detail mengenai syntax workflow, bisa lihat di [workflow syntax for GitHub Actions](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions).
 
 Setelah selesai membuat workflow saatnya mencoba workflow yang telah dibuat, untuk itu, kamu bisa melakukan commit lalu push terlebih dahulu untuk mengupload workflow ke remote repositori dan pastikan di remote repositori pada tab **Actions** &raquo; pada sidebar menu sebelah kiri terdapat workflow dengan nama **Continious Integration**:
 ![push ci yml](/posts/deploy-vercel-github-action/push-ci-yml.png)<!--rehype:width=1366&height=656&loading=lazy&class=mt-6&decoding=async-->
