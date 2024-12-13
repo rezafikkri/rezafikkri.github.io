@@ -38,6 +38,7 @@ Gimp merupakan alternatif untuk Photoshop. Gimp juga mendukung berbagai sistem o
 Kdenlive merupakan software alternatif untuk Adobe Premiere, juga mendukung berbagai sistem operasi, mulai dari Linux, MacOS dan Windows. Kdenlive mendukung banyak Video dan Audio format, seperti H.264, Quick Time, dll. Kita juga bisa melakukan color correction untuk memperbaiki warna pada video. Walaupun software ini gratis digunakan, software ini memiliki fitur fitur yang lumayan, bahkan salah satu channel youtube seperti Indonesia Belajar misalnya, menggunakan kdenlive dalam mengedit videonya. Kdenlive bisa kamu download di website resminya di [kdenlive.org](https://kdenlive.org/). Berikut tampilan dari Kdenlive :
 ![Kdenlive](/posts/alternatif-software-berbayar/kdenlive.png)<!--rehype:width=1920&height=1080&loading=lazy&decoding=async-->
 
-Oke, terima kasih buat kamu yang sudah membaca, semoga bermanfaat. Jika ada yang ingin ditanyakan atau ada saran silahkan kirim email ke fikkri.reza@gmail.com. Jangan lupa follow Linkedin [in/reza-sariful-fikri](https://www.linkedin.com/in/reza-sariful-fikri) ku atau bisa juga di Facebook [reza.sariful.fikri](https://web.facebook.com/reza.sariful.fikri) untuk mendapatkan tulisan terbaru.
+Oke, terima kasih buat kamu yang sudah membaca, semoga bermanfaat. Jika ada yang ingin ditanyakan atau ada saran silahkan kirim email ke fikkri.reza@gmail.com. Jangan lupa follow Linkedin saya di [in/reza-sariful-fikri](https://www.linkedin.com/in/reza-sariful-fikri) untuk mendapatkan tulisan terbaru. Serta jangan lupa baca artikel dan tutorial saya lainnya pada halaman Blog dengan mengklik menu Blog pada navbar atau footer.
+
 
 Kamu bisa juga berdonasi melalui [Saweria](https://saweria.co/rezafikkri) untuk mendukung saya.
