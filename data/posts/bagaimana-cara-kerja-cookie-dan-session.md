@@ -1,7 +1,7 @@
 ---
 id: "e3e9c456-8c4b-4470-850d-82ae1c5262c4"
 title: "Bagaimana Cara Kerja Cookie dan Session?"
-lastmod: 1725383570416
+lastmod: 1734069067838
 topics: ["50d103e8-2275-4b09-8dea-5105ab5e9838","56863ee6-39ae-40d2-94ca-34e0805ce291","b2ded9c2-dea9-4427-a4aa-3b5a24e89468","cdc80207-597b-4fb7-b572-53b68c9f1a78","3b2bf050-b69c-4438-b3d9-ed0a3a5e0911"]
 slug: "bagaimana-cara-kerja-cookie-dan-session"
 ogImage: "/posts/bagaimana-cara-kerja-cookie-dan-session/cara-kerja-cookie-session.png"
