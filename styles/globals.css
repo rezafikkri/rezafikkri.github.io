@@ -55,4 +55,8 @@
     @apply py-1.5;
     @apply pe-1.5;
   }
+
+  .hljs-toolbar {
+    @apply rounded-t-lg;
+  }
 }
