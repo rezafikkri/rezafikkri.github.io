@@ -61,7 +61,7 @@ git remote add origin https://github.com/[username]/[remote-repo-name].git
   <li>Pastikan website counter-js berhasil terupload ke GitHub (dengan merefresh halaman yang tampil pada langkah ke-3).</li>
 </ol>
 
-Oke, terima kasih buat kamu yang sudah membaca, semoga bermanfaat. Pada bagian selanjutnya (ke-2) akan membahas dan membuat GitHub Actions workflow untuk proses CI, kamu bisa klik link pada bagian **Daftar Seri Tulisan** di bawah!, untuk menuju ke bagian selanjutnya atau bagian yang lain. Jika ada yang ingin ditanyakan atau ada saran silahkan kirim email ke fikkri.reza@gmail.com. Jangan lupa follow Linkedin [in/reza-sariful-fikri](https://www.linkedin.com/in/reza-sariful-fikri) ku atau bisa juga di Facebook [reza.sariful.fikri](https://web.facebook.com/reza.sariful.fikri) untuk mendapatkan tulisan terbaru.
+Oke, terima kasih buat kamu yang sudah membaca, semoga bermanfaat. Jika ada yang ingin ditanyakan atau ada saran silahkan kirim email ke fikkri.reza@gmail.com. Jangan lupa follow Linkedin saya di [in/reza-sariful-fikri](https://www.linkedin.com/in/reza-sariful-fikri) untuk mendapatkan tulisan terbaru. Serta jangan lupa baca artikel dan tutorial saya lainnya pada halaman Blog dengan mengklik menu Blog pada navbar atau footer.
 
 Kamu bisa juga berdonasi melalui [Saweria](https://saweria.co/rezafikkri) untuk mendukung saya.
 

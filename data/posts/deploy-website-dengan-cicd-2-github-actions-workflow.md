@@ -110,7 +110,7 @@ Jika proses CI yang dijalankan berhasil (artinya lolos testing dan linting) maka
 Untuk sekarang tidak perlu untuk melakukan *Merge pull request* atau semacamnya, karena ini hanya bertujuan untuk melihat apakah workflow akan dijalankan ketika misalnya sebuah pull request dibuka ke branch main. Untuk itu kamu bisa *Close pull request* tersebut dengan scroll ke paling bawah halaman dan klik button *Close pull request*:
 ![close pull request](/posts/deploy-vercel-github-action/close-pull-request.png)<!--rehype:width=1351&height=656&loading=lazy&class=mt-6&decoding=async-->
 
-Oke, terima kasih buat kamu yang sudah membaca, semoga bermanfaat. Pada seri selanjutnya (ke-3) akan membahas mengenai cara deploy dengan Vercel untuk proses CD, kamu bisa klik link pada bagian **Daftar Seri Tulisan** di bawah!, untuk menuju ke bagian selanjutnya atau bagian yang lain. Jika ada yang ingin ditanyakan atau ada saran silahkan kirim email ke fikkri.reza@gmail.com. Jangan lupa follow Linkedin [in/reza-sariful-fikri](https://www.linkedin.com/in/reza-sariful-fikri) ku atau bisa juga di Facebook [reza.sariful.fikri](https://web.facebook.com/reza.sariful.fikri) untuk mendapatkan tulisan terbaru.
+Oke, terima kasih buat kamu yang sudah membaca, semoga bermanfaat. Jika ada yang ingin ditanyakan atau ada saran silahkan kirim email ke fikkri.reza@gmail.com. Jangan lupa follow Linkedin saya di [in/reza-sariful-fikri](https://www.linkedin.com/in/reza-sariful-fikri) untuk mendapatkan tulisan terbaru. Serta jangan lupa baca artikel dan tutorial saya lainnya pada halaman Blog dengan mengklik menu Blog pada navbar atau footer.
 
 Kamu bisa juga berdonasi melalui [Saweria](https://saweria.co/rezafikkri) untuk mendukung saya.
 
