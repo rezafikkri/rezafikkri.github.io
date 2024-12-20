@@ -1,9 +1,11 @@
 import Profile from "@/components/about/profile";
 import Summary from "@/components/about/summary";
 import Skill from "@/components/about/skill";
+import getBaseUrl from "@/lib/get-base-url";
 
 const title = "Tentang Saya";
 const description = "Seorang backend web developer, suka menulis dan juga membuat aplikasi open source.";
+const baseUrl = getBaseUrl();
 
 export const metadata = {
   title,
@@ -11,10 +13,10 @@ export const metadata = {
   openGraph: {
     title,
     description,
-    url: '/about',
+    url: `${baseUrl}/about`,
     images: [
       {
-        url: '/rezas.jpg',
+        url: `${baseUrl}/rezas.jpg`,
         width: 400,
         height: 400,
       }, 

@@ -1,7 +1,10 @@
 import ProjectList from "@/components/project/project-list";
+import getBaseUrl from "@/lib/get-base-url";
 
 const title = "Projek";
 const description = "Karya-karya open source.";
+
+const baseUrl = getBaseUrl();
 
 export const metadata = {
   title,
@@ -9,10 +12,10 @@ export const metadata = {
   openGraph: {
     title,
     description,
-    url: '/projects',
+    url: `${baseUrl}/projects`,
     images: [
       {
-        url: '/Reza logo.svg',
+        url: `${baseUrl}/Reza logo.svg`,
         width: 744,
         height: 744,
       }, 

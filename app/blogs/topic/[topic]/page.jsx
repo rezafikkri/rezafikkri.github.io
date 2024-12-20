@@ -1,10 +1,12 @@
 import { getPosts, getTopicId, getTopics } from "@/lib/posts.mjs";
 import PostList from "@/components/post/post-list";
 import LargeTopics from "@/components/post/large-topics";
+import getBaseUrl from "@/lib/get-base-url";
 
 export async function generateMetadata({ params }) {
   const selectedTopic = (await params).topic;
   const description = `Kumpulan tulisan mengenai ${selectedTopic}.`;
+  const baseUrl = getBaseUrl();
 
   return {
     title: selectedTopic,
@@ -12,10 +14,10 @@ export async function generateMetadata({ params }) {
     openGraph: {
       title: selectedTopic,
       description: description,
-      url: `/blogs/topics/${selectedTopic}`,
+      url: `${baseUrl}/blogs/topics/${selectedTopic}`,
       images: [
         {
-          url: '/Reza logo.svg',
+          url: `${baseUrl}/Reza logo.svg`,
           width: 744,
           height: 744,
         },

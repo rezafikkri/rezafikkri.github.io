@@ -20,7 +20,7 @@ export const metadata = {
     siteName: process.env.SITE_NAME,
     images: [
       {
-        url: '/rezas.jpg',
+        url: `${baseUrl}/rezas.jpg`,
         width: 400,
         height: 400,
       }, 
