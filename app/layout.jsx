@@ -29,8 +29,8 @@ const baseUrl = getBaseUrl();
 export const metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    template: "%s - Reza Sariful Fikri",
-    default: "Reza Sariful Fikri"
+    template: `%s - ${process.env.SITE_NAME}`,
+    default: process.env.SITE_NAME,
   },
   verification: {
     google: 'fLcDg3KFF-m2xDnm4TGsRylXksSQTGGfLq6FqSe8cUs',
