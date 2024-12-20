@@ -6,10 +6,11 @@ import { getPost, getSlugs, getTopics } from "@/lib/posts.mjs";
 import FormatTime from "@/components/format-time";
 import getBaseUrl from "@/lib/get-base-url";
 
+const baseUrl = getBaseUrl();
+
 export async function generateMetadata({ params }) {
   const slug = (await params).slug;
   const post = getPost(slug);
-  const baseUrl = getBaseUrl();
 
   return {
     title: post.title,
@@ -32,13 +33,12 @@ export default async function Page({ params }) {
   const slug = (await params).slug;
   const post = getPost(slug);
   const topics = getTopics(post.topics);
-  const baseUrl = getBaseUrl();
 
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Article',
     headline: post.title,
-    image: [ baseUrl + post.ogImage ],
+    image: [ post.ogImage ],
     dateModified: dayjs(post.lastmod).toISOString(),
     author: [
       {
