@@ -18,7 +18,7 @@ export async function generateMetadata({ params }) {
       title: post.title,
       description: post.excerpt,
       url: `${baseUrl}/blogs/${post.slug}`,
-      images: [ baseUrl + post.ogImage ],
+      images: [ post.ogImage ],
       type: 'article',
     },
   };
