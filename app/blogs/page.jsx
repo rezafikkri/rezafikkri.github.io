@@ -1,9 +1,12 @@
 import { getTopics, getPosts } from "@/lib/posts";
 import LargeTopics from "@/components/post/large-topics";
 import PostList from "@/components/post/post-list";
+import getBaseUrl from "@/lib/get-base-url";
 
 const title = "Blog";
 const description = "Kumpulan tulisan mengenai programming dan teknologi secara umum.";
+
+const baseUrl = getBaseUrl();
 
 export const metadata = {
   title,
@@ -11,10 +14,10 @@ export const metadata = {
   openGraph: {
     title,
     description,
-    url: '/blogs',
+    url: `${baseUrl}/blogs`,
     images: [
       {
-        url: '/Reza logo.svg',
+        url: `${baseUrl}/Reza logo.svg`,
         width: 744,
         height: 744,
       }, 
