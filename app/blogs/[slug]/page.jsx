@@ -39,7 +39,7 @@ export default async function Page({ params }) {
     '@type': 'Article',
     headline: post.title,
     image: [ post.ogImage ],
-    dateModified: dayjs(post.lastmod).toISOString(),
+    dateModified: dayjs(post.lastmod).format(),
     author: [
       {
         '@type': 'Person',
