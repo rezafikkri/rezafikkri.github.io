@@ -4,7 +4,7 @@ title: "Deploy Website dengan CI/CD #2: GitHub Actions Workflow"
 lastmod: 1720767708928
 topics: ["e5d6b8ea-d8e0-4bd2-8bb3-d74d08dc5669","ab8888e2-d055-4507-aec3-7cadb0d36d98","3b2bf050-b69c-4438-b3d9-ed0a3a5e0911"]
 slug: "deploy-website-dengan-cicd-2-github-actions-workflow"
-ogImage: "/posts/deploy-vercel-github-action/2-deploy-vercel-github-action.png"
+ogImage: "https://res.cloudinary.com/rezafikkri/image/upload/q_auto/2-deploy-vercel-github-action.png"
 serial: {"id":"ede13e57-95e1-425e-9e07-f5f686cb3990","order":2}
 ---
 
@@ -22,7 +22,7 @@ Mengenai *event* dan *jobs*, *event* adalah aktivitas spesifik di dalam sebuah r
 ## Membuat GitHub Actions Workflow
 
 Oke, untuk membuat workflow, buat direktori `.github/workflows/` di dalam direktori utama website counter-js, lalu didalamnya buat file `ci.yml`, seperti dibawah ini:
-![create ci yml](/posts/deploy-vercel-github-action/create-ci-yml.png)<!--rehype:width=564&height=439&loading=lazy&class=mt-6&decoding=async-->
+![create ci yml](https://res.cloudinary.com/rezafikkri/image/upload/q_auto/create-ci-yml.png)<!--rehype:width=564&height=439&loading=lazy&class=mt-6&decoding=async-->
 Dan copy semua code dibawah ini ke dalam file `ci.yml`:
 ```yaml
 name: Continious Integration
@@ -100,15 +100,15 @@ Sekarang, saya akan menjelaskan setiap baris kode diatas, supaya kamu lebih mema
 > **Info:** Jika kamu ingin melihat dan belajar lebih detail mengenai syntax workflow, bisa lihat di [workflow syntax for GitHub Actions](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions).
 
 Setelah selesai membuat workflow saatnya mencoba workflow yang telah dibuat, untuk itu, kamu bisa melakukan commit lalu push terlebih dahulu untuk mengupload workflow ke remote repositori dan pastikan di remote repositori pada tab **Actions** &raquo; pada sidebar menu sebelah kiri terdapat workflow dengan nama **Continious Integration**:
-![push ci yml](/posts/deploy-vercel-github-action/push-ci-yml.png)<!--rehype:width=1366&height=656&loading=lazy&class=mt-6&decoding=async-->
+![push ci yml](https://res.cloudinary.com/rezafikkri/image/upload/q_auto/push-ci-yml.png)<!--rehype:width=1366&height=656&loading=lazy&class=mt-6&decoding=async-->
 
 Untuk memicu workflow agar dijalankan, buat branch baru dan lakukan perubahan apapun di local repositori, setelah itu lakukan commit lalu push dan buka sebuah pull request ke branch main. Jika tidak ada masalah pada workflow yang dibuat, maka secara otomatis workflow akan dijalankan:
-![test workflow pending](/posts/deploy-vercel-github-action/test-workflow-pending.png)<!--rehype:width=1351&height=656&loading=lazy&class=mt-6&decoding=async-->
+![test workflow pending](https://res.cloudinary.com/rezafikkri/image/upload/q_auto/test-workflow-pending.png)<!--rehype:width=1351&height=656&loading=lazy&class=mt-6&decoding=async-->
 Jika proses CI yang dijalankan berhasil (artinya lolos testing dan linting) maka akan berstatus *pass*:
-![test workflow pass](/posts/deploy-vercel-github-action/test-workflow-pass.png)<!--rehype:width=1351&height=656&loading=lazy&class=mt-6&decoding=async-->
+![test workflow pass](https://res.cloudinary.com/rezafikkri/image/upload/q_auto/test-workflow-pass.png)<!--rehype:width=1351&height=656&loading=lazy&class=mt-6&decoding=async-->
 
 Untuk sekarang tidak perlu untuk melakukan *Merge pull request* atau semacamnya, karena ini hanya bertujuan untuk melihat apakah workflow akan dijalankan ketika misalnya sebuah pull request dibuka ke branch main. Untuk itu kamu bisa *Close pull request* tersebut dengan scroll ke paling bawah halaman dan klik button *Close pull request*:
-![close pull request](/posts/deploy-vercel-github-action/close-pull-request.png)<!--rehype:width=1351&height=656&loading=lazy&class=mt-6&decoding=async-->
+![close pull request](https://res.cloudinary.com/rezafikkri/image/upload/q_auto/close-pull-request.png)<!--rehype:width=1351&height=656&loading=lazy&class=mt-6&decoding=async-->
 
 Oke, terima kasih buat kamu yang sudah membaca, semoga bermanfaat. Jika ada yang ingin ditanyakan atau ada saran silahkan kirim email ke fikkri.reza@gmail.com. Jangan lupa follow Linkedin saya di [in/reza-sariful-fikri](https://www.linkedin.com/in/reza-sariful-fikri) untuk mendapatkan tulisan terbaru. Serta jangan lupa baca artikel dan tutorial saya lainnya pada halaman Blog dengan mengklik menu Blog pada navbar atau footer.
 
