@@ -4,7 +4,7 @@ title: "Deploy Website dengan CI/CD #1: Pendahuluan"
 lastmod: 1720766808794
 topics: ["e5d6b8ea-d8e0-4bd2-8bb3-d74d08dc5669","ab8888e2-d055-4507-aec3-7cadb0d36d98","3b2bf050-b69c-4438-b3d9-ed0a3a5e0911"]
 slug: "deploy-website-dengan-cicd-1-pendahuluan"
-ogImage: "/posts/deploy-vercel-github-action/1-deploy-vercel-github-action.png"
+ogImage: "https://res.cloudinary.com/rezafikkri/image/upload/q_auto/1-deploy-vercel-github-action.png"
 serial: {"id":"ede13e57-95e1-425e-9e07-f5f686cb3990","order":1}
 ---
 
@@ -39,8 +39,8 @@ Berikut langkah-langkahnya:
 <ol>
   <li>Buka terminal atau cmd pada direktori utama website counter-js yang telah di download, kemudian jalankan <code>git init</code> untuk membuat local repositori baru dan jangan lupa lakukan commit.
   </li>
-  <li>Buat public remote repositori baru pada akun GitHub-mu, isi <strong>Repository name</strong>, <strong>Decription</strong> (optional) dan klik <strong>Create repository</strong> (biarkan value yang lain default saja): <img alt="before create new repo" src="/posts/deploy-vercel-github-action/before-create-new-repo.png" width="1336" height="1224" loading="lazy" class="mt-6" decoding="async"/></li>
-  <li>Pastikan setelah kamu klik <strong>Create repository</strong>, maka akan diarahkan ke halaman seperti di bawah ini, yang menandakan repositori masih kosong: <img alt="after create new repo" src="/posts/deploy-vercel-github-action/after-create-new-repo.png" width="1336" height="656" loading="lazy" class="mt-6" decoding="async"/></li>
+  <li>Buat public remote repositori baru pada akun GitHub-mu, isi <strong>Repository name</strong>, <strong>Decription</strong> (optional) dan klik <strong>Create repository</strong> (biarkan value yang lain default saja): <img alt="before create new repo" src="https://res.cloudinary.com/rezafikkri/image/upload/q_auto/before-create-new-repo.png" width="1336" height="1224" loading="lazy" class="mt-6" decoding="async"/></li>
+  <li>Pastikan setelah kamu klik <strong>Create repository</strong>, maka akan diarahkan ke halaman seperti di bawah ini, yang menandakan repositori masih kosong: <img alt="after create new repo" src="https://res.cloudinary.com/rezafikkri/image/upload/q_auto/after-create-new-repo.png" width="1336" height="656" loading="lazy" class="mt-6" decoding="async"/></li>
   <li>
     Buka kembali terminal atau cmd pada direktori utama website counte-js dan tambahkan remote repositori yang telah dibuat sebelumnya dengan nama "origin" (kamu bisa menggunakan <em>ssh</em> atau <em>https</em>):
     <pre><code class="language-bash"># ssh
