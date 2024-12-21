@@ -5,6 +5,8 @@ lastmod: 1720767708928
 topics: ["e5d6b8ea-d8e0-4bd2-8bb3-d74d08dc5669","ab8888e2-d055-4507-aec3-7cadb0d36d98","3b2bf050-b69c-4438-b3d9-ed0a3a5e0911"]
 slug: "deploy-website-dengan-cicd-3-deploy-dengan-vercel"
 ogImage: "https://res.cloudinary.com/rezafikkri/image/upload/q_auto/3-deploy-vercel-github-action.png"
+ogImageWidth: 1920
+ogImageHeight: 1080
 serial: {"id":"ede13e57-95e1-425e-9e07-f5f686cb3990","order":3}
 ---
 

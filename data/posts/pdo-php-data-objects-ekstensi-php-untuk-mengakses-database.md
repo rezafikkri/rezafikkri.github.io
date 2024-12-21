@@ -5,6 +5,8 @@ lastmod: 1723245780821
 topics: ["cdc80207-597b-4fb7-b572-53b68c9f1a78","597f5651-dfe2-4aad-81aa-7c8b090ff468"]
 slug: "pdo-php-data-objects-ekstensi-php-untuk-mengakses-database"
 ogImage: "https://res.cloudinary.com/rezafikkri/image/upload/q_auto/php-pdo.png"
+ogImageWidth: 1364
+ogImageHeight: 657
 ---
 
 Bismillah, hari ini kita akan mempelajari PDO (PHP Data Objects).
