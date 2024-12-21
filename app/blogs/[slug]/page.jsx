@@ -1,4 +1,6 @@
 import dayjs from "dayjs";
+import utc from 'dayjs/plugin/utc';
+import timezone from 'dayjs/plugin/timezone';
 import Pagination from "@/components/post/pagination";
 import PostContent from "@/components/post/post-content";
 import SmallTopics from "@/components/post/small-topics";
@@ -7,6 +9,9 @@ import FormatTime from "@/components/format-time";
 import getBaseUrl from "@/lib/get-base-url";
 
 const baseUrl = getBaseUrl();
+
+dayjs.extend(utc);
+dayjs.extend(timezone);
 
 export async function generateMetadata({ params }) {
   const slug = (await params).slug;
@@ -39,7 +44,7 @@ export default async function Page({ params }) {
     '@type': 'Article',
     headline: post.title,
     image: [ post.ogImage ],
-    dateModified: dayjs(post.lastmod).format(),
+    dateModified: dayjs(post.lastmod).tz('UTC').format('YYYY-MM-DDTHH:mm:ssZ'),
     author: [
       {
         '@type': 'Person',
