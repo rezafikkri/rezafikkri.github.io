@@ -5,6 +5,8 @@ lastmod: 1679628746132
 topics: ["12ca2718-3365-465d-b35e-12d05d9a9873"]
 slug: "css-combinator-cara-kerja-dan-penggunaannya"
 ogImage: "https://res.cloudinary.com/rezafikkri/image/upload/q_auto/css-combinators.png"
+ogImageWidth: 1364
+ogImageHeight: 657
 ---
 
 Bismillah, hari ini kita akan membahas mengenai Combinator di CSS. Apa itu Combinator? <!-- excerpt -->Combinator merupakan suatu karakter yang menyatakan hubungan antara selector, untuk menargetkan element dalam dokumen. Misalnya untuk menyeleksi semua<!-- excerpt --> element `<p>` yang ada di dalam element `<article>`, kita menggunakan Descendant Combinator ( ): 

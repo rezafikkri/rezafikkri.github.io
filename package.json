@@ -13,6 +13,7 @@
     "@inquirer/checkbox": "^4.0.3",
     "@inquirer/confirm": "^5.1.0",
     "@inquirer/input": "^4.1.0",
+    "@inquirer/number": "^3.0.4",
     "@inquirer/select": "^4.0.3",
     "copy-to-clipboard": "^3.3.3",
     "dayjs": "^1.11.13",

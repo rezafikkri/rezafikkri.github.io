@@ -5,6 +5,8 @@ lastmod: 1679999694791
 topics: ["0fff756a-1ad2-4ee2-9c70-3db8d713b476"]
 slug: "alternatif-software-berbayar"
 ogImage: "https://res.cloudinary.com/rezafikkri/image/upload/q_auto/alternatif-software-berbayar.png"
+ogImageWidth: 1364
+ogImageHeight: 657
 ---
 
 Bismillah, kali ini kita akan membahas mengenai alternatif software-software berbayar seperti Microsoft Office, CorelDraw, Adobe Photoshop dan Adobe Premier. Mungkin kamu pernah menggunakan software-software tersebut, atau bahkan kamu bekerja dengan menggunakan software-software tersebut. Kebanyakan, orang yang masih awam atau tidak terlalu paham akan teknologi, biasanya menggunakan software bajakan di laptop atau PC-nya, terutama yang menggunakan sistem operasi windows. Mungkin bagi yang masih awam, hal tersebut terjadi karena ketidaktahuan mereka, tetapi ada juga mereka yang paham akan teknologi dan tahu bahwa mereka menggunakan software bajakan, tetapi tetap menggunakannya. Alangkah baiknya jika menggunakan software berbayar, kita menggunakan versi originalnya, yaitu dengan membeli license dari software berbayar yang digunakan, apalagi bagi yang telah mendapatkan penghasilan dari software-software tersebut. 
