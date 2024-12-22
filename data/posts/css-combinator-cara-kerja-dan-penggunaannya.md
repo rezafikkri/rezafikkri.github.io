@@ -54,7 +54,7 @@ Berikut contoh implementasinya:
 ```
 
 Hasil:
-![hasil implementasi Descendant Combinator](https://res.cloudinary.com/rezafikkri/image/upload/q_auto/css-combinator-1.png)<!--rehype:width=1042&height=626&loading=lazy&mt-6&decoding=async-->
+![hasil implementasi Descendant Combinator](https://res.cloudinary.com/rezafikkri/image/upload/q_auto/css-combinator-1.png)<!--rehype:width=1042&height=626&loading=lazy&decoding=async-->
 
 Atau kamu juga bisa melihat [hasilnya secara online di CodePen](https://codepen.io/rezafikkri/pen/bGxxdrN).
 
@@ -95,7 +95,7 @@ Berikut contoh implementasinya:
 ```
 
 Hasil:
-![hasil imlementasi Child Combinator](https://res.cloudinary.com/rezafikkri/image/upload/q_auto/css-combinator-2.png)<!--rehype:width=992&height=626&loading=lazy&class=mt-6&decoding=async-->
+![hasil imlementasi Child Combinator](https://res.cloudinary.com/rezafikkri/image/upload/q_auto/css-combinator-2.png)<!--rehype:width=992&height=626&loading=lazy&decoding=async-->
 
 Atau kamu juga bisa melihat  [hasilnya secara online di CodePen](https://codepen.io/rezafikkri/pen/BaOOKQg).
 
@@ -136,7 +136,7 @@ Berikut contoh implementasinya:
 ```
 
 Hasil:
-![hasil implementasi Adjacent Sibling Combinator](https://res.cloudinary.com/rezafikkri/image/upload/css-combinator-3.png)<!--rehype:width=997&height=626&loading=lazy&class=mt-6&decoding=async-->
+![hasil implementasi Adjacent Sibling Combinator](https://res.cloudinary.com/rezafikkri/image/upload/css-combinator-3.png)<!--rehype:width=997&height=626&loading=lazy&decoding=async-->
 
 Atau kamu juga bisa melihat  [hasilnya secara online di CodePen](https://codepen.io/rezafikkri/pen/YzOJgNM).
 
@@ -177,7 +177,7 @@ Berikut contoh implementasinya:
 ```
 
 Hasil:
-![hasil implementasi General Sibling Combinator](https://res.cloudinary.com/rezafikkri/image/upload/css-combinator-4.png)<!--rehype:width=972&height=626&loading=lazy&class=mt-6&decoding=async-->
+![hasil implementasi General Sibling Combinator](https://res.cloudinary.com/rezafikkri/image/upload/css-combinator-4.png)<!--rehype:width=972&height=626&loading=lazy&decoding=async-->
 
 Atau kamu juga bisa melihat  [hasilnya secara online di CodePen](https://codepen.io/rezafikkri/pen/eYLbJMQ).
 

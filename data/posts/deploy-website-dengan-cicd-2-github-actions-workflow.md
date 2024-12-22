@@ -67,7 +67,7 @@ Sekarang, saya akan menjelaskan setiap baris kode diatas, supaya kamu lebih mema
     <pre class="language-yaml"><code>on:
   pull_request:
     branches: [main]</code></pre>
-    Mungkin kamu bertanya kenapa ketika pull request dibuka ke branch main yang akan memicu workflow CI dijalankan, hal ini karena (terkait dengan konsep yang saya jelaskan pada seri ke-1), ketika telah dibuka pull request ke branch main maka berarti perubahan tersebut telah siap untuk dideploy, tetapi sebelum dideploy tentunya perlu untuk melakukan beberapa pengujian (seperti unit testing, dsb), sehingga diharapkan bisa mengurangi resiko kesalahan (error) ter-deploy oleh Vercel ke production:
+    Mungkin kamu bertanya kenapa ketika pull request dibuka ke branch main yang akan memicu workflow CI dijalankan, hal ini karena (terkait dengan konsep yang saya jelaskan pada seri ke-1), ketika telah dibuka pull request ke branch main maka berarti perubahan tersebut telah siap untuk dideploy, tetapi sebelum dideploy tentunya perlu untuk melakukan beberapa pengujian (seperti unit testing, dsb), sehingga diharapkan bisa mengurangi resiko kesalahan (error) ter-deploy oleh Vercel ke production.
   </li>
   <li>
     Mendefinisikan <em>job</em> dengan id <code>test-and-lint</code>:
