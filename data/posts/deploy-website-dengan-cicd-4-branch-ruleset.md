@@ -18,7 +18,7 @@ Ruleset adalah daftar aturan yang berlaku pada repositori, yang dapat membantu k
 
 Untuk membuat ruleset, ikuti langkah berikut:
 1. Buka remote repositori website counter-js di GitHub kamu, lalu klik **Settings** &raquo; pada sidebar menu sebelah kiri klik **Rules**, kemudian klik **Rulesets**, pada halaman Rulesets yang terbuka, klik **New ruleset** dan klik **New branch ruleset**:
-![create branch ruleset github](https://res.cloudinary.com/rezafikkri/image/upload/q_auto/create-branch-ruleset-github.png)<!--rehype:width=1366&height=656&loading=lazy&class=mt-6&decoding=async-->
+![create branch ruleset github](https://res.cloudinary.com/rezafikkri/image/upload/q_auto/create-branch-ruleset-github.png)<!--rehype:width=1366&height=656&loading=lazy&decoding=async-->
 2. Pada bagian **Ruleset Name**, isi dengan nama ruleset
 3. Pada bagian **Enforcement Status**, pilih **Active**, yang berarti bahwa ruleset ini akan langsung diterapkan ketika dibuat (ketika klik button **Create**). Kamu juga bisa membiarkannya default, yaitu **Disabled**, yang berarti bahwa ruleset ini belum akan diterapkan dan ketika nanti kamu ingin menerapkan ruleset ini, kamu bisa mengubah **Enforcement Status**-nya.
 4. Pada bagian **Bypass list**, kamu bisa memberikan izin kepada *rules*, *teams* atau *apps* tertentu untuk *bypass* (mengabaikan atau melewati) ruleset ini. Tetapi karena dalam tutorial ini, ingin diterapkan bahwa tidak ada yang boleh mengabaikan ruleset ini, maka cukup dibiarkan kosong saja.
@@ -26,13 +26,13 @@ Untuk membuat ruleset, ikuti langkah berikut:
 6. Pada bagian **Rules**, kamu memilih *rule* apa saja yang ingin diterapkan. Secara default sudah ada dua *rule* yang otomatis dipilih oleh GitHub, yaitu rule pertama adalah **Restrict deletions**, yang berarti hanya user dengan izin *bypass* yang boleh menghapus branch yang didefinisikan pada bagian **Target branches**, yaitu dalam tutorial ini adalah branch main dan karena sebelumnya pada bagian **Bypass list** hanya dibiarkan kosong, maka artinya tidak ada seorang pun yang bisa menghapus branch main, ini bagus, karena jika branch main tidak sengaja terhapus, maka akan berakibat fatal. Yang kedua adalah **Block force pushes**, ini berarti bahwa tidak ada user yang diizinkan untuk melakukan *force push*.
 7. Pilih rule **Require pull request before merging**, supaya jika ingin melakukan perubahan harus melalui pull request.
 8. Pilih rule **Require status checks to pass**, lalu klik **Add checks**, pada kolom pencarian tulis id dari *job* yang terdapat pada workflow yang sebelumnya dibuat, sebagai contoh, id dari *job* yang saya buat sebelumnya adalah "test-and-lint" maka masukkan "test-and-lint" atau cukup "test" saja, lalu pada bagian **Suggestions** pilih **Add test-and-lint** dan klik kembali button **Add checks**:
-![require status checks pass](https://res.cloudinary.com/rezafikkri/image/upload/q_auto/require-status-checks-pass.png)<!--rehype:width=1351&height=656&loading=lazy&class=mt-6&decoding=async-->
+![require status checks pass](https://res.cloudinary.com/rezafikkri/image/upload/q_auto/require-status-checks-pass.png)<!--rehype:width=1351&height=656&loading=lazy&decoding=async-->
 9. Berikut adalah tampilan akhir dari *settings ruleset*:
-![settings ruleset](https://res.cloudinary.com/rezafikkri/image/upload/q_auto/settings-ruleset.png)<!--rehype:width=1366&height=2731&loading=lazy&class=mt-6&decoding=async-->
+![settings ruleset](https://res.cloudinary.com/rezafikkri/image/upload/q_auto/settings-ruleset.png)<!--rehype:width=1366&height=2731&loading=lazy&decoding=async-->
 10. Klik button **Create** untuk membuat ruleset.
 
 Setelah selesai membuat Branch Ruleset, saatnya melakukan test apakah ruleset tersebut berjalan sebagaimana mestinya. Kamu bisa mencoba membuat perubahan langsung pada branch main di local repositori, lalu coba lakukan push, maka kamu akan mendapatkan error seperti di bawah ini:
-![error directly change main branch](https://res.cloudinary.com/rezafikkri/image/upload/q_auto/error-directly-change-main-branch.png)<!--rehype:width=1140&height=534&loading=lazy&class=mt-6&decoding=async-->
+![error directly change main branch](https://res.cloudinary.com/rezafikkri/image/upload/q_auto/error-directly-change-main-branch.png)<!--rehype:width=1140&height=534&loading=lazy&decoding=async-->
 Yang menandakan bahwa ruleset telah berjalan sebagaimana mestinya. Kamu bisa membatalkan perubahan sebelumnya dengan menjalankan command:
 ```bash
 git reset --hard HEAD~1

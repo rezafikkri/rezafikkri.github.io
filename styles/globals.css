@@ -53,7 +53,7 @@
 
   .prose blockquote > p {
     @apply py-1.5;
-    @apply pe-1.5;
+    @apply pe-2;
   }
 
   .hljs-toolbar {
