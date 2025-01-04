@@ -17,7 +17,7 @@ export default function Footer() {
       </div>
       <div className="flex justify-between flex-col sm:flex-row gap-2 sm:gap-5">
         <p className="basis-2/4">Dibuat dengan Next.js dan Tailwind CSS</p>
-        <p className="basis-2/4 sm:text-end">&copy;2024 Reza Sariful Fikri 🇮🇩🇵🇸</p>
+        <p className="basis-2/4 sm:text-end">&copy;2025 Reza Sariful Fikri 🇮🇩🇵🇸</p>
       </div>
     </footer>
   );
