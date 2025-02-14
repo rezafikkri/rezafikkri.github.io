@@ -101,7 +101,7 @@ Set-Cookie: SIDR=31d4d96e407aad42; Path=/; Secure; HttpOnly; Expires=Wed, 12 Des
 ```
 Dengan mengatur atribut `Secure`, akan membantu mencegah penyerang [Man-in-the-middle](https://en.wikipedia.org/wiki/Man-in-the-middle_attack) mengakses Cookie dengan mudah. Dan juga website yang menggunakan protocol HTTP tidak bisa membuat Cookie dengan atribut `Secure`. Tetapi jika kamu membuat website di localhost (dengan menggunakan host localhost dan tidak menggunakan [virtual host](https://httpd.apache.org/docs/2.4/vhosts/)), Cookie akan tetap bisa dibuat dan dikirim, walaupun menggunakan protocol HTTP.
 
-Terakhir, untuk menghapus Cookie, sebenarnya tidak ada cara khusus, kita hanya perlu membuat Cookie dengan nama yang sama dengan Cookie yang ingin dihapus, lalu nilainya kita kosongkan saja dan waktu kadaluarsanya kita atur menjadi sebelum waktu saat ini, sehingga nantinya Browser akan secara otomatis menghapus Cookie tersebut, karena dianggap sudah kadaluarsa. Tetapi perlu diingat, nilai dari atribut `Path` dan `Domain` harus sama dengan Cookie yang ingin dihapus. Misalnya saat membuat Cookie:
+Terakhir, untuk menghapus Cookie, selain kita bisa menghapusnya secara manual di browser, kita juga bisa menghapusnya dengan membuat Cookie dengan nama yang sama dengan Cookie yang ingin dihapus, lalu nilainya kita kosongkan saja dan waktu kadaluarsanya kita atur menjadi sebelum waktu saat ini, sehingga nantinya Browser akan secara otomatis menghapus Cookie tersebut, karena dianggap sudah kadaluarsa. Tetapi perlu diingat, nilai dari atribut `Path` dan `Domain` harus sama dengan Cookie yang ingin dihapus. Misalnya saat membuat Cookie:
 ```http
 Set-Cookie: SIDR=31d4d96e407aad42; Path=/cookie; Domain=coba.rezafikkri
 ```
