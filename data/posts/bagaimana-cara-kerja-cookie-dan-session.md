@@ -30,7 +30,7 @@ Cookie adalah kumpulan data kecil yang berisi informasi yang dikirim oleh Server
 Cara kerja Cookie secara umum yaitu, Browser mengirim HTTP Request ke Server, lalu Server akan menyertakan header `Set-Cookie` (yang berisi data cookie-nya) pada HTTP Response, kemudian Browser akan menyimpan data yang terdapat pada header `Set-Cookie`, lalu pada request-request berikutnya, Browser akan menyertakan data Cookie tersebut pada HTTP Request header `Cookie`. Berikut jika digambarkan dalam bentuk diagram:
 ![Cookie Diagram](https://res.cloudinary.com/rezafikkri/image/upload/q_auto:best/cookie-diagram.svg)<!--rehype:width=802&height=441&loading=lazy&decoding=async-->
 
-Berikut adalah contoh dimana kita misalnya membuat Cookie "session identifier" dengan nama `SIDR` dan value `31d4d96e407aad42`:
+Berikut adalah contoh dimana kita misalnya membuat Cookie "session identifier" dengan nama `SIDR` dan nilai `31d4d96e407aad42`:
 ```http
 Set-Cookie: SIDR=31d4d96e407aad42
 ```
@@ -39,7 +39,7 @@ Lalu pada request-request berikutnya Browser akan menyertakan header `Cookie` se
 Cookie: SIDR=31d4d96e407aad42
 ```
 
-Dalam membuat Cookie kamu harus memperhatikan batas (*limit*) yang telah ditentukan, yaitu setidaknya maksimal ukuran per Cookie adalah 4096 bytes, ukuran tersebut tidak hanya dihitung dari value Cookie, tetapi juga nama dan atribut-atributnya. Selain itu juga, setidaknya per domain maksimal hanya 50 Cookie. Batasan tersebut adalah sebagaimana ditetapkan pada [RFC 6265](https://www.rfc-editor.org/rfc/rfc6265.html#page-27). Batasan tersebut juga bisa berbeda disetiap browser, tetapi biasanya perbedaannya tidak terlalu jauh.
+Dalam membuat Cookie kamu harus memperhatikan batas (*limit*) yang telah ditentukan, yaitu setidaknya maksimal ukuran per Cookie adalah 4096 bytes, ukuran tersebut tidak hanya dihitung dari nilai Cookie, tetapi juga nama dan atribut-atributnya. Selain itu juga, setidaknya per domain maksimal hanya 50 Cookie. Batasan tersebut adalah sebagaimana ditetapkan pada [RFC 6265](https://www.rfc-editor.org/rfc/rfc6265.html#page-27). Batasan tersebut juga bisa berbeda disetiap browser, tetapi biasanya perbedaannya tidak terlalu jauh.
 
 Dalam membuat Cookie juga tidak disarankan memasukkan data terlalu banyak, karena semua data di Cookie akan selalu dikirim di setiap request, semakin banyak data, maka website kamu akan semakin lambat.
 
@@ -101,14 +101,17 @@ Set-Cookie: SIDR=31d4d96e407aad42; Path=/; Secure; HttpOnly; Expires=Wed, 12 Des
 ```
 Dengan mengatur atribut `Secure`, akan membantu mencegah penyerang [Man-in-the-middle](https://en.wikipedia.org/wiki/Man-in-the-middle_attack) mengakses Cookie dengan mudah. Dan juga website yang menggunakan protocol HTTP tidak bisa membuat Cookie dengan atribut `Secure`. Tetapi jika kamu membuat website di localhost (dengan menggunakan host localhost dan tidak menggunakan [virtual host](https://httpd.apache.org/docs/2.4/vhosts/)), Cookie akan tetap bisa dibuat dan dikirim, walaupun menggunakan protocol HTTP.
 
-Terakhir, untuk menghapus Cookie, caranya cukup mudah, kamu hanya perlu mengatur waktu kadaluarsa menjadi sebelum waktu saat ini, sehingga nantinya Browser akan secara otomatis menghapus Cookie tersebut, karena dianggap sudah kadaluarsa. Tetapi perlu diingat, value dari atribut `Path` dan `Domain` harus sama dengan Cookie yang ingin dihapus. Misalnya saat membuat Cookie:
+Terakhir, untuk menghapus Cookie, sebenarnya tidak ada cara khusus, kita hanya perlu membuat Cookie dengan nama yang sama dengan Cookie yang ingin dihapus, lalu nilainya kita kosongkan saja dan waktu kadaluarsanya kita atur menjadi sebelum waktu saat ini, sehingga nantinya Browser akan secara otomatis menghapus Cookie tersebut, karena dianggap sudah kadaluarsa. Tetapi perlu diingat, nilai dari atribut `Path` dan `Domain` harus sama dengan Cookie yang ingin dihapus. Misalnya saat membuat Cookie:
 ```http
 Set-Cookie: SIDR=31d4d96e407aad42; Path=/cookie; Domain=coba.rezafikkri
 ```
-Lalu karena saat menghapus Cookie waktu saat ini adalah `Sun, 24 Nov 2024 03:42:10 GMT`, maka atur waktu kadaluarsa menjadi waktu sebelum itu dan jangan lupa pastikan value dari atribut `Path` dan `Domain` sama:
+Lalu karena saat menghapus Cookie waktu saat ini adalah `Sun, 24 Nov 2024 03:42:10 GMT`, maka atur waktu kadaluarsa menjadi waktu sebelum itu dan jangan lupa pastikan nilai dari atribut `Path` dan `Domain` sama:
 ```http
 Set-Cookie: SIDR=; Path=/cookie; Domain=coba.rezafikkri; Expires=Sun, 24 Nov 2024 02:42:10 GMT
 ```
+Hal lain yang perlu diingat ketika menghapus Cookie adalah, jika pada saat membuat Cookie kita tidak mengatur nilai dari atribut `Domain`, maka itu artinya Cookie hanya bisa dihapus dari domain yang sama dengan dimana Cookie tersebut dibuat, dengan kata lain, untuk menghapus Cookie tersebut, kita tidak perlu mengatur nilai atribute `Domain`-nya, karena walaupun ketika menghapus Cookie kita mengatur nilai dari atribut `Domain`-nya sama dengan nilai dari atribut `Domain` yang ada pada Cookie tersebut dan tetapi kita menghapus Cookie tersebut dari domain yang berbeda dengan dimana Cookie tersebut dibuat (*misalnya di domain yang benar-benar berbeda atau bahkan di subdomainnya*), maka Cookie tetap tidak akan terhapus. Dan juga, sama halnya ketika membuat Cookie, jika Cookie tersebut dibuat di parent domainnya dan kita mengatur nilai dari atribute `Domain` adalah parent domainnya, tentu kita bisa menghapus Cookie tersebut dari subdomainnya.
+
+Sedangkan untuk atribut `Path`, mau tidak diatur atau diatur nilainya, jika ingin menghapus Coookie, maka cukup samakan nilai dari atribut `Path`-nya.
 
 ## Apa itu Session dan Bagaimana Cara Kerjanya?
 Setelah membahas mengenai Cookie, sekarang kita akan membahas mengenai Session, yang sebenarnya masih berkaitan dengan Cookie.
