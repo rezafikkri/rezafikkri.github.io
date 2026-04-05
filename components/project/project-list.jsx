@@ -8,7 +8,7 @@ export default function ProjectList() {
         <p className="text-gray-700 mb-5">Templat admin yang dibuat dengan bootstrap 4</p>
         <div className="absolute bottom-4">
           <Link href="https://github.com/rezafikkri/Reza-Admin" className="inline-block no-underline border border-gray-200 bg-gray-50 hover:bg-gray-100 rounded-lg px-2 py-1 text-sm mr-2">Code</Link>
-          <Link href="https://rezafikkri.github.io/Reza-Admin" className="inline-block no-underline border border-gray-200 bg-gray-50 hover:bg-gray-100 rounded-lg px-2 py-1 text-sm mr-2">Demo</Link>
+          <Link href="https://rezafikkri.my.id/Reza-Admin" className="inline-block no-underline border border-gray-200 bg-gray-50 hover:bg-gray-100 rounded-lg px-2 py-1 text-sm mr-2">Demo</Link>
         </div>
       </div>
 
