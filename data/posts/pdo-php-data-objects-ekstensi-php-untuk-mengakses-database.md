@@ -1,7 +1,7 @@
 ---
 id: "e2b7af83-c3b4-4e3f-95fb-013cd05d4614"
 title: "PDO (PHP Data Objects): Ekstensi PHP untuk mengakses database"
-lastmod: 1723245780821
+lastmod: 1723245780
 topics: ["cdc80207-597b-4fb7-b572-53b68c9f1a78","597f5651-dfe2-4aad-81aa-7c8b090ff468"]
 slug: "pdo-php-data-objects-ekstensi-php-untuk-mengakses-database"
 ogImage: "https://res.cloudinary.com/rezafikkri/image/upload/q_auto/php-pdo.png"

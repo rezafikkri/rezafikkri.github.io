@@ -50,7 +50,7 @@ export default async function Page({ params }) {
     '@type': 'Article',
     headline: post.title,
     image: [ post.ogImage ],
-    dateModified: dayjs(post.lastmod).tz('UTC').format('YYYY-MM-DDTHH:mm:ssZ'),
+    dateModified: dayjs.unix(post.lastmod).tz('UTC').format('YYYY-MM-DDTHH:mm:ssZ'),
     author: [
       {
         '@type': 'Person',

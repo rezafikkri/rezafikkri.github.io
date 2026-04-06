@@ -15,7 +15,7 @@ export default function PostList({ posts }) {
   return (
     <dl className="flex flex-col space-y-3.5">
       {posts.map((post) => {
-        const year = dayjs(post.lastmod).year();
+        const year = dayjs.unix(post.lastmod).year();
         const dli = (
           <div key={post.id}>
             {currentYear != year && <h3 className={`text-2xl font-bold mb-2 ${currentYear != 0 && 'mt-6'}`}>{year}</h3>}

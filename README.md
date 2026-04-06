@@ -25,13 +25,6 @@ To create a new blog post, run:
 pnpm run post
 ```
 
-### Update Sitemap / Article Title
-If you update a blog title or want to refresh `<lastmod>` in the sitemap, run:
-
-```bash
-pnpm run update-sitemap
-```
-
 ## Notes
 
 - Project follows standard **Next.js App Router** conventions

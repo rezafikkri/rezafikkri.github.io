@@ -1,7 +1,7 @@
 ---
 id: "6f096981-3026-489d-baff-ec22a4f564e2"
 title: "Alternatif Software Berbayar"
-lastmod: 1679999694791
+lastmod: 1679999694
 topics: ["0fff756a-1ad2-4ee2-9c70-3db8d713b476"]
 slug: "alternatif-software-berbayar"
 ogImage: "https://res.cloudinary.com/rezafikkri/image/upload/q_auto/alternatif-software-berbayar.png"

@@ -1,11 +1,12 @@
-import { getPosts, getTopicId, getTopics } from "@/lib/posts.mjs";
+import { getPosts, getTopicBySlug, getTopicId, getTopics } from "@/lib/posts.mjs";
 import PostList from "@/components/post/post-list";
 import LargeTopics from "@/components/post/large-topics";
 import getBaseUrl from "@/lib/get-base-url";
 
 export async function generateMetadata({ params }) {
-  const selectedTopic = (await params).topic;
-  const description = `Kumpulan tulisan mengenai ${selectedTopic}.`;
+  const selectedTopic = (await params).slug;
+  const topic = getTopicBySlug(selectedTopic);
+  const description = `Kumpulan tulisan mengenai ${topic.name}.`;
   const baseUrl = getBaseUrl();
 
   return {
@@ -28,14 +29,14 @@ export async function generateMetadata({ params }) {
 }
 
 export function generateStaticParams() {
-  return getTopics().map(topic => ({ topic: topic.name }));
+  return getTopics().map(topic => ({ slug: topic.slug }));
 }
 
 export default async function Page({ params }) {
-  const selectedTopic = (await params).topic;
+  const selectedTopic = (await params).slug;
+  const topic = getTopicBySlug(selectedTopic);
   const topics = getTopics();
-  const topicId = getTopicId(selectedTopic);
-  const posts = getPosts(topicId);
+  const posts = getPosts(topic.id);
 
   return (
     <>
@@ -45,7 +46,7 @@ export default async function Page({ params }) {
       </header>
       <section className="mt-20 text-gray-800">
         <p className="text-lg font-medium text-gray-500">{posts.length} tulisan dengan topik:</p>
-        <h1 className="text-5xl font-bold mt-2 mb-10">{selectedTopic.replace(/-/g, ' ')}</h1>
+        <h1 className="text-5xl font-bold mt-2 mb-10">{topic.name}</h1>
         <PostList posts={posts} />
       </section>
     </>

@@ -6,10 +6,10 @@ export default function SmallTopics({ topics, mt })  {
       {topics.map((topic) => (
         <Link
           key={topic.id}
-          href={`/blogs/topic/${topic.name}`} 
+          href={`/blogs/topics/${topic.slug}`} 
           className="no-underline text-xs bg-white border border-gray-500 hover:border-ajwa-blue px-2 py-1 rounded-lg"
         >
-          {topic.name.replace(/-/g, ' ')}
+          {topic.name}
         </Link>
       ))}
     </div>
