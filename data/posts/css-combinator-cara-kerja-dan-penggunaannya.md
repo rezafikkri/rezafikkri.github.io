@@ -1,7 +1,7 @@
 ---
 id: "bee5cd43-e243-4ce8-9016-5fe7d3e08c69"
 title: "CSS Combinator: Cara Kerja dan Penggunaannya"
-lastmod: 1679628746132
+lastmod: 1679628746
 topics: ["12ca2718-3365-465d-b35e-12d05d9a9873"]
 slug: "css-combinator-cara-kerja-dan-penggunaannya"
 ogImage: "https://res.cloudinary.com/rezafikkri/image/upload/q_auto/css-combinators.png"

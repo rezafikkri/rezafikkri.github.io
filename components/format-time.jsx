@@ -6,5 +6,5 @@ import 'dayjs/locale/id';
 dayjs.locale('id');
 
 export default function FormatTime({ className, lastmod, format }) {
-  return <time className={className}>{dayjs(lastmod).format(format)}</time>;
+  return <time className={className}>{dayjs.unix(lastmod).format(format)}</time>;
 }

@@ -8,5 +8,5 @@ dayjs.extend(relativeTime);
 dayjs.locale('id');
 
 export default function RelativeTime({ className, lastmod }) {
-  return <time className={className}>{dayjs(lastmod).fromNow()}</time>;
+  return <time className={className}>{dayjs.unix(lastmod).fromNow()}</time>;
 }
