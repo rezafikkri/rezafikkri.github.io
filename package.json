@@ -20,7 +20,7 @@
     "eslint-config-next": "^15.1.2",
     "gray-matter": "^4.0.3",
     "highlight.js": "^11.11.1",
-    "next": "^15.5.14",
+    "next": "^15.5.15",
     "react": "19.2.4",
     "react-dom": "19.2.4",
     "rehype-attr": "^3.0.3",
